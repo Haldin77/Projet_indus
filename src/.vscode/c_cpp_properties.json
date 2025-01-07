@@ -1,0 +1,24 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "${default}",
+        "limitSymbolsToIncludedHeaders": false
+      },
+      "includePath": [
+        "/home/dilhan/ros2_ws/install/omni_common/include/**",
+        "/home/dilhan/ros2_ws/install/omni_msgs/include/**",
+        "/opt/ros/humble/include/**",
+        "/home/dilhan/ros2_ws/src/Geomagic_Touch_ROS2/omni_common/include/**",
+        "/home/dilhan/ros2_ws/src/ur_to_touch_haptic_teleoperation/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS",
+      "intelliSenseMode": "gcc-x64",
+      "compilerPath": "/usr/bin/gcc",
+      "cStandard": "gnu11",
+      "cppStandard": "c++14"
+    }
+  ],
+  "version": 4
+}

@@ -1,0 +1,5 @@
+source;share/ur_to_touch_haptic_teleoperation/local_setup.bash
+source;share/ur_to_touch_haptic_teleoperation/local_setup.dsv
+source;share/ur_to_touch_haptic_teleoperation/local_setup.ps1
+source;share/ur_to_touch_haptic_teleoperation/local_setup.sh
+source;share/ur_to_touch_haptic_teleoperation/local_setup.zsh
