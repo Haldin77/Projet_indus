@@ -1,0 +1,6 @@
+gmake[2]: *** Deleting file 'CMakeFiles/ur_to_touch_haptic_teleoperation_teleop_node.dir/src/teleoperate.cpp.o'
+gmake[2]: *** [CMakeFiles/ur_to_touch_haptic_teleoperation_teleop_node.dir/build.make:76: CMakeFiles/ur_to_touch_haptic_teleoperation_teleop_node.dir/src/teleoperate.cpp.o] Interrupt
+gmake[2]: *** [CMakeFiles/ur_to_touch_haptic_teleoperation_haptic_node.dir/build.make:76: CMakeFiles/ur_to_touch_haptic_teleoperation_haptic_node.dir/src/haptic_feedback.cpp.o] Interrupt
+gmake[1]: *** [CMakeFiles/Makefile2:139: CMakeFiles/ur_to_touch_haptic_teleoperation_teleop_node.dir/all] Interrupt
+gmake[1]: *** [CMakeFiles/Makefile2:165: CMakeFiles/ur_to_touch_haptic_teleoperation_haptic_node.dir/all] Interrupt
+gmake: *** [Makefile:146: all] Interrupt
