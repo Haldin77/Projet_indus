@@ -4,7 +4,8 @@ from omni_msgs.msg import OmniState, OmniButtonEvent, OmniFeedback
 from geometry_msgs.msg import TwistStamped
 from rclpy.clock import Clock
 from scipy.signal import butter, lfilter
-
+from optoforce import OptoForce22 as OptoForce
+from optoforce.status import no_errors
 
 class OmniStateToTwistWithButton(Node):
     def __init__(self):
@@ -47,7 +48,7 @@ class OmniStateToTwistWithButton(Node):
 
         # Publisher vers TwistStamped
         self.publisher_ = self.create_publisher(TwistStamped, '/servo_node/delta_twist_cmds', 1000)
-        self.publisher_omni = self.create_publisher(OmniFeedback, '/phantom/force_feedback', 10)
+        self.publisher_omni = self.create_publisher(OmniFeedback, '/phantom/force_feedback', 1000)
         self.get_logger().info("OmniState to TwistStamped with Button Control Node started.")
 
     def apply_filter(self, data_history):
@@ -88,7 +89,10 @@ class OmniStateToTwistWithButton(Node):
         twist_msg.twist.linear.x = self.apply_filter(self.linear_x_history)
         twist_msg.twist.linear.y = self.apply_filter(self.linear_y_history)
         twist_msg.twist.linear.z = self.apply_filter(self.linear_z_history)
-
+        with OptoForce(speed_hz=100, filter_hz=15, zero=False) as force_sensor:
+            self.wrench_msg.force.x = force_sensor.read(only_latest_data=False).Fx - 3.0
+            self.wrench_msg.force.y = force_sensor.read(only_latest_data=False).Fy + 7.0
+            self.wrench_msg.force.z = force_sensor.read(only_latest_data=False).Fz - 50.5
         # Filtrage de bruit par seuil (deadband)
         self.deadband_filter_noise(twist_msg, 0.001)
 

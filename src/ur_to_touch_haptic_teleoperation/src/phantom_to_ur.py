@@ -39,8 +39,8 @@ class OmniStateToTwistWithButton(Node):
             10)
 
         # Publisher vers TwistStamped
-        self.publisher_ = self.create_publisher(TwistStamped, '/servo_node/delta_twist_cmds', 10)
-        self.publisher_omni = self.create_publisher(OmniFeedback, '/phantom/force_feedback', 10)
+        self.publisher_ = self.create_publisher(TwistStamped, '/servo_node/delta_twist_cmds', 1000)
+        self.publisher_omni = self.create_publisher(OmniFeedback, '/phantom/force_feedback', 1000)
         self.get_logger().info("OmniState to TwistStamped with Button Control Node started.")
 
     def omni_state_callback(self, msg: OmniState):
