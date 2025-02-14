@@ -100,7 +100,7 @@ class OmniStateToTwistWithButton(Node):
         self.publisher_.publish(twist_msg)
         self.publisher_omni.publish(self.wrench_msg)
         self.get_logger().info(f"Published TwistStamped: {twist_msg}")
-        
+        #test
         # Mettre à jour l'orientation précédente
         self.last_orientation.pose.orientation = msg.pose.orientation
 
