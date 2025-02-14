@@ -1,0 +1,14 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "omni_msgs__py",
+		"source" : "/home/dilhan/ros2_ws/build/omni_msgs/omni_msgs__py"
+	}
+}

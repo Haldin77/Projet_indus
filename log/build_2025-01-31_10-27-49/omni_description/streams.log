@@ -1,0 +1,35 @@
+[0.012s] Invoking command in '/home/dilhan/ros2_ws/build/omni_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/dilhan/ros2_ws/build/omni_description -- -j12 -l12
+[0.052s] Invoked command in '/home/dilhan/ros2_ws/build/omni_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/dilhan/ros2_ws/build/omni_description -- -j12 -l12
+[0.064s] Invoking command in '/home/dilhan/ros2_ws/build/omni_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/dilhan/ros2_ws/build/omni_description
+[0.075s] -- Install configuration: ""
+[0.076s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_description/share/omni_description/meshes
+[0.076s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_description/share/omni_description/meshes/wrist.stl
+[0.076s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_description/share/omni_description/meshes/lower_arm.stl
+[0.076s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_description/share/omni_description/meshes/upper_arm.stl
+[0.076s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_description/share/omni_description/meshes/base.stl
+[0.076s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_description/share/omni_description/meshes/tip.stl
+[0.076s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_description/share/omni_description/meshes/torso.stl
+[0.076s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_description/share/omni_description/meshes/pen.stl
+[0.076s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_description/share/omni_description/resources
+[0.076s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_description/share/omni_description/resources/omni.rviz
+[0.076s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_description/share/omni_description/resources/OmniRviz.png
+[0.076s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_description/share/omni_description/urdf
+[0.077s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_description/share/omni_description/urdf/omni.dae
+[0.077s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_description/share/omni_description/urdf/omni.robot.xml
+[0.077s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_description/share/omni_description/urdf/omni.urdf
+[0.077s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_description/share/ament_index/resource_index/package_run_dependencies/omni_description
+[0.077s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_description/share/ament_index/resource_index/parent_prefix_path/omni_description
+[0.078s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_description/share/omni_description/environment/ament_prefix_path.sh
+[0.078s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_description/share/omni_description/environment/ament_prefix_path.dsv
+[0.078s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_description/share/omni_description/environment/path.sh
+[0.078s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_description/share/omni_description/environment/path.dsv
+[0.079s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_description/share/omni_description/local_setup.bash
+[0.079s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_description/share/omni_description/local_setup.sh
+[0.079s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_description/share/omni_description/local_setup.zsh
+[0.079s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_description/share/omni_description/local_setup.dsv
+[0.079s] -- Installing: /home/dilhan/ros2_ws/install/omni_description/share/omni_description/package.dsv
+[0.079s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_description/share/ament_index/resource_index/packages/omni_description
+[0.080s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_description/share/omni_description/cmake/omni_descriptionConfig.cmake
+[0.080s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_description/share/omni_description/cmake/omni_descriptionConfig-version.cmake
+[0.080s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_description/share/omni_description/package.xml
+[0.081s] Invoked command in '/home/dilhan/ros2_ws/build/omni_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/dilhan/ros2_ws/build/omni_description

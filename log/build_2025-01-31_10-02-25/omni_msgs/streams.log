@@ -1,0 +1,218 @@
+[0.015s] Invoking command in '/home/dilhan/ros2_ws/build/omni_msgs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/dilhan/ros2_ws/build/omni_msgs -- -j12 -l12
+[0.070s] [  2%] Built target omni_msgs__cpp
+[0.071s] [ 12%] Built target omni_msgs__rosidl_generator_c
+[0.083s] [ 12%] Built target ament_cmake_python_copy_omni_msgs
+[0.098s] [ 19%] [32mBuilding CXX object CMakeFiles/omni_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/omni_msgs/msg/detail/dds_fastrtps/omni_button_event__type_support.cpp.o[0m
+[0.098s] [ 23%] [32mBuilding CXX object CMakeFiles/omni_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/omni_msgs/msg/omni_feedback__type_support.cpp.o[0m
+[0.098s] [ 34%] Built target omni_msgs__rosidl_typesupport_introspection_c
+[0.100s] [ 44%] [32mBuilding CXX object CMakeFiles/omni_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/omni_msgs/msg/omni_state__type_support.cpp.o[0m
+[0.101s] [ 44%] [32mBuilding CXX object CMakeFiles/omni_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/omni_msgs/msg/detail/dds_fastrtps/omni_feedback__type_support.cpp.o[0m
+[0.101s] [ 42%] [32mBuilding CXX object CMakeFiles/omni_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/omni_msgs/msg/detail/omni_button_event__type_support.cpp.o[0m
+[0.101s] [ 44%] Built target omni_msgs__rosidl_typesupport_c
+[0.101s] [ 46%] [32mBuilding CXX object CMakeFiles/omni_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/omni_msgs/msg/detail/omni_feedback__type_support.cpp.o[0m
+[0.101s] [ 48%] [32mBuilding CXX object CMakeFiles/omni_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/omni_msgs/msg/detail/omni_button_event__type_support_c.cpp.o[0m
+[0.102s] [ 51%] [32mBuilding CXX object CMakeFiles/omni_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/omni_msgs/msg/detail/dds_fastrtps/omni_state__type_support.cpp.o[0m
+[0.105s] [ 53%] [32mBuilding CXX object CMakeFiles/omni_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/omni_msgs/msg/omni_button_event__type_support.cpp.o[0m
+[0.111s] [ 55%] [32mBuilding CXX object CMakeFiles/omni_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/omni_msgs/msg/detail/omni_feedback__type_support_c.cpp.o[0m
+[0.111s] [ 57%] [32mBuilding CXX object CMakeFiles/omni_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/omni_msgs/msg/detail/omni_state__type_support_c.cpp.o[0m
+[0.462s] [ 59%] [32mBuilding CXX object CMakeFiles/omni_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/omni_msgs/msg/detail/omni_state__type_support.cpp.o[0m
+[0.463s] [ 61%] [32m[1mLinking CXX shared library libomni_msgs__rosidl_typesupport_cpp.so[0m
+[0.475s] running egg_info
+[0.476s] writing omni_msgs.egg-info/PKG-INFO
+[0.477s] writing dependency_links to omni_msgs.egg-info/dependency_links.txt
+[0.477s] writing top-level names to omni_msgs.egg-info/top_level.txt
+[0.483s] reading manifest file 'omni_msgs.egg-info/SOURCES.txt'
+[0.484s] writing manifest file 'omni_msgs.egg-info/SOURCES.txt'
+[0.529s] [ 61%] Built target ament_cmake_python_build_omni_msgs_egg
+[0.541s] [ 63%] Built target omni_msgs__rosidl_typesupport_cpp
+[0.550s] [ 65%] [32m[1mLinking CXX shared library libomni_msgs__rosidl_typesupport_fastrtps_c.so[0m
+[0.571s] [ 68%] [32m[1mLinking CXX shared library libomni_msgs__rosidl_typesupport_fastrtps_cpp.so[0m
+[0.623s] [ 70%] Built target omni_msgs__rosidl_typesupport_fastrtps_c
+[0.643s] [ 72%] Built target omni_msgs__rosidl_typesupport_fastrtps_cpp
+[0.783s] [ 74%] [32m[1mLinking CXX shared library libomni_msgs__rosidl_typesupport_introspection_cpp.so[0m
+[0.838s] [ 76%] Built target omni_msgs__rosidl_typesupport_introspection_cpp
+[0.858s] [ 76%] Built target omni_msgs
+[0.877s] [ 78%] Built target omni_msgs__py
+[0.898s] [ 85%] [32mBuilding C object CMakeFiles/omni_msgs__rosidl_generator_py.dir/rosidl_generator_py/omni_msgs/msg/_omni_button_event_s.c.o[0m
+[0.898s] [ 85%] [32mBuilding C object CMakeFiles/omni_msgs__rosidl_generator_py.dir/rosidl_generator_py/omni_msgs/msg/_omni_feedback_s.c.o[0m
+[0.898s] [ 85%] [32mBuilding C object CMakeFiles/omni_msgs__rosidl_generator_py.dir/rosidl_generator_py/omni_msgs/msg/_omni_state_s.c.o[0m
+[0.990s] [ 87%] [32m[1mLinking C shared library rosidl_generator_py/omni_msgs/libomni_msgs__rosidl_generator_py.so[0m
+[1.029s] [ 87%] Built target omni_msgs__rosidl_generator_py
+[1.051s] [ 93%] [32mBuilding C object CMakeFiles/omni_msgs__rosidl_typesupport_introspection_c__pyext.dir/rosidl_generator_py/omni_msgs/_omni_msgs_s.ep.rosidl_typesupport_introspection_c.c.o[0m
+[1.051s] [ 93%] [32mBuilding C object CMakeFiles/omni_msgs__rosidl_typesupport_c__pyext.dir/rosidl_generator_py/omni_msgs/_omni_msgs_s.ep.rosidl_typesupport_c.c.o[0m
+[1.051s] [ 93%] [32mBuilding C object CMakeFiles/omni_msgs__rosidl_typesupport_fastrtps_c__pyext.dir/rosidl_generator_py/omni_msgs/_omni_msgs_s.ep.rosidl_typesupport_fastrtps_c.c.o[0m
+[1.138s] [100%] [32m[1mLinking C shared library rosidl_generator_py/omni_msgs/omni_msgs_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so[0m
+[1.138s] [100%] [32m[1mLinking C shared library rosidl_generator_py/omni_msgs/omni_msgs_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so[0m
+[1.138s] [100%] [32m[1mLinking C shared library rosidl_generator_py/omni_msgs/omni_msgs_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so[0m
+[1.176s] [100%] Built target omni_msgs__rosidl_typesupport_c__pyext
+[1.176s] [100%] Built target omni_msgs__rosidl_typesupport_introspection_c__pyext
+[1.176s] [100%] Built target omni_msgs__rosidl_typesupport_fastrtps_c__pyext
+[1.187s] Invoked command in '/home/dilhan/ros2_ws/build/omni_msgs' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/dilhan/ros2_ws/build/omni_msgs -- -j12 -l12
+[1.189s] Invoking command in '/home/dilhan/ros2_ws/build/omni_msgs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/dilhan/ros2_ws/build/omni_msgs
+[1.196s] -- Install configuration: ""
+[1.196s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_msgs/share/ament_index/resource_index/rosidl_interfaces/omni_msgs
+[1.196s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_msgs/include/omni_msgs/omni_msgs
+[1.197s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_msgs/include/omni_msgs/omni_msgs/msg
+[1.197s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_msgs/include/omni_msgs/omni_msgs/msg/detail
+[1.197s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_msgs/include/omni_msgs/omni_msgs/msg/detail/omni_state__functions.h
+[1.197s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_msgs/include/omni_msgs/omni_msgs/msg/detail/omni_button_event__struct.h
+[1.197s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_msgs/include/omni_msgs/omni_msgs/msg/detail/omni_feedback__functions.c
+[1.197s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_msgs/include/omni_msgs/omni_msgs/msg/detail/omni_feedback__type_support.h
+[1.197s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_msgs/include/omni_msgs/omni_msgs/msg/detail/omni_button_event__functions.c
+[1.197s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_msgs/include/omni_msgs/omni_msgs/msg/detail/omni_button_event__type_support.h
+[1.197s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_msgs/include/omni_msgs/omni_msgs/msg/detail/omni_state__type_support.h
+[1.197s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_msgs/include/omni_msgs/omni_msgs/msg/detail/omni_button_event__functions.h
+[1.197s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_msgs/include/omni_msgs/omni_msgs/msg/detail/omni_feedback__struct.h
+[1.197s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_msgs/include/omni_msgs/omni_msgs/msg/detail/omni_feedback__functions.h
+[1.197s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_msgs/include/omni_msgs/omni_msgs/msg/detail/omni_state__struct.h
+[1.197s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_msgs/include/omni_msgs/omni_msgs/msg/detail/omni_state__functions.c
+[1.197s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_msgs/include/omni_msgs/omni_msgs/msg/rosidl_generator_c__visibility_control.h
+[1.197s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_msgs/include/omni_msgs/omni_msgs/msg/omni_feedback.h
+[1.198s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_msgs/include/omni_msgs/omni_msgs/msg/omni_button_event.h
+[1.198s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_msgs/include/omni_msgs/omni_msgs/msg/omni_state.h
+[1.198s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_msgs/share/omni_msgs/environment/library_path.sh
+[1.198s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_msgs/share/omni_msgs/environment/library_path.dsv
+[1.198s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_msgs/lib/libomni_msgs__rosidl_generator_c.so
+[1.198s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_msgs/include/omni_msgs/omni_msgs
+[1.198s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_msgs/include/omni_msgs/omni_msgs/msg
+[1.198s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_msgs/include/omni_msgs/omni_msgs/msg/detail
+[1.198s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_msgs/include/omni_msgs/omni_msgs/msg/detail/omni_state__rosidl_typesupport_fastrtps_c.h
+[1.198s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_msgs/include/omni_msgs/omni_msgs/msg/detail/omni_feedback__rosidl_typesupport_fastrtps_c.h
+[1.198s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_msgs/include/omni_msgs/omni_msgs/msg/detail/omni_button_event__rosidl_typesupport_fastrtps_c.h
+[1.198s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_msgs/include/omni_msgs/omni_msgs/msg/rosidl_typesupport_fastrtps_c__visibility_control.h
+[1.199s] -- Installing: /home/dilhan/ros2_ws/install/omni_msgs/lib/libomni_msgs__rosidl_typesupport_fastrtps_c.so
+[1.199s] -- Set runtime path of "/home/dilhan/ros2_ws/install/omni_msgs/lib/libomni_msgs__rosidl_typesupport_fastrtps_c.so" to ""
+[1.199s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_msgs/include/omni_msgs/omni_msgs
+[1.199s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_msgs/include/omni_msgs/omni_msgs/msg
+[1.199s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_msgs/include/omni_msgs/omni_msgs/msg/detail
+[1.199s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_msgs/include/omni_msgs/omni_msgs/msg/detail/omni_state__rosidl_typesupport_introspection_c.h
+[1.199s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_msgs/include/omni_msgs/omni_msgs/msg/detail/omni_state__type_support.c
+[1.199s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_msgs/include/omni_msgs/omni_msgs/msg/detail/omni_button_event__rosidl_typesupport_introspection_c.h
+[1.199s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_msgs/include/omni_msgs/omni_msgs/msg/detail/omni_feedback__rosidl_typesupport_introspection_c.h
+[1.200s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_msgs/include/omni_msgs/omni_msgs/msg/detail/omni_button_event__type_support.c
+[1.200s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_msgs/include/omni_msgs/omni_msgs/msg/detail/omni_feedback__type_support.c
+[1.200s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_msgs/include/omni_msgs/omni_msgs/msg/rosidl_typesupport_introspection_c__visibility_control.h
+[1.200s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_msgs/lib/libomni_msgs__rosidl_typesupport_introspection_c.so
+[1.200s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_msgs/lib/libomni_msgs__rosidl_typesupport_c.so
+[1.200s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_msgs/include/omni_msgs/omni_msgs
+[1.201s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_msgs/include/omni_msgs/omni_msgs/msg
+[1.201s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_msgs/include/omni_msgs/omni_msgs/msg/omni_feedback.hpp
+[1.201s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_msgs/include/omni_msgs/omni_msgs/msg/detail
+[1.201s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_msgs/include/omni_msgs/omni_msgs/msg/detail/omni_feedback__type_support.hpp
+[1.201s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_msgs/include/omni_msgs/omni_msgs/msg/detail/omni_state__struct.hpp
+[1.201s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_msgs/include/omni_msgs/omni_msgs/msg/detail/omni_state__type_support.hpp
+[1.201s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_msgs/include/omni_msgs/omni_msgs/msg/detail/omni_button_event__type_support.hpp
+[1.201s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_msgs/include/omni_msgs/omni_msgs/msg/detail/omni_button_event__struct.hpp
+[1.201s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_msgs/include/omni_msgs/omni_msgs/msg/detail/omni_button_event__builder.hpp
+[1.201s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_msgs/include/omni_msgs/omni_msgs/msg/detail/omni_state__traits.hpp
+[1.201s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_msgs/include/omni_msgs/omni_msgs/msg/detail/omni_feedback__builder.hpp
+[1.201s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_msgs/include/omni_msgs/omni_msgs/msg/detail/omni_state__builder.hpp
+[1.201s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_msgs/include/omni_msgs/omni_msgs/msg/detail/omni_feedback__struct.hpp
+[1.201s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_msgs/include/omni_msgs/omni_msgs/msg/detail/omni_feedback__traits.hpp
+[1.201s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_msgs/include/omni_msgs/omni_msgs/msg/detail/omni_button_event__traits.hpp
+[1.201s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_msgs/include/omni_msgs/omni_msgs/msg/omni_button_event.hpp
+[1.202s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_msgs/include/omni_msgs/omni_msgs/msg/omni_state.hpp
+[1.202s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_msgs/include/omni_msgs/omni_msgs/msg/rosidl_generator_cpp__visibility_control.hpp
+[1.202s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_msgs/include/omni_msgs/omni_msgs
+[1.202s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_msgs/include/omni_msgs/omni_msgs/msg
+[1.202s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_msgs/include/omni_msgs/omni_msgs/msg/detail
+[1.202s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_msgs/include/omni_msgs/omni_msgs/msg/detail/omni_button_event__rosidl_typesupport_fastrtps_cpp.hpp
+[1.202s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_msgs/include/omni_msgs/omni_msgs/msg/detail/dds_fastrtps
+[1.202s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_msgs/include/omni_msgs/omni_msgs/msg/detail/omni_state__rosidl_typesupport_fastrtps_cpp.hpp
+[1.202s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_msgs/include/omni_msgs/omni_msgs/msg/detail/omni_feedback__rosidl_typesupport_fastrtps_cpp.hpp
+[1.202s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_msgs/include/omni_msgs/omni_msgs/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h
+[1.202s] -- Installing: /home/dilhan/ros2_ws/install/omni_msgs/lib/libomni_msgs__rosidl_typesupport_fastrtps_cpp.so
+[1.202s] -- Set runtime path of "/home/dilhan/ros2_ws/install/omni_msgs/lib/libomni_msgs__rosidl_typesupport_fastrtps_cpp.so" to ""
+[1.202s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_msgs/include/omni_msgs/omni_msgs
+[1.203s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_msgs/include/omni_msgs/omni_msgs/msg
+[1.203s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_msgs/include/omni_msgs/omni_msgs/msg/detail
+[1.203s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_msgs/include/omni_msgs/omni_msgs/msg/detail/omni_button_event__type_support.cpp
+[1.203s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_msgs/include/omni_msgs/omni_msgs/msg/detail/omni_state__type_support.cpp
+[1.203s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_msgs/include/omni_msgs/omni_msgs/msg/detail/omni_feedback__rosidl_typesupport_introspection_cpp.hpp
+[1.203s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_msgs/include/omni_msgs/omni_msgs/msg/detail/omni_feedback__type_support.cpp
+[1.203s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_msgs/include/omni_msgs/omni_msgs/msg/detail/omni_state__rosidl_typesupport_introspection_cpp.hpp
+[1.203s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_msgs/include/omni_msgs/omni_msgs/msg/detail/omni_button_event__rosidl_typesupport_introspection_cpp.hpp
+[1.203s] -- Installing: /home/dilhan/ros2_ws/install/omni_msgs/lib/libomni_msgs__rosidl_typesupport_introspection_cpp.so
+[1.204s] -- Set runtime path of "/home/dilhan/ros2_ws/install/omni_msgs/lib/libomni_msgs__rosidl_typesupport_introspection_cpp.so" to ""
+[1.204s] -- Installing: /home/dilhan/ros2_ws/install/omni_msgs/lib/libomni_msgs__rosidl_typesupport_cpp.so
+[1.204s] -- Set runtime path of "/home/dilhan/ros2_ws/install/omni_msgs/lib/libomni_msgs__rosidl_typesupport_cpp.so" to ""
+[1.204s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_msgs/share/omni_msgs/environment/pythonpath.sh
+[1.204s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_msgs/share/omni_msgs/environment/pythonpath.dsv
+[1.204s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_msgs/local/lib/python3.10/dist-packages/omni_msgs-0.0.0-py3.10.egg-info
+[1.204s] -- Installing: /home/dilhan/ros2_ws/install/omni_msgs/local/lib/python3.10/dist-packages/omni_msgs-0.0.0-py3.10.egg-info/PKG-INFO
+[1.205s] -- Installing: /home/dilhan/ros2_ws/install/omni_msgs/local/lib/python3.10/dist-packages/omni_msgs-0.0.0-py3.10.egg-info/top_level.txt
+[1.205s] -- Installing: /home/dilhan/ros2_ws/install/omni_msgs/local/lib/python3.10/dist-packages/omni_msgs-0.0.0-py3.10.egg-info/SOURCES.txt
+[1.205s] -- Installing: /home/dilhan/ros2_ws/install/omni_msgs/local/lib/python3.10/dist-packages/omni_msgs-0.0.0-py3.10.egg-info/dependency_links.txt
+[1.205s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_msgs/local/lib/python3.10/dist-packages/omni_msgs
+[1.205s] -- Installing: /home/dilhan/ros2_ws/install/omni_msgs/local/lib/python3.10/dist-packages/omni_msgs/omni_msgs_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so
+[1.205s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_msgs/local/lib/python3.10/dist-packages/omni_msgs/msg
+[1.205s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_msgs/local/lib/python3.10/dist-packages/omni_msgs/msg/_omni_feedback.py
+[1.205s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_msgs/local/lib/python3.10/dist-packages/omni_msgs/msg/_omni_state.py
+[1.205s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_msgs/local/lib/python3.10/dist-packages/omni_msgs/msg/__init__.py
+[1.205s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_msgs/local/lib/python3.10/dist-packages/omni_msgs/msg/_omni_state_s.c
+[1.205s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_msgs/local/lib/python3.10/dist-packages/omni_msgs/msg/_omni_feedback_s.c
+[1.206s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_msgs/local/lib/python3.10/dist-packages/omni_msgs/msg/_omni_button_event.py
+[1.206s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_msgs/local/lib/python3.10/dist-packages/omni_msgs/msg/_omni_button_event_s.c
+[1.206s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_msgs/local/lib/python3.10/dist-packages/omni_msgs/_omni_msgs_s.ep.rosidl_typesupport_introspection_c.c
+[1.206s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_msgs/local/lib/python3.10/dist-packages/omni_msgs/_omni_msgs_s.ep.rosidl_typesupport_fastrtps_c.c
+[1.206s] -- Installing: /home/dilhan/ros2_ws/install/omni_msgs/local/lib/python3.10/dist-packages/omni_msgs/omni_msgs_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so
+[1.206s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_msgs/local/lib/python3.10/dist-packages/omni_msgs/__init__.py
+[1.206s] -- Installing: /home/dilhan/ros2_ws/install/omni_msgs/local/lib/python3.10/dist-packages/omni_msgs/omni_msgs_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so
+[1.206s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_msgs/local/lib/python3.10/dist-packages/omni_msgs/_omni_msgs_s.ep.rosidl_typesupport_c.c
+[1.206s] -- Installing: /home/dilhan/ros2_ws/install/omni_msgs/local/lib/python3.10/dist-packages/omni_msgs/libomni_msgs__rosidl_generator_py.so
+[1.234s] Listing '/home/dilhan/ros2_ws/install/omni_msgs/local/lib/python3.10/dist-packages/omni_msgs'...
+[1.234s] Listing '/home/dilhan/ros2_ws/install/omni_msgs/local/lib/python3.10/dist-packages/omni_msgs/msg'...
+[1.237s] -- Installing: /home/dilhan/ros2_ws/install/omni_msgs/local/lib/python3.10/dist-packages/omni_msgs/omni_msgs_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so
+[1.237s] -- Set runtime path of "/home/dilhan/ros2_ws/install/omni_msgs/local/lib/python3.10/dist-packages/omni_msgs/omni_msgs_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so" to ""
+[1.238s] -- Installing: /home/dilhan/ros2_ws/install/omni_msgs/local/lib/python3.10/dist-packages/omni_msgs/omni_msgs_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so
+[1.238s] -- Set runtime path of "/home/dilhan/ros2_ws/install/omni_msgs/local/lib/python3.10/dist-packages/omni_msgs/omni_msgs_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so" to ""
+[1.238s] -- Installing: /home/dilhan/ros2_ws/install/omni_msgs/local/lib/python3.10/dist-packages/omni_msgs/omni_msgs_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so
+[1.238s] -- Set runtime path of "/home/dilhan/ros2_ws/install/omni_msgs/local/lib/python3.10/dist-packages/omni_msgs/omni_msgs_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so" to ""
+[1.239s] -- Installing: /home/dilhan/ros2_ws/install/omni_msgs/lib/libomni_msgs__rosidl_generator_py.so
+[1.239s] -- Set runtime path of "/home/dilhan/ros2_ws/install/omni_msgs/lib/libomni_msgs__rosidl_generator_py.so" to ""
+[1.239s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_msgs/share/omni_msgs/msg/OmniButtonEvent.idl
+[1.239s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_msgs/share/omni_msgs/msg/OmniFeedback.idl
+[1.239s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_msgs/share/omni_msgs/msg/OmniState.idl
+[1.240s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_msgs/share/omni_msgs/msg/OmniButtonEvent.msg
+[1.240s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_msgs/share/omni_msgs/msg/OmniFeedback.msg
+[1.240s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_msgs/share/omni_msgs/msg/OmniState.msg
+[1.240s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_msgs/share/ament_index/resource_index/package_run_dependencies/omni_msgs
+[1.240s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_msgs/share/ament_index/resource_index/parent_prefix_path/omni_msgs
+[1.240s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_msgs/share/omni_msgs/environment/ament_prefix_path.sh
+[1.240s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_msgs/share/omni_msgs/environment/ament_prefix_path.dsv
+[1.240s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_msgs/share/omni_msgs/environment/path.sh
+[1.240s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_msgs/share/omni_msgs/environment/path.dsv
+[1.240s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_msgs/share/omni_msgs/local_setup.bash
+[1.240s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_msgs/share/omni_msgs/local_setup.sh
+[1.240s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_msgs/share/omni_msgs/local_setup.zsh
+[1.240s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_msgs/share/omni_msgs/local_setup.dsv
+[1.240s] -- Installing: /home/dilhan/ros2_ws/install/omni_msgs/share/omni_msgs/package.dsv
+[1.240s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_msgs/share/ament_index/resource_index/packages/omni_msgs
+[1.241s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_msgs/share/omni_msgs/cmake/export_omni_msgs__rosidl_generator_cExport.cmake
+[1.241s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_msgs/share/omni_msgs/cmake/export_omni_msgs__rosidl_generator_cExport-noconfig.cmake
+[1.241s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_msgs/share/omni_msgs/cmake/export_omni_msgs__rosidl_typesupport_fastrtps_cExport.cmake
+[1.241s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_msgs/share/omni_msgs/cmake/export_omni_msgs__rosidl_typesupport_fastrtps_cExport-noconfig.cmake
+[1.241s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_msgs/share/omni_msgs/cmake/omni_msgs__rosidl_typesupport_introspection_cExport.cmake
+[1.241s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_msgs/share/omni_msgs/cmake/omni_msgs__rosidl_typesupport_introspection_cExport-noconfig.cmake
+[1.242s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_msgs/share/omni_msgs/cmake/omni_msgs__rosidl_typesupport_cExport.cmake
+[1.242s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_msgs/share/omni_msgs/cmake/omni_msgs__rosidl_typesupport_cExport-noconfig.cmake
+[1.242s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_msgs/share/omni_msgs/cmake/export_omni_msgs__rosidl_generator_cppExport.cmake
+[1.242s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_msgs/share/omni_msgs/cmake/export_omni_msgs__rosidl_typesupport_fastrtps_cppExport.cmake
+[1.242s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_msgs/share/omni_msgs/cmake/export_omni_msgs__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake
+[1.242s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_msgs/share/omni_msgs/cmake/omni_msgs__rosidl_typesupport_introspection_cppExport.cmake
+[1.242s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_msgs/share/omni_msgs/cmake/omni_msgs__rosidl_typesupport_introspection_cppExport-noconfig.cmake
+[1.243s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_msgs/share/omni_msgs/cmake/omni_msgs__rosidl_typesupport_cppExport.cmake
+[1.243s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_msgs/share/omni_msgs/cmake/omni_msgs__rosidl_typesupport_cppExport-noconfig.cmake
+[1.243s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_msgs/share/omni_msgs/cmake/export_omni_msgs__rosidl_generator_pyExport.cmake
+[1.243s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_msgs/share/omni_msgs/cmake/export_omni_msgs__rosidl_generator_pyExport-noconfig.cmake
+[1.243s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_msgs/share/omni_msgs/cmake/rosidl_cmake-extras.cmake
+[1.243s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_msgs/share/omni_msgs/cmake/ament_cmake_export_dependencies-extras.cmake
+[1.243s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_msgs/share/omni_msgs/cmake/ament_cmake_export_include_directories-extras.cmake
+[1.243s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_msgs/share/omni_msgs/cmake/ament_cmake_export_libraries-extras.cmake
+[1.243s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_msgs/share/omni_msgs/cmake/ament_cmake_export_targets-extras.cmake
+[1.243s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_msgs/share/omni_msgs/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake
+[1.244s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_msgs/share/omni_msgs/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake
+[1.244s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_msgs/share/omni_msgs/cmake/omni_msgsConfig.cmake
+[1.244s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_msgs/share/omni_msgs/cmake/omni_msgsConfig-version.cmake
+[1.244s] -- Up-to-date: /home/dilhan/ros2_ws/install/omni_msgs/share/omni_msgs/package.xml
+[1.246s] Invoked command in '/home/dilhan/ros2_ws/build/omni_msgs' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/dilhan/ros2_ws/build/omni_msgs

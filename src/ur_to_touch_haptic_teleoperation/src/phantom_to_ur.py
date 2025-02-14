@@ -70,11 +70,11 @@ class OmniStateToTwistWithButton(Node):
         angular_velocity = TwistStamped
         q1 = self.last_orientation.pose.orientation
         q2 = msg.pose.orientation
-        twist_msg.twist.angular.x = -(200 / dt) * (q1.w * q2.x - q1.x * q2.w - q1.y * q2.z + q1.z * q2.y)
-        twist_msg.twist.angular.y = -(200/ dt) * (q1.w * q2.y + q1.x * q2.z - q1.y * q2.w - q1.z * q2.x)
-        twist_msg.twist.angular.z = -(200/ dt) * (q1.w * q2.z - q1.x * q2.y + q1.y * q2.x - q1.z * q2.w)
+        twist_msg.twist.angular.x = 0.0#-(2 / dt) * (q1.w * q2.x - q1.x * q2.w - q1.y * q2.z + q1.z * q2.y)
+        twist_msg.twist.angular.y = 0.0#-(2/ dt) * (q1.w * q2.y + q1.x * q2.z - q1.y * q2.w - q1.z * q2.x)
+        twist_msg.twist.angular.z = 0.0#-(2/ dt) * (q1.w * q2.z - q1.x * q2.y + q1.y * q2.x - q1.z * q2.w)
 
-        self.deadband_filter_noise(twist_msg,0.001)
+        self.deadband_filter_noise(twist_msg,0.5)
         # Publier le message TwistStamped
         self.publisher_.publish(twist_msg)
         self.publisher_omni.publish(self.wrench_msg)

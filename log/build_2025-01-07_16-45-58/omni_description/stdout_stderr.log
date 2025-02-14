@@ -1,0 +1,52 @@
+-- The C compiler identification is GNU 11.4.0
+-- The CXX compiler identification is GNU 11.4.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found ament_cmake: 1.3.11 (/opt/ros/humble/share/ament_cmake/cmake)
+-- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+-- Found ament_lint_auto: 0.12.11 (/opt/ros/humble/share/ament_lint_auto/cmake)
+-- Added test 'copyright' to check source files copyright and LICENSE
+-- Added test 'lint_cmake' to check CMake code style
+-- Added test 'xmllint' to check XML markup files
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/dilhan/ros2_ws/build/omni_description
+-- Install configuration: ""
+-- Installing: /home/dilhan/ros2_ws/install/omni_description/share/omni_description/meshes
+-- Installing: /home/dilhan/ros2_ws/install/omni_description/share/omni_description/meshes/wrist.stl
+-- Installing: /home/dilhan/ros2_ws/install/omni_description/share/omni_description/meshes/lower_arm.stl
+-- Installing: /home/dilhan/ros2_ws/install/omni_description/share/omni_description/meshes/upper_arm.stl
+-- Installing: /home/dilhan/ros2_ws/install/omni_description/share/omni_description/meshes/base.stl
+-- Installing: /home/dilhan/ros2_ws/install/omni_description/share/omni_description/meshes/tip.stl
+-- Installing: /home/dilhan/ros2_ws/install/omni_description/share/omni_description/meshes/torso.stl
+-- Installing: /home/dilhan/ros2_ws/install/omni_description/share/omni_description/meshes/pen.stl
+-- Installing: /home/dilhan/ros2_ws/install/omni_description/share/omni_description/resources
+-- Installing: /home/dilhan/ros2_ws/install/omni_description/share/omni_description/resources/omni.rviz
+-- Installing: /home/dilhan/ros2_ws/install/omni_description/share/omni_description/resources/OmniRviz.png
+-- Installing: /home/dilhan/ros2_ws/install/omni_description/share/omni_description/urdf
+-- Installing: /home/dilhan/ros2_ws/install/omni_description/share/omni_description/urdf/omni.dae
+-- Installing: /home/dilhan/ros2_ws/install/omni_description/share/omni_description/urdf/omni.robot.xml
+-- Installing: /home/dilhan/ros2_ws/install/omni_description/share/omni_description/urdf/omni.urdf
+-- Installing: /home/dilhan/ros2_ws/install/omni_description/share/ament_index/resource_index/package_run_dependencies/omni_description
+-- Installing: /home/dilhan/ros2_ws/install/omni_description/share/ament_index/resource_index/parent_prefix_path/omni_description
+-- Installing: /home/dilhan/ros2_ws/install/omni_description/share/omni_description/environment/ament_prefix_path.sh
+-- Installing: /home/dilhan/ros2_ws/install/omni_description/share/omni_description/environment/ament_prefix_path.dsv
+-- Installing: /home/dilhan/ros2_ws/install/omni_description/share/omni_description/environment/path.sh
+-- Installing: /home/dilhan/ros2_ws/install/omni_description/share/omni_description/environment/path.dsv
+-- Installing: /home/dilhan/ros2_ws/install/omni_description/share/omni_description/local_setup.bash
+-- Installing: /home/dilhan/ros2_ws/install/omni_description/share/omni_description/local_setup.sh
+-- Installing: /home/dilhan/ros2_ws/install/omni_description/share/omni_description/local_setup.zsh
+-- Installing: /home/dilhan/ros2_ws/install/omni_description/share/omni_description/local_setup.dsv
+-- Installing: /home/dilhan/ros2_ws/install/omni_description/share/omni_description/package.dsv
+-- Installing: /home/dilhan/ros2_ws/install/omni_description/share/ament_index/resource_index/packages/omni_description
+-- Installing: /home/dilhan/ros2_ws/install/omni_description/share/omni_description/cmake/omni_descriptionConfig.cmake
+-- Installing: /home/dilhan/ros2_ws/install/omni_description/share/omni_description/cmake/omni_descriptionConfig-version.cmake
+-- Installing: /home/dilhan/ros2_ws/install/omni_description/share/omni_description/package.xml

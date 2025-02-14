@@ -1,0 +1,88 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-fc9eecf5265672fcb868.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3
+					]
+				}
+			],
+			"name" : "",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "ur_to_touch_haptic_teleoperation",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-uninstall-8ec5e38c06eaf5b8b696.json",
+					"name" : "uninstall",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ur_to_touch_haptic_teleoperation_haptic_node::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ur_to_touch_haptic_teleoperation_haptic_node-61306678a92e42c03383.json",
+					"name" : "ur_to_touch_haptic_teleoperation_haptic_node",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ur_to_touch_haptic_teleoperation_teleop_node::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ur_to_touch_haptic_teleoperation_teleop_node-6a0bcab15ba106bd7428.json",
+					"name" : "ur_to_touch_haptic_teleoperation_teleop_node",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ur_to_touch_haptic_teleoperation_uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ur_to_touch_haptic_teleoperation_uninstall-b57e4bd33c54a2423e4d.json",
+					"name" : "ur_to_touch_haptic_teleoperation_uninstall",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/dilhan/ros2_ws/build/ur_to_touch_haptic_teleoperation",
+		"source" : "/home/dilhan/ros2_ws/src/ur_to_touch_haptic_teleoperation"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}
