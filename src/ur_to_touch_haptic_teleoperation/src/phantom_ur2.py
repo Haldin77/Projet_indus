@@ -76,7 +76,7 @@ class OmniStateToTwistWithButton(Node):
         self.linear_y_history.append(msg.velocity.y * 0.01)
         self.linear_z_history.append(msg.velocity.z * 0.01)
 
-        # Orientation
+        # Orientation 
         q1 = self.last_orientation.pose.orientation
         q2 = msg.pose.orientation
 
