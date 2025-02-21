@@ -179,6 +179,11 @@ class OmniStateToTwistWithButton(Node):
         #MGD
 
         if self.joint_angles is not None:
+            Tsonde=np.array([1,0,0,0.04],
+                            [0,1,0,0.116],
+                            [0,0,1,0],
+                            [0,0,0,1])
+            
             ur3 = UR3Kinematics()
             T06 = ur3.fk_ur(self.joint_angles)
             R06 = T06[:3, :3]
@@ -189,11 +194,11 @@ class OmniStateToTwistWithButton(Node):
             #     force[0] = force[0] 
             #     print(force)
             # Convertir le vecteur de force en numpy array
-            F_outil = np.array([self.wrench_input.wrench.force.x, self.wrench_input.wrench.force.y, self.wrench_input.wrench.force.z])
+            F_outil = np.array([self.wrench_input.wrench.force.x, self.wrench_input.wrench.force.y, self.wrench_input.wrench.force.z,0])
             # F_outil = [0,0,0]
             self.get_logger().info(f"OUTIL : {F_outil}")
             # Calculer les forces dans le repère de base
-            F_base = np.dot(R06, F_outil)
+            F_base = np.dot(np.dot(T06,Tsonde),F_outil)
             self.get_logger().info(f"BASE : {F_base}")
 
             # Stocker les forces transformées
