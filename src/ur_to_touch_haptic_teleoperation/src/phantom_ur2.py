@@ -8,6 +8,7 @@ from optoforce import OptoForce22 as OptoForce
 from optoforce.status import no_errors
 import numpy as np
 from sensor_msgs.msg import JointState
+from geometry_msgs.msg import WrenchStamped
 
 def dh_matrix(theta, d, a, alpha):
     """
@@ -24,22 +25,22 @@ class UR3Kinematics:
     def __init__(self):
         # ParamÃ¨tres DH modifiÃ©s du UR3e
         self.a1 = 0.0
-        self.d1 = 0.1519
+        self.d1 = 0.15185
         self.alpha1 = 0.5*np.pi
-        self.a2 = -0.24365
+        self.a2 = -0.24355
         self.d2 = 0.0
         self.alpha2 = 0.0
-        self.a3 = -0.21325
+        self.a3 = -0.2132
         self.d3 = 0.0
         self.alpha3 = 0.0
         self.a4 = 0.0
-        self.d4 = 0.11235
+        self.d4 = 0.13105
         self.alpha4 = 0.5*np.pi
         self.a5 = 0.0
         self.d5 = 0.08535
         self.alpha5 = - 0.5*np.pi
         self.alpha6 = 0.0
-        self.d6 = 0.0815
+        self.d6 = 0.0921
         self.a6 = 0.0
 
     def fk_ur(self, joint_angles):
@@ -53,6 +54,13 @@ class UR3Kinematics:
         theta4 = joint_angles[2]
         theta5 = joint_angles[3]
         theta6 = joint_angles[4]
+        # theta1 = joint_angles[0]
+        # theta2 = joint_angles[1]
+        # theta3 = joint_angles[2]
+        # theta4 = joint_angles[3]
+        # theta5 = joint_angles[4]
+        # theta6 = joint_angles[5]
+
    
         # Matrices de transformation DH modifiÃ©es
         T01 = dh_matrix(theta1, self.d1, self.a1, self.alpha1)
@@ -68,9 +76,9 @@ class UR3Kinematics:
         T04 = np.dot(T03, T34)
         T05 = np.dot(T04, T45)
         T06 = np.dot(T05, T56)
-        T60=np.linalg.inv(T06)
+        # T60=np.linalg.inv(T06)
 
-        return T60
+        return T06
 
 
 
@@ -86,8 +94,8 @@ class OmniStateToTwistWithButton(Node):
         self.clock = Clock()
         self.timer = self.clock.now().nanoseconds / 1e9
         self.grey_button_pressed = False  # État du bouton gris
+        self.wrench_input = WrenchStamped()
         self.wrench_msg = OmniFeedback()
-
         # Historique des données pour le filtrage
         self.linear_x_history = []
         self.linear_y_history = []
@@ -100,12 +108,8 @@ class OmniStateToTwistWithButton(Node):
         self.sampling_frequency = 500.0  # Exemple : fréquence d'échantillonnage à ajuster si nécessaire
         self.b, self.a = butter(2, self.cutoff_frequency / (self.sampling_frequency / 2), btype='low')
         #subscriber au tpoic joint_stat 
-        self.subscription_joint = self.create_subscription(JointState,'/joint_states',self.joint_stat_callback,10)
-        self.joint_angles=None   
-    def joint_state_callback(self, msg: JointState):
-        self.joint_angles = list(msg.position)  
-        
-        
+        self.subscription_joint = self.create_subscription(JointState,'/joint_states',self.joint_state_callback,1000)
+        self.joint_angles=[]   
         # Subscriber au topic OmniState
         self.subscription_state = self.create_subscription(
             OmniState,
@@ -118,12 +122,23 @@ class OmniStateToTwistWithButton(Node):
             OmniButtonEvent,
             '/phantom/button',
             self.omni_button_callback,
-            10)
+            100)
 
+        self.subscription_wrench = self.create_subscription(
+            WrenchStamped,
+            '/force_torque_sensor_broadcaster/wrench',
+            self.wrench_callback,
+            100)
+        
         # Publisher vers TwistStamped
         self.publisher_ = self.create_publisher(TwistStamped, '/servo_node/delta_twist_cmds', 1000)
         self.publisher_omni = self.create_publisher(OmniFeedback, '/phantom/force_feedback', 1000)
         self.get_logger().info("OmniState to TwistStamped with Button Control Node started.")
+        
+    def joint_state_callback(self, msg: JointState):
+        self.joint_angles = list(msg.position)
+        
+        
 
     def apply_filter(self, data_history):
         """Filtrer les données avec un filtre passe-bas."""
@@ -145,17 +160,24 @@ class OmniStateToTwistWithButton(Node):
         twist_msg.header.stamp = self.get_clock().now().to_msg()
         twist_msg.header.frame_id = "base_link"
         #MGD
-        ur3=UR3Kinematics()
+
         if self.joint_angles is not None:
             ur3 = UR3Kinematics()
-            T60 = ur3.fk_ur(self.joint_angles)
-            R60 = T60[:3, :3]
-
+            T06 = ur3.fk_ur(self.joint_angles)
+            R06 = T06[:3, :3]
+            # with OptoForce(speed_hz=100, filter_hz=1.5, zero=True) as force_sensor:
+            #     force = [force_sensor.read(only_latest_data=False).Fx,force_sensor.read(only_latest_data=False).Fy,force_sensor.read(only_latest_data=False).Fz]
+            #     force[2] = force[2] / 10 
+            #     force[1] = force[1] 
+            #     force[0] = force[0] 
+            #     print(force)
             # Convertir le vecteur de force en numpy array
-            F_outil = np.array([self.wrench_msg.force.x, self.wrench_msg.force.y, self.wrench_msg.force.z])
-
+            # F_outil = np.array([self.wrench_input.wrench.force.x, self.wrench_input.wrench.force.y, self.wrench_input.wrench.force.z])
+            F_outil = [0,0,0]
+            self.get_logger().info(f"OUTIL : {F_outil}")
             # Calculer les forces dans le repère de base
-            F_base = np.dot(R60, F_outil)
+            F_base = np.dot(R06, F_outil)
+            self.get_logger().info(f"BASE : {F_base}")
 
             # Stocker les forces transformées
             self.VecteurforceBase = F_base.tolist()
@@ -175,20 +197,15 @@ class OmniStateToTwistWithButton(Node):
         #twist_msg.twist.angular.z = -(2.0 / dt) * (q1.w * q2.z - q1.x * q2.y + q1.y * q2.x - q1.z * q2.w) * 100.0
 
         # Appliquer le filtre
-        twist_msg.twist.linear.x = self.apply_filter(self.linear_x_history)
-        twist_msg.twist.linear.y = self.apply_filter(self.linear_y_history)
+        twist_msg.twist.linear.x = -self.apply_filter(self.linear_x_history)
+        twist_msg.twist.linear.y = -self.apply_filter(self.linear_y_history)
         twist_msg.twist.linear.z = self.apply_filter(self.linear_z_history)
-        with OptoForce(speed_hz=100, filter_hz=15, zero=False) as force_sensor:
-            self.wrench_msg.force.x = force_sensor.read(only_latest_data=False).Fx - 3.0
-            self.wrench_msg.force.y = force_sensor.read(only_latest_data=False).Fy + 7.0
-            self.wrench_msg.force.z = force_sensor.read(only_latest_data=False).Fz - 50.5
-            self.Vecteurforceoutil[0]=self.wrench_msg.force.x
-            self.Vecteurforceoutil[1]=self.wrench_msg.force.y
-            self.Vecteurforceoutil[2]=self.wrench_msg.force.z
-        
         # Filtrage de bruit par seuil (deadband)
         self.deadband_filter_noise(twist_msg, 0.001)
-
+        self.wrench_msg.force.x = self.VecteurforceBase[0]*5
+        self.wrench_msg.force.y = self.VecteurforceBase[1]*5
+        self.wrench_msg.force.z = self.VecteurforceBase[2]*5
+        
         # Publication des messages
         self.publisher_.publish(twist_msg)
         self.publisher_omni.publish(self.wrench_msg)
@@ -207,6 +224,12 @@ class OmniStateToTwistWithButton(Node):
         else:
             self.get_logger().info("Grey button released. Resuming Twist commands.")
 
+    def wrench_callback(self, msg: WrenchStamped):
+        """
+        Mise a jour des efforts
+        """
+        self.wrench_input = msg
+        
     def deadband_filter_noise(self, twist, deadband):
         """Appliquer un filtre deadband pour supprimer le bruit."""
         if abs(twist.twist.linear.x) < deadband:

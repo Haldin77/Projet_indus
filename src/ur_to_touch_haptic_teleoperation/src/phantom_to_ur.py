@@ -104,6 +104,7 @@ class OmniStateToTwistWithButton(Node):
         self.wrench_msg.force.z = 0.1*msg.wrench.force.x
         self.wrench_msg.force.y = 0.1*msg.wrench.force.y
         self.wrench_msg.force.x = -0.1*msg.wrench.force.z
+        
     def deadband_filter_noise(self,twist, deadband):
     
         if abs(twist.twist.linear.x) < deadband:
