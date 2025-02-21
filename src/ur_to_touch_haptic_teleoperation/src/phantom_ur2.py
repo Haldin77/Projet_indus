@@ -172,8 +172,8 @@ class OmniStateToTwistWithButton(Node):
             #     force[0] = force[0] 
             #     print(force)
             # Convertir le vecteur de force en numpy array
-            # F_outil = np.array([self.wrench_input.wrench.force.x, self.wrench_input.wrench.force.y, self.wrench_input.wrench.force.z])
-            F_outil = [0,0,0]
+            F_outil = np.array([self.wrench_input.wrench.force.x, self.wrench_input.wrench.force.y, self.wrench_input.wrench.force.z])
+            # F_outil = [0,0,0]
             self.get_logger().info(f"OUTIL : {F_outil}")
             # Calculer les forces dans le repère de base
             F_base = np.dot(R06, F_outil)
@@ -202,9 +202,9 @@ class OmniStateToTwistWithButton(Node):
         twist_msg.twist.linear.z = self.apply_filter(self.linear_z_history)
         # Filtrage de bruit par seuil (deadband)
         self.deadband_filter_noise(twist_msg, 0.001)
-        self.wrench_msg.force.x = self.VecteurforceBase[0]*5
-        self.wrench_msg.force.y = self.VecteurforceBase[1]*5
-        self.wrench_msg.force.z = self.VecteurforceBase[2]*5
+        self.wrench_msg.force.x = self.VecteurforceBase[0]*0.1
+        self.wrench_msg.force.y = self.VecteurforceBase[1]*0.1
+        self.wrench_msg.force.z = self.VecteurforceBase[2]*0.1
         
         # Publication des messages
         self.publisher_.publish(twist_msg)
