@@ -39,10 +39,10 @@ class URNode : public rclcpp::Node
             
             // Abonnement à un topic pour recevoir des données à envoyer à l'UR
             sub = this->create_subscription<geometry_msgs::msg::WrenchStamped>(
-                "/wrench", 10, std::bind(&URNode::sendMsgToPhantom_callback, this, std::placeholders::_1));
+                "/wrench", 1000, std::bind(&URNode::sendMsgToPhantom_callback, this, std::placeholders::_1));
 
             // Création d'un Publisher pour envoyer des données reçues
-            pub = this->create_publisher<omni_msgs::msg::OmniState>("ur_controller", 10);
+            pub = this->create_publisher<omni_msgs::msg::OmniState>("phantom_states", 1000);
 
             // Lancer un thread pour écouter le serveur UDP
             std::thread thread_serveur_udp = std::thread(&URNode::serveur_udp, this);
