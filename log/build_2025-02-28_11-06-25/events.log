@@ -1,0 +1,525 @@
+[0.000000] (-) TimerEvent: {}
+[0.000222] (omni_msgs) JobQueued: {'identifier': 'omni_msgs', 'dependencies': OrderedDict()}
+[0.000290] (ur_udp) JobQueued: {'identifier': 'ur_udp', 'dependencies': OrderedDict([('omni_msgs', '/home/dilhan/ros2_ws/install/omni_msgs')])}
+[0.000948] (omni_msgs) JobStarted: {'identifier': 'omni_msgs'}
+[0.011325] (omni_msgs) JobProgress: {'identifier': 'omni_msgs', 'progress': 'cmake'}
+[0.011890] (omni_msgs) Command: {'cmd': ['/usr/bin/cmake', '/home/dilhan/ros2_ws/src/omni_msgs', '-DCATKIN_INSTALL_INTO_PREFIX_ROOT=0', '-DCMAKE_INSTALL_PREFIX=/home/dilhan/ros2_ws/install/omni_msgs'], 'cwd': '/home/dilhan/ros2_ws/build/omni_msgs', 'env': OrderedDict([('GJS_DEBUG_TOPICS', 'JS ERROR;JS LOG'), ('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'dilhan'), ('FONTCONFIG_PATH', '/etc/fonts'), ('GIO_MODULE_DIR', '/home/dilhan/snap/code/common/.cache/gio-modules'), ('XDG_SESSION_TYPE', 'x11'), ('GIT_ASKPASS', '/snap/code/184/usr/share/code/resources/app/extensions/git/dist/askpass.sh'), ('GTK_EXE_PREFIX_VSCODE_SNAP_ORIG', ''), ('GDK_BACKEND_VSCODE_SNAP_ORIG', ''), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/usr/local/cuda-11.8/lib64:/usr/local/cuda-11.8/lib64:/home/dilhan/ros2_ws/install/omni_msgs/lib:/usr/local/cuda-11.8/lib64:/usr/local/cuda-11.8/lib64:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/dilhan'), ('CHROME_DESKTOP', 'code.desktop'), ('LOCPATH_VSCODE_SNAP_ORIG', ''), ('TERM_PROGRAM_VERSION', '1.97.2'), ('DESKTOP_SESSION', 'ubuntu'), ('GTK_PATH', '/snap/code/184/usr/lib/x86_64-linux-gnu/gtk-3.0'), ('OH_SDK_BASE', '/opt/OpenHaptics/Developer/3.4-0'), ('DEBUGPY_ADAPTER_ENDPOINTS', '/home/dilhan/.vscode/extensions/ms-python.debugpy-2025.0.1-linux-x64/.noConfigDebugAdapterEndpoints/endpoint-7dd354176fec8f21.txt'), ('XDG_DATA_HOME_VSCODE_SNAP_ORIG', ''), ('GTK_IM_MODULE_FILE', '/home/dilhan/snap/code/common/.cache/immodules/immodules.cache'), ('GIO_LAUNCHED_DESKTOP_FILE', '/var/lib/snapd/desktop/applications/code_code.desktop'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('GSETTINGS_SCHEMA_DIR_VSCODE_SNAP_ORIG', ''), ('VSCODE_GIT_ASKPASS_MAIN', '/snap/code/184/usr/share/code/resources/app/extensions/git/dist/askpass-main.js'), ('PS1', '\\[\x1b]633;A\x07\\]🤖\u200b  \\[\\033[1;36m\\][$(echo -n "$USER")] \\[\\033[1;34m\\]\\W\\[\\033[0;35m\\] \\[\\033[1;36m\\]# \\[\\033[0m\\]\\[\x1b]633;B\x07\\]'), ('VSCODE_GIT_ASKPASS_NODE', '/snap/code/184/usr/share/code/code'), ('MANAGERPID', '1849'), ('PYDEVD_DISABLE_FILE_VALIDATION', '1'), ('SYSTEMD_EXEC_PID', '2080'), ('BUNDLED_DEBUGPY_PATH', '/home/dilhan/.vscode/extensions/ms-python.debugpy-2025.0.1-linux-x64/bundled/libs/debugpy'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('GIO_LAUNCHED_DESKTOP_FILE_PID', '4257'), ('FANUC_DEVENV_PATH', '/home/dilhan/Docker_env/devenv'), ('COLCON_PREFIX_PATH', '/home/dilhan/ros2_ws/install'), ('ROS_DISTRO', 'humble'), ('GTK_IM_MODULE', 'ibus'), ('LOGNAME', 'dilhan'), ('JOURNAL_STREAM', '8:14056'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_CONFIG_DIRS_VSCODE_SNAP_ORIG', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('UR_DEVENV_PATH', '/home/dilhan/Docker_env/Docker_ROS2/Projet_Indus'), ('XDG_SESSION_CLASS', 'user'), ('XDG_DATA_DIRS_VSCODE_SNAP_ORIG', '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('USERNAME', 'dilhan'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('WINDOWPATH', '2'), ('PATH', '/usr/local/cuda-11.8/bin:/usr/local/cuda-11.8/bin:/usr/local/cuda-12.1/bin:/home/dilhan/.local/bin:/usr/local/cuda-11.8/bin:/usr/local/cuda-11.8/bin:/usr/local/cuda-12.1/bin:/opt/ros/humble/bin:/home/dilhan/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/home/dilhan/.local/bin:/home/dilhan/.local/bin:/home/dilhan/.local/bin:/home/dilhan/.vscode/extensions/ms-python.debugpy-2025.0.1-linux-x64/bundled/scripts/noConfigScripts:/home/dilhan/.local/bin'), ('SESSION_MANAGER', 'local/dilhan:@/tmp/.ICE-unix/2051,unix/dilhan:/tmp/.ICE-unix/2051'), ('GTK_EXE_PREFIX', '/snap/code/184/usr'), ('INVOCATION_ID', '3552868b64094528b029e2c85a424727'), ('XDG_MENU_PREFIX', 'gnome-'), ('BAMF_DESKTOP_FILE_HINT', '/var/lib/snapd/desktop/applications/code_code.desktop'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('GDK_BACKEND', 'x11'), ('DISPLAY', ':1'), ('LOCPATH', '/snap/code/184/usr/lib/locale'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'Unity'), ('GIO_MODULE_DIR_VSCODE_SNAP_ORIG', ''), ('XDG_DATA_HOME', '/home/dilhan/snap/code/184/.local/share'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('VSCODE_GIT_IPC_HANDLE', '/run/user/1000/vscode-git-bb0a17e6aa.sock'), ('TERM_PROGRAM', 'vscode'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('GSETTINGS_SCHEMA_DIR', '/home/dilhan/snap/code/184/.local/share/glib-2.0/schemas'), ('AMENT_PREFIX_PATH', '/home/dilhan/ros2_ws/install/ur_to_touch_haptic_teleoperation:/home/dilhan/ros2_ws/install/optoforce_wrapper:/home/dilhan/ros2_ws/install/omni_common:/home/dilhan/ros2_ws/install/omni_msgs:/home/dilhan/ros2_ws/install/omni_description:/opt/ros/humble'), ('ORIGINAL_XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('SHELL', '/bin/bash'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('DUCK_DEVENV_PATH', '/home/dilhan/Docker_env/ducker/devenv'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('GTK_PATH_VSCODE_SNAP_ORIG', ''), ('FONTCONFIG_FILE', '/etc/fonts/fonts.conf'), ('GTK_IM_MODULE_FILE_VSCODE_SNAP_ORIG', ''), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('GJS_DEBUG_OUTPUT', 'stderr'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/dilhan/ros2_ws/build/omni_msgs'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/home/dilhan/snap/code/184/.local/share:/home/dilhan/snap/code/184:/snap/code/184/usr/share:/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/dilhan/ros2_ws/install/optoforce_wrapper/lib/python3.10/site-packages:/home/dilhan/ros2_ws/install/omni_msgs/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'en_US.UTF-8'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/home/dilhan/ros2_ws/install/ur_to_touch_haptic_teleoperation:/home/dilhan/ros2_ws/install/omni_common:/home/dilhan/ros2_ws/install/omni_msgs:/home/dilhan/ros2_ws/install/omni_description')]), 'shell': False}
+[0.070206] (omni_msgs) StdoutLine: {'line': b'-- The C compiler identification is GNU 11.4.0\n'}
+[0.099693] (-) TimerEvent: {}
+[0.125554] (omni_msgs) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 11.4.0\n'}
+[0.133951] (omni_msgs) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[0.199821] (-) TimerEvent: {}
+[0.204282] (omni_msgs) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[0.210216] (omni_msgs) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc - skipped\n'}
+[0.210468] (omni_msgs) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[0.210810] (omni_msgs) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[0.214201] (omni_msgs) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[0.294362] (omni_msgs) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[0.299918] (-) TimerEvent: {}
+[0.300411] (omni_msgs) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ - skipped\n'}
+[0.300637] (omni_msgs) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[0.300999] (omni_msgs) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[0.304514] (omni_msgs) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.11 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[0.400011] (-) TimerEvent: {}
+[0.465721] (omni_msgs) StdoutLine: {'line': b'-- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter \n'}
+[0.500120] (-) TimerEvent: {}
+[0.558920] (omni_msgs) StdoutLine: {'line': b'-- Found rosidl_default_generators: 1.2.0 (/opt/ros/humble/share/rosidl_default_generators/cmake)\n'}
+[0.562063] (omni_msgs) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[0.569281] (omni_msgs) StdoutLine: {'line': b'-- Found rosidl_adapter: 3.1.6 (/opt/ros/humble/share/rosidl_adapter/cmake)\n'}
+[0.600266] (-) TimerEvent: {}
+[0.614984] (omni_msgs) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[0.656543] (omni_msgs) StdoutLine: {'line': b'-- Found geometry_msgs: 4.2.4 (/opt/ros/humble/share/geometry_msgs/cmake)\n'}
+[0.695887] (omni_msgs) StdoutLine: {'line': b'-- Found sensor_msgs: 4.2.4 (/opt/ros/humble/share/sensor_msgs/cmake)\n'}
+[0.700331] (-) TimerEvent: {}
+[0.800580] (-) TimerEvent: {}
+[0.900880] (-) TimerEvent: {}
+[1.001157] (-) TimerEvent: {}
+[1.011674] (omni_msgs) StdoutLine: {'line': b'-- Found ament_cmake_ros: 0.10.0 (/opt/ros/humble/share/ament_cmake_ros/cmake)\n'}
+[1.101249] (-) TimerEvent: {}
+[1.201493] (-) TimerEvent: {}
+[1.270222] (omni_msgs) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[1.301581] (-) TimerEvent: {}
+[1.401794] (-) TimerEvent: {}
+[1.502037] (-) TimerEvent: {}
+[1.598690] (omni_msgs) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[1.602110] (-) TimerEvent: {}
+[1.620424] (omni_msgs) StdoutLine: {'line': b'-- Found PythonInterp: /usr/bin/python3 (found suitable version "3.10.12", minimum required is "3.6") \n'}
+[1.622891] (omni_msgs) StdoutLine: {'line': b'-- Found python_cmake_module: 0.10.0 (/opt/ros/humble/share/python_cmake_module/cmake)\n'}
+[1.647691] (omni_msgs) StdoutLine: {'line': b'-- Found PythonLibs: /usr/lib/x86_64-linux-gnu/libpython3.10.so (found suitable version "3.10.12", minimum required is "3.5") \n'}
+[1.647891] (omni_msgs) StdoutLine: {'line': b'-- Using PYTHON_EXECUTABLE: /usr/bin/python3\n'}
+[1.647958] (omni_msgs) StdoutLine: {'line': b'-- Using PYTHON_INCLUDE_DIRS: /usr/include/python3.10\n'}
+[1.648017] (omni_msgs) StdoutLine: {'line': b'-- Using PYTHON_LIBRARIES: /usr/lib/x86_64-linux-gnu/libpython3.10.so\n'}
+[1.666363] (omni_msgs) StdoutLine: {'line': b'-- Found PythonExtra: .so  \n'}
+[1.702201] (-) TimerEvent: {}
+[1.738480] (omni_msgs) StdoutLine: {'line': b'-- Configuring done\n'}
+[1.774117] (omni_msgs) StdoutLine: {'line': b'-- Generating done\n'}
+[1.776250] (omni_msgs) StderrLine: {'line': b'\x1b[33mCMake Warning:\n'}
+[1.776390] (omni_msgs) StderrLine: {'line': b'  Manually-specified variables were not used by the project:\n'}
+[1.776462] (omni_msgs) StderrLine: {'line': b'\n'}
+[1.776524] (omni_msgs) StderrLine: {'line': b'    CATKIN_INSTALL_INTO_PREFIX_ROOT\n'}
+[1.776588] (omni_msgs) StderrLine: {'line': b'\n'}
+[1.776655] (omni_msgs) StderrLine: {'line': b'\x1b[0m\n'}
+[1.784674] (omni_msgs) StdoutLine: {'line': b'-- Build files have been written to: /home/dilhan/ros2_ws/build/omni_msgs\n'}
+[1.793895] (omni_msgs) CommandEnded: {'returncode': 0}
+[1.794523] (omni_msgs) JobProgress: {'identifier': 'omni_msgs', 'progress': 'build'}
+[1.795126] (omni_msgs) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/dilhan/ros2_ws/build/omni_msgs', '--', '-j12', '-l12'], 'cwd': '/home/dilhan/ros2_ws/build/omni_msgs', 'env': OrderedDict([('GJS_DEBUG_TOPICS', 'JS ERROR;JS LOG'), ('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'dilhan'), ('FONTCONFIG_PATH', '/etc/fonts'), ('GIO_MODULE_DIR', '/home/dilhan/snap/code/common/.cache/gio-modules'), ('XDG_SESSION_TYPE', 'x11'), ('GIT_ASKPASS', '/snap/code/184/usr/share/code/resources/app/extensions/git/dist/askpass.sh'), ('GTK_EXE_PREFIX_VSCODE_SNAP_ORIG', ''), ('GDK_BACKEND_VSCODE_SNAP_ORIG', ''), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/usr/local/cuda-11.8/lib64:/usr/local/cuda-11.8/lib64:/home/dilhan/ros2_ws/install/omni_msgs/lib:/usr/local/cuda-11.8/lib64:/usr/local/cuda-11.8/lib64:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/dilhan'), ('CHROME_DESKTOP', 'code.desktop'), ('LOCPATH_VSCODE_SNAP_ORIG', ''), ('TERM_PROGRAM_VERSION', '1.97.2'), ('DESKTOP_SESSION', 'ubuntu'), ('GTK_PATH', '/snap/code/184/usr/lib/x86_64-linux-gnu/gtk-3.0'), ('OH_SDK_BASE', '/opt/OpenHaptics/Developer/3.4-0'), ('DEBUGPY_ADAPTER_ENDPOINTS', '/home/dilhan/.vscode/extensions/ms-python.debugpy-2025.0.1-linux-x64/.noConfigDebugAdapterEndpoints/endpoint-7dd354176fec8f21.txt'), ('XDG_DATA_HOME_VSCODE_SNAP_ORIG', ''), ('GTK_IM_MODULE_FILE', '/home/dilhan/snap/code/common/.cache/immodules/immodules.cache'), ('GIO_LAUNCHED_DESKTOP_FILE', '/var/lib/snapd/desktop/applications/code_code.desktop'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('GSETTINGS_SCHEMA_DIR_VSCODE_SNAP_ORIG', ''), ('VSCODE_GIT_ASKPASS_MAIN', '/snap/code/184/usr/share/code/resources/app/extensions/git/dist/askpass-main.js'), ('PS1', '\\[\x1b]633;A\x07\\]🤖\u200b  \\[\\033[1;36m\\][$(echo -n "$USER")] \\[\\033[1;34m\\]\\W\\[\\033[0;35m\\] \\[\\033[1;36m\\]# \\[\\033[0m\\]\\[\x1b]633;B\x07\\]'), ('VSCODE_GIT_ASKPASS_NODE', '/snap/code/184/usr/share/code/code'), ('MANAGERPID', '1849'), ('PYDEVD_DISABLE_FILE_VALIDATION', '1'), ('SYSTEMD_EXEC_PID', '2080'), ('BUNDLED_DEBUGPY_PATH', '/home/dilhan/.vscode/extensions/ms-python.debugpy-2025.0.1-linux-x64/bundled/libs/debugpy'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('GIO_LAUNCHED_DESKTOP_FILE_PID', '4257'), ('FANUC_DEVENV_PATH', '/home/dilhan/Docker_env/devenv'), ('COLCON_PREFIX_PATH', '/home/dilhan/ros2_ws/install'), ('ROS_DISTRO', 'humble'), ('GTK_IM_MODULE', 'ibus'), ('LOGNAME', 'dilhan'), ('JOURNAL_STREAM', '8:14056'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_CONFIG_DIRS_VSCODE_SNAP_ORIG', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('UR_DEVENV_PATH', '/home/dilhan/Docker_env/Docker_ROS2/Projet_Indus'), ('XDG_SESSION_CLASS', 'user'), ('XDG_DATA_DIRS_VSCODE_SNAP_ORIG', '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('USERNAME', 'dilhan'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('WINDOWPATH', '2'), ('PATH', '/usr/local/cuda-11.8/bin:/usr/local/cuda-11.8/bin:/usr/local/cuda-12.1/bin:/home/dilhan/.local/bin:/usr/local/cuda-11.8/bin:/usr/local/cuda-11.8/bin:/usr/local/cuda-12.1/bin:/opt/ros/humble/bin:/home/dilhan/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/home/dilhan/.local/bin:/home/dilhan/.local/bin:/home/dilhan/.local/bin:/home/dilhan/.vscode/extensions/ms-python.debugpy-2025.0.1-linux-x64/bundled/scripts/noConfigScripts:/home/dilhan/.local/bin'), ('SESSION_MANAGER', 'local/dilhan:@/tmp/.ICE-unix/2051,unix/dilhan:/tmp/.ICE-unix/2051'), ('GTK_EXE_PREFIX', '/snap/code/184/usr'), ('INVOCATION_ID', '3552868b64094528b029e2c85a424727'), ('XDG_MENU_PREFIX', 'gnome-'), ('BAMF_DESKTOP_FILE_HINT', '/var/lib/snapd/desktop/applications/code_code.desktop'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('GDK_BACKEND', 'x11'), ('DISPLAY', ':1'), ('LOCPATH', '/snap/code/184/usr/lib/locale'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'Unity'), ('GIO_MODULE_DIR_VSCODE_SNAP_ORIG', ''), ('XDG_DATA_HOME', '/home/dilhan/snap/code/184/.local/share'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('VSCODE_GIT_IPC_HANDLE', '/run/user/1000/vscode-git-bb0a17e6aa.sock'), ('TERM_PROGRAM', 'vscode'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('GSETTINGS_SCHEMA_DIR', '/home/dilhan/snap/code/184/.local/share/glib-2.0/schemas'), ('AMENT_PREFIX_PATH', '/home/dilhan/ros2_ws/install/ur_to_touch_haptic_teleoperation:/home/dilhan/ros2_ws/install/optoforce_wrapper:/home/dilhan/ros2_ws/install/omni_common:/home/dilhan/ros2_ws/install/omni_msgs:/home/dilhan/ros2_ws/install/omni_description:/opt/ros/humble'), ('ORIGINAL_XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('SHELL', '/bin/bash'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('DUCK_DEVENV_PATH', '/home/dilhan/Docker_env/ducker/devenv'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('GTK_PATH_VSCODE_SNAP_ORIG', ''), ('FONTCONFIG_FILE', '/etc/fonts/fonts.conf'), ('GTK_IM_MODULE_FILE_VSCODE_SNAP_ORIG', ''), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('GJS_DEBUG_OUTPUT', 'stderr'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/dilhan/ros2_ws/build/omni_msgs'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/home/dilhan/snap/code/184/.local/share:/home/dilhan/snap/code/184:/snap/code/184/usr/share:/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/dilhan/ros2_ws/install/optoforce_wrapper/lib/python3.10/site-packages:/home/dilhan/ros2_ws/install/omni_msgs/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'en_US.UTF-8'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/home/dilhan/ros2_ws/install/ur_to_touch_haptic_teleoperation:/home/dilhan/ros2_ws/install/omni_common:/home/dilhan/ros2_ws/install/omni_msgs:/home/dilhan/ros2_ws/install/omni_description')]), 'shell': False}
+[1.802295] (-) TimerEvent: {}
+[1.838475] (omni_msgs) StdoutLine: {'line': b'[  2%] \x1b[34m\x1b[1mGenerating C code for ROS interfaces\x1b[0m\n'}
+[1.848981] (omni_msgs) StdoutLine: {'line': b'[  4%] \x1b[34m\x1b[1mGenerating C++ code for ROS interfaces\x1b[0m\n'}
+[1.856985] (omni_msgs) StdoutLine: {'line': b'[  4%] Built target ament_cmake_python_copy_omni_msgs\n'}
+[1.902347] (-) TimerEvent: {}
+[2.002581] (-) TimerEvent: {}
+[2.102823] (-) TimerEvent: {}
+[2.121392] (omni_msgs) StdoutLine: {'line': b'running egg_info\n'}
+[2.122035] (omni_msgs) StdoutLine: {'line': b'creating omni_msgs.egg-info\n'}
+[2.122334] (omni_msgs) StdoutLine: {'line': b'writing omni_msgs.egg-info/PKG-INFO\n'}
+[2.122724] (omni_msgs) StdoutLine: {'line': b'writing dependency_links to omni_msgs.egg-info/dependency_links.txt\n'}
+[2.122823] (omni_msgs) StdoutLine: {'line': b'writing top-level names to omni_msgs.egg-info/top_level.txt\n'}
+[2.124496] (omni_msgs) StdoutLine: {'line': b"writing manifest file 'omni_msgs.egg-info/SOURCES.txt'\n"}
+[2.126559] (omni_msgs) StdoutLine: {'line': b"reading manifest file 'omni_msgs.egg-info/SOURCES.txt'\n"}
+[2.127045] (omni_msgs) StdoutLine: {'line': b"writing manifest file 'omni_msgs.egg-info/SOURCES.txt'\n"}
+[2.159346] (omni_msgs) StdoutLine: {'line': b'[  4%] Built target ament_cmake_python_build_omni_msgs_egg\n'}
+[2.172473] (omni_msgs) StdoutLine: {'line': b'[  8%] \x1b[32mBuilding C object CMakeFiles/omni_msgs__rosidl_generator_c.dir/rosidl_generator_c/omni_msgs/msg/detail/omni_feedback__functions.c.o\x1b[0m\n'}
+[2.172685] (omni_msgs) StdoutLine: {'line': b'[  8%] \x1b[32mBuilding C object CMakeFiles/omni_msgs__rosidl_generator_c.dir/rosidl_generator_c/omni_msgs/msg/detail/omni_button_event__functions.c.o\x1b[0m\n'}
+[2.176703] (omni_msgs) StdoutLine: {'line': b'[ 10%] \x1b[32mBuilding C object CMakeFiles/omni_msgs__rosidl_generator_c.dir/rosidl_generator_c/omni_msgs/msg/detail/omni_state__functions.c.o\x1b[0m\n'}
+[2.185484] (omni_msgs) StdoutLine: {'line': b'[ 10%] Built target omni_msgs__cpp\n'}
+[2.195632] (omni_msgs) StdoutLine: {'line': b'[ 14%] \x1b[34m\x1b[1mGenerating C++ type support dispatch for ROS interfaces\x1b[0m\n'}
+[2.195861] (omni_msgs) StdoutLine: {'line': b'[ 14%] \x1b[34m\x1b[1mGenerating C++ introspection for ROS interfaces\x1b[0m\n'}
+[2.197220] (omni_msgs) StdoutLine: {'line': b'[ 17%] \x1b[34m\x1b[1mGenerating C++ type support for eProsima Fast-RTPS\x1b[0m\n'}
+[2.202922] (-) TimerEvent: {}
+[2.226228] (omni_msgs) StdoutLine: {'line': b'[ 19%] \x1b[32m\x1b[1mLinking C shared library libomni_msgs__rosidl_generator_c.so\x1b[0m\n'}
+[2.269903] (omni_msgs) StdoutLine: {'line': b'[ 19%] Built target omni_msgs__rosidl_generator_c\n'}
+[2.280531] (omni_msgs) StdoutLine: {'line': b'[ 25%] \x1b[34m\x1b[1mGenerating C type support dispatch for ROS interfaces\x1b[0m\n'}
+[2.280759] (omni_msgs) StdoutLine: {'line': b'[ 25%] \x1b[34m\x1b[1mGenerating C type support for eProsima Fast-RTPS\x1b[0m\n'}
+[2.280849] (omni_msgs) StdoutLine: {'line': b'[ 25%] \x1b[34m\x1b[1mGenerating C introspection for ROS interfaces\x1b[0m\n'}
+[2.303015] (-) TimerEvent: {}
+[2.403289] (-) TimerEvent: {}
+[2.491159] (omni_msgs) StdoutLine: {'line': b'[ 27%] \x1b[32mBuilding CXX object CMakeFiles/omni_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/omni_msgs/msg/omni_feedback__type_support.cpp.o\x1b[0m\n'}
+[2.493511] (omni_msgs) StdoutLine: {'line': b'[ 29%] \x1b[32mBuilding CXX object CMakeFiles/omni_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/omni_msgs/msg/omni_state__type_support.cpp.o\x1b[0m\n'}
+[2.494940] (omni_msgs) StdoutLine: {'line': b'[ 31%] \x1b[32mBuilding CXX object CMakeFiles/omni_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/omni_msgs/msg/omni_button_event__type_support.cpp.o\x1b[0m\n'}
+[2.503355] (-) TimerEvent: {}
+[2.512242] (omni_msgs) StdoutLine: {'line': b'[ 34%] \x1b[32mBuilding CXX object CMakeFiles/omni_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/omni_msgs/msg/detail/omni_feedback__type_support.cpp.o\x1b[0m\n'}
+[2.514109] (omni_msgs) StdoutLine: {'line': b'[ 36%] \x1b[32mBuilding CXX object CMakeFiles/omni_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/omni_msgs/msg/detail/omni_state__type_support.cpp.o\x1b[0m\n'}
+[2.514280] (omni_msgs) StdoutLine: {'line': b'[ 38%] \x1b[32mBuilding CXX object CMakeFiles/omni_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/omni_msgs/msg/detail/omni_button_event__type_support.cpp.o\x1b[0m\n'}
+[2.593567] (omni_msgs) StdoutLine: {'line': b'[ 42%] \x1b[32mBuilding CXX object CMakeFiles/omni_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/omni_msgs/msg/detail/dds_fastrtps/omni_feedback__type_support.cpp.o\x1b[0m\n'}
+[2.593782] (omni_msgs) StdoutLine: {'line': b'[ 42%] \x1b[32mBuilding CXX object CMakeFiles/omni_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/omni_msgs/msg/detail/dds_fastrtps/omni_button_event__type_support.cpp.o\x1b[0m\n'}
+[2.596952] (omni_msgs) StdoutLine: {'line': b'[ 44%] \x1b[32mBuilding CXX object CMakeFiles/omni_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/omni_msgs/msg/detail/dds_fastrtps/omni_state__type_support.cpp.o\x1b[0m\n'}
+[2.602719] (omni_msgs) StdoutLine: {'line': b'[ 46%] \x1b[32mBuilding CXX object CMakeFiles/omni_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/omni_msgs/msg/omni_feedback__type_support.cpp.o\x1b[0m\n'}
+[2.603432] (-) TimerEvent: {}
+[2.660889] (omni_msgs) StdoutLine: {'line': b'[ 48%] \x1b[32mBuilding CXX object CMakeFiles/omni_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/omni_msgs/msg/omni_button_event__type_support.cpp.o\x1b[0m\n'}
+[2.705376] (-) TimerEvent: {}
+[2.723945] (omni_msgs) StdoutLine: {'line': b'[ 51%] \x1b[32mBuilding CXX object CMakeFiles/omni_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/omni_msgs/msg/omni_state__type_support.cpp.o\x1b[0m\n'}
+[2.736022] (omni_msgs) StdoutLine: {'line': b'[ 53%] \x1b[32mBuilding C object CMakeFiles/omni_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/omni_msgs/msg/detail/omni_feedback__type_support.c.o\x1b[0m\n'}
+[2.772477] (omni_msgs) StdoutLine: {'line': b'[ 55%] \x1b[32mBuilding CXX object CMakeFiles/omni_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/omni_msgs/msg/detail/omni_feedback__type_support_c.cpp.o\x1b[0m\n'}
+[2.792782] (omni_msgs) StdoutLine: {'line': b'[ 57%] \x1b[32mBuilding C object CMakeFiles/omni_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/omni_msgs/msg/detail/omni_button_event__type_support.c.o\x1b[0m\n'}
+[2.802624] (omni_msgs) StdoutLine: {'line': b'[ 59%] \x1b[32m\x1b[1mLinking CXX shared library libomni_msgs__rosidl_typesupport_c.so\x1b[0m\n'}
+[2.805475] (-) TimerEvent: {}
+[2.862915] (omni_msgs) StdoutLine: {'line': b'[ 61%] \x1b[32mBuilding C object CMakeFiles/omni_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/omni_msgs/msg/detail/omni_state__type_support.c.o\x1b[0m\n'}
+[2.907385] (-) TimerEvent: {}
+[2.931492] (omni_msgs) StdoutLine: {'line': b'[ 63%] \x1b[32m\x1b[1mLinking C shared library libomni_msgs__rosidl_typesupport_introspection_c.so\x1b[0m\n'}
+[2.931759] (omni_msgs) StdoutLine: {'line': b'[ 65%] \x1b[32mBuilding CXX object CMakeFiles/omni_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/omni_msgs/msg/detail/omni_button_event__type_support_c.cpp.o\x1b[0m\n'}
+[2.933597] (omni_msgs) StdoutLine: {'line': b'[ 65%] Built target omni_msgs__rosidl_typesupport_c\n'}
+[2.950290] (omni_msgs) StdoutLine: {'line': b'[ 68%] \x1b[32mBuilding CXX object CMakeFiles/omni_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/omni_msgs/msg/detail/omni_state__type_support_c.cpp.o\x1b[0m\n'}
+[3.007489] (-) TimerEvent: {}
+[3.020457] (omni_msgs) StdoutLine: {'line': b'[ 68%] Built target omni_msgs__rosidl_typesupport_introspection_c\n'}
+[3.021556] (omni_msgs) StdoutLine: {'line': b'[ 70%] \x1b[32m\x1b[1mLinking CXX shared library libomni_msgs__rosidl_typesupport_cpp.so\x1b[0m\n'}
+[3.105426] (omni_msgs) StdoutLine: {'line': b'[ 70%] Built target omni_msgs__rosidl_typesupport_cpp\n'}
+[3.113367] (-) TimerEvent: {}
+[3.149629] (omni_msgs) StdoutLine: {'line': b'[ 72%] \x1b[32m\x1b[1mLinking CXX shared library libomni_msgs__rosidl_typesupport_introspection_cpp.so\x1b[0m\n'}
+[3.213467] (-) TimerEvent: {}
+[3.234400] (omni_msgs) StdoutLine: {'line': b'[ 72%] Built target omni_msgs__rosidl_typesupport_introspection_cpp\n'}
+[3.250241] (omni_msgs) StdoutLine: {'line': b'[ 74%] \x1b[32m\x1b[1mLinking CXX shared library libomni_msgs__rosidl_typesupport_fastrtps_cpp.so\x1b[0m\n'}
+[3.313571] (-) TimerEvent: {}
+[3.324508] (omni_msgs) StdoutLine: {'line': b'[ 74%] Built target omni_msgs__rosidl_typesupport_fastrtps_cpp\n'}
+[3.350478] (omni_msgs) StdoutLine: {'line': b'[ 76%] \x1b[32m\x1b[1mLinking CXX shared library libomni_msgs__rosidl_typesupport_fastrtps_c.so\x1b[0m\n'}
+[3.413674] (-) TimerEvent: {}
+[3.416649] (omni_msgs) StdoutLine: {'line': b'[ 76%] Built target omni_msgs__rosidl_typesupport_fastrtps_c\n'}
+[3.438923] (omni_msgs) StdoutLine: {'line': b'[ 76%] Built target omni_msgs\n'}
+[3.461456] (omni_msgs) StdoutLine: {'line': b'[ 78%] \x1b[34m\x1b[1mGenerating Python code for ROS interfaces\x1b[0m\n'}
+[3.513754] (-) TimerEvent: {}
+[3.613979] (-) TimerEvent: {}
+[3.714235] (-) TimerEvent: {}
+[3.814479] (-) TimerEvent: {}
+[3.881374] (omni_msgs) StdoutLine: {'line': b'[ 78%] Built target omni_msgs__py\n'}
+[3.900367] (omni_msgs) StdoutLine: {'line': b'[ 85%] \x1b[32mBuilding C object CMakeFiles/omni_msgs__rosidl_generator_py.dir/rosidl_generator_py/omni_msgs/msg/_omni_feedback_s.c.o\x1b[0m\n'}
+[3.900551] (omni_msgs) StdoutLine: {'line': b'[ 85%] \x1b[32mBuilding C object CMakeFiles/omni_msgs__rosidl_generator_py.dir/rosidl_generator_py/omni_msgs/msg/_omni_state_s.c.o\x1b[0m\n'}
+[3.900626] (omni_msgs) StdoutLine: {'line': b'[ 85%] \x1b[32mBuilding C object CMakeFiles/omni_msgs__rosidl_generator_py.dir/rosidl_generator_py/omni_msgs/msg/_omni_button_event_s.c.o\x1b[0m\n'}
+[3.914576] (-) TimerEvent: {}
+[3.993798] (omni_msgs) StdoutLine: {'line': b'[ 87%] \x1b[32m\x1b[1mLinking C shared library rosidl_generator_py/omni_msgs/libomni_msgs__rosidl_generator_py.so\x1b[0m\n'}
+[4.014666] (-) TimerEvent: {}
+[4.034791] (omni_msgs) StdoutLine: {'line': b'[ 87%] Built target omni_msgs__rosidl_generator_py\n'}
+[4.058204] (omni_msgs) StdoutLine: {'line': b'[ 89%] \x1b[32mBuilding C object CMakeFiles/omni_msgs__rosidl_typesupport_fastrtps_c__pyext.dir/rosidl_generator_py/omni_msgs/_omni_msgs_s.ep.rosidl_typesupport_fastrtps_c.c.o\x1b[0m\n'}
+[4.058927] (omni_msgs) StdoutLine: {'line': b'[ 93%] \x1b[32mBuilding C object CMakeFiles/omni_msgs__rosidl_typesupport_c__pyext.dir/rosidl_generator_py/omni_msgs/_omni_msgs_s.ep.rosidl_typesupport_c.c.o\x1b[0m\n'}
+[4.059065] (omni_msgs) StdoutLine: {'line': b'[ 93%] \x1b[32mBuilding C object CMakeFiles/omni_msgs__rosidl_typesupport_introspection_c__pyext.dir/rosidl_generator_py/omni_msgs/_omni_msgs_s.ep.rosidl_typesupport_introspection_c.c.o\x1b[0m\n'}
+[4.114760] (-) TimerEvent: {}
+[4.154121] (omni_msgs) StdoutLine: {'line': b'[ 97%] \x1b[32m\x1b[1mLinking C shared library rosidl_generator_py/omni_msgs/omni_msgs_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so\x1b[0m\n'}
+[4.154355] (omni_msgs) StdoutLine: {'line': b'[ 97%] \x1b[32m\x1b[1mLinking C shared library rosidl_generator_py/omni_msgs/omni_msgs_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so\x1b[0m\n'}
+[4.154422] (omni_msgs) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking C shared library rosidl_generator_py/omni_msgs/omni_msgs_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so\x1b[0m\n'}
+[4.193228] (omni_msgs) StdoutLine: {'line': b'[100%] Built target omni_msgs__rosidl_typesupport_c__pyext\n'}
+[4.193419] (omni_msgs) StdoutLine: {'line': b'[100%] Built target omni_msgs__rosidl_typesupport_fastrtps_c__pyext\n'}
+[4.193538] (omni_msgs) StdoutLine: {'line': b'[100%] Built target omni_msgs__rosidl_typesupport_introspection_c__pyext\n'}
+[4.205114] (omni_msgs) CommandEnded: {'returncode': 0}
+[4.205934] (omni_msgs) JobProgress: {'identifier': 'omni_msgs', 'progress': 'install'}
+[4.214283] (omni_msgs) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/dilhan/ros2_ws/build/omni_msgs'], 'cwd': '/home/dilhan/ros2_ws/build/omni_msgs', 'env': OrderedDict([('GJS_DEBUG_TOPICS', 'JS ERROR;JS LOG'), ('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'dilhan'), ('FONTCONFIG_PATH', '/etc/fonts'), ('GIO_MODULE_DIR', '/home/dilhan/snap/code/common/.cache/gio-modules'), ('XDG_SESSION_TYPE', 'x11'), ('GIT_ASKPASS', '/snap/code/184/usr/share/code/resources/app/extensions/git/dist/askpass.sh'), ('GTK_EXE_PREFIX_VSCODE_SNAP_ORIG', ''), ('GDK_BACKEND_VSCODE_SNAP_ORIG', ''), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/usr/local/cuda-11.8/lib64:/usr/local/cuda-11.8/lib64:/home/dilhan/ros2_ws/install/omni_msgs/lib:/usr/local/cuda-11.8/lib64:/usr/local/cuda-11.8/lib64:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/dilhan'), ('CHROME_DESKTOP', 'code.desktop'), ('LOCPATH_VSCODE_SNAP_ORIG', ''), ('TERM_PROGRAM_VERSION', '1.97.2'), ('DESKTOP_SESSION', 'ubuntu'), ('GTK_PATH', '/snap/code/184/usr/lib/x86_64-linux-gnu/gtk-3.0'), ('OH_SDK_BASE', '/opt/OpenHaptics/Developer/3.4-0'), ('DEBUGPY_ADAPTER_ENDPOINTS', '/home/dilhan/.vscode/extensions/ms-python.debugpy-2025.0.1-linux-x64/.noConfigDebugAdapterEndpoints/endpoint-7dd354176fec8f21.txt'), ('XDG_DATA_HOME_VSCODE_SNAP_ORIG', ''), ('GTK_IM_MODULE_FILE', '/home/dilhan/snap/code/common/.cache/immodules/immodules.cache'), ('GIO_LAUNCHED_DESKTOP_FILE', '/var/lib/snapd/desktop/applications/code_code.desktop'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('GSETTINGS_SCHEMA_DIR_VSCODE_SNAP_ORIG', ''), ('VSCODE_GIT_ASKPASS_MAIN', '/snap/code/184/usr/share/code/resources/app/extensions/git/dist/askpass-main.js'), ('PS1', '\\[\x1b]633;A\x07\\]🤖\u200b  \\[\\033[1;36m\\][$(echo -n "$USER")] \\[\\033[1;34m\\]\\W\\[\\033[0;35m\\] \\[\\033[1;36m\\]# \\[\\033[0m\\]\\[\x1b]633;B\x07\\]'), ('VSCODE_GIT_ASKPASS_NODE', '/snap/code/184/usr/share/code/code'), ('MANAGERPID', '1849'), ('PYDEVD_DISABLE_FILE_VALIDATION', '1'), ('SYSTEMD_EXEC_PID', '2080'), ('BUNDLED_DEBUGPY_PATH', '/home/dilhan/.vscode/extensions/ms-python.debugpy-2025.0.1-linux-x64/bundled/libs/debugpy'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('GIO_LAUNCHED_DESKTOP_FILE_PID', '4257'), ('FANUC_DEVENV_PATH', '/home/dilhan/Docker_env/devenv'), ('COLCON_PREFIX_PATH', '/home/dilhan/ros2_ws/install'), ('ROS_DISTRO', 'humble'), ('GTK_IM_MODULE', 'ibus'), ('LOGNAME', 'dilhan'), ('JOURNAL_STREAM', '8:14056'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_CONFIG_DIRS_VSCODE_SNAP_ORIG', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('UR_DEVENV_PATH', '/home/dilhan/Docker_env/Docker_ROS2/Projet_Indus'), ('XDG_SESSION_CLASS', 'user'), ('XDG_DATA_DIRS_VSCODE_SNAP_ORIG', '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('USERNAME', 'dilhan'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('WINDOWPATH', '2'), ('PATH', '/usr/local/cuda-11.8/bin:/usr/local/cuda-11.8/bin:/usr/local/cuda-12.1/bin:/home/dilhan/.local/bin:/usr/local/cuda-11.8/bin:/usr/local/cuda-11.8/bin:/usr/local/cuda-12.1/bin:/opt/ros/humble/bin:/home/dilhan/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/home/dilhan/.local/bin:/home/dilhan/.local/bin:/home/dilhan/.local/bin:/home/dilhan/.vscode/extensions/ms-python.debugpy-2025.0.1-linux-x64/bundled/scripts/noConfigScripts:/home/dilhan/.local/bin'), ('SESSION_MANAGER', 'local/dilhan:@/tmp/.ICE-unix/2051,unix/dilhan:/tmp/.ICE-unix/2051'), ('GTK_EXE_PREFIX', '/snap/code/184/usr'), ('INVOCATION_ID', '3552868b64094528b029e2c85a424727'), ('XDG_MENU_PREFIX', 'gnome-'), ('BAMF_DESKTOP_FILE_HINT', '/var/lib/snapd/desktop/applications/code_code.desktop'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('GDK_BACKEND', 'x11'), ('DISPLAY', ':1'), ('LOCPATH', '/snap/code/184/usr/lib/locale'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'Unity'), ('GIO_MODULE_DIR_VSCODE_SNAP_ORIG', ''), ('XDG_DATA_HOME', '/home/dilhan/snap/code/184/.local/share'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('VSCODE_GIT_IPC_HANDLE', '/run/user/1000/vscode-git-bb0a17e6aa.sock'), ('TERM_PROGRAM', 'vscode'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('GSETTINGS_SCHEMA_DIR', '/home/dilhan/snap/code/184/.local/share/glib-2.0/schemas'), ('AMENT_PREFIX_PATH', '/home/dilhan/ros2_ws/install/ur_to_touch_haptic_teleoperation:/home/dilhan/ros2_ws/install/optoforce_wrapper:/home/dilhan/ros2_ws/install/omni_common:/home/dilhan/ros2_ws/install/omni_msgs:/home/dilhan/ros2_ws/install/omni_description:/opt/ros/humble'), ('ORIGINAL_XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('SHELL', '/bin/bash'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('DUCK_DEVENV_PATH', '/home/dilhan/Docker_env/ducker/devenv'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('GTK_PATH_VSCODE_SNAP_ORIG', ''), ('FONTCONFIG_FILE', '/etc/fonts/fonts.conf'), ('GTK_IM_MODULE_FILE_VSCODE_SNAP_ORIG', ''), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('GJS_DEBUG_OUTPUT', 'stderr'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/dilhan/ros2_ws/build/omni_msgs'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/home/dilhan/snap/code/184/.local/share:/home/dilhan/snap/code/184:/snap/code/184/usr/share:/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/dilhan/ros2_ws/install/optoforce_wrapper/lib/python3.10/site-packages:/home/dilhan/ros2_ws/install/omni_msgs/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'en_US.UTF-8'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/home/dilhan/ros2_ws/install/ur_to_touch_haptic_teleoperation:/home/dilhan/ros2_ws/install/omni_common:/home/dilhan/ros2_ws/install/omni_msgs:/home/dilhan/ros2_ws/install/omni_description')]), 'shell': False}
+[4.215495] (-) TimerEvent: {}
+[4.222253] (omni_msgs) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[4.222494] (omni_msgs) StdoutLine: {'line': b'-- Installing: /home/dilhan/ros2_ws/install/omni_msgs/share/ament_index/resource_index/rosidl_interfaces/omni_msgs\n'}
+[4.222689] (omni_msgs) StdoutLine: {'line': b'-- Installing: /home/dilhan/ros2_ws/install/omni_msgs/include/omni_msgs/omni_msgs\n'}
+[4.222827] (omni_msgs) StdoutLine: {'line': b'-- Installing: /home/dilhan/ros2_ws/install/omni_msgs/include/omni_msgs/omni_msgs/msg\n'}
+[4.222905] (omni_msgs) StdoutLine: {'line': b'-- Installing: /home/dilhan/ros2_ws/install/omni_msgs/include/omni_msgs/omni_msgs/msg/detail\n'}
+[4.222999] (omni_msgs) StdoutLine: {'line': b'-- Installing: /home/dilhan/ros2_ws/install/omni_msgs/include/omni_msgs/omni_msgs/msg/detail/omni_state__functions.h\n'}
+[4.223163] (omni_msgs) StdoutLine: {'line': b'-- Installing: /home/dilhan/ros2_ws/install/omni_msgs/include/omni_msgs/omni_msgs/msg/detail/omni_button_event__struct.h\n'}
+[4.223296] (omni_msgs) StdoutLine: {'line': b'-- Installing: /home/dilhan/ros2_ws/install/omni_msgs/include/omni_msgs/omni_msgs/msg/detail/omni_feedback__functions.c\n'}
+[4.223449] (omni_msgs) StdoutLine: {'line': b'-- Installing: /home/dilhan/ros2_ws/install/omni_msgs/include/omni_msgs/omni_msgs/msg/detail/omni_feedback__type_support.h\n'}
+[4.223590] (omni_msgs) StdoutLine: {'line': b'-- Installing: /home/dilhan/ros2_ws/install/omni_msgs/include/omni_msgs/omni_msgs/msg/detail/omni_button_event__functions.c\n'}
+[4.223730] (omni_msgs) StdoutLine: {'line': b'-- Installing: /home/dilhan/ros2_ws/install/omni_msgs/include/omni_msgs/omni_msgs/msg/detail/omni_button_event__type_support.h\n'}
+[4.223866] (omni_msgs) StdoutLine: {'line': b'-- Installing: /home/dilhan/ros2_ws/install/omni_msgs/include/omni_msgs/omni_msgs/msg/detail/omni_state__type_support.h\n'}
+[4.224002] (omni_msgs) StdoutLine: {'line': b'-- Installing: /home/dilhan/ros2_ws/install/omni_msgs/include/omni_msgs/omni_msgs/msg/detail/omni_button_event__functions.h\n'}
+[4.224142] (omni_msgs) StdoutLine: {'line': b'-- Installing: /home/dilhan/ros2_ws/install/omni_msgs/include/omni_msgs/omni_msgs/msg/detail/omni_feedback__struct.h\n'}
+[4.224282] (omni_msgs) StdoutLine: {'line': b'-- Installing: /home/dilhan/ros2_ws/install/omni_msgs/include/omni_msgs/omni_msgs/msg/detail/omni_feedback__functions.h\n'}
+[4.224436] (omni_msgs) StdoutLine: {'line': b'-- Installing: /home/dilhan/ros2_ws/install/omni_msgs/include/omni_msgs/omni_msgs/msg/detail/omni_state__struct.h\n'}
+[4.224572] (omni_msgs) StdoutLine: {'line': b'-- Installing: /home/dilhan/ros2_ws/install/omni_msgs/include/omni_msgs/omni_msgs/msg/detail/omni_state__functions.c\n'}
+[4.224720] (omni_msgs) StdoutLine: {'line': b'-- Installing: /home/dilhan/ros2_ws/install/omni_msgs/include/omni_msgs/omni_msgs/msg/rosidl_generator_c__visibility_control.h\n'}
+[4.224853] (omni_msgs) StdoutLine: {'line': b'-- Installing: /home/dilhan/ros2_ws/install/omni_msgs/include/omni_msgs/omni_msgs/msg/omni_feedback.h\n'}
+[4.224992] (omni_msgs) StdoutLine: {'line': b'-- Installing: /home/dilhan/ros2_ws/install/omni_msgs/include/omni_msgs/omni_msgs/msg/omni_button_event.h\n'}
+[4.225128] (omni_msgs) StdoutLine: {'line': b'-- Installing: /home/dilhan/ros2_ws/install/omni_msgs/include/omni_msgs/omni_msgs/msg/omni_state.h\n'}
+[4.225389] (omni_msgs) StdoutLine: {'line': b'-- Installing: /home/dilhan/ros2_ws/install/omni_msgs/share/omni_msgs/environment/library_path.sh\n'}
+[4.225556] (omni_msgs) StdoutLine: {'line': b'-- Installing: /home/dilhan/ros2_ws/install/omni_msgs/share/omni_msgs/environment/library_path.dsv\n'}
+[4.225767] (omni_msgs) StdoutLine: {'line': b'-- Installing: /home/dilhan/ros2_ws/install/omni_msgs/lib/libomni_msgs__rosidl_generator_c.so\n'}
+[4.226159] (omni_msgs) StdoutLine: {'line': b'-- Set runtime path of "/home/dilhan/ros2_ws/install/omni_msgs/lib/libomni_msgs__rosidl_generator_c.so" to ""\n'}
+[4.226364] (omni_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/dilhan/ros2_ws/install/omni_msgs/include/omni_msgs/omni_msgs\n'}
+[4.226437] (omni_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/dilhan/ros2_ws/install/omni_msgs/include/omni_msgs/omni_msgs/msg\n'}
+[4.226497] (omni_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/dilhan/ros2_ws/install/omni_msgs/include/omni_msgs/omni_msgs/msg/detail\n'}
+[4.226589] (omni_msgs) StdoutLine: {'line': b'-- Installing: /home/dilhan/ros2_ws/install/omni_msgs/include/omni_msgs/omni_msgs/msg/detail/omni_state__rosidl_typesupport_fastrtps_c.h\n'}
+[4.226691] (omni_msgs) StdoutLine: {'line': b'-- Installing: /home/dilhan/ros2_ws/install/omni_msgs/include/omni_msgs/omni_msgs/msg/detail/omni_feedback__rosidl_typesupport_fastrtps_c.h\n'}
+[4.226770] (omni_msgs) StdoutLine: {'line': b'-- Installing: /home/dilhan/ros2_ws/install/omni_msgs/include/omni_msgs/omni_msgs/msg/detail/omni_button_event__rosidl_typesupport_fastrtps_c.h\n'}
+[4.226853] (omni_msgs) StdoutLine: {'line': b'-- Installing: /home/dilhan/ros2_ws/install/omni_msgs/include/omni_msgs/omni_msgs/msg/rosidl_typesupport_fastrtps_c__visibility_control.h\n'}
+[4.226957] (omni_msgs) StdoutLine: {'line': b'-- Installing: /home/dilhan/ros2_ws/install/omni_msgs/lib/libomni_msgs__rosidl_typesupport_fastrtps_c.so\n'}
+[4.227351] (omni_msgs) StdoutLine: {'line': b'-- Set runtime path of "/home/dilhan/ros2_ws/install/omni_msgs/lib/libomni_msgs__rosidl_typesupport_fastrtps_c.so" to ""\n'}
+[4.227533] (omni_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/dilhan/ros2_ws/install/omni_msgs/include/omni_msgs/omni_msgs\n'}
+[4.227591] (omni_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/dilhan/ros2_ws/install/omni_msgs/include/omni_msgs/omni_msgs/msg\n'}
+[4.227640] (omni_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/dilhan/ros2_ws/install/omni_msgs/include/omni_msgs/omni_msgs/msg/detail\n'}
+[4.227707] (omni_msgs) StdoutLine: {'line': b'-- Installing: /home/dilhan/ros2_ws/install/omni_msgs/include/omni_msgs/omni_msgs/msg/detail/omni_state__rosidl_typesupport_introspection_c.h\n'}
+[4.227792] (omni_msgs) StdoutLine: {'line': b'-- Installing: /home/dilhan/ros2_ws/install/omni_msgs/include/omni_msgs/omni_msgs/msg/detail/omni_state__type_support.c\n'}
+[4.227893] (omni_msgs) StdoutLine: {'line': b'-- Installing: /home/dilhan/ros2_ws/install/omni_msgs/include/omni_msgs/omni_msgs/msg/detail/omni_button_event__rosidl_typesupport_introspection_c.h\n'}
+[4.228028] (omni_msgs) StdoutLine: {'line': b'-- Installing: /home/dilhan/ros2_ws/install/omni_msgs/include/omni_msgs/omni_msgs/msg/detail/omni_feedback__rosidl_typesupport_introspection_c.h\n'}
+[4.228167] (omni_msgs) StdoutLine: {'line': b'-- Installing: /home/dilhan/ros2_ws/install/omni_msgs/include/omni_msgs/omni_msgs/msg/detail/omni_button_event__type_support.c\n'}
+[4.228315] (omni_msgs) StdoutLine: {'line': b'-- Installing: /home/dilhan/ros2_ws/install/omni_msgs/include/omni_msgs/omni_msgs/msg/detail/omni_feedback__type_support.c\n'}
+[4.228477] (omni_msgs) StdoutLine: {'line': b'-- Installing: /home/dilhan/ros2_ws/install/omni_msgs/include/omni_msgs/omni_msgs/msg/rosidl_typesupport_introspection_c__visibility_control.h\n'}
+[4.228645] (omni_msgs) StdoutLine: {'line': b'-- Installing: /home/dilhan/ros2_ws/install/omni_msgs/lib/libomni_msgs__rosidl_typesupport_introspection_c.so\n'}
+[4.230480] (omni_msgs) StdoutLine: {'line': b'-- Set runtime path of "/home/dilhan/ros2_ws/install/omni_msgs/lib/libomni_msgs__rosidl_typesupport_introspection_c.so" to ""\n'}
+[4.230570] (omni_msgs) StdoutLine: {'line': b'-- Installing: /home/dilhan/ros2_ws/install/omni_msgs/lib/libomni_msgs__rosidl_typesupport_c.so\n'}
+[4.230646] (omni_msgs) StdoutLine: {'line': b'-- Set runtime path of "/home/dilhan/ros2_ws/install/omni_msgs/lib/libomni_msgs__rosidl_typesupport_c.so" to ""\n'}
+[4.230729] (omni_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/dilhan/ros2_ws/install/omni_msgs/include/omni_msgs/omni_msgs\n'}
+[4.230845] (omni_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/dilhan/ros2_ws/install/omni_msgs/include/omni_msgs/omni_msgs/msg\n'}
+[4.231440] (omni_msgs) StdoutLine: {'line': b'-- Installing: /home/dilhan/ros2_ws/install/omni_msgs/include/omni_msgs/omni_msgs/msg/omni_feedback.hpp\n'}
+[4.231595] (omni_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/dilhan/ros2_ws/install/omni_msgs/include/omni_msgs/omni_msgs/msg/detail\n'}
+[4.231670] (omni_msgs) StdoutLine: {'line': b'-- Installing: /home/dilhan/ros2_ws/install/omni_msgs/include/omni_msgs/omni_msgs/msg/detail/omni_feedback__type_support.hpp\n'}
+[4.231734] (omni_msgs) StdoutLine: {'line': b'-- Installing: /home/dilhan/ros2_ws/install/omni_msgs/include/omni_msgs/omni_msgs/msg/detail/omni_state__struct.hpp\n'}
+[4.231799] (omni_msgs) StdoutLine: {'line': b'-- Installing: /home/dilhan/ros2_ws/install/omni_msgs/include/omni_msgs/omni_msgs/msg/detail/omni_state__type_support.hpp\n'}
+[4.231862] (omni_msgs) StdoutLine: {'line': b'-- Installing: /home/dilhan/ros2_ws/install/omni_msgs/include/omni_msgs/omni_msgs/msg/detail/omni_button_event__type_support.hpp\n'}
+[4.231921] (omni_msgs) StdoutLine: {'line': b'-- Installing: /home/dilhan/ros2_ws/install/omni_msgs/include/omni_msgs/omni_msgs/msg/detail/omni_button_event__struct.hpp\n'}
+[4.231979] (omni_msgs) StdoutLine: {'line': b'-- Installing: /home/dilhan/ros2_ws/install/omni_msgs/include/omni_msgs/omni_msgs/msg/detail/omni_button_event__builder.hpp\n'}
+[4.232037] (omni_msgs) StdoutLine: {'line': b'-- Installing: /home/dilhan/ros2_ws/install/omni_msgs/include/omni_msgs/omni_msgs/msg/detail/omni_state__traits.hpp\n'}
+[4.232103] (omni_msgs) StdoutLine: {'line': b'-- Installing: /home/dilhan/ros2_ws/install/omni_msgs/include/omni_msgs/omni_msgs/msg/detail/omni_feedback__builder.hpp\n'}
+[4.232523] (omni_msgs) StdoutLine: {'line': b'-- Installing: /home/dilhan/ros2_ws/install/omni_msgs/include/omni_msgs/omni_msgs/msg/detail/omni_state__builder.hpp\n'}
+[4.232648] (omni_msgs) StdoutLine: {'line': b'-- Installing: /home/dilhan/ros2_ws/install/omni_msgs/include/omni_msgs/omni_msgs/msg/detail/omni_feedback__struct.hpp\n'}
+[4.232713] (omni_msgs) StdoutLine: {'line': b'-- Installing: /home/dilhan/ros2_ws/install/omni_msgs/include/omni_msgs/omni_msgs/msg/detail/omni_feedback__traits.hpp\n'}
+[4.232798] (omni_msgs) StdoutLine: {'line': b'-- Installing: /home/dilhan/ros2_ws/install/omni_msgs/include/omni_msgs/omni_msgs/msg/detail/omni_button_event__traits.hpp\n'}
+[4.232868] (omni_msgs) StdoutLine: {'line': b'-- Installing: /home/dilhan/ros2_ws/install/omni_msgs/include/omni_msgs/omni_msgs/msg/omni_button_event.hpp\n'}
+[4.232931] (omni_msgs) StdoutLine: {'line': b'-- Installing: /home/dilhan/ros2_ws/install/omni_msgs/include/omni_msgs/omni_msgs/msg/omni_state.hpp\n'}
+[4.233006] (omni_msgs) StdoutLine: {'line': b'-- Installing: /home/dilhan/ros2_ws/install/omni_msgs/include/omni_msgs/omni_msgs/msg/rosidl_generator_cpp__visibility_control.hpp\n'}
+[4.233126] (omni_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/dilhan/ros2_ws/install/omni_msgs/include/omni_msgs/omni_msgs\n'}
+[4.233211] (omni_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/dilhan/ros2_ws/install/omni_msgs/include/omni_msgs/omni_msgs/msg\n'}
+[4.233297] (omni_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/dilhan/ros2_ws/install/omni_msgs/include/omni_msgs/omni_msgs/msg/detail\n'}
+[4.233454] (omni_msgs) StdoutLine: {'line': b'-- Installing: /home/dilhan/ros2_ws/install/omni_msgs/include/omni_msgs/omni_msgs/msg/detail/omni_button_event__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[4.233551] (omni_msgs) StdoutLine: {'line': b'-- Installing: /home/dilhan/ros2_ws/install/omni_msgs/include/omni_msgs/omni_msgs/msg/detail/dds_fastrtps\n'}
+[4.233614] (omni_msgs) StdoutLine: {'line': b'-- Installing: /home/dilhan/ros2_ws/install/omni_msgs/include/omni_msgs/omni_msgs/msg/detail/omni_state__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[4.233723] (omni_msgs) StdoutLine: {'line': b'-- Installing: /home/dilhan/ros2_ws/install/omni_msgs/include/omni_msgs/omni_msgs/msg/detail/omni_feedback__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[4.233970] (omni_msgs) StdoutLine: {'line': b'-- Installing: /home/dilhan/ros2_ws/install/omni_msgs/include/omni_msgs/omni_msgs/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h\n'}
+[4.234196] (omni_msgs) StdoutLine: {'line': b'-- Installing: /home/dilhan/ros2_ws/install/omni_msgs/lib/libomni_msgs__rosidl_typesupport_fastrtps_cpp.so\n'}
+[4.234827] (omni_msgs) StdoutLine: {'line': b'-- Set runtime path of "/home/dilhan/ros2_ws/install/omni_msgs/lib/libomni_msgs__rosidl_typesupport_fastrtps_cpp.so" to ""\n'}
+[4.234977] (omni_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/dilhan/ros2_ws/install/omni_msgs/include/omni_msgs/omni_msgs\n'}
+[4.235197] (omni_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/dilhan/ros2_ws/install/omni_msgs/include/omni_msgs/omni_msgs/msg\n'}
+[4.235276] (omni_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/dilhan/ros2_ws/install/omni_msgs/include/omni_msgs/omni_msgs/msg/detail\n'}
+[4.235577] (omni_msgs) StdoutLine: {'line': b'-- Installing: /home/dilhan/ros2_ws/install/omni_msgs/include/omni_msgs/omni_msgs/msg/detail/omni_button_event__type_support.cpp\n'}
+[4.235670] (omni_msgs) StdoutLine: {'line': b'-- Installing: /home/dilhan/ros2_ws/install/omni_msgs/include/omni_msgs/omni_msgs/msg/detail/omni_state__type_support.cpp\n'}
+[4.235762] (omni_msgs) StdoutLine: {'line': b'-- Installing: /home/dilhan/ros2_ws/install/omni_msgs/include/omni_msgs/omni_msgs/msg/detail/omni_feedback__rosidl_typesupport_introspection_cpp.hpp\n'}
+[4.235842] (omni_msgs) StdoutLine: {'line': b'-- Installing: /home/dilhan/ros2_ws/install/omni_msgs/include/omni_msgs/omni_msgs/msg/detail/omni_feedback__type_support.cpp\n'}
+[4.236130] (omni_msgs) StdoutLine: {'line': b'-- Installing: /home/dilhan/ros2_ws/install/omni_msgs/include/omni_msgs/omni_msgs/msg/detail/omni_state__rosidl_typesupport_introspection_cpp.hpp\n'}
+[4.236254] (omni_msgs) StdoutLine: {'line': b'-- Installing: /home/dilhan/ros2_ws/install/omni_msgs/include/omni_msgs/omni_msgs/msg/detail/omni_button_event__rosidl_typesupport_introspection_cpp.hpp\n'}
+[4.236817] (omni_msgs) StdoutLine: {'line': b'-- Installing: /home/dilhan/ros2_ws/install/omni_msgs/lib/libomni_msgs__rosidl_typesupport_introspection_cpp.so\n'}
+[4.237065] (omni_msgs) StdoutLine: {'line': b'-- Set runtime path of "/home/dilhan/ros2_ws/install/omni_msgs/lib/libomni_msgs__rosidl_typesupport_introspection_cpp.so" to ""\n'}
+[4.237181] (omni_msgs) StdoutLine: {'line': b'-- Installing: /home/dilhan/ros2_ws/install/omni_msgs/lib/libomni_msgs__rosidl_typesupport_cpp.so\n'}
+[4.237842] (omni_msgs) StdoutLine: {'line': b'-- Set runtime path of "/home/dilhan/ros2_ws/install/omni_msgs/lib/libomni_msgs__rosidl_typesupport_cpp.so" to ""\n'}
+[4.237942] (omni_msgs) StdoutLine: {'line': b'-- Installing: /home/dilhan/ros2_ws/install/omni_msgs/share/omni_msgs/environment/pythonpath.sh\n'}
+[4.238064] (omni_msgs) StdoutLine: {'line': b'-- Installing: /home/dilhan/ros2_ws/install/omni_msgs/share/omni_msgs/environment/pythonpath.dsv\n'}
+[4.238188] (omni_msgs) StdoutLine: {'line': b'-- Installing: /home/dilhan/ros2_ws/install/omni_msgs/local/lib/python3.10/dist-packages/omni_msgs-0.1.0-py3.10.egg-info\n'}
+[4.238540] (omni_msgs) StdoutLine: {'line': b'-- Installing: /home/dilhan/ros2_ws/install/omni_msgs/local/lib/python3.10/dist-packages/omni_msgs-0.1.0-py3.10.egg-info/PKG-INFO\n'}
+[4.238681] (omni_msgs) StdoutLine: {'line': b'-- Installing: /home/dilhan/ros2_ws/install/omni_msgs/local/lib/python3.10/dist-packages/omni_msgs-0.1.0-py3.10.egg-info/top_level.txt\n'}
+[4.238925] (omni_msgs) StdoutLine: {'line': b'-- Installing: /home/dilhan/ros2_ws/install/omni_msgs/local/lib/python3.10/dist-packages/omni_msgs-0.1.0-py3.10.egg-info/SOURCES.txt\n'}
+[4.239090] (omni_msgs) StdoutLine: {'line': b'-- Installing: /home/dilhan/ros2_ws/install/omni_msgs/local/lib/python3.10/dist-packages/omni_msgs-0.1.0-py3.10.egg-info/dependency_links.txt\n'}
+[4.239442] (omni_msgs) StdoutLine: {'line': b'-- Installing: /home/dilhan/ros2_ws/install/omni_msgs/local/lib/python3.10/dist-packages/omni_msgs\n'}
+[4.239545] (omni_msgs) StdoutLine: {'line': b'-- Installing: /home/dilhan/ros2_ws/install/omni_msgs/local/lib/python3.10/dist-packages/omni_msgs/omni_msgs_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so\n'}
+[4.239688] (omni_msgs) StdoutLine: {'line': b'-- Installing: /home/dilhan/ros2_ws/install/omni_msgs/local/lib/python3.10/dist-packages/omni_msgs/msg\n'}
+[4.239809] (omni_msgs) StdoutLine: {'line': b'-- Installing: /home/dilhan/ros2_ws/install/omni_msgs/local/lib/python3.10/dist-packages/omni_msgs/msg/_omni_feedback.py\n'}
+[4.239974] (omni_msgs) StdoutLine: {'line': b'-- Installing: /home/dilhan/ros2_ws/install/omni_msgs/local/lib/python3.10/dist-packages/omni_msgs/msg/_omni_state.py\n'}
+[4.240214] (omni_msgs) StdoutLine: {'line': b'-- Installing: /home/dilhan/ros2_ws/install/omni_msgs/local/lib/python3.10/dist-packages/omni_msgs/msg/__init__.py\n'}
+[4.240515] (omni_msgs) StdoutLine: {'line': b'-- Installing: /home/dilhan/ros2_ws/install/omni_msgs/local/lib/python3.10/dist-packages/omni_msgs/msg/_omni_state_s.c\n'}
+[4.240731] (omni_msgs) StdoutLine: {'line': b'-- Installing: /home/dilhan/ros2_ws/install/omni_msgs/local/lib/python3.10/dist-packages/omni_msgs/msg/_omni_feedback_s.c\n'}
+[4.240918] (omni_msgs) StdoutLine: {'line': b'-- Installing: /home/dilhan/ros2_ws/install/omni_msgs/local/lib/python3.10/dist-packages/omni_msgs/msg/_omni_button_event.py\n'}
+[4.241152] (omni_msgs) StdoutLine: {'line': b'-- Installing: /home/dilhan/ros2_ws/install/omni_msgs/local/lib/python3.10/dist-packages/omni_msgs/msg/_omni_button_event_s.c\n'}
+[4.241369] (omni_msgs) StdoutLine: {'line': b'-- Installing: /home/dilhan/ros2_ws/install/omni_msgs/local/lib/python3.10/dist-packages/omni_msgs/_omni_msgs_s.ep.rosidl_typesupport_introspection_c.c\n'}
+[4.241466] (omni_msgs) StdoutLine: {'line': b'-- Installing: /home/dilhan/ros2_ws/install/omni_msgs/local/lib/python3.10/dist-packages/omni_msgs/_omni_msgs_s.ep.rosidl_typesupport_fastrtps_c.c\n'}
+[4.241598] (omni_msgs) StdoutLine: {'line': b'-- Installing: /home/dilhan/ros2_ws/install/omni_msgs/local/lib/python3.10/dist-packages/omni_msgs/omni_msgs_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so\n'}
+[4.241847] (omni_msgs) StdoutLine: {'line': b'-- Installing: /home/dilhan/ros2_ws/install/omni_msgs/local/lib/python3.10/dist-packages/omni_msgs/__init__.py\n'}
+[4.242070] (omni_msgs) StdoutLine: {'line': b'-- Installing: /home/dilhan/ros2_ws/install/omni_msgs/local/lib/python3.10/dist-packages/omni_msgs/omni_msgs_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so\n'}
+[4.242249] (omni_msgs) StdoutLine: {'line': b'-- Installing: /home/dilhan/ros2_ws/install/omni_msgs/local/lib/python3.10/dist-packages/omni_msgs/_omni_msgs_s.ep.rosidl_typesupport_c.c\n'}
+[4.242559] (omni_msgs) StdoutLine: {'line': b'-- Installing: /home/dilhan/ros2_ws/install/omni_msgs/local/lib/python3.10/dist-packages/omni_msgs/libomni_msgs__rosidl_generator_py.so\n'}
+[4.276273] (omni_msgs) StdoutLine: {'line': b"Listing '/home/dilhan/ros2_ws/install/omni_msgs/local/lib/python3.10/dist-packages/omni_msgs'...\n"}
+[4.276436] (omni_msgs) StdoutLine: {'line': b"Compiling '/home/dilhan/ros2_ws/install/omni_msgs/local/lib/python3.10/dist-packages/omni_msgs/__init__.py'...\n"}
+[4.276493] (omni_msgs) StdoutLine: {'line': b"Listing '/home/dilhan/ros2_ws/install/omni_msgs/local/lib/python3.10/dist-packages/omni_msgs/msg'...\n"}
+[4.276539] (omni_msgs) StdoutLine: {'line': b"Compiling '/home/dilhan/ros2_ws/install/omni_msgs/local/lib/python3.10/dist-packages/omni_msgs/msg/__init__.py'...\n"}
+[4.276584] (omni_msgs) StdoutLine: {'line': b"Compiling '/home/dilhan/ros2_ws/install/omni_msgs/local/lib/python3.10/dist-packages/omni_msgs/msg/_omni_button_event.py'...\n"}
+[4.276626] (omni_msgs) StdoutLine: {'line': b"Compiling '/home/dilhan/ros2_ws/install/omni_msgs/local/lib/python3.10/dist-packages/omni_msgs/msg/_omni_feedback.py'...\n"}
+[4.276667] (omni_msgs) StdoutLine: {'line': b"Compiling '/home/dilhan/ros2_ws/install/omni_msgs/local/lib/python3.10/dist-packages/omni_msgs/msg/_omni_state.py'...\n"}
+[4.280662] (omni_msgs) StdoutLine: {'line': b'-- Installing: /home/dilhan/ros2_ws/install/omni_msgs/local/lib/python3.10/dist-packages/omni_msgs/omni_msgs_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so\n'}
+[4.280984] (omni_msgs) StdoutLine: {'line': b'-- Set runtime path of "/home/dilhan/ros2_ws/install/omni_msgs/local/lib/python3.10/dist-packages/omni_msgs/omni_msgs_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so" to ""\n'}
+[4.281175] (omni_msgs) StdoutLine: {'line': b'-- Installing: /home/dilhan/ros2_ws/install/omni_msgs/local/lib/python3.10/dist-packages/omni_msgs/omni_msgs_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so\n'}
+[4.281521] (omni_msgs) StdoutLine: {'line': b'-- Set runtime path of "/home/dilhan/ros2_ws/install/omni_msgs/local/lib/python3.10/dist-packages/omni_msgs/omni_msgs_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so" to ""\n'}
+[4.281703] (omni_msgs) StdoutLine: {'line': b'-- Installing: /home/dilhan/ros2_ws/install/omni_msgs/local/lib/python3.10/dist-packages/omni_msgs/omni_msgs_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so\n'}
+[4.282026] (omni_msgs) StdoutLine: {'line': b'-- Set runtime path of "/home/dilhan/ros2_ws/install/omni_msgs/local/lib/python3.10/dist-packages/omni_msgs/omni_msgs_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so" to ""\n'}
+[4.282135] (omni_msgs) StdoutLine: {'line': b'-- Installing: /home/dilhan/ros2_ws/install/omni_msgs/lib/libomni_msgs__rosidl_generator_py.so\n'}
+[4.282490] (omni_msgs) StdoutLine: {'line': b'-- Set runtime path of "/home/dilhan/ros2_ws/install/omni_msgs/lib/libomni_msgs__rosidl_generator_py.so" to ""\n'}
+[4.282610] (omni_msgs) StdoutLine: {'line': b'-- Installing: /home/dilhan/ros2_ws/install/omni_msgs/share/omni_msgs/msg/OmniFeedback.idl\n'}
+[4.282788] (omni_msgs) StdoutLine: {'line': b'-- Installing: /home/dilhan/ros2_ws/install/omni_msgs/share/omni_msgs/msg/OmniButtonEvent.idl\n'}
+[4.282939] (omni_msgs) StdoutLine: {'line': b'-- Installing: /home/dilhan/ros2_ws/install/omni_msgs/share/omni_msgs/msg/OmniState.idl\n'}
+[4.283095] (omni_msgs) StdoutLine: {'line': b'-- Installing: /home/dilhan/ros2_ws/install/omni_msgs/share/omni_msgs/msg/OmniFeedback.msg\n'}
+[4.283249] (omni_msgs) StdoutLine: {'line': b'-- Installing: /home/dilhan/ros2_ws/install/omni_msgs/share/omni_msgs/msg/OmniButtonEvent.msg\n'}
+[4.283417] (omni_msgs) StdoutLine: {'line': b'-- Installing: /home/dilhan/ros2_ws/install/omni_msgs/share/omni_msgs/msg/OmniState.msg\n'}
+[4.283633] (omni_msgs) StdoutLine: {'line': b'-- Installing: /home/dilhan/ros2_ws/install/omni_msgs/share/ament_index/resource_index/package_run_dependencies/omni_msgs\n'}
+[4.283852] (omni_msgs) StdoutLine: {'line': b'-- Installing: /home/dilhan/ros2_ws/install/omni_msgs/share/ament_index/resource_index/parent_prefix_path/omni_msgs\n'}
+[4.284022] (omni_msgs) StdoutLine: {'line': b'-- Installing: /home/dilhan/ros2_ws/install/omni_msgs/share/omni_msgs/environment/ament_prefix_path.sh\n'}
+[4.284174] (omni_msgs) StdoutLine: {'line': b'-- Installing: /home/dilhan/ros2_ws/install/omni_msgs/share/omni_msgs/environment/ament_prefix_path.dsv\n'}
+[4.284348] (omni_msgs) StdoutLine: {'line': b'-- Installing: /home/dilhan/ros2_ws/install/omni_msgs/share/omni_msgs/environment/path.sh\n'}
+[4.284512] (omni_msgs) StdoutLine: {'line': b'-- Installing: /home/dilhan/ros2_ws/install/omni_msgs/share/omni_msgs/environment/path.dsv\n'}
+[4.284678] (omni_msgs) StdoutLine: {'line': b'-- Installing: /home/dilhan/ros2_ws/install/omni_msgs/share/omni_msgs/local_setup.bash\n'}
+[4.284837] (omni_msgs) StdoutLine: {'line': b'-- Installing: /home/dilhan/ros2_ws/install/omni_msgs/share/omni_msgs/local_setup.sh\n'}
+[4.284997] (omni_msgs) StdoutLine: {'line': b'-- Installing: /home/dilhan/ros2_ws/install/omni_msgs/share/omni_msgs/local_setup.zsh\n'}
+[4.285151] (omni_msgs) StdoutLine: {'line': b'-- Installing: /home/dilhan/ros2_ws/install/omni_msgs/share/omni_msgs/local_setup.dsv\n'}
+[4.285310] (omni_msgs) StdoutLine: {'line': b'-- Installing: /home/dilhan/ros2_ws/install/omni_msgs/share/omni_msgs/package.dsv\n'}
+[4.285520] (omni_msgs) StdoutLine: {'line': b'-- Installing: /home/dilhan/ros2_ws/install/omni_msgs/share/ament_index/resource_index/packages/omni_msgs\n'}
+[4.285741] (omni_msgs) StdoutLine: {'line': b'-- Installing: /home/dilhan/ros2_ws/install/omni_msgs/share/omni_msgs/cmake/export_omni_msgs__rosidl_generator_cExport.cmake\n'}
+[4.285910] (omni_msgs) StdoutLine: {'line': b'-- Installing: /home/dilhan/ros2_ws/install/omni_msgs/share/omni_msgs/cmake/export_omni_msgs__rosidl_generator_cExport-noconfig.cmake\n'}
+[4.286092] (omni_msgs) StdoutLine: {'line': b'-- Installing: /home/dilhan/ros2_ws/install/omni_msgs/share/omni_msgs/cmake/export_omni_msgs__rosidl_typesupport_fastrtps_cExport.cmake\n'}
+[4.286263] (omni_msgs) StdoutLine: {'line': b'-- Installing: /home/dilhan/ros2_ws/install/omni_msgs/share/omni_msgs/cmake/export_omni_msgs__rosidl_typesupport_fastrtps_cExport-noconfig.cmake\n'}
+[4.286452] (omni_msgs) StdoutLine: {'line': b'-- Installing: /home/dilhan/ros2_ws/install/omni_msgs/share/omni_msgs/cmake/omni_msgs__rosidl_typesupport_introspection_cExport.cmake\n'}
+[4.286627] (omni_msgs) StdoutLine: {'line': b'-- Installing: /home/dilhan/ros2_ws/install/omni_msgs/share/omni_msgs/cmake/omni_msgs__rosidl_typesupport_introspection_cExport-noconfig.cmake\n'}
+[4.286803] (omni_msgs) StdoutLine: {'line': b'-- Installing: /home/dilhan/ros2_ws/install/omni_msgs/share/omni_msgs/cmake/omni_msgs__rosidl_typesupport_cExport.cmake\n'}
+[4.286971] (omni_msgs) StdoutLine: {'line': b'-- Installing: /home/dilhan/ros2_ws/install/omni_msgs/share/omni_msgs/cmake/omni_msgs__rosidl_typesupport_cExport-noconfig.cmake\n'}
+[4.287147] (omni_msgs) StdoutLine: {'line': b'-- Installing: /home/dilhan/ros2_ws/install/omni_msgs/share/omni_msgs/cmake/export_omni_msgs__rosidl_generator_cppExport.cmake\n'}
+[4.287327] (omni_msgs) StdoutLine: {'line': b'-- Installing: /home/dilhan/ros2_ws/install/omni_msgs/share/omni_msgs/cmake/export_omni_msgs__rosidl_typesupport_fastrtps_cppExport.cmake\n'}
+[4.287507] (omni_msgs) StdoutLine: {'line': b'-- Installing: /home/dilhan/ros2_ws/install/omni_msgs/share/omni_msgs/cmake/export_omni_msgs__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake\n'}
+[4.287683] (omni_msgs) StdoutLine: {'line': b'-- Installing: /home/dilhan/ros2_ws/install/omni_msgs/share/omni_msgs/cmake/omni_msgs__rosidl_typesupport_introspection_cppExport.cmake\n'}
+[4.287853] (omni_msgs) StdoutLine: {'line': b'-- Installing: /home/dilhan/ros2_ws/install/omni_msgs/share/omni_msgs/cmake/omni_msgs__rosidl_typesupport_introspection_cppExport-noconfig.cmake\n'}
+[4.288034] (omni_msgs) StdoutLine: {'line': b'-- Installing: /home/dilhan/ros2_ws/install/omni_msgs/share/omni_msgs/cmake/omni_msgs__rosidl_typesupport_cppExport.cmake\n'}
+[4.288206] (omni_msgs) StdoutLine: {'line': b'-- Installing: /home/dilhan/ros2_ws/install/omni_msgs/share/omni_msgs/cmake/omni_msgs__rosidl_typesupport_cppExport-noconfig.cmake\n'}
+[4.288392] (omni_msgs) StdoutLine: {'line': b'-- Installing: /home/dilhan/ros2_ws/install/omni_msgs/share/omni_msgs/cmake/export_omni_msgs__rosidl_generator_pyExport.cmake\n'}
+[4.288565] (omni_msgs) StdoutLine: {'line': b'-- Installing: /home/dilhan/ros2_ws/install/omni_msgs/share/omni_msgs/cmake/export_omni_msgs__rosidl_generator_pyExport-noconfig.cmake\n'}
+[4.288725] (omni_msgs) StdoutLine: {'line': b'-- Installing: /home/dilhan/ros2_ws/install/omni_msgs/share/omni_msgs/cmake/rosidl_cmake-extras.cmake\n'}
+[4.288897] (omni_msgs) StdoutLine: {'line': b'-- Installing: /home/dilhan/ros2_ws/install/omni_msgs/share/omni_msgs/cmake/ament_cmake_export_dependencies-extras.cmake\n'}
+[4.289064] (omni_msgs) StdoutLine: {'line': b'-- Installing: /home/dilhan/ros2_ws/install/omni_msgs/share/omni_msgs/cmake/ament_cmake_export_include_directories-extras.cmake\n'}
+[4.289227] (omni_msgs) StdoutLine: {'line': b'-- Installing: /home/dilhan/ros2_ws/install/omni_msgs/share/omni_msgs/cmake/ament_cmake_export_libraries-extras.cmake\n'}
+[4.289400] (omni_msgs) StdoutLine: {'line': b'-- Installing: /home/dilhan/ros2_ws/install/omni_msgs/share/omni_msgs/cmake/ament_cmake_export_targets-extras.cmake\n'}
+[4.289566] (omni_msgs) StdoutLine: {'line': b'-- Installing: /home/dilhan/ros2_ws/install/omni_msgs/share/omni_msgs/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake\n'}
+[4.289720] (omni_msgs) StdoutLine: {'line': b'-- Installing: /home/dilhan/ros2_ws/install/omni_msgs/share/omni_msgs/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake\n'}
+[4.289878] (omni_msgs) StdoutLine: {'line': b'-- Installing: /home/dilhan/ros2_ws/install/omni_msgs/share/omni_msgs/cmake/omni_msgsConfig.cmake\n'}
+[4.290017] (omni_msgs) StdoutLine: {'line': b'-- Installing: /home/dilhan/ros2_ws/install/omni_msgs/share/omni_msgs/cmake/omni_msgsConfig-version.cmake\n'}
+[4.290185] (omni_msgs) StdoutLine: {'line': b'-- Installing: /home/dilhan/ros2_ws/install/omni_msgs/share/omni_msgs/package.xml\n'}
+[4.292478] (omni_msgs) CommandEnded: {'returncode': 0}
+[4.308440] (omni_msgs) JobEnded: {'identifier': 'omni_msgs', 'rc': 0}
+[4.308955] (ur_udp) JobStarted: {'identifier': 'ur_udp'}
+[4.315960] (-) TimerEvent: {}
+[4.316259] (ur_udp) JobProgress: {'identifier': 'ur_udp', 'progress': 'cmake'}
+[4.316675] (ur_udp) Command: {'cmd': ['/usr/bin/cmake', '/home/dilhan/ros2_ws/src/ur_udp', '-DCMAKE_INSTALL_PREFIX=/home/dilhan/ros2_ws/install/ur_udp'], 'cwd': '/home/dilhan/ros2_ws/build/ur_udp', 'env': OrderedDict([('GJS_DEBUG_TOPICS', 'JS ERROR;JS LOG'), ('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'dilhan'), ('FONTCONFIG_PATH', '/etc/fonts'), ('GIO_MODULE_DIR', '/home/dilhan/snap/code/common/.cache/gio-modules'), ('XDG_SESSION_TYPE', 'x11'), ('GIT_ASKPASS', '/snap/code/184/usr/share/code/resources/app/extensions/git/dist/askpass.sh'), ('GTK_EXE_PREFIX_VSCODE_SNAP_ORIG', ''), ('ROS_PACKAGE_PATH', '/home/dilhan/ros2_ws/install/omni_msgs/share'), ('GDK_BACKEND_VSCODE_SNAP_ORIG', ''), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/dilhan/ros2_ws/install/omni_msgs/lib:/usr/local/cuda-11.8/lib64:/usr/local/cuda-11.8/lib64:/usr/local/cuda-11.8/lib64:/usr/local/cuda-11.8/lib64:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/dilhan'), ('CHROME_DESKTOP', 'code.desktop'), ('LOCPATH_VSCODE_SNAP_ORIG', ''), ('TERM_PROGRAM_VERSION', '1.97.2'), ('DESKTOP_SESSION', 'ubuntu'), ('GTK_PATH', '/snap/code/184/usr/lib/x86_64-linux-gnu/gtk-3.0'), ('OH_SDK_BASE', '/opt/OpenHaptics/Developer/3.4-0'), ('DEBUGPY_ADAPTER_ENDPOINTS', '/home/dilhan/.vscode/extensions/ms-python.debugpy-2025.0.1-linux-x64/.noConfigDebugAdapterEndpoints/endpoint-7dd354176fec8f21.txt'), ('XDG_DATA_HOME_VSCODE_SNAP_ORIG', ''), ('GTK_IM_MODULE_FILE', '/home/dilhan/snap/code/common/.cache/immodules/immodules.cache'), ('GIO_LAUNCHED_DESKTOP_FILE', '/var/lib/snapd/desktop/applications/code_code.desktop'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('GSETTINGS_SCHEMA_DIR_VSCODE_SNAP_ORIG', ''), ('VSCODE_GIT_ASKPASS_MAIN', '/snap/code/184/usr/share/code/resources/app/extensions/git/dist/askpass-main.js'), ('PS1', '\\[\x1b]633;A\x07\\]🤖\u200b  \\[\\033[1;36m\\][$(echo -n "$USER")] \\[\\033[1;34m\\]\\W\\[\\033[0;35m\\] \\[\\033[1;36m\\]# \\[\\033[0m\\]\\[\x1b]633;B\x07\\]'), ('VSCODE_GIT_ASKPASS_NODE', '/snap/code/184/usr/share/code/code'), ('MANAGERPID', '1849'), ('PYDEVD_DISABLE_FILE_VALIDATION', '1'), ('SYSTEMD_EXEC_PID', '2080'), ('BUNDLED_DEBUGPY_PATH', '/home/dilhan/.vscode/extensions/ms-python.debugpy-2025.0.1-linux-x64/bundled/libs/debugpy'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('GIO_LAUNCHED_DESKTOP_FILE_PID', '4257'), ('FANUC_DEVENV_PATH', '/home/dilhan/Docker_env/devenv'), ('COLCON_PREFIX_PATH', '/home/dilhan/ros2_ws/install'), ('ROS_DISTRO', 'humble'), ('GTK_IM_MODULE', 'ibus'), ('LOGNAME', 'dilhan'), ('JOURNAL_STREAM', '8:14056'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_CONFIG_DIRS_VSCODE_SNAP_ORIG', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('UR_DEVENV_PATH', '/home/dilhan/Docker_env/Docker_ROS2/Projet_Indus'), ('XDG_SESSION_CLASS', 'user'), ('XDG_DATA_DIRS_VSCODE_SNAP_ORIG', '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PKG_CONFIG_PATH', '/home/dilhan/ros2_ws/install/omni_msgs/lib/x86_64-linux-gnu/pkgconfig:/home/dilhan/ros2_ws/install/omni_msgs/lib/pkgconfig'), ('USERNAME', 'dilhan'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('WINDOWPATH', '2'), ('PATH', '/usr/local/cuda-11.8/bin:/usr/local/cuda-11.8/bin:/usr/local/cuda-12.1/bin:/home/dilhan/.local/bin:/usr/local/cuda-11.8/bin:/usr/local/cuda-11.8/bin:/usr/local/cuda-12.1/bin:/opt/ros/humble/bin:/home/dilhan/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/home/dilhan/.local/bin:/home/dilhan/.local/bin:/home/dilhan/.local/bin:/home/dilhan/.vscode/extensions/ms-python.debugpy-2025.0.1-linux-x64/bundled/scripts/noConfigScripts:/home/dilhan/.local/bin'), ('SESSION_MANAGER', 'local/dilhan:@/tmp/.ICE-unix/2051,unix/dilhan:/tmp/.ICE-unix/2051'), ('GTK_EXE_PREFIX', '/snap/code/184/usr'), ('INVOCATION_ID', '3552868b64094528b029e2c85a424727'), ('XDG_MENU_PREFIX', 'gnome-'), ('BAMF_DESKTOP_FILE_HINT', '/var/lib/snapd/desktop/applications/code_code.desktop'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('GDK_BACKEND', 'x11'), ('DISPLAY', ':1'), ('LOCPATH', '/snap/code/184/usr/lib/locale'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'Unity'), ('GIO_MODULE_DIR_VSCODE_SNAP_ORIG', ''), ('XDG_DATA_HOME', '/home/dilhan/snap/code/184/.local/share'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('VSCODE_GIT_IPC_HANDLE', '/run/user/1000/vscode-git-bb0a17e6aa.sock'), ('TERM_PROGRAM', 'vscode'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('GSETTINGS_SCHEMA_DIR', '/home/dilhan/snap/code/184/.local/share/glib-2.0/schemas'), ('AMENT_PREFIX_PATH', '/home/dilhan/ros2_ws/install/ur_to_touch_haptic_teleoperation:/home/dilhan/ros2_ws/install/optoforce_wrapper:/home/dilhan/ros2_ws/install/omni_common:/home/dilhan/ros2_ws/install/omni_msgs:/home/dilhan/ros2_ws/install/omni_description:/opt/ros/humble'), ('ORIGINAL_XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('SHELL', '/bin/bash'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('DUCK_DEVENV_PATH', '/home/dilhan/Docker_env/ducker/devenv'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('GTK_PATH_VSCODE_SNAP_ORIG', ''), ('FONTCONFIG_FILE', '/etc/fonts/fonts.conf'), ('GTK_IM_MODULE_FILE_VSCODE_SNAP_ORIG', ''), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('GJS_DEBUG_OUTPUT', 'stderr'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/dilhan/ros2_ws/build/ur_udp'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/home/dilhan/snap/code/184/.local/share:/home/dilhan/snap/code/184:/snap/code/184/usr/share:/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/dilhan/ros2_ws/install/omni_msgs/local/lib/python3.10/dist-packages:/home/dilhan/ros2_ws/install/optoforce_wrapper/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'en_US.UTF-8'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/home/dilhan/ros2_ws/install/optoforce_wrapper:/opt/ros/humble:/home/dilhan/ros2_ws/install/omni_msgs:/home/dilhan/ros2_ws/install/ur_to_touch_haptic_teleoperation:/home/dilhan/ros2_ws/install/omni_common:/home/dilhan/ros2_ws/install/omni_description')]), 'shell': False}
+[4.373571] (ur_udp) StdoutLine: {'line': b'-- The C compiler identification is GNU 11.4.0\n'}
+[4.416063] (-) TimerEvent: {}
+[4.423361] (ur_udp) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 11.4.0\n'}
+[4.430570] (ur_udp) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[4.496087] (ur_udp) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[4.501618] (ur_udp) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc - skipped\n'}
+[4.501814] (ur_udp) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[4.502104] (ur_udp) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[4.504474] (ur_udp) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[4.516136] (-) TimerEvent: {}
+[4.579841] (ur_udp) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[4.585933] (ur_udp) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ - skipped\n'}
+[4.586146] (ur_udp) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[4.586504] (ur_udp) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[4.588949] (ur_udp) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.11 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[4.616234] (-) TimerEvent: {}
+[4.716489] (-) TimerEvent: {}
+[4.720183] (ur_udp) StdoutLine: {'line': b'-- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter \n'}
+[4.806015] (ur_udp) StdoutLine: {'line': b'-- Found rclcpp: 16.0.11 (/opt/ros/humble/share/rclcpp/cmake)\n'}
+[4.816558] (-) TimerEvent: {}
+[4.851696] (ur_udp) StdoutLine: {'line': b'-- Found rosidl_generator_c: 3.1.6 (/opt/ros/humble/share/rosidl_generator_c/cmake)\n'}
+[4.856305] (ur_udp) StdoutLine: {'line': b'-- Found rosidl_adapter: 3.1.6 (/opt/ros/humble/share/rosidl_adapter/cmake)\n'}
+[4.863654] (ur_udp) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 3.1.6 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)\n'}
+[4.874155] (ur_udp) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[4.887941] (ur_udp) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[4.916640] (-) TimerEvent: {}
+[4.925095] (ur_udp) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)\n'}
+[4.927538] (ur_udp) StdoutLine: {'line': b'-- Found rmw_fastrtps_cpp: 6.2.7 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)\n'}
+[5.016744] (-) TimerEvent: {}
+[5.020411] (ur_udp) StdoutLine: {'line': b'-- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  \n'}
+[5.056339] (ur_udp) StdoutLine: {'line': b'-- Found FastRTPS: /opt/ros/humble/include  \n'}
+[5.103460] (ur_udp) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[5.112170] (ur_udp) StdoutLine: {'line': b'-- Looking for pthread.h\n'}
+[5.116822] (-) TimerEvent: {}
+[5.184105] (ur_udp) StdoutLine: {'line': b'-- Looking for pthread.h - found\n'}
+[5.184537] (ur_udp) StdoutLine: {'line': b'-- Performing Test CMAKE_HAVE_LIBC_PTHREAD\n'}
+[5.216941] (-) TimerEvent: {}
+[5.259124] (ur_udp) StdoutLine: {'line': b'-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success\n'}
+[5.260238] (ur_udp) StdoutLine: {'line': b'-- Found Threads: TRUE  \n'}
+[5.304157] (ur_udp) StdoutLine: {'line': b'-- Found geometry_msgs: 4.2.4 (/opt/ros/humble/share/geometry_msgs/cmake)\n'}
+[5.315866] (ur_udp) StdoutLine: {'line': b'-- Found omni_msgs: 0.1.0 (/home/dilhan/ros2_ws/install/omni_msgs/share/omni_msgs/cmake)\n'}
+[5.317006] (-) TimerEvent: {}
+[5.355255] (ur_udp) StdoutLine: {'line': b'-- Found ament_lint_auto: 0.12.11 (/opt/ros/humble/share/ament_lint_auto/cmake)\n'}
+[5.417115] (-) TimerEvent: {}
+[5.436925] (ur_udp) StdoutLine: {'line': b"-- Added test 'cppcheck' to perform static code analysis on C / C++ code\n"}
+[5.437170] (ur_udp) StdoutLine: {'line': b'-- Configured cppcheck include dirs: /home/dilhan/ros2_ws/src/ur_udp/include/ur_udp\n'}
+[5.437272] (ur_udp) StdoutLine: {'line': b'-- Configured cppcheck exclude dirs and/or files: \n'}
+[5.438201] (ur_udp) StdoutLine: {'line': b"-- Added test 'flake8' to check Python code syntax and style conventions\n"}
+[5.439855] (ur_udp) StdoutLine: {'line': b"-- Added test 'lint_cmake' to check CMake code style\n"}
+[5.440957] (ur_udp) StdoutLine: {'line': b"-- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257\n"}
+[5.445482] (ur_udp) StdoutLine: {'line': b"-- Added test 'uncrustify' to check C / C++ code style\n"}
+[5.445751] (ur_udp) StdoutLine: {'line': b'-- Configured uncrustify additional arguments: \n'}
+[5.446448] (ur_udp) StdoutLine: {'line': b"-- Added test 'xmllint' to check XML markup files\n"}
+[5.448152] (ur_udp) StdoutLine: {'line': b'-- Configuring done\n'}
+[5.461728] (ur_udp) StdoutLine: {'line': b'-- Generating done\n'}
+[5.466799] (ur_udp) StdoutLine: {'line': b'-- Build files have been written to: /home/dilhan/ros2_ws/build/ur_udp\n'}
+[5.477677] (ur_udp) CommandEnded: {'returncode': 0}
+[5.478422] (ur_udp) JobProgress: {'identifier': 'ur_udp', 'progress': 'build'}
+[5.478797] (ur_udp) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/dilhan/ros2_ws/build/ur_udp', '--', '-j12', '-l12'], 'cwd': '/home/dilhan/ros2_ws/build/ur_udp', 'env': OrderedDict([('GJS_DEBUG_TOPICS', 'JS ERROR;JS LOG'), ('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'dilhan'), ('FONTCONFIG_PATH', '/etc/fonts'), ('GIO_MODULE_DIR', '/home/dilhan/snap/code/common/.cache/gio-modules'), ('XDG_SESSION_TYPE', 'x11'), ('GIT_ASKPASS', '/snap/code/184/usr/share/code/resources/app/extensions/git/dist/askpass.sh'), ('GTK_EXE_PREFIX_VSCODE_SNAP_ORIG', ''), ('ROS_PACKAGE_PATH', '/home/dilhan/ros2_ws/install/omni_msgs/share'), ('GDK_BACKEND_VSCODE_SNAP_ORIG', ''), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/dilhan/ros2_ws/install/omni_msgs/lib:/usr/local/cuda-11.8/lib64:/usr/local/cuda-11.8/lib64:/usr/local/cuda-11.8/lib64:/usr/local/cuda-11.8/lib64:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/dilhan'), ('CHROME_DESKTOP', 'code.desktop'), ('LOCPATH_VSCODE_SNAP_ORIG', ''), ('TERM_PROGRAM_VERSION', '1.97.2'), ('DESKTOP_SESSION', 'ubuntu'), ('GTK_PATH', '/snap/code/184/usr/lib/x86_64-linux-gnu/gtk-3.0'), ('OH_SDK_BASE', '/opt/OpenHaptics/Developer/3.4-0'), ('DEBUGPY_ADAPTER_ENDPOINTS', '/home/dilhan/.vscode/extensions/ms-python.debugpy-2025.0.1-linux-x64/.noConfigDebugAdapterEndpoints/endpoint-7dd354176fec8f21.txt'), ('XDG_DATA_HOME_VSCODE_SNAP_ORIG', ''), ('GTK_IM_MODULE_FILE', '/home/dilhan/snap/code/common/.cache/immodules/immodules.cache'), ('GIO_LAUNCHED_DESKTOP_FILE', '/var/lib/snapd/desktop/applications/code_code.desktop'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('GSETTINGS_SCHEMA_DIR_VSCODE_SNAP_ORIG', ''), ('VSCODE_GIT_ASKPASS_MAIN', '/snap/code/184/usr/share/code/resources/app/extensions/git/dist/askpass-main.js'), ('PS1', '\\[\x1b]633;A\x07\\]🤖\u200b  \\[\\033[1;36m\\][$(echo -n "$USER")] \\[\\033[1;34m\\]\\W\\[\\033[0;35m\\] \\[\\033[1;36m\\]# \\[\\033[0m\\]\\[\x1b]633;B\x07\\]'), ('VSCODE_GIT_ASKPASS_NODE', '/snap/code/184/usr/share/code/code'), ('MANAGERPID', '1849'), ('PYDEVD_DISABLE_FILE_VALIDATION', '1'), ('SYSTEMD_EXEC_PID', '2080'), ('BUNDLED_DEBUGPY_PATH', '/home/dilhan/.vscode/extensions/ms-python.debugpy-2025.0.1-linux-x64/bundled/libs/debugpy'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('GIO_LAUNCHED_DESKTOP_FILE_PID', '4257'), ('FANUC_DEVENV_PATH', '/home/dilhan/Docker_env/devenv'), ('COLCON_PREFIX_PATH', '/home/dilhan/ros2_ws/install'), ('ROS_DISTRO', 'humble'), ('GTK_IM_MODULE', 'ibus'), ('LOGNAME', 'dilhan'), ('JOURNAL_STREAM', '8:14056'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_CONFIG_DIRS_VSCODE_SNAP_ORIG', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('UR_DEVENV_PATH', '/home/dilhan/Docker_env/Docker_ROS2/Projet_Indus'), ('XDG_SESSION_CLASS', 'user'), ('XDG_DATA_DIRS_VSCODE_SNAP_ORIG', '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PKG_CONFIG_PATH', '/home/dilhan/ros2_ws/install/omni_msgs/lib/x86_64-linux-gnu/pkgconfig:/home/dilhan/ros2_ws/install/omni_msgs/lib/pkgconfig'), ('USERNAME', 'dilhan'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('WINDOWPATH', '2'), ('PATH', '/usr/local/cuda-11.8/bin:/usr/local/cuda-11.8/bin:/usr/local/cuda-12.1/bin:/home/dilhan/.local/bin:/usr/local/cuda-11.8/bin:/usr/local/cuda-11.8/bin:/usr/local/cuda-12.1/bin:/opt/ros/humble/bin:/home/dilhan/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/home/dilhan/.local/bin:/home/dilhan/.local/bin:/home/dilhan/.local/bin:/home/dilhan/.vscode/extensions/ms-python.debugpy-2025.0.1-linux-x64/bundled/scripts/noConfigScripts:/home/dilhan/.local/bin'), ('SESSION_MANAGER', 'local/dilhan:@/tmp/.ICE-unix/2051,unix/dilhan:/tmp/.ICE-unix/2051'), ('GTK_EXE_PREFIX', '/snap/code/184/usr'), ('INVOCATION_ID', '3552868b64094528b029e2c85a424727'), ('XDG_MENU_PREFIX', 'gnome-'), ('BAMF_DESKTOP_FILE_HINT', '/var/lib/snapd/desktop/applications/code_code.desktop'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('GDK_BACKEND', 'x11'), ('DISPLAY', ':1'), ('LOCPATH', '/snap/code/184/usr/lib/locale'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'Unity'), ('GIO_MODULE_DIR_VSCODE_SNAP_ORIG', ''), ('XDG_DATA_HOME', '/home/dilhan/snap/code/184/.local/share'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('VSCODE_GIT_IPC_HANDLE', '/run/user/1000/vscode-git-bb0a17e6aa.sock'), ('TERM_PROGRAM', 'vscode'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('GSETTINGS_SCHEMA_DIR', '/home/dilhan/snap/code/184/.local/share/glib-2.0/schemas'), ('AMENT_PREFIX_PATH', '/home/dilhan/ros2_ws/install/ur_to_touch_haptic_teleoperation:/home/dilhan/ros2_ws/install/optoforce_wrapper:/home/dilhan/ros2_ws/install/omni_common:/home/dilhan/ros2_ws/install/omni_msgs:/home/dilhan/ros2_ws/install/omni_description:/opt/ros/humble'), ('ORIGINAL_XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('SHELL', '/bin/bash'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('DUCK_DEVENV_PATH', '/home/dilhan/Docker_env/ducker/devenv'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('GTK_PATH_VSCODE_SNAP_ORIG', ''), ('FONTCONFIG_FILE', '/etc/fonts/fonts.conf'), ('GTK_IM_MODULE_FILE_VSCODE_SNAP_ORIG', ''), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('GJS_DEBUG_OUTPUT', 'stderr'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/dilhan/ros2_ws/build/ur_udp'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/home/dilhan/snap/code/184/.local/share:/home/dilhan/snap/code/184:/snap/code/184/usr/share:/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/dilhan/ros2_ws/install/omni_msgs/local/lib/python3.10/dist-packages:/home/dilhan/ros2_ws/install/optoforce_wrapper/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'en_US.UTF-8'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/home/dilhan/ros2_ws/install/optoforce_wrapper:/opt/ros/humble:/home/dilhan/ros2_ws/install/omni_msgs:/home/dilhan/ros2_ws/install/ur_to_touch_haptic_teleoperation:/home/dilhan/ros2_ws/install/omni_common:/home/dilhan/ros2_ws/install/omni_description')]), 'shell': False}
+[5.517206] (-) TimerEvent: {}
+[5.533009] (ur_udp) StdoutLine: {'line': b'[ 50%] \x1b[32mBuilding CXX object CMakeFiles/phantom_udp.dir/src/phantom_udp.cpp.o\x1b[0m\n'}
+[5.533193] (ur_udp) StdoutLine: {'line': b'[ 50%] \x1b[32mBuilding CXX object CMakeFiles/ur_udp.dir/src/ur_udp.cpp.o\x1b[0m\n'}
+[5.617317] (-) TimerEvent: {}
+[5.717593] (-) TimerEvent: {}
+[5.817876] (-) TimerEvent: {}
+[5.918134] (-) TimerEvent: {}
+[6.018355] (-) TimerEvent: {}
+[6.118611] (-) TimerEvent: {}
+[6.218882] (-) TimerEvent: {}
+[6.319164] (-) TimerEvent: {}
+[6.419442] (-) TimerEvent: {}
+[6.519703] (-) TimerEvent: {}
+[6.619975] (-) TimerEvent: {}
+[6.720242] (-) TimerEvent: {}
+[6.820516] (-) TimerEvent: {}
+[6.920806] (-) TimerEvent: {}
+[7.021134] (-) TimerEvent: {}
+[7.121410] (-) TimerEvent: {}
+[7.221678] (-) TimerEvent: {}
+[7.321937] (-) TimerEvent: {}
+[7.422198] (-) TimerEvent: {}
+[7.522454] (-) TimerEvent: {}
+[7.622700] (-) TimerEvent: {}
+[7.722953] (-) TimerEvent: {}
+[7.823218] (-) TimerEvent: {}
+[7.923495] (-) TimerEvent: {}
+[8.023752] (-) TimerEvent: {}
+[8.124010] (-) TimerEvent: {}
+[8.148307] (ur_udp) StderrLine: {'line': b'\x1b[01m\x1b[K/home/dilhan/ros2_ws/src/ur_udp/src/phantom_udp.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvoid PhantomNode::sendMsgToUR_callback(omni_msgs::msg::OmniState_<std::allocator<void> >::SharedPtr)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[8.148715] (ur_udp) StderrLine: {'line': b'\x1b[01m\x1b[K/home/dilhan/ros2_ws/src/ur_udp/src/phantom_udp.cpp:160:38:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused variable \xe2\x80\x98\x1b[01m\x1b[Kvel\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable\x07-Wunused-variable\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[8.148805] (ur_udp) StderrLine: {'line': b'  160 |             MessagePhantom::Velocity \x1b[01;35m\x1b[Kvel\x1b[m\x1b[K{0, 0, 0};\n'}
+[8.148882] (ur_udp) StderrLine: {'line': b'      |                                      \x1b[01;35m\x1b[K^~~\x1b[m\x1b[K\n'}
+[8.148946] (ur_udp) StderrLine: {'line': b'\x1b[01m\x1b[K/home/dilhan/ros2_ws/src/ur_udp/src/phantom_udp.cpp:161:38:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused variable \xe2\x80\x98\x1b[01m\x1b[Kpos\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable\x07-Wunused-variable\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[8.149013] (ur_udp) StderrLine: {'line': b'  161 |             MessagePhantom::Position \x1b[01;35m\x1b[Kpos\x1b[m\x1b[K{0, 0, 0, 0};\n'}
+[8.149079] (ur_udp) StderrLine: {'line': b'      |                                      \x1b[01;35m\x1b[K^~~\x1b[m\x1b[K\n'}
+[8.149142] (ur_udp) StderrLine: {'line': b'\x1b[01m\x1b[K/home/dilhan/ros2_ws/src/ur_udp/src/phantom_udp.cpp:165:38:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused variable \xe2\x80\x98\x1b[01m\x1b[Kvel\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable\x07-Wunused-variable\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[8.149219] (ur_udp) StderrLine: {'line': b'  165 |             MessagePhantom::Velocity \x1b[01;35m\x1b[Kvel\x1b[m\x1b[K{msg_omniState->velocity.x, msg_omniState->velocity.y, msg_omniState->velocity.z};\n'}
+[8.149286] (ur_udp) StderrLine: {'line': b'      |                                      \x1b[01;35m\x1b[K^~~\x1b[m\x1b[K\n'}
+[8.149355] (ur_udp) StderrLine: {'line': b'\x1b[01m\x1b[K/home/dilhan/ros2_ws/src/ur_udp/src/phantom_udp.cpp:166:38:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused variable \xe2\x80\x98\x1b[01m\x1b[Kpos\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable\x07-Wunused-variable\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[8.149414] (ur_udp) StderrLine: {'line': b'  166 |             MessagePhantom::Position \x1b[01;35m\x1b[Kpos\x1b[m\x1b[K{msg_omniState->pose.orientation.x, msg_omniState->pose.orientation.y, msg_omniState->pose.orientation.z, msg_omniState->pose.orientation.w};\n'}
+[8.149468] (ur_udp) StderrLine: {'line': b'      |                                      \x1b[01;35m\x1b[K^~~\x1b[m\x1b[K\n'}
+[8.155183] (ur_udp) StderrLine: {'line': b'\x1b[01m\x1b[K/home/dilhan/ros2_ws/src/ur_udp/src/phantom_udp.cpp:169:28:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kvel\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[8.155333] (ur_udp) StderrLine: {'line': b'  169 |         MessagePhantom msg{\x1b[01;31m\x1b[Kvel\x1b[m\x1b[K, pos, time};\n'}
+[8.155409] (ur_udp) StderrLine: {'line': b'      |                            \x1b[01;31m\x1b[K^~~\x1b[m\x1b[K\n'}
+[8.160695] (ur_udp) StderrLine: {'line': b'\x1b[01m\x1b[K/home/dilhan/ros2_ws/src/ur_udp/src/phantom_udp.cpp:169:33:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kpos\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope; did you mean \xe2\x80\x98\x1b[01m\x1b[Kpow\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[8.160820] (ur_udp) StderrLine: {'line': b'  169 |         MessagePhantom msg{vel, \x1b[01;31m\x1b[Kpos\x1b[m\x1b[K, time};\n'}
+[8.160886] (ur_udp) StderrLine: {'line': b'      |                                 \x1b[01;31m\x1b[K^~~\x1b[m\x1b[K\n'}
+[8.160944] (ur_udp) StderrLine: {'line': b'      |                                 \x1b[32m\x1b[Kpow\x1b[m\x1b[K\n'}
+[8.224112] (-) TimerEvent: {}
+[8.324370] (-) TimerEvent: {}
+[8.424625] (-) TimerEvent: {}
+[8.524881] (-) TimerEvent: {}
+[8.625138] (-) TimerEvent: {}
+[8.725391] (-) TimerEvent: {}
+[8.825649] (-) TimerEvent: {}
+[8.925911] (-) TimerEvent: {}
+[9.026163] (-) TimerEvent: {}
+[9.126435] (-) TimerEvent: {}
+[9.226705] (-) TimerEvent: {}
+[9.326954] (-) TimerEvent: {}
+[9.427208] (-) TimerEvent: {}
+[9.527529] (-) TimerEvent: {}
+[9.627788] (-) TimerEvent: {}
+[9.728038] (-) TimerEvent: {}
+[9.828311] (-) TimerEvent: {}
+[9.928564] (-) TimerEvent: {}
+[10.028812] (-) TimerEvent: {}
+[10.129100] (-) TimerEvent: {}
+[10.192139] (ur_udp) StderrLine: {'line': b'\x1b[01m\x1b[K/home/dilhan/ros2_ws/src/ur_udp/src/ur_udp.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvoid* URNode::serveur_udp()\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[10.192321] (ur_udp) StderrLine: {'line': b'\x1b[01m\x1b[K/home/dilhan/ros2_ws/src/ur_udp/src/ur_udp.cpp:139:9:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kcontrol reaches end of non-void function [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreturn-type\x07-Wreturn-type\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[10.192396] (ur_udp) StderrLine: {'line': b'  139 |         \x1b[01;35m\x1b[K}\x1b[m\x1b[K\n'}
+[10.192451] (ur_udp) StderrLine: {'line': b'      |         \x1b[01;35m\x1b[K^\x1b[m\x1b[K\n'}
+[10.229201] (-) TimerEvent: {}
+[10.242544] (ur_udp) StderrLine: {'line': b'\x1b[01m\x1b[K/home/dilhan/ros2_ws/src/ur_udp/src/phantom_udp.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvoid* PhantomNode::serveur_udp()\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[10.242703] (ur_udp) StderrLine: {'line': b'\x1b[01m\x1b[K/home/dilhan/ros2_ws/src/ur_udp/src/phantom_udp.cpp:135:5:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kcontrol reaches end of non-void function [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreturn-type\x07-Wreturn-type\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[10.242767] (ur_udp) StderrLine: {'line': b'  135 |     \x1b[01;35m\x1b[K}\x1b[m\x1b[K\n'}
+[10.242818] (ur_udp) StderrLine: {'line': b'      |     \x1b[01;35m\x1b[K^\x1b[m\x1b[K\n'}
+[10.329319] (-) TimerEvent: {}
+[10.429588] (-) TimerEvent: {}
+[10.465778] (ur_udp) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/phantom_udp.dir/build.make:76: CMakeFiles/phantom_udp.dir/src/phantom_udp.cpp.o] Error 1\n'}
+[10.465992] (ur_udp) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:165: CMakeFiles/phantom_udp.dir/all] Error 2\n'}
+[10.466059] (ur_udp) StderrLine: {'line': b'gmake[1]: *** Waiting for unfinished jobs....\n'}
+[10.529686] (-) TimerEvent: {}
+[10.629965] (-) TimerEvent: {}
+[10.730227] (-) TimerEvent: {}
+[10.830518] (-) TimerEvent: {}
+[10.930780] (-) TimerEvent: {}
+[11.031040] (-) TimerEvent: {}
+[11.131307] (-) TimerEvent: {}
+[11.231575] (-) TimerEvent: {}
+[11.331832] (-) TimerEvent: {}
+[11.432095] (-) TimerEvent: {}
+[11.532394] (-) TimerEvent: {}
+[11.632668] (-) TimerEvent: {}
+[11.732929] (-) TimerEvent: {}
+[11.833196] (-) TimerEvent: {}
+[11.933470] (-) TimerEvent: {}
+[12.033721] (-) TimerEvent: {}
+[12.133988] (-) TimerEvent: {}
+[12.234244] (-) TimerEvent: {}
+[12.334518] (-) TimerEvent: {}
+[12.434773] (-) TimerEvent: {}
+[12.535029] (-) TimerEvent: {}
+[12.635289] (-) TimerEvent: {}
+[12.735574] (-) TimerEvent: {}
+[12.835816] (-) TimerEvent: {}
+[12.936055] (-) TimerEvent: {}
+[13.036313] (-) TimerEvent: {}
+[13.136575] (-) TimerEvent: {}
+[13.236836] (-) TimerEvent: {}
+[13.337128] (-) TimerEvent: {}
+[13.389762] (ur_udp) StdoutLine: {'line': b'[ 75%] \x1b[32m\x1b[1mLinking CXX executable ur_udp\x1b[0m\n'}
+[13.437224] (-) TimerEvent: {}
+[13.537496] (-) TimerEvent: {}
+[13.637767] (-) TimerEvent: {}
+[13.735669] (ur_udp) StdoutLine: {'line': b'[ 75%] Built target ur_udp\n'}
+[13.736798] (ur_udp) StderrLine: {'line': b'gmake: *** [Makefile:146: all] Error 2\n'}
+[13.737821] (-) TimerEvent: {}
+[13.738798] (ur_udp) CommandEnded: {'returncode': 2}
+[13.742472] (ur_udp) JobEnded: {'identifier': 'ur_udp', 'rc': 2}
+[13.752947] (-) EventReactorShutdown: {}

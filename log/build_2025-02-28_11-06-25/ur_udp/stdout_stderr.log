@@ -1,0 +1,81 @@
+-- The C compiler identification is GNU 11.4.0
+-- The CXX compiler identification is GNU 11.4.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found ament_cmake: 1.3.11 (/opt/ros/humble/share/ament_cmake/cmake)
+-- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+-- Found rclcpp: 16.0.11 (/opt/ros/humble/share/rclcpp/cmake)
+-- Found rosidl_generator_c: 3.1.6 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+-- Found rosidl_adapter: 3.1.6 (/opt/ros/humble/share/rosidl_adapter/cmake)
+-- Found rosidl_generator_cpp: 3.1.6 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+-- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+-- Found rmw_fastrtps_cpp: 6.2.7 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+-- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  
+-- Found FastRTPS: /opt/ros/humble/include  
+-- Using RMW implementation 'rmw_fastrtps_cpp' as default
+-- Looking for pthread.h
+-- Looking for pthread.h - found
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE  
+-- Found geometry_msgs: 4.2.4 (/opt/ros/humble/share/geometry_msgs/cmake)
+-- Found omni_msgs: 0.1.0 (/home/dilhan/ros2_ws/install/omni_msgs/share/omni_msgs/cmake)
+-- Found ament_lint_auto: 0.12.11 (/opt/ros/humble/share/ament_lint_auto/cmake)
+-- Added test 'cppcheck' to perform static code analysis on C / C++ code
+-- Configured cppcheck include dirs: /home/dilhan/ros2_ws/src/ur_udp/include/ur_udp
+-- Configured cppcheck exclude dirs and/or files: 
+-- Added test 'flake8' to check Python code syntax and style conventions
+-- Added test 'lint_cmake' to check CMake code style
+-- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257
+-- Added test 'uncrustify' to check C / C++ code style
+-- Configured uncrustify additional arguments: 
+-- Added test 'xmllint' to check XML markup files
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/dilhan/ros2_ws/build/ur_udp
+[ 50%] [32mBuilding CXX object CMakeFiles/phantom_udp.dir/src/phantom_udp.cpp.o[0m
+[ 50%] [32mBuilding CXX object CMakeFiles/ur_udp.dir/src/ur_udp.cpp.o[0m
+[01m[K/home/dilhan/ros2_ws/src/ur_udp/src/phantom_udp.cpp:[m[K In member function ‘[01m[Kvoid PhantomNode::sendMsgToUR_callback(omni_msgs::msg::OmniState_<std::allocator<void> >::SharedPtr)[m[K’:
+[01m[K/home/dilhan/ros2_ws/src/ur_udp/src/phantom_udp.cpp:160:38:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kvel[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+  160 |             MessagePhantom::Velocity [01;35m[Kvel[m[K{0, 0, 0};
+      |                                      [01;35m[K^~~[m[K
+[01m[K/home/dilhan/ros2_ws/src/ur_udp/src/phantom_udp.cpp:161:38:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kpos[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+  161 |             MessagePhantom::Position [01;35m[Kpos[m[K{0, 0, 0, 0};
+      |                                      [01;35m[K^~~[m[K
+[01m[K/home/dilhan/ros2_ws/src/ur_udp/src/phantom_udp.cpp:165:38:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kvel[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+  165 |             MessagePhantom::Velocity [01;35m[Kvel[m[K{msg_omniState->velocity.x, msg_omniState->velocity.y, msg_omniState->velocity.z};
+      |                                      [01;35m[K^~~[m[K
+[01m[K/home/dilhan/ros2_ws/src/ur_udp/src/phantom_udp.cpp:166:38:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kpos[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+  166 |             MessagePhantom::Position [01;35m[Kpos[m[K{msg_omniState->pose.orientation.x, msg_omniState->pose.orientation.y, msg_omniState->pose.orientation.z, msg_omniState->pose.orientation.w};
+      |                                      [01;35m[K^~~[m[K
+[01m[K/home/dilhan/ros2_ws/src/ur_udp/src/phantom_udp.cpp:169:28:[m[K [01;31m[Kerror: [m[K‘[01m[Kvel[m[K’ was not declared in this scope
+  169 |         MessagePhantom msg{[01;31m[Kvel[m[K, pos, time};
+      |                            [01;31m[K^~~[m[K
+[01m[K/home/dilhan/ros2_ws/src/ur_udp/src/phantom_udp.cpp:169:33:[m[K [01;31m[Kerror: [m[K‘[01m[Kpos[m[K’ was not declared in this scope; did you mean ‘[01m[Kpow[m[K’?
+  169 |         MessagePhantom msg{vel, [01;31m[Kpos[m[K, time};
+      |                                 [01;31m[K^~~[m[K
+      |                                 [32m[Kpow[m[K
+[01m[K/home/dilhan/ros2_ws/src/ur_udp/src/ur_udp.cpp:[m[K In member function ‘[01m[Kvoid* URNode::serveur_udp()[m[K’:
+[01m[K/home/dilhan/ros2_ws/src/ur_udp/src/ur_udp.cpp:139:9:[m[K [01;35m[Kwarning: [m[Kcontrol reaches end of non-void function [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreturn-type-Wreturn-type]8;;[m[K]
+  139 |         [01;35m[K}[m[K
+      |         [01;35m[K^[m[K
+[01m[K/home/dilhan/ros2_ws/src/ur_udp/src/phantom_udp.cpp:[m[K In member function ‘[01m[Kvoid* PhantomNode::serveur_udp()[m[K’:
+[01m[K/home/dilhan/ros2_ws/src/ur_udp/src/phantom_udp.cpp:135:5:[m[K [01;35m[Kwarning: [m[Kcontrol reaches end of non-void function [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreturn-type-Wreturn-type]8;;[m[K]
+  135 |     [01;35m[K}[m[K
+      |     [01;35m[K^[m[K
+gmake[2]: *** [CMakeFiles/phantom_udp.dir/build.make:76: CMakeFiles/phantom_udp.dir/src/phantom_udp.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:165: CMakeFiles/phantom_udp.dir/all] Error 2
+gmake[1]: *** Waiting for unfinished jobs....
+[ 75%] [32m[1mLinking CXX executable ur_udp[0m
+[ 75%] Built target ur_udp
+gmake: *** [Makefile:146: all] Error 2

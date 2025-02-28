@@ -1,0 +1,85 @@
+[0.009s] Invoking command in '/home/dilhan/ros2_ws/build/ur_udp': CMAKE_PREFIX_PATH=/home/dilhan/ros2_ws/install/optoforce_wrapper:/opt/ros/humble:/home/dilhan/ros2_ws/install/omni_msgs:/home/dilhan/ros2_ws/install/ur_to_touch_haptic_teleoperation:/home/dilhan/ros2_ws/install/omni_common:/home/dilhan/ros2_ws/install/omni_description LD_LIBRARY_PATH=/home/dilhan/ros2_ws/install/omni_msgs/lib:/usr/local/cuda-11.8/lib64:/usr/local/cuda-11.8/lib64:/usr/local/cuda-11.8/lib64:/usr/local/cuda-11.8/lib64:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib PKG_CONFIG_PATH=/home/dilhan/ros2_ws/install/omni_msgs/lib/x86_64-linux-gnu/pkgconfig:/home/dilhan/ros2_ws/install/omni_msgs/lib/pkgconfig PYTHONPATH=/home/dilhan/ros2_ws/install/omni_msgs/local/lib/python3.10/dist-packages:/home/dilhan/ros2_ws/install/optoforce_wrapper/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages ROS_PACKAGE_PATH=/home/dilhan/ros2_ws/install/omni_msgs/share /usr/bin/cmake /home/dilhan/ros2_ws/src/ur_udp -DCMAKE_INSTALL_PREFIX=/home/dilhan/ros2_ws/install/ur_udp
+[0.065s] -- The C compiler identification is GNU 11.4.0
+[0.114s] -- The CXX compiler identification is GNU 11.4.0
+[0.122s] -- Detecting C compiler ABI info
+[0.187s] -- Detecting C compiler ABI info - done
+[0.193s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.193s] -- Detecting C compile features
+[0.193s] -- Detecting C compile features - done
+[0.196s] -- Detecting CXX compiler ABI info
+[0.271s] -- Detecting CXX compiler ABI info - done
+[0.277s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.277s] -- Detecting CXX compile features
+[0.278s] -- Detecting CXX compile features - done
+[0.280s] -- Found ament_cmake: 1.3.11 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.411s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[0.497s] -- Found rclcpp: 16.0.11 (/opt/ros/humble/share/rclcpp/cmake)
+[0.543s] -- Found rosidl_generator_c: 3.1.6 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.547s] -- Found rosidl_adapter: 3.1.6 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.555s] -- Found rosidl_generator_cpp: 3.1.6 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.565s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.579s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.616s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[0.619s] -- Found rmw_fastrtps_cpp: 6.2.7 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[0.712s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  
+[0.747s] -- Found FastRTPS: /opt/ros/humble/include  
+[0.795s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.803s] -- Looking for pthread.h
+[0.875s] -- Looking for pthread.h - found
+[0.876s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[0.950s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+[0.951s] -- Found Threads: TRUE  
+[0.995s] -- Found geometry_msgs: 4.2.4 (/opt/ros/humble/share/geometry_msgs/cmake)
+[1.007s] -- Found omni_msgs: 0.1.0 (/home/dilhan/ros2_ws/install/omni_msgs/share/omni_msgs/cmake)
+[1.046s] -- Found ament_lint_auto: 0.12.11 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[1.128s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[1.128s] -- Configured cppcheck include dirs: /home/dilhan/ros2_ws/src/ur_udp/include/ur_udp
+[1.128s] -- Configured cppcheck exclude dirs and/or files: 
+[1.129s] -- Added test 'flake8' to check Python code syntax and style conventions
+[1.131s] -- Added test 'lint_cmake' to check CMake code style
+[1.132s] -- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257
+[1.137s] -- Added test 'uncrustify' to check C / C++ code style
+[1.137s] -- Configured uncrustify additional arguments: 
+[1.138s] -- Added test 'xmllint' to check XML markup files
+[1.139s] -- Configuring done
+[1.153s] -- Generating done
+[1.158s] -- Build files have been written to: /home/dilhan/ros2_ws/build/ur_udp
+[1.169s] Invoked command in '/home/dilhan/ros2_ws/build/ur_udp' returned '0': CMAKE_PREFIX_PATH=/home/dilhan/ros2_ws/install/optoforce_wrapper:/opt/ros/humble:/home/dilhan/ros2_ws/install/omni_msgs:/home/dilhan/ros2_ws/install/ur_to_touch_haptic_teleoperation:/home/dilhan/ros2_ws/install/omni_common:/home/dilhan/ros2_ws/install/omni_description LD_LIBRARY_PATH=/home/dilhan/ros2_ws/install/omni_msgs/lib:/usr/local/cuda-11.8/lib64:/usr/local/cuda-11.8/lib64:/usr/local/cuda-11.8/lib64:/usr/local/cuda-11.8/lib64:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib PKG_CONFIG_PATH=/home/dilhan/ros2_ws/install/omni_msgs/lib/x86_64-linux-gnu/pkgconfig:/home/dilhan/ros2_ws/install/omni_msgs/lib/pkgconfig PYTHONPATH=/home/dilhan/ros2_ws/install/omni_msgs/local/lib/python3.10/dist-packages:/home/dilhan/ros2_ws/install/optoforce_wrapper/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages ROS_PACKAGE_PATH=/home/dilhan/ros2_ws/install/omni_msgs/share /usr/bin/cmake /home/dilhan/ros2_ws/src/ur_udp -DCMAKE_INSTALL_PREFIX=/home/dilhan/ros2_ws/install/ur_udp
+[1.171s] Invoking command in '/home/dilhan/ros2_ws/build/ur_udp': CMAKE_PREFIX_PATH=/home/dilhan/ros2_ws/install/optoforce_wrapper:/opt/ros/humble:/home/dilhan/ros2_ws/install/omni_msgs:/home/dilhan/ros2_ws/install/ur_to_touch_haptic_teleoperation:/home/dilhan/ros2_ws/install/omni_common:/home/dilhan/ros2_ws/install/omni_description LD_LIBRARY_PATH=/home/dilhan/ros2_ws/install/omni_msgs/lib:/usr/local/cuda-11.8/lib64:/usr/local/cuda-11.8/lib64:/usr/local/cuda-11.8/lib64:/usr/local/cuda-11.8/lib64:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib PKG_CONFIG_PATH=/home/dilhan/ros2_ws/install/omni_msgs/lib/x86_64-linux-gnu/pkgconfig:/home/dilhan/ros2_ws/install/omni_msgs/lib/pkgconfig PYTHONPATH=/home/dilhan/ros2_ws/install/omni_msgs/local/lib/python3.10/dist-packages:/home/dilhan/ros2_ws/install/optoforce_wrapper/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages ROS_PACKAGE_PATH=/home/dilhan/ros2_ws/install/omni_msgs/share /usr/bin/cmake --build /home/dilhan/ros2_ws/build/ur_udp -- -j12 -l12
+[1.224s] [ 50%] [32mBuilding CXX object CMakeFiles/phantom_udp.dir/src/phantom_udp.cpp.o[0m
+[1.224s] [ 50%] [32mBuilding CXX object CMakeFiles/ur_udp.dir/src/ur_udp.cpp.o[0m
+[3.840s] [01m[K/home/dilhan/ros2_ws/src/ur_udp/src/phantom_udp.cpp:[m[K In member function ‘[01m[Kvoid PhantomNode::sendMsgToUR_callback(omni_msgs::msg::OmniState_<std::allocator<void> >::SharedPtr)[m[K’:
+[3.840s] [01m[K/home/dilhan/ros2_ws/src/ur_udp/src/phantom_udp.cpp:160:38:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kvel[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+[3.840s]   160 |             MessagePhantom::Velocity [01;35m[Kvel[m[K{0, 0, 0};
+[3.840s]       |                                      [01;35m[K^~~[m[K
+[3.840s] [01m[K/home/dilhan/ros2_ws/src/ur_udp/src/phantom_udp.cpp:161:38:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kpos[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+[3.840s]   161 |             MessagePhantom::Position [01;35m[Kpos[m[K{0, 0, 0, 0};
+[3.840s]       |                                      [01;35m[K^~~[m[K
+[3.840s] [01m[K/home/dilhan/ros2_ws/src/ur_udp/src/phantom_udp.cpp:165:38:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kvel[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+[3.840s]   165 |             MessagePhantom::Velocity [01;35m[Kvel[m[K{msg_omniState->velocity.x, msg_omniState->velocity.y, msg_omniState->velocity.z};
+[3.840s]       |                                      [01;35m[K^~~[m[K
+[3.840s] [01m[K/home/dilhan/ros2_ws/src/ur_udp/src/phantom_udp.cpp:166:38:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kpos[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+[3.840s]   166 |             MessagePhantom::Position [01;35m[Kpos[m[K{msg_omniState->pose.orientation.x, msg_omniState->pose.orientation.y, msg_omniState->pose.orientation.z, msg_omniState->pose.orientation.w};
+[3.841s]       |                                      [01;35m[K^~~[m[K
+[3.846s] [01m[K/home/dilhan/ros2_ws/src/ur_udp/src/phantom_udp.cpp:169:28:[m[K [01;31m[Kerror: [m[K‘[01m[Kvel[m[K’ was not declared in this scope
+[3.846s]   169 |         MessagePhantom msg{[01;31m[Kvel[m[K, pos, time};
+[3.846s]       |                            [01;31m[K^~~[m[K
+[3.852s] [01m[K/home/dilhan/ros2_ws/src/ur_udp/src/phantom_udp.cpp:169:33:[m[K [01;31m[Kerror: [m[K‘[01m[Kpos[m[K’ was not declared in this scope; did you mean ‘[01m[Kpow[m[K’?
+[3.852s]   169 |         MessagePhantom msg{vel, [01;31m[Kpos[m[K, time};
+[3.852s]       |                                 [01;31m[K^~~[m[K
+[3.852s]       |                                 [32m[Kpow[m[K
+[5.883s] [01m[K/home/dilhan/ros2_ws/src/ur_udp/src/ur_udp.cpp:[m[K In member function ‘[01m[Kvoid* URNode::serveur_udp()[m[K’:
+[5.883s] [01m[K/home/dilhan/ros2_ws/src/ur_udp/src/ur_udp.cpp:139:9:[m[K [01;35m[Kwarning: [m[Kcontrol reaches end of non-void function [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreturn-type-Wreturn-type]8;;[m[K]
+[5.883s]   139 |         [01;35m[K}[m[K
+[5.884s]       |         [01;35m[K^[m[K
+[5.934s] [01m[K/home/dilhan/ros2_ws/src/ur_udp/src/phantom_udp.cpp:[m[K In member function ‘[01m[Kvoid* PhantomNode::serveur_udp()[m[K’:
+[5.934s] [01m[K/home/dilhan/ros2_ws/src/ur_udp/src/phantom_udp.cpp:135:5:[m[K [01;35m[Kwarning: [m[Kcontrol reaches end of non-void function [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreturn-type-Wreturn-type]8;;[m[K]
+[5.934s]   135 |     [01;35m[K}[m[K
+[5.934s]       |     [01;35m[K^[m[K
+[6.157s] gmake[2]: *** [CMakeFiles/phantom_udp.dir/build.make:76: CMakeFiles/phantom_udp.dir/src/phantom_udp.cpp.o] Error 1
+[6.157s] gmake[1]: *** [CMakeFiles/Makefile2:165: CMakeFiles/phantom_udp.dir/all] Error 2
+[6.157s] gmake[1]: *** Waiting for unfinished jobs....
+[9.081s] [ 75%] [32m[1mLinking CXX executable ur_udp[0m
+[9.427s] [ 75%] Built target ur_udp
+[9.428s] gmake: *** [Makefile:146: all] Error 2
+[9.430s] Invoked command in '/home/dilhan/ros2_ws/build/ur_udp' returned '2': CMAKE_PREFIX_PATH=/home/dilhan/ros2_ws/install/optoforce_wrapper:/opt/ros/humble:/home/dilhan/ros2_ws/install/omni_msgs:/home/dilhan/ros2_ws/install/ur_to_touch_haptic_teleoperation:/home/dilhan/ros2_ws/install/omni_common:/home/dilhan/ros2_ws/install/omni_description LD_LIBRARY_PATH=/home/dilhan/ros2_ws/install/omni_msgs/lib:/usr/local/cuda-11.8/lib64:/usr/local/cuda-11.8/lib64:/usr/local/cuda-11.8/lib64:/usr/local/cuda-11.8/lib64:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib PKG_CONFIG_PATH=/home/dilhan/ros2_ws/install/omni_msgs/lib/x86_64-linux-gnu/pkgconfig:/home/dilhan/ros2_ws/install/omni_msgs/lib/pkgconfig PYTHONPATH=/home/dilhan/ros2_ws/install/omni_msgs/local/lib/python3.10/dist-packages:/home/dilhan/ros2_ws/install/optoforce_wrapper/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages ROS_PACKAGE_PATH=/home/dilhan/ros2_ws/install/omni_msgs/share /usr/bin/cmake --build /home/dilhan/ros2_ws/build/ur_udp -- -j12 -l12

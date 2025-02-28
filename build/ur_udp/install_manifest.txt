@@ -1,0 +1,17 @@
+/home/dilhan/ros2_ws/install/ur_udp/lib/ur_udp/ur_udp
+/home/dilhan/ros2_ws/install/ur_udp/lib/ur_udp/phantom_udp
+/home/dilhan/ros2_ws/install/ur_udp/share/ament_index/resource_index/package_run_dependencies/ur_udp
+/home/dilhan/ros2_ws/install/ur_udp/share/ament_index/resource_index/parent_prefix_path/ur_udp
+/home/dilhan/ros2_ws/install/ur_udp/share/ur_udp/environment/ament_prefix_path.sh
+/home/dilhan/ros2_ws/install/ur_udp/share/ur_udp/environment/ament_prefix_path.dsv
+/home/dilhan/ros2_ws/install/ur_udp/share/ur_udp/environment/path.sh
+/home/dilhan/ros2_ws/install/ur_udp/share/ur_udp/environment/path.dsv
+/home/dilhan/ros2_ws/install/ur_udp/share/ur_udp/local_setup.bash
+/home/dilhan/ros2_ws/install/ur_udp/share/ur_udp/local_setup.sh
+/home/dilhan/ros2_ws/install/ur_udp/share/ur_udp/local_setup.zsh
+/home/dilhan/ros2_ws/install/ur_udp/share/ur_udp/local_setup.dsv
+/home/dilhan/ros2_ws/install/ur_udp/share/ur_udp/package.dsv
+/home/dilhan/ros2_ws/install/ur_udp/share/ament_index/resource_index/packages/ur_udp
+/home/dilhan/ros2_ws/install/ur_udp/share/ur_udp/cmake/ur_udpConfig.cmake
+/home/dilhan/ros2_ws/install/ur_udp/share/ur_udp/cmake/ur_udpConfig-version.cmake
+/home/dilhan/ros2_ws/install/ur_udp/share/ur_udp/package.xml

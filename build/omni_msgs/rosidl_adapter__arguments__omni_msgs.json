@@ -1,0 +1,8 @@
+{
+  "package_name": "omni_msgs",
+  "non_idl_tuples": [
+    "/home/dilhan/ros2_ws/src/omni_msgs:msg/OmniFeedback.msg",
+    "/home/dilhan/ros2_ws/src/omni_msgs:msg/OmniButtonEvent.msg",
+    "/home/dilhan/ros2_ws/src/omni_msgs:msg/OmniState.msg"
+  ]
+}

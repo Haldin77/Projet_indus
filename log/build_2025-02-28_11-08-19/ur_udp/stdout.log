@@ -1,0 +1,21 @@
+[35m[1mConsolidate compiler generated dependencies of target phantom_udp[0m
+[ 50%] Built target ur_udp
+[100%] Built target phantom_udp
+-- Install configuration: ""
+-- Up-to-date: /home/dilhan/ros2_ws/install/ur_udp/lib/ur_udp/ur_udp
+-- Up-to-date: /home/dilhan/ros2_ws/install/ur_udp/lib/ur_udp/phantom_udp
+-- Up-to-date: /home/dilhan/ros2_ws/install/ur_udp/share/ament_index/resource_index/package_run_dependencies/ur_udp
+-- Up-to-date: /home/dilhan/ros2_ws/install/ur_udp/share/ament_index/resource_index/parent_prefix_path/ur_udp
+-- Up-to-date: /home/dilhan/ros2_ws/install/ur_udp/share/ur_udp/environment/ament_prefix_path.sh
+-- Up-to-date: /home/dilhan/ros2_ws/install/ur_udp/share/ur_udp/environment/ament_prefix_path.dsv
+-- Up-to-date: /home/dilhan/ros2_ws/install/ur_udp/share/ur_udp/environment/path.sh
+-- Up-to-date: /home/dilhan/ros2_ws/install/ur_udp/share/ur_udp/environment/path.dsv
+-- Up-to-date: /home/dilhan/ros2_ws/install/ur_udp/share/ur_udp/local_setup.bash
+-- Up-to-date: /home/dilhan/ros2_ws/install/ur_udp/share/ur_udp/local_setup.sh
+-- Up-to-date: /home/dilhan/ros2_ws/install/ur_udp/share/ur_udp/local_setup.zsh
+-- Up-to-date: /home/dilhan/ros2_ws/install/ur_udp/share/ur_udp/local_setup.dsv
+-- Installing: /home/dilhan/ros2_ws/install/ur_udp/share/ur_udp/package.dsv
+-- Up-to-date: /home/dilhan/ros2_ws/install/ur_udp/share/ament_index/resource_index/packages/ur_udp
+-- Up-to-date: /home/dilhan/ros2_ws/install/ur_udp/share/ur_udp/cmake/ur_udpConfig.cmake
+-- Up-to-date: /home/dilhan/ros2_ws/install/ur_udp/share/ur_udp/cmake/ur_udpConfig-version.cmake
+-- Up-to-date: /home/dilhan/ros2_ws/install/ur_udp/share/ur_udp/package.xml

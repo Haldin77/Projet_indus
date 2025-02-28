@@ -1,0 +1,32 @@
+[01m[K/home/dilhan/ros2_ws/src/ur_udp/src/phantom_udp.cpp:[m[K In member function ‘[01m[Kvoid PhantomNode::sendMsgToUR_callback(omni_msgs::msg::OmniState_<std::allocator<void> >::SharedPtr)[m[K’:
+[01m[K/home/dilhan/ros2_ws/src/ur_udp/src/phantom_udp.cpp:160:38:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kvel[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+  160 |             MessagePhantom::Velocity [01;35m[Kvel[m[K{0, 0, 0};
+      |                                      [01;35m[K^~~[m[K
+[01m[K/home/dilhan/ros2_ws/src/ur_udp/src/phantom_udp.cpp:161:38:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kpos[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+  161 |             MessagePhantom::Position [01;35m[Kpos[m[K{0, 0, 0, 0};
+      |                                      [01;35m[K^~~[m[K
+[01m[K/home/dilhan/ros2_ws/src/ur_udp/src/phantom_udp.cpp:165:38:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kvel[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+  165 |             MessagePhantom::Velocity [01;35m[Kvel[m[K{msg_omniState->velocity.x, msg_omniState->velocity.y, msg_omniState->velocity.z};
+      |                                      [01;35m[K^~~[m[K
+[01m[K/home/dilhan/ros2_ws/src/ur_udp/src/phantom_udp.cpp:166:38:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kpos[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+  166 |             MessagePhantom::Position [01;35m[Kpos[m[K{msg_omniState->pose.orientation.x, msg_omniState->pose.orientation.y, msg_omniState->pose.orientation.z, msg_omniState->pose.orientation.w};
+      |                                      [01;35m[K^~~[m[K
+[01m[K/home/dilhan/ros2_ws/src/ur_udp/src/phantom_udp.cpp:169:28:[m[K [01;31m[Kerror: [m[K‘[01m[Kvel[m[K’ was not declared in this scope
+  169 |         MessagePhantom msg{[01;31m[Kvel[m[K, pos, time};
+      |                            [01;31m[K^~~[m[K
+[01m[K/home/dilhan/ros2_ws/src/ur_udp/src/phantom_udp.cpp:169:33:[m[K [01;31m[Kerror: [m[K‘[01m[Kpos[m[K’ was not declared in this scope; did you mean ‘[01m[Kpow[m[K’?
+  169 |         MessagePhantom msg{vel, [01;31m[Kpos[m[K, time};
+      |                                 [01;31m[K^~~[m[K
+      |                                 [32m[Kpow[m[K
+[01m[K/home/dilhan/ros2_ws/src/ur_udp/src/ur_udp.cpp:[m[K In member function ‘[01m[Kvoid* URNode::serveur_udp()[m[K’:
+[01m[K/home/dilhan/ros2_ws/src/ur_udp/src/ur_udp.cpp:139:9:[m[K [01;35m[Kwarning: [m[Kcontrol reaches end of non-void function [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreturn-type-Wreturn-type]8;;[m[K]
+  139 |         [01;35m[K}[m[K
+      |         [01;35m[K^[m[K
+[01m[K/home/dilhan/ros2_ws/src/ur_udp/src/phantom_udp.cpp:[m[K In member function ‘[01m[Kvoid* PhantomNode::serveur_udp()[m[K’:
+[01m[K/home/dilhan/ros2_ws/src/ur_udp/src/phantom_udp.cpp:135:5:[m[K [01;35m[Kwarning: [m[Kcontrol reaches end of non-void function [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreturn-type-Wreturn-type]8;;[m[K]
+  135 |     [01;35m[K}[m[K
+      |     [01;35m[K^[m[K
+gmake[2]: *** [CMakeFiles/phantom_udp.dir/build.make:76: CMakeFiles/phantom_udp.dir/src/phantom_udp.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:165: CMakeFiles/phantom_udp.dir/all] Error 2
+gmake[1]: *** Waiting for unfinished jobs....
+gmake: *** [Makefile:146: all] Error 2

@@ -155,15 +155,17 @@ private:
         }
 
         // Créer le message
+        MessagePhantom::Velocity vel;
+        MessagePhantom::Position pos;
         if (button == 0)
         {
-            MessagePhantom::Velocity vel{0, 0, 0};
-            MessagePhantom::Position pos{0, 0, 0, 0};
+            vel = {0, 0, 0};
+            pos = {0, 0, 0, 0};
         }
         else
         {
-            MessagePhantom::Velocity vel{msg_omniState->velocity.x, msg_omniState->velocity.y, msg_omniState->velocity.z};
-            MessagePhantom::Position pos{msg_omniState->pose.orientation.x, msg_omniState->pose.orientation.y, msg_omniState->pose.orientation.z, msg_omniState->pose.orientation.w};
+            vel = {msg_omniState->velocity.x, msg_omniState->velocity.y, msg_omniState->velocity.z};
+            pos = {msg_omniState->pose.orientation.x, msg_omniState->pose.orientation.y, msg_omniState->pose.orientation.z, msg_omniState->pose.orientation.w};
         }
         double time = static_cast<double>(chrono::duration_cast<us>(get_time::now().time_since_epoch()).count());
         MessagePhantom msg{vel, pos, time};

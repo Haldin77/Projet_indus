@@ -22,7 +22,7 @@ struct MessagePhantom {
     Position pos;
     double time;
 
-    MSGPACK_DEFINE(vel, time) // Macro pour Msgpack
+    MSGPACK_DEFINE(vel,pos, time) // Macro pour Msgpack
 };
 
 struct MessageUR {
