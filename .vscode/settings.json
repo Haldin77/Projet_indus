@@ -1,0 +1,37 @@
+{
+    "python.autoComplete.extraPaths": [
+        "/home/dilhan/ros2_ws/install/omni_msgs/local/lib/python3.10/dist-packages",
+        "/home/dilhan/workspace/ros_ur_driver/install/ur_robot_driver/local/lib/python3.10/dist-packages",
+        "/home/dilhan/workspace/ros_ur_driver/install/ur_msgs/local/lib/python3.10/dist-packages",
+        "/home/dilhan/workspace/ros_ur_driver/install/ur_moveit_config/local/lib/python3.10/dist-packages",
+        "/home/dilhan/workspace/ros_ur_driver/install/ur_dashboard_msgs/local/lib/python3.10/dist-packages",
+        "/home/dilhan/workspace/ros_ur_driver/install/rqt_joint_trajectory_controller/lib/python3.10/site-packages",
+        "/home/dilhan/workspace/ros_ur_driver/install/rqt_controller_manager/lib/python3.10/site-packages",
+        "/home/dilhan/workspace/ros_ur_driver/install/ros2controlcli/lib/python3.10/site-packages",
+        "/home/dilhan/workspace/ros_ur_driver/install/ros2_controllers_test_nodes/lib/python3.10/site-packages",
+        "/home/dilhan/workspace/ros_ur_driver/install/controller_manager/local/lib/python3.10/dist-packages",
+        "/home/dilhan/workspace/ros_ur_driver/install/controller_manager_msgs/local/lib/python3.10/dist-packages",
+        "/home/dilhan/workspace/ros_ur_driver/install/control_msgs/local/lib/python3.10/dist-packages",
+        "/opt/ros/humble/lib/python3.10/site-packages",
+        "/opt/ros/humble/local/lib/python3.10/dist-packages"
+    ],
+    "python.analysis.extraPaths": [
+        "/home/dilhan/ros2_ws/install/omni_msgs/local/lib/python3.10/dist-packages",
+        "/home/dilhan/workspace/ros_ur_driver/install/ur_robot_driver/local/lib/python3.10/dist-packages",
+        "/home/dilhan/workspace/ros_ur_driver/install/ur_msgs/local/lib/python3.10/dist-packages",
+        "/home/dilhan/workspace/ros_ur_driver/install/ur_moveit_config/local/lib/python3.10/dist-packages",
+        "/home/dilhan/workspace/ros_ur_driver/install/ur_dashboard_msgs/local/lib/python3.10/dist-packages",
+        "/home/dilhan/workspace/ros_ur_driver/install/rqt_joint_trajectory_controller/lib/python3.10/site-packages",
+        "/home/dilhan/workspace/ros_ur_driver/install/rqt_controller_manager/lib/python3.10/site-packages",
+        "/home/dilhan/workspace/ros_ur_driver/install/ros2controlcli/lib/python3.10/site-packages",
+        "/home/dilhan/workspace/ros_ur_driver/install/ros2_controllers_test_nodes/lib/python3.10/site-packages",
+        "/home/dilhan/workspace/ros_ur_driver/install/controller_manager/local/lib/python3.10/dist-packages",
+        "/home/dilhan/workspace/ros_ur_driver/install/controller_manager_msgs/local/lib/python3.10/dist-packages",
+        "/home/dilhan/workspace/ros_ur_driver/install/control_msgs/local/lib/python3.10/dist-packages",
+        "/opt/ros/humble/lib/python3.10/site-packages",
+        "/opt/ros/humble/local/lib/python3.10/dist-packages"
+    ],
+    "files.associations": {
+        "chrono": "cpp"
+    }
+}
