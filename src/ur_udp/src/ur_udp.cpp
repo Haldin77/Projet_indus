@@ -35,7 +35,7 @@ class URNode : public rclcpp::Node
         {
             // Déclaration des paramètres de configuration
             this->declare_parameter<int>("portUR", 32000);
-            this->declare_parameter<std::string>("server_ip", "172.17.0.1");
+            this->declare_parameter<std::string>("server_ip", "192.168.42.109");
             this->declare_parameter<int>("portPhantom", 32001);
             
             // Abonnement à un topic pour recevoir des données à envoyer à l'UR
@@ -43,7 +43,7 @@ class URNode : public rclcpp::Node
                 "/wrench", 1000, std::bind(&URNode::sendMsgToPhantom_callback, this, std::placeholders::_1));
 
             // Création d'un Publisher pour envoyer des données reçues
-            pub = this->create_publisher<omni_msgs::msg::OmniState>("phantom_states", 1000);
+            pub = this->create_publisher<omni_msgs::msg::OmniState>("/phantom_state", 1000);
 
             // Lancer un thread pour écouter le serveur UDP
             std::thread thread_serveur_udp = std::thread(&URNode::serveur_udp, this);
@@ -119,8 +119,7 @@ class URNode : public rclcpp::Node
                     // ntohs() convertit le numéro de port du client en ordre d'octets hôte
                     cout << "\nNouveau message reçu de " << inet_ntoa(cli_addr.sin_addr)
                             << ":" << ntohs(cli_addr.sin_port) << "\n";
-                    // cout << "velocity reçue :\nvx : " << msg.vel.vx << "\nvy : " << msg.vel.vy << "\nvz : " << msg.vel.vz << "\nwx : " 
-                    //     << msg.vel.wx << "\nwy : " << msg.vel.wy << "\nwz : " << msg.vel.wz << endl;
+                    cout << "velocity reçue :\nvx : " << msg.vel.vx << "\nvy : " << msg.vel.vy << "\nvz : " << msg.vel.vz << "\nwx : " << endl;
 
                     currentMsg = msg;
 
