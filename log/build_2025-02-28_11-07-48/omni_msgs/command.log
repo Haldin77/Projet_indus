@@ -1,4 +1,0 @@
-Invoking command in '/home/dilhan/ros2_ws/build/omni_msgs': /usr/bin/cmake --build /home/dilhan/ros2_ws/build/omni_msgs -- -j12 -l12
-Invoked command in '/home/dilhan/ros2_ws/build/omni_msgs' returned '0': /usr/bin/cmake --build /home/dilhan/ros2_ws/build/omni_msgs -- -j12 -l12
-Invoking command in '/home/dilhan/ros2_ws/build/omni_msgs': /usr/bin/cmake --install /home/dilhan/ros2_ws/build/omni_msgs
-Invoked command in '/home/dilhan/ros2_ws/build/omni_msgs' returned '0': /usr/bin/cmake --install /home/dilhan/ros2_ws/build/omni_msgs
