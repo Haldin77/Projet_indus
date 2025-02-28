@@ -11,13 +11,14 @@
 #include "geometry_msgs/msg/wrench_stamped.hpp"
 #include "omni_msgs/msg/omni_state.hpp"
 #include "message.hpp"
+#include "../include/ur_udp/message.hpp"
 
 using namespace std;
 using  us = chrono::microseconds; 
 using get_time = chrono::steady_clock;
 
 // Variable globale : vitesse reçue la plus récente
-MessagePhantom currentMsg = {{0, 0, 0, 0, 0, 0}, -1};
+MessagePhantom currentMsg = {{0, 0, 0},{0, 0, 0, 0}, -1};
 
 // Mutex pour synchroniser l'accès à la console pour les threads
 mutex console_mutex;
@@ -118,8 +119,8 @@ class URNode : public rclcpp::Node
                     // ntohs() convertit le numéro de port du client en ordre d'octets hôte
                     cout << "\nNouveau message reçu de " << inet_ntoa(cli_addr.sin_addr)
                             << ":" << ntohs(cli_addr.sin_port) << "\n";
-                    cout << "velocity reçue :\nvx : " << msg.vel.vx << "\nvy : " << msg.vel.vy << "\nvz : " << msg.vel.vz << "\nwx : " 
-                        << msg.vel.wx << "\nwy : " << msg.vel.wy << "\nwz : " << msg.vel.wz << endl;
+                    // cout << "velocity reçue :\nvx : " << msg.vel.vx << "\nvy : " << msg.vel.vy << "\nvz : " << msg.vel.vz << "\nwx : " 
+                    //     << msg.vel.wx << "\nwy : " << msg.vel.wy << "\nwz : " << msg.vel.wz << endl;
 
                     currentMsg = msg;
 
@@ -127,7 +128,10 @@ class URNode : public rclcpp::Node
                     omniStateMsg.velocity.x = msg.vel.vx;
                     omniStateMsg.velocity.y = msg.vel.vy;
                     omniStateMsg.velocity.z = msg.vel.vz;
-
+                    omniStateMsg.pose.orientation.x = msg.pos.x;
+                    omniStateMsg.pose.orientation.y = msg.pos.y;
+                    omniStateMsg.pose.orientation.z = msg.pos.z;
+                    omniStateMsg.pose.orientation.w = msg.pos.w;
                     pub->publish(omniStateMsg);
                 }
             }

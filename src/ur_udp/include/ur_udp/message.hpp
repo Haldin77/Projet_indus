@@ -8,14 +8,18 @@ struct MessagePhantom {
         double vx;
         double vy;
         double vz;
-        double wx;
-        double wy;
-        double wz;
-
-        MSGPACK_DEFINE(vx, vy, vz, wx, wy, wz)
+        MSGPACK_DEFINE(vx, vy, vz)
+    };
+    struct Position {
+        double x;
+        double y;
+        double z;
+        double w;
+        MSGPACK_DEFINE(x, y, z, w)
     };
 
     Velocity vel;
+    Position pos;
     double time;
 
     MSGPACK_DEFINE(vel, time) // Macro pour Msgpack
