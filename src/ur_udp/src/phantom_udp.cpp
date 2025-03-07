@@ -11,6 +11,7 @@
 #include "geometry_msgs/msg/wrench_stamped.hpp"
 #include "omni_msgs/msg/omni_state.hpp"
 #include "omni_msgs/msg/omni_button_event.hpp"
+#include "omni_msgs/msg/omni_feedback.hpp"
 #include "message.hpp"
 #include "../include/ur_udp/message.hpp"
 
@@ -31,16 +32,17 @@ public:
     {
         // Déclaration des paramètres de configuration
         this->declare_parameter<int>("portUR", 32000);
-        this->declare_parameter<std::string>("server_ip", "172.17.0.1");
+        this->declare_parameter<std::string>("server_ip", "192.168.42.146");
         this->declare_parameter<int>("portPhantom", 32001);
 
         // Abonnement à un topic pour recevoir des données à envoyer à l'UR
         sub = this->create_subscription<omni_msgs::msg::OmniState>(
-            "send_to_ur", 10, std::bind(&PhantomNode::sendMsgToUR_callback, this, std::placeholders::_1));
+            "/phantom/state", 1000, std::bind(&PhantomNode::sendMsgToUR_callback, this, std::placeholders::_1));
 
         // Création d'un Publisher pour envoyer des données reçues
-        pub = this->create_publisher<geometry_msgs::msg::WrenchStamped>("force_data", 10);
+        pub = this->create_publisher<omni_msgs::msg::OmniFeedback>("/phantom/force_feedback", 1000);
 
+        sub_button = this->create_subscription<omni_msgs::msg::OmniButtonEvent>("/phantom/button",10,std::bind(&PhantomNode::button_callback, this, std::placeholders::_1));
         // Lancer un thread pour écouter le serveur UDP
         std::thread thread_serveur_udp = std::thread(&PhantomNode::serveur_udp, this);
         /*if (thread_serveur_udp.joinable())
@@ -54,10 +56,10 @@ public:
 
 private:
     rclcpp::Subscription<omni_msgs::msg::OmniState>::SharedPtr sub;
-    rclcpp::Publisher<geometry_msgs::msg::WrenchStamped>::SharedPtr pub;
+    rclcpp::Publisher<omni_msgs::msg::OmniFeedback>::SharedPtr pub;
     rclcpp::Subscription<omni_msgs::msg::OmniButtonEvent>::SharedPtr sub_button;
     std::thread thread_serveur_udp;
-    bool button = 0;
+    std::uint32_t button = 0;
 
     // Partie serveur pour recevoir les efforts de l'UR
     void *serveur_udp()
@@ -123,10 +125,10 @@ private:
 
                 currentMsg = msg;
 
-                geometry_msgs::msg::WrenchStamped wrenchMsg;
-                wrenchMsg.wrench.force.x = msg.f.x;
-                wrenchMsg.wrench.force.y = msg.f.y;
-                wrenchMsg.wrench.force.z = msg.f.z;
+                omni_msgs::msg::OmniFeedback wrenchMsg;
+                wrenchMsg.force.x = msg.f.x;
+                wrenchMsg.force.y = msg.f.y;
+                wrenchMsg.force.z = msg.f.z;
 
                 pub->publish(wrenchMsg);
             }
@@ -164,6 +166,7 @@ private:
         }
         else
         {
+            
             vel = {msg_omniState->velocity.x, msg_omniState->velocity.y, msg_omniState->velocity.z};
             pos = {msg_omniState->pose.orientation.x, msg_omniState->pose.orientation.y, msg_omniState->pose.orientation.z, msg_omniState->pose.orientation.w};
         }
@@ -183,7 +186,7 @@ private:
 
         close(sockfd);
     }
-    void button_calback(const omni_msgs::msg::OmniButtonEvent::SharedPtr msg)
+    void button_callback(const omni_msgs::msg::OmniButtonEvent::SharedPtr msg)
     {
         button = msg->grey_button;
     }
