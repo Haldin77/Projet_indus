@@ -35,7 +35,7 @@ class URNode : public rclcpp::Node
         {
             // Déclaration des paramètres de configuration
             this->declare_parameter<int>("portUR", 32000);
-            this->declare_parameter<std::string>("server_ip", "192.168.42.109");
+            this->declare_parameter<std::string>("server_ip", "192.168.42.145");
             this->declare_parameter<int>("portPhantom", 32001);
             
             // Abonnement à un topic pour recevoir des données à envoyer à l'UR

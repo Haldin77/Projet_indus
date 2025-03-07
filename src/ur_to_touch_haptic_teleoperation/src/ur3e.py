@@ -4,8 +4,6 @@ from omni_msgs.msg import OmniState, OmniButtonEvent, OmniFeedback
 from geometry_msgs.msg import TwistStamped
 from rclpy.clock import Clock
 from scipy.signal import butter, lfilter
-from optoforce import OptoForce22 as OptoForce
-from optoforce.status import no_errors
 import numpy as np
 from sensor_msgs.msg import JointState
 from geometry_msgs.msg import WrenchStamped
@@ -129,7 +127,7 @@ class OmniStateToTwistWithButton(Node):
             WrenchStamped,
             '/force_torque_sensor_broadcaster/wrench',
             self.wrench_callback,
-            1000)
+            100)
         
         # Publisher vers TwistStamped
         self.publisher_ = self.create_publisher(TwistStamped, '/servo_node/delta_twist_cmds', 1000)
@@ -160,26 +158,7 @@ class OmniStateToTwistWithButton(Node):
         twist_msg.header.frame_id = "base_link"
         #MGD
 
-        if self.joint_angles is not None:
-            ur3 = UR3Kinematics()
-            T06 = ur3.fk_ur(self.joint_angles)
-            R06 = T06[:3, :3]
-            # with OptoForce(speed_hz=100, filter_hz=1.5, zero=True) as force_sensor:
-            #     force = [force_sensor.read(only_latest_data=False).Fx,force_sensor.read(only_latest_data=False).Fy,force_sensor.read(only_latest_data=False).Fz]
-            #     force[2] = force[2] / 10 
-            #     force[1] = force[1] 
-            #     force[0] = force[0] 
-            #     print(force)
-            # Convertir le vecteur de force en numpy array
-            F_outil = np.array([self.wrench_input.wrench.force.x, self.wrench_input.wrench.force.y, self.wrench_input.wrench.force.z])
-            # F_outil = [0,0,0]
-            #self.get_logger().info(f"OUTIL : {F_outil}")
-            # Calculer les forces dans le repère de base
-            F_base = np.dot(R06, F_outil)
-            #self.get_logger().info(f"BASE : {F_base}")
-
-            # Stocker les forces transformées
-            self.VecteurforceBase = F_base.tolist()
+        
             #self.get_logger().info(f"Force en base: {self.VecteurforceBase}")
         
         # Copier les vitesses linéaires
@@ -221,12 +200,19 @@ class OmniStateToTwistWithButton(Node):
         
         # Filtrage de bruit par seuil (deadband)
         self.deadband_filter_noise(twist_msg, 0.00101)
-        self.wrench_msg.wrench.force.x = self.VecteurforceBase[0]*0.1
-        self.wrench_msg.wrench.force.y = self.VecteurforceBase[1]*0.1
-        self.wrench_msg.wrench.force.z = self.VecteurforceBase[2]*0.1
+        
 
         # Convertir les composantes de la force (Vector3) en un tableau numpy
         # Convertir les composantes de la force (Vector3) en un tableau numpy
+        #force = np.array([self.wrench_msg.wrench.force.x,self.wrench_msg.wrench.force.y,self.wrench_msg.wrench.force.z])
+
+        # Convertir la vitesse linéaire (Vector3) en un tableau numpy
+        #linear_velocity = np.array([twist_msg.twist.linear.x, twist_msg.twist.linear.y, twist_msg.twist.linear.z])
+
+        # Calculer la norme au carré de la force (produit scalaire de la force avec elle-même)
+
+        # Vérifier si la norme de la force est supérieure à 10
+        
         force = np.array([self.wrench_msg.wrench.force.x, 
                           self.wrench_msg.wrench.force.y, 
                           self.wrench_msg.wrench.force.z])
@@ -240,25 +226,23 @@ class OmniStateToTwistWithButton(Node):
         norm = np.dot(force, force)
 
         # Vérifier si la norme de la force est supérieure à 10
-        if norm >4:
-            # Calculer le produit scalaire entre la force et la vitesse linéaire
-            if np.dot(force, linear_velocity) < 0:
-                dot_product = np.dot(force, linear_velocity)
+        if norm >2:
+            # # Calculer le produit scalaire entre la force et la vitesse linéaire
+            if np.dot(force, linear_velocity) > 0:
+            #     dot_product = np.dot(force, linear_velocity)
 
-                # Calculer la projection de la vitesse linéaire sur la force
-                projection = (dot_product / norm) * force
+            #     # Calculer la projection de la vitesse linéaire sur la force
+            #     projection = (dot_product / norm) * force
 
-                # Calculer la symétrie de la vitesse linéaire par rapport au plan
-                linear_velocity_sym = linear_velocity - 2* projection
+            #     # Calculer la symétrie de la vitesse linéaire par rapport au plan
+            #     linear_velocity_sym = linear_velocity - 2* projection
 
-                # Mettre à jour twist_msg avec la vitesse symétrique
-                twist_msg.twist.linear.x = linear_velocity_sym[0]
-                twist_msg.twist.linear.y = linear_velocity_sym[1]
-                twist_msg.twist.linear.z = linear_velocity_sym[2]
-
+            #     # Mettre à jour twist_msg avec la vitesse symétrique
+                twist_msg.twist.linear.x = 0.0
+                twist_msg.twist.linear.y = 0.0
+                twist_msg.twist.linear.z = 0.0
         # Publication des messages
         self.publisher_.publish(twist_msg)
-        self.publisher_omni.publish(self.wrench_msg)
         #self.get_logger().info(f"Published TwistStamped: {twist_msg}")
         #test
         # Mettre à jour l'orientation précédente
@@ -268,7 +252,32 @@ class OmniStateToTwistWithButton(Node):
         """
         Mise a jour des efforts
         """
-        self.wrench_input = msg
+        if self.joint_angles is not None:
+            ur3 = UR3Kinematics()
+            T06 = ur3.fk_ur(self.joint_angles)
+            R06 = T06[:3, :3]
+            # with OptoForce(speed_hz=100, filter_hz=1.5, zero=True) as force_sensor:
+            #     force = [force_sensor.read(only_latest_data=False).Fx,force_sensor.read(only_latest_data=False).Fy,force_sensor.read(only_latest_data=False).Fz]
+            #     force[2] = force[2] / 10 
+            #     force[1] = force[1] 
+            #     force[0] = force[0] 
+            #     print(force)
+            # Convertir le vecteur de force en numpy array
+            F_outil = np.array([self.wrench_input.wrench.force.x, self.wrench_input.wrench.force.y, self.wrench_input.wrench.force.z])
+            # F_outil = [0,0,0]
+            #self.get_logger().info(f"OUTIL : {F_outil}")
+            # Calculer les forces dans le repère de base
+            F_base = np.dot(R06, F_outil)
+            #self.get_logger().info(f"BASE : {F_base}")
+
+            # Stocker les forces transformées
+            self.VecteurforceBase = F_base.tolist()
+            self.wrench_input = msg
+            self.wrench_msg.wrench.force.x = self.VecteurforceBase[0]*0.1
+            self.wrench_msg.wrench.force.y = self.VecteurforceBase[1]*0.1
+            self.wrench_msg.wrench.force.z = self.VecteurforceBase[2]*0.1
+
+            self.publisher_omni.publish(self.wrench_msg)
         
     def deadband_filter_noise(self, twist, deadband):
         """Appliquer un filtre deadband pour supprimer le bruit."""
