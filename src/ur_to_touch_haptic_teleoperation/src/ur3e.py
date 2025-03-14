@@ -188,9 +188,12 @@ class OmniStateToTwistWithButton(Node):
             twist_msg.twist.angular.y = 0.0
             twist_msg.twist.angular.z = 0.0
         else:
-            twist_msg.twist.angular.x = (2.0 / dt) * (q1.w * q2.x - q1.x * q2.w - q1.y * q2.z + q1.z * q2.y)*2.5
-            twist_msg.twist.angular.y = (2.0 / dt) * (q1.w * q2.y + q1.x * q2.z - q1.y * q2.w - q1.z * q2.x)*2.5
-            twist_msg.twist.angular.z = (2.0 / dt) * (q1.w * q2.z - q1.x * q2.y + q1.y * q2.x - q1.z * q2.w)*2.5
+            # twist_msg.twist.angular.x = (2.0 / dt) * (q1.w * q2.x - q1.x * q2.w - q1.y * q2.z + q1.z * q2.y)*2.5
+            # twist_msg.twist.angular.y = (2.0 / dt) * (q1.w * q2.y + q1.x * q2.z - q1.y * q2.w - q1.z * q2.x)*2.5
+            # twist_msg.twist.angular.z = (2.0 / dt) * (q1.w * q2.z - q1.x * q2.y + q1.y * q2.x - q1.z * q2.w)*2.5
+            twist_msg.twist.angular.x = (q2.x - q1.x)/dt
+            twist_msg.twist.angular.y = (q2.y - q1.y)/dt
+            twist_msg.twist.angular.z = (q2.z - q1.z)/dt
 
         # Appliquer le filtre
         twist_msg.twist.linear.x = -self.apply_filter(self.linear_x_history,-1)
