@@ -15,7 +15,7 @@
 #include "message.hpp"
 #include "../include/ur_udp/message.hpp"
 
-MessageUR currentMsg = {{0, 0, 0}, -1};
+MessageUR currentMsg = {{0, 0, 0}, -1, -1};
 
 using namespace std;
 using us = chrono::microseconds;
@@ -32,7 +32,8 @@ public:
     {
         // Déclaration des paramètres de configuration
         this->declare_parameter<int>("portUR", 32000);
-        this->declare_parameter<std::string>("server_ip", "192.168.42.146");
+        this->declare_parameter<std::string>("server_ip", "127.0.0.1");
+        //this->declare_parameter<std::string>("server_ip", "192.168.42.146");
         this->declare_parameter<int>("portPhantom", 32001);
 
         // Abonnement à un topic pour recevoir des données à envoyer à l'UR
@@ -111,7 +112,7 @@ private:
 
             // Duré en micro-secondes, calulée entre maintenant et ... 1970 (.time_since_epoch())
             double currentTime = chrono::duration_cast<us>(get_time::now().time_since_epoch()).count() / 1000.0;
-            cout << "Temps de transmission (ms) : " << currentTime << " - " << msg.time / 1000.0 << " = " << currentTime - msg.time / 1000.0 << endl;
+            cout << "Temps de transmission de l'aller-retour (ms) : " << currentTime - msg.transmissionTime / 1000.0 << endl;
 
             // On vérifie que le message reçu n'est pas un message plus vieux que le dernier message pris en compte (sécurité sur l'ordre d'arrivée des messages)
             if ((msg.time - currentMsg.time) > 0)
@@ -178,7 +179,7 @@ private:
         msgpack::pack(buffer, msg);                  // Sérialise `message` dans `buffer`
         const char *serialized_data = buffer.data(); // Accès aux données sérialisées
         std::size_t data_size = buffer.size();       // Taille des données sérialisées
-
+        
         ssize_t sent_bytes = sendto(sockfd, serialized_data, data_size, 0,
                                     (struct sockaddr *)&serv_addr, sizeof(serv_addr));
         if (sent_bytes < 0)
@@ -195,7 +196,8 @@ int main(int argc, char *argv[])
 {
 
     rclcpp::init(argc, argv);
-    rclcpp::spin(std::make_shared<PhantomNode>());
+    auto node = std::make_shared<PhantomNode>();
+    rclcpp::spin(node);
     rclcpp::shutdown();
 
     return 0;

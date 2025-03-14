@@ -35,7 +35,8 @@ class URNode : public rclcpp::Node
         {
             // Déclaration des paramètres de configuration
             this->declare_parameter<int>("portUR", 32000);
-            this->declare_parameter<std::string>("server_ip", "192.168.42.145");
+            this->declare_parameter<std::string>("server_ip", "127.0.0.1");
+            //this->declare_parameter<std::string>("server_ip", "192.168.42.145");
             this->declare_parameter<int>("portPhantom", 32001);
             
             // Abonnement à un topic pour recevoir des données à envoyer à l'UR
@@ -161,7 +162,7 @@ class URNode : public rclcpp::Node
             // Créer le message
             MessageUR::Force f{msg_wrench->wrench.force.x, msg_wrench->wrench.force.y, msg_wrench->wrench.force.z};
             double time = static_cast<double>(chrono::duration_cast<us>(get_time::now().time_since_epoch()).count());
-            MessageUR msg{f, time};
+            MessageUR msg{f, time, currentMsg.time};
 
             // Sérialiser le message (= encodage)
             msgpack::sbuffer buffer;                      // Tampon pour les données sérialisées

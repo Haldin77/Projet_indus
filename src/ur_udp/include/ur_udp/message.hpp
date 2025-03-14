@@ -36,8 +36,9 @@ struct MessageUR {
 
     Force f;
     double time;
+    double transmissionTime;
 
-    MSGPACK_DEFINE(f, time) // Macro pour Msgpack
+    MSGPACK_DEFINE(f, time, transmissionTime) // Macro pour Msgpack
 };
 
 
