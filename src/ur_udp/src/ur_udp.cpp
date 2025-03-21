@@ -84,7 +84,8 @@ class URNode : public rclcpp::Node
                 exit(0);
             }
 
-            cout << "Serveur UDP en écoute sur le port " << portno << "...\n";
+            std::string serverStartMsg = "Serveur UDP en écoute sur le port " + std::to_string(portno) + "...";
+            RCLCPP_INFO(this->get_logger(), serverStartMsg.c_str());
 
             char buffer[256];
             while(rclcpp::ok())
