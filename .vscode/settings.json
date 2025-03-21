@@ -32,6 +32,7 @@
         "/opt/ros/humble/local/lib/python3.10/dist-packages"
     ],
     "files.associations": {
-        "chrono": "cpp"
+        "chrono": "cpp",
+        "iostream": "cpp"
     }
 }
