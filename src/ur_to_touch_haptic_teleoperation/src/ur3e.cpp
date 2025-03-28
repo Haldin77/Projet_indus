@@ -52,7 +52,7 @@ class UR3Kinematics {
         return T;
     }
 
-    Matrix4d fk_ur(const std::vector<double>& joint_angles) {
+    Eigen::Matrix4d fk_ur(const std::vector<double>& joint_angles) {
         Eigen::Matrix4d T01 = dh_matrix(joint_angles[5], d1, a1, alpha1);
         Eigen::Matrix4d T12 = dh_matrix(joint_angles[0], d2, a2, alpha2);
         Eigen::Matrix4d T23 = dh_matrix(joint_angles[1], d3, a3, alpha3);
@@ -65,18 +65,18 @@ class UR3Kinematics {
 
     private:
 
-    double a1, d1, alpha1, 
-    double a2, d2, alpha2, 
-    double a3, d3, alpha3,
-    double a4, d4, alpha4, 
-    double a5, d5, alpha5, 
+    double a1, d1, alpha1; 
+    double a2, d2, alpha2; 
+    double a3, d3, alpha3;
+    double a4, d4, alpha4; 
+    double a5, d5, alpha5; 
     double a6, d6, alpha6;
 };
 
 
 class OmniStateToTwistWithButton : public rclcpp::Node {
     public:
-    OmniStateToTwistWithButton() : Node("omni_to_twist_with_button_node"), filter_size(5){
+    OmniStateToTwistWithButton() : Node("omni_to_twist_with_button_node") {
         
         /////////////////////[  SUBSCRITION  ]////////////////////////
         // Subscriber au topic /joint_state
@@ -85,7 +85,7 @@ class OmniStateToTwistWithButton : public rclcpp::Node {
         
         // Subscriber au topic /phantom_state
         subscription_state = this->create_subscription<omni_msgs::msg::OmniState>(
-            "/phantom_state", QUEUE_LENGTH, std::bind(&OmniStateToTwistWithButton::omni_state_callback, this, _1));
+            "/phantom_state", QUEUE_LENGTH, std::bind(&OmniStateToTwistWithButton::omni_state_callback, this, std::placeholders::_1));
         
         // Subscriber au topic /force_torque_sensor_broadcaster/wrench
         subscription_wrench = this->create_subscription<geometry_msgs::msg::WrenchStamped>(
@@ -109,10 +109,6 @@ class OmniStateToTwistWithButton : public rclcpp::Node {
         //________FILTRE___________
         cutoff_frequency = 2.5;
         sampling_frequency = 500.0;
-        a_coef = {};    // a determiner
-        b_coef = {};    // a determiner
-        size_a = ;
-        size_b = ;
 
         //_______HISTORIQUE________
         for(int i=0; i<LEN_HISTORY; i++){
@@ -129,10 +125,6 @@ class OmniStateToTwistWithButton : public rclcpp::Node {
         //______TIME______________
         auto now = this->get_clock()->now();
         timer = now.seconds();
-
-        //______ARTICULATION______
-        joint_angles = {0.0, 0.0, 0.0, 0.0, 0.0, 0.0};
-        old_filtered_orientation = {0.0, 0.0, 0.0, 0.0};
     }
 
     private:
@@ -141,27 +133,27 @@ class OmniStateToTwistWithButton : public rclcpp::Node {
     //_________FILTRE______________
     float cutoff_frequency; //Frequence de coupure en Hz
     float sampling_frequency; //Frequence d'echantillonage
-    float a_coef;
-    float b_coef;
-    int size_a;
-    int size_b;
+    const int size_a = 5;
+    const int size_b = 5;
+    float a_coef[5] = {1.0, -3.9433, 5.8326, -3.8352, 0.9459};
+    float b_coef[5] = {0.0098, -0.0389, 0.0582, -0.0389, 0.0098};
 
     //________HISTORIQUE____________
     double linear_x_history[LEN_HISTORY], linear_y_history[LEN_HISTORY], linear_z_history[LEN_HISTORY];
-    double angular_x_history[LEN_HISTORY], angular_y_history[LEN_HISTORY], angular_z_history, angular_w_history[LEN_HISTORY];
+    double angular_x_history[LEN_HISTORY], angular_y_history[LEN_HISTORY], angular_z_history[LEN_HISTORY], angular_w_history[LEN_HISTORY];
 
     //________FORCE_________________
     double VecteurForceOutil[3];
     double VecteurForceBase[3];
-    wrench_input = geometry_msgs::msg::WrenchStamped();     // a garder ??
-    wrench_msg = geometry_msgs::msg::WrenchStamped();       // a garder ??
+    geometry_msgs::msg::WrenchStamped wrench_input = geometry_msgs::msg::WrenchStamped();     // a garder ??
+    geometry_msgs::msg::WrenchStamped wrench_msg = geometry_msgs::msg::WrenchStamped();       // a garder ??
 
     //________TIME__________________
-    unsigned double timer;
+    double timer;
 
     //_______ARTICULATIONS__________
-    double joint_angles[6];
-    double old_filtered_orientation[4];
+    std::vector<double> joint_angles;
+    double old_filtered_orientation[4] = {0.0, 0.0, 0.0, 0.0};
 
     ///////////////////////[  SUB_AND_PUB  ]///////////////////////////
     rclcpp::Subscription<sensor_msgs::msg::JointState>::SharedPtr subscription_joint;
@@ -197,7 +189,7 @@ class OmniStateToTwistWithButton : public rclcpp::Node {
     }
 
     // renvoie la derniere data filtre en fonction des coefficients du filtre b et a et de l'historique des mesures non filtre
-    double lfilter(const double data){
+    double lfilter(const double* data){
         double output = 0.0;
         //application des coefficients b
         for(int i = 0; i < size_b; i++){
@@ -220,8 +212,8 @@ class OmniStateToTwistWithButton : public rclcpp::Node {
 
     void omni_state_callback(const omni_msgs::msg::OmniState::SharedPtr msg) {
         auto now = this->get_clock()->now();
-        unsigned double current_time = now.seconds();
-        unsigned double dt = current_time - timer;
+        double current_time = now.seconds();
+        double dt = current_time - timer;
         timer = current_time;
 
         // Créer un message TwistStamped
@@ -268,7 +260,7 @@ class OmniStateToTwistWithButton : public rclcpp::Node {
         twist_msg.twist.angular.x = (angular_x_filtered - old_filtered_orientation[0]) / dt;
         twist_msg.twist.angular.y = (angular_y_filtered - old_filtered_orientation[1]) / dt;
         twist_msg.twist.angular.z = (angular_z_filtered - old_filtered_orientation[2]) / dt;
-        twist_msg.twist.angular.w = (angular_w_filtered - old_filtered_orientation[3]) / dt;
+        //twist_msg.twist.angular.w = (angular_w_filtered - old_filtered_orientation[3]) / dt;
 
         // Mise à jour de old_filtered_orientation (stockage de l'orientation précédente)
         old_filtered_orientation[0] = angular_x_filtered;
@@ -281,7 +273,8 @@ class OmniStateToTwistWithButton : public rclcpp::Node {
         double force[3] = {
             wrench_msg.wrench.force.x,
             wrench_msg.wrench.force.y,
-            wrench_msg.wrench.focre.z};
+            wrench_msg.wrench.force.z
+        };
         
         // calcul de la norme de la force
         double norme_force = 0;
@@ -322,7 +315,7 @@ class OmniStateToTwistWithButton : public rclcpp::Node {
             publisher_omni->publish(wrench_msg);
         }
     }
-}
+};
 
 int main(int argc, char * argv[]){
     rclcpp::init(argc, argv);

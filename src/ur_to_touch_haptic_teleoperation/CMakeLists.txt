@@ -15,19 +15,10 @@ find_package(yaml-cpp REQUIRED)
 find_package(omni_msgs REQUIRED)  # Assurez-vous d'ajouter omni_msgs si nécessaire
 
 # Déclaration des exécutables
-add_executable(${PROJECT_NAME}_teleop_node src/teleoperate.cpp)
-add_executable(${PROJECT_NAME}_haptic_node src/haptic_feedback.cpp)
+add_executable(ur3e src/ur3e.cpp)
 
 # Lier les bibliothèques et dépendances aux exécutables
-ament_target_dependencies(${PROJECT_NAME}_teleop_node
-    rclcpp
-    std_msgs
-    geometry_msgs
-    yaml-cpp
-    omni_msgs  # Ajout de omni_msgs si nécessaire
-)
-
-ament_target_dependencies(${PROJECT_NAME}_haptic_node
+ament_target_dependencies(ur3e
     rclcpp
     std_msgs
     geometry_msgs
@@ -44,13 +35,7 @@ include_directories(
 )
 
 # Lier les bibliothèques aux exécutables
-target_link_libraries(${PROJECT_NAME}_teleop_node
-    ${rclcpp_LIBRARIES}
-    ${Boost_LIBRARIES}
-    yaml-cpp
-)
-
-target_link_libraries(${PROJECT_NAME}_haptic_node
+target_link_libraries(ur3e
     ${rclcpp_LIBRARIES}
     ${Boost_LIBRARIES}
     yaml-cpp
@@ -58,8 +43,7 @@ target_link_libraries(${PROJECT_NAME}_haptic_node
 
 # Installer les exécutables
 install(TARGETS
-    ${PROJECT_NAME}_teleop_node
-    ${PROJECT_NAME}_haptic_node
+    ur3e
     DESTINATION lib/${PROJECT_NAME}
 )
 
