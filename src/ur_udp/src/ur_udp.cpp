@@ -35,7 +35,7 @@ class URNode : public rclcpp::Node
         {
             // Déclaration des paramètres de configuration
             this->declare_parameter<int>("portUR", 32000);
-            this->declare_parameter<std::string>("server_ip", "192.168.42.145");
+            this->declare_parameter<std::string>("server_ip", "192.168.42.163");
             this->declare_parameter<int>("portPhantom", 32001);
             
             // Abonnement à un topic pour recevoir des données à envoyer à l'UR
@@ -119,7 +119,7 @@ class URNode : public rclcpp::Node
                     // ntohs() convertit le numéro de port du client en ordre d'octets hôte
                     cout << "\nNouveau message reçu de " << inet_ntoa(cli_addr.sin_addr)
                             << ":" << ntohs(cli_addr.sin_port) << "\n";
-                    cout << "velocity reçue :\nvx : " << msg.vel.vx << "\nvy : " << msg.vel.vy << "\nvz : " << msg.vel.vz << "\nwx : " << endl;
+                    cout << "velocity reçue :\nx : " << msg.pos.x << "\ny : " << msg.pos.y << "\nvz : " << msg.pos.z << "\nwx : " << endl;
 
                     currentMsg = msg;
 

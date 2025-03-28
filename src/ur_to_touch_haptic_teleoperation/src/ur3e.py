@@ -2,8 +2,11 @@ import rclpy
 from rclpy.node import Node
 from omni_msgs.msg import OmniState, OmniButtonEvent, OmniFeedback
 from geometry_msgs.msg import TwistStamped
+from geometry_msgs.msg import PoseStamped
 from rclpy.clock import Clock
 from scipy.signal import butter, lfilter
+import tf_transformations as tf
+from scipy.spatial.transform import Rotation as R
 import numpy as np
 from sensor_msgs.msg import JointState
 from geometry_msgs.msg import WrenchStamped
@@ -94,6 +97,7 @@ class OmniStateToTwistWithButton(Node):
         self.grey_button_pressed = False  # État du bouton gris
         self.wrench_input = WrenchStamped()
         self.wrench_msg = WrenchStamped()
+        self.pl_scene = PoseStamped()
         # Historique des données pour le filtrage
         self.linear_x_history = []
         self.linear_y_history = []
@@ -102,9 +106,12 @@ class OmniStateToTwistWithButton(Node):
         self.angular_y_history = []
         self.angular_z_history = []
         self.angular_w_history = []
-        
+        self.angular_velocity_x = []
+        self.angular_velocity_y = []
+        self.angular_velocity_z = []
         self.Vecteurforceoutil=[]
         self.VecteurforceBase=[]
+        self.K = 1.5
 
         # Paramètres du filtre
         self.cutoff_frequency = 2.5  # Fréquence de coupure en Hz
@@ -129,6 +136,12 @@ class OmniStateToTwistWithButton(Node):
             self.wrench_callback,
             100)
         
+        self.subscription_pose = self.create_subscription(
+            PoseStamped,
+            '/tcp_pose_broadcaster/pose',
+            self.pl_scene_callback,
+            100)
+        
         # Publisher vers TwistStamped
         self.publisher_ = self.create_publisher(TwistStamped, '/servo_node/delta_twist_cmds', 1000)
         self.publisher_omni = self.create_publisher(WrenchStamped, '/wrench', 1000)
@@ -147,7 +160,7 @@ class OmniStateToTwistWithButton(Node):
     
     
     def omni_state_callback(self, msg: OmniState):
-
+        
         current_time = self.clock.now().nanoseconds / 1e9  # Convertir en secondes
         dt = current_time - self.timer
         self.timer = current_time
@@ -162,46 +175,60 @@ class OmniStateToTwistWithButton(Node):
             #self.get_logger().info(f"Force en base: {self.VecteurforceBase}")
         
         # Copier les vitesses linéaires
-        self.linear_x_history.append(msg.velocity.x * 0.01)
-        self.linear_y_history.append(msg.velocity.y * 0.01)
-        self.linear_z_history.append(msg.velocity.z * 0.01)
-        self.angular_x_history.append(msg.pose.orientation.x)
-        self.angular_y_history.append(msg.pose.orientation.y)
-        self.angular_z_history.append(msg.pose.orientation.z)
-        self.angular_w_history.append(msg.pose.orientation.w)
-        q1 = OmniState().pose.orientation
-        q1.x = self.apply_filter(self.angular_x_history,-2)
-        q1.y = self.apply_filter(self.angular_y_history,-2)
-        q1.z = self.apply_filter(self.angular_z_history,-2)
-        q1.w = self.apply_filter(self.angular_w_history,-2)
-        
-        
-        q2 = OmniState().pose.orientation
-        q2.x = self.apply_filter(self.angular_x_history,-1)
-        q2.y = self.apply_filter(self.angular_y_history,-1)
-        q2.z = self.apply_filter(self.angular_z_history,-1)
-        q2.w = self.apply_filter(self.angular_w_history,-1)
+        self.linear_x_history.append(msg.velocity.x*0.1)
+        self.linear_y_history.append(msg.velocity.y*0.1)
+        self.linear_z_history.append(msg.velocity.z*0.1)
+
+
+        # self.angular_x_history.append(msg.pose.orientation.x)
+        # self.angular_y_history.append(msg.pose.orientation.y)
+        # self.angular_z_history.append(msg.pose.orientation.z)
+        quat = self.pl_scene.pose.orientation
+        #q1 = tf.euler_from_quaternion([quat.x,quat.y,quat.z,quat.w])
+        q1 = R.from_quat([quat.x,quat.y,quat.z,quat.w]).as_euler('zyx', degrees=False)  # Yaw-Pitch-Roll (default tf2)
+        #euler_xyz = R.from_quat([quat.x,quat.y,quat.z,quat.w]).as_euler('xyz', degrees=False) 
+
+        #print(f"ZYX (Yaw-Pitch-Roll) : {euler_zyx}")
+        #print(f"XYZ                 : {euler_xyz}")
+        q2 = [msg.pose.orientation.x,msg.pose.orientation.y,msg.pose.orientation.z]
+        # self.get_logger().info(f"Euler ur tool: {q1} , Phantom Euler tool : {q2}")
+        theta = R.from_euler('zyx', q2-q1)
+        theta_axis = theta.as_rotvec()
+        self.get_logger().info(f"theta : {theta_axis}")
+        if len(self.linear_x_history) > 20 :
+            self.linear_x_history = self.linear_x_history[1:-1]
+            self.linear_y_history = self.linear_y_history[1:-1]
+            self.linear_z_history = self.linear_z_history[1:-1]
+            # self.angular_x_history = self.angular_x_history[1:-1]
+            # self.angular_y_history = self.angular_y_history[1:-1]
+            # self.angular_z_history = self.angular_z_history[1:-1]
+            # self.angular_velocity_x = self.angular_velocity_x[1:-1]
+            # self.angular_velocity_y = self.angular_velocity_y[1:-1]
+            # self.angular_velocity_z = self.angular_velocity_z[1:-1]
         # Orientation 
         # Calcul des vitesses angulaires
-        if len(self.angular_x_history) < 2 or len(self.angular_w_history) < 2 or len(self.angular_y_history) < 2 or len(self.angular_z_history) < 2:
-            twist_msg.twist.angular.x = 0.0
-            twist_msg.twist.angular.y = 0.0
-            twist_msg.twist.angular.z = 0.0
-        else:
-            # twist_msg.twist.angular.x = (2.0 / dt) * (q1.w * q2.x - q1.x * q2.w - q1.y * q2.z + q1.z * q2.y)*2.5
-            # twist_msg.twist.angular.y = (2.0 / dt) * (q1.w * q2.y + q1.x * q2.z - q1.y * q2.w - q1.z * q2.x)*2.5
-            # twist_msg.twist.angular.z = (2.0 / dt) * (q1.w * q2.z - q1.x * q2.y + q1.y * q2.x - q1.z * q2.w)*2.5
-            twist_msg.twist.angular.x = (q2.x - q1.x)/dt
-            twist_msg.twist.angular.y = (q2.y - q1.y)/dt
-            twist_msg.twist.angular.z = (q2.z - q1.z)/dt
+        # if len(self.angular_x_history) < 2 or len(self.angular_w_history) < 2 or len(self.angular_y_history) < 2 or len(self.angular_z_history) < 2:
+        #     twist_msg.twist.angular.x = 0.0
+        #     twist_msg.twist.angular.y = 0.0
+        #     twist_msg.twist.angular.z = 0.0
+        # else:
+        #     # self.angular_velocity_x.append((2.0 / dt) * (q1.w * q2.x - q1.x * q2.w - q1.y * q2.z + q1.z * q2.y))
+        #     # self.angular_velocity_y.append((2.0 / dt) * (q1.w * q2.y + q1.x * q2.z - q1.y * q2.w - q1.z * q2.x))
+        #     # self.angular_velocity_z.append((2.0 / dt) * (q1.w * q2.z - q1.x * q2.y + q1.y * q2.x - q1.z * q2.w))
+        #     self.angular_velocity_x.append((q2[0] - q1[0])*self.K)
+        #     self.angular_velocity_y.append((q2[1] - q1[1])*self.K)
+        #     self.angular_velocity_z.append((q2[2] - q1[2])*self.K)
 
         # Appliquer le filtre
         twist_msg.twist.linear.x = -self.apply_filter(self.linear_x_history,-1)
         twist_msg.twist.linear.y = -self.apply_filter(self.linear_y_history,-1)
         twist_msg.twist.linear.z = self.apply_filter(self.linear_z_history,-1)
-        
-        
-        # Filtrage de bruit par seuil (deadband)
+        twist_msg.twist.angular.x = theta_axis[0]*self.K#-(q2[0] - q1[0])*self.K
+        twist_msg.twist.angular.y = theta_axis[1]*self.K#-(q2[1] - q1[1])*self.K
+        twist_msg.twist.angular.z = theta_axis[2]*self.K#-(q2[2] - q1[2])*self.K
+        #self.get_logger().info(f"Published TwistStamped: {twist_msg}")
+        self.get_logger().info(f"w1 : {(q2[0] - q1[0])} w2 : {q2[1] - q1[1]} w3 : {q2[2] - q1[2]}")
+        # Filtrage de bruit par seuil (deadband)    
         self.deadband_filter_noise(twist_msg, 0.00101)
         
 
@@ -297,6 +324,8 @@ class OmniStateToTwistWithButton(Node):
         if abs(twist.twist.angular.z) < deadband:
             twist.twist.angular.z = 0.0
 
+    def pl_scene_callback(self, msg: PoseStamped):
+        self.pl_scene = msg
 
 def main(args=None):
     rclpy.init(args=args)
