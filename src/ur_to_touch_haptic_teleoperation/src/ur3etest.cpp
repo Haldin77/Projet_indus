@@ -252,9 +252,10 @@ private:
         //MGD
 
         // Copier les vitesses linéaires
-        linear_x_history.push_back(msg->velocity.x * 0.01);
-        linear_y_history.push_back(msg->velocity.y * 0.01);
-        linear_z_history.push_back(msg->velocity.z * 0.01);
+        RCLCPP_INFO(this->get_logger(), "Message reçu sur le topic /wrench",msg->velocity.x);
+        linear_x_history.push_back(msg->velocity.x * 100);
+        linear_y_history.push_back(msg->velocity.y * 100);
+        linear_z_history.push_back(msg->velocity.z * 100);
         angular_x_history.push_back(msg->pose.orientation.x);
         angular_y_history.push_back(msg->pose.orientation.y);
         angular_z_history.push_back(msg->pose.orientation.z);
@@ -280,12 +281,12 @@ private:
             twist_msg.twist.angular.y = 0.0;
             twist_msg.twist.angular.z = 0.0;
         } else {
-            // twist_msg.twist.angular.x = (2.0 / dt) * (q1.w * q2.x - q1.x * q2.w - q1.y * q2.z + q1.z * q2.y)*2.5
-            // twist_msg.twist.angular.y = (2.0 / dt) * (q1.w * q2.y + q1.x * q2.z - q1.y * q2.w - q1.z * q2.x)*2.5
-            // twist_msg.twist.angular.z = (2.0 / dt) * (q1.w * q2.z - q1.x * q2.y + q1.y * q2.x - q1.z * q2.w)*2.5
-            twist_msg.twist.angular.x = (q2.x - q1.x) / dt;
-            twist_msg.twist.angular.y = (q2.y - q1.y) / dt;
-            twist_msg.twist.angular.z = (q2.z - q1.z) / dt;
+            twist_msg.twist.angular.x = (2.0 / dt) * (q1.w * q2.x - q1.x * q2.w - q1.y * q2.z + q1.z * q2.y)
+            twist_msg.twist.angular.y = (2.0 / dt) * (q1.w * q2.y + q1.x * q2.z - q1.y * q2.w - q1.z * q2.x)
+            twist_msg.twist.angular.z = (2.0 / dt) * (q1.w * q2.z - q1.x * q2.y + q1.y * q2.x - q1.z * q2.w)
+            // twist_msg.twist.angular.x = (q2.x - q1.x) / dt;
+            // twist_msg.twist.angular.y = (q2.y - q1.y) / dt;
+            // twist_msg.twist.angular.z = (q2.z - q1.z) / dt;
         }
 
         // Appliquer le filtre
@@ -311,7 +312,7 @@ private:
         double norm = force.dot(force);
 
         // Vérifier si la norme de la force est supérieure à 10 (ici >2 dans le code)
-        if (norm > 2) {
+        if (norm > 200) {
             if (force.dot(linear_velocity) > 0) {
                 // twist_msg.twist.linear velocities annulées
                 twist_msg.twist.linear.x = 0.0;
@@ -320,7 +321,7 @@ private:
             }
         }
         // Publication des messages
-        publisher_->publish(twist_msg);
+        publisher->publish(twist_msg);
         //test
         // Mettre à jour l'orientation précédente
         last_orientation.pose.orientation = msg->pose.orientation;
