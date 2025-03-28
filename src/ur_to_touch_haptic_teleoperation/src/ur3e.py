@@ -184,17 +184,10 @@ class OmniStateToTwistWithButton(Node):
         # self.angular_y_history.append(msg.pose.orientation.y)
         # self.angular_z_history.append(msg.pose.orientation.z)
         quat = self.pl_scene.pose.orientation
-        #q1 = tf.euler_from_quaternion([quat.x,quat.y,quat.z,quat.w])
-        q1 = R.from_quat([quat.x,quat.y,quat.z,quat.w]).as_euler('zyx', degrees=False)  # Yaw-Pitch-Roll (default tf2)
-        #euler_xyz = R.from_quat([quat.x,quat.y,quat.z,quat.w]).as_euler('xyz', degrees=False) 
-
-        #print(f"ZYX (Yaw-Pitch-Roll) : {euler_zyx}")
-        #print(f"XYZ                 : {euler_xyz}")
-        q2 = [msg.pose.orientation.x,msg.pose.orientation.y,msg.pose.orientation.z]
-        # self.get_logger().info(f"Euler ur tool: {q1} , Phantom Euler tool : {q2}")
-        theta = R.from_euler('zyx', q2-q1)
-        theta_axis = theta.as_rotvec()
-        self.get_logger().info(f"theta : {theta_axis}")
+        q1 = np.array([quat.x,quat.y,quat.z,quat.w])
+        q2 = [msg.pose.orientation.x,msg.pose.orientation.y,msg.pose.orientation.z,msg.pose.orientation.w]
+        theta_axis = quaternion_to_axis_angle(q2,q1)*self.K
+        
         if len(self.linear_x_history) > 20 :
             self.linear_x_history = self.linear_x_history[1:-1]
             self.linear_y_history = self.linear_y_history[1:-1]
@@ -223,12 +216,9 @@ class OmniStateToTwistWithButton(Node):
         twist_msg.twist.linear.x = -self.apply_filter(self.linear_x_history,-1)
         twist_msg.twist.linear.y = -self.apply_filter(self.linear_y_history,-1)
         twist_msg.twist.linear.z = self.apply_filter(self.linear_z_history,-1)
-        twist_msg.twist.angular.x = theta_axis[0]*self.K#-(q2[0] - q1[0])*self.K
-        twist_msg.twist.angular.y = theta_axis[1]*self.K#-(q2[1] - q1[1])*self.K
-        twist_msg.twist.angular.z = theta_axis[2]*self.K#-(q2[2] - q1[2])*self.K
-        #self.get_logger().info(f"Published TwistStamped: {twist_msg}")
-        self.get_logger().info(f"w1 : {(q2[0] - q1[0])} w2 : {q2[1] - q1[1]} w3 : {q2[2] - q1[2]}")
-        # Filtrage de bruit par seuil (deadband)    
+        twist_msg.twist.angular.x = theta_axis[0]#-(q2[0] - q1[0])*self.K
+        twist_msg.twist.angular.y = theta_axis[1]#-(q2[1] - q1[1])*self.K
+        twist_msg.twist.angular.z = theta_axis[2]#-(q2[2] - q1[2])*self.K  
         self.deadband_filter_noise(twist_msg, 0.00101)
         
 
@@ -308,7 +298,8 @@ class OmniStateToTwistWithButton(Node):
             self.wrench_msg.wrench.force.z = self.VecteurforceBase[2]*0.1
 
             self.publisher_omni.publish(self.wrench_msg)
-        
+    
+    
     def deadband_filter_noise(self, twist, deadband):
         """Appliquer un filtre deadband pour supprimer le bruit."""
         if abs(twist.twist.linear.x) < deadband:
@@ -327,6 +318,27 @@ class OmniStateToTwistWithButton(Node):
     def pl_scene_callback(self, msg: PoseStamped):
         self.pl_scene = msg
 
+def quaternion_to_axis_angle(q_ref, q_mes):
+        """
+        Calcule l'erreur en rotation vectorielle (axis-angle)
+        entre une consigne quaternion q_ref et une mesure quaternion q_mes.
+
+        Args:
+            q_ref (numpy.array): Quaternion de consigne [x, y, z, w]
+            q_mes (numpy.array): Quaternion mesuré [x, y, z, w]
+
+        Returns:
+            numpy.array: Vecteur rotationnel de l'erreur (axis-angle)
+        """
+        # Calcul du quaternion d'erreur : q_e = q_ref^-1 ⊗ q_mes
+        q_ref_inv = R.from_quat(q_ref).inv()  # Inverse de la consigne
+        q_error = q_ref_inv * R.from_quat(q_mes)  # Multiplication quaternion
+
+        # Convertir l'erreur en rotation vectorielle (axis-angle)
+        axis_angle_error = q_error.as_rotvec()
+
+        return axis_angle_error
+    
 def main(args=None):
     rclpy.init(args=args)
 
