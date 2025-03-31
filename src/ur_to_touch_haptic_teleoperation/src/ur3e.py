@@ -175,9 +175,9 @@ class OmniStateToTwistWithButton(Node):
             #self.get_logger().info(f"Force en base: {self.VecteurforceBase}")
         
         # Copier les vitesses linéaires
-        self.linear_x_history.append(msg.velocity.x*0.1)
-        self.linear_y_history.append(msg.velocity.y*0.1)
-        self.linear_z_history.append(msg.velocity.z*0.1)
+        self.linear_x_history.append(msg.velocity.x*10)
+        self.linear_y_history.append(msg.velocity.y*10)
+        self.linear_z_history.append(msg.velocity.z*10)
 
 
         # self.angular_x_history.append(msg.pose.orientation.x)
@@ -246,7 +246,7 @@ class OmniStateToTwistWithButton(Node):
         norm = np.dot(force, force)
 
         # Vérifier si la norme de la force est supérieure à 10
-        if norm >2:
+        if norm >200:
             # # Calculer le produit scalaire entre la force et la vitesse linéaire
             if np.dot(force, linear_velocity) > 0:
             #     dot_product = np.dot(force, linear_velocity)
@@ -335,7 +335,7 @@ def quaternion_to_axis_angle(q_ref, q_mes):
         q_error = q_ref_inv * R.from_quat(q_mes)  # Multiplication quaternion
 
         # Convertir l'erreur en rotation vectorielle (axis-angle)
-        axis_angle_error = q_error.as_rotvec()
+        axis_angle_error = q_error.as_euler("xyz",degrees=False)
 
         return axis_angle_error
     
