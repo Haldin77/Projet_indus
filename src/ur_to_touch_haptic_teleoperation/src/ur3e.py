@@ -186,7 +186,7 @@ class OmniStateToTwistWithButton(Node):
         quat = self.pl_scene.pose.orientation
         q1 = np.array([quat.x,quat.y,quat.z,quat.w])
         q2 = [msg.pose.orientation.x,msg.pose.orientation.y,msg.pose.orientation.z,msg.pose.orientation.w]
-        theta_axis = quaternion_to_axis_angle(q2,q1)*self.K
+        theta_axis = self.quaternion_to_axis_angle(q2,q1)*self.K
         
         if len(self.linear_x_history) > 20 :
             self.linear_x_history = self.linear_x_history[1:-1]
@@ -318,26 +318,29 @@ class OmniStateToTwistWithButton(Node):
     def pl_scene_callback(self, msg: PoseStamped):
         self.pl_scene = msg
 
-def quaternion_to_axis_angle(q_ref, q_mes):
-        """
-        Calcule l'erreur en rotation vectorielle (axis-angle)
-        entre une consigne quaternion q_ref et une mesure quaternion q_mes.
+    def quaternion_to_axis_angle(self, q_ref, q_mes):
+            """
+            Calcule l'erreur en rotation vectorielle (axis-angle)
+            entre une consigne quaternion q_ref et une mesure quaternion q_mes.
 
-        Args:
-            q_ref (numpy.array): Quaternion de consigne [x, y, z, w]
-            q_mes (numpy.array): Quaternion mesuré [x, y, z, w]
+            Args:
+                q_ref (numpy.array): Quaternion de consigne [x, y, z, w]
+                q_mes (numpy.array): Quaternion mesuré [x, y, z, w]
 
-        Returns:
-            numpy.array: Vecteur rotationnel de l'erreur (axis-angle)
-        """
-        # Calcul du quaternion d'erreur : q_e = q_ref^-1 ⊗ q_mes
-        q_ref_inv = R.from_quat(q_ref).inv()  # Inverse de la consigne
-        q_error = q_ref_inv * R.from_quat(q_mes)  # Multiplication quaternion
+            Returns:
+                numpy.array: Vecteur rotationnel de l'erreur (axis-angle)
+            """
+            # Calcul du quaternion d'erreur : q_e = q_ref^-1 ⊗ q_mes
+            q_ref_inv = R.from_quat(q_ref).inv()  # Inverse de la consigne
+            q_error = q_ref_inv * R.from_quat(q_mes)  # Multiplication quaternion
 
-        # Convertir l'erreur en rotation vectorielle (axis-angle)
-        axis_angle_error = q_error.as_euler("xyz",degrees=False)
-
-        return axis_angle_error
+            # Convertir l'erreur en rotation vectorielle (axis-angle)
+            axis_angle_error = q_error.as_rotvec()
+            ur3 = UR3Kinematics()
+            T06 = ur3.fk_ur(self.joint_angles)
+            R06 = T06[:3, :3]
+            axis_angle_error = np.dot(np.linalg.inv(R06), axis_angle_error)
+            return axis_angle_error
     
 def main(args=None):
     rclpy.init(args=args)

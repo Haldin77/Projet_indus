@@ -1,0 +1,6 @@
+Invoking command in '/home/projet-echo/Projet_indus/build/omni_msgs': /usr/bin/cmake /home/projet-echo/Projet_indus/src/Geomagic_Touch_ROS2/omni_msgs -DCATKIN_INSTALL_INTO_PREFIX_ROOT=0 -DCMAKE_INSTALL_PREFIX=/home/projet-echo/Projet_indus/install/omni_msgs
+Invoked command in '/home/projet-echo/Projet_indus/build/omni_msgs' returned '0': /usr/bin/cmake /home/projet-echo/Projet_indus/src/Geomagic_Touch_ROS2/omni_msgs -DCATKIN_INSTALL_INTO_PREFIX_ROOT=0 -DCMAKE_INSTALL_PREFIX=/home/projet-echo/Projet_indus/install/omni_msgs
+Invoking command in '/home/projet-echo/Projet_indus/build/omni_msgs': /usr/bin/cmake --build /home/projet-echo/Projet_indus/build/omni_msgs -- -j20 -l20
+Invoked command in '/home/projet-echo/Projet_indus/build/omni_msgs' returned '0': /usr/bin/cmake --build /home/projet-echo/Projet_indus/build/omni_msgs -- -j20 -l20
+Invoking command in '/home/projet-echo/Projet_indus/build/omni_msgs': /usr/bin/cmake --install /home/projet-echo/Projet_indus/build/omni_msgs
+Invoked command in '/home/projet-echo/Projet_indus/build/omni_msgs' returned '0': /usr/bin/cmake --install /home/projet-echo/Projet_indus/build/omni_msgs

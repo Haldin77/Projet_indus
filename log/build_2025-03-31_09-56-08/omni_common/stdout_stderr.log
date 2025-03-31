@@ -1,0 +1,62 @@
+[ 25%] [32mBuilding CXX object CMakeFiles/omni.dir/src/omni.cpp.o[0m
+[ 50%] [32mBuilding CXX object CMakeFiles/omni_state.dir/src/omni_state.cpp.o[0m
+[01m[K/home/projet-echo/Projet_indus/src/Geomagic_Touch_ROS2/omni_common/src/omni.cpp:246:62:[m[K [01;35m[Kwarning: [m[K‘[01m[Kstdcall[m[K’ attribute ignored [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wattributes-Wattributes]8;;[m[K]
+  246 | HDCallbackCode HDCALLBACK omni_state_callback(void *pUserData[01;35m[K)[m[K
+      |                                                              [01;35m[K^[m[K
+[01m[K/home/projet-echo/Projet_indus/src/Geomagic_Touch_ROS2/omni_common/src/omni.cpp:[m[K In function ‘[01m[KHDCallbackCode omni_state_callback(void*)[m[K’:
+[01m[K/home/projet-echo/Projet_indus/src/Geomagic_Touch_ROS2/omni_common/src/omni.cpp:296:57:[m[K [01;35m[Kwarning: [m[Knarrowing conversion of ‘[01m[Komni_state->OmniState::joints.hduVector3D<double>::operator[](0)[m[K’ from ‘[01m[Kdouble[m[K’ to ‘[01m[Kfloat[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wnarrowing-Wnarrowing]8;;[m[K]
+  296 |                   omni_state->rot[1], omni_state->rot[2][01;35m[K}[m[K;
+      |                                                         [01;35m[K^[m[K
+[01m[K/home/projet-echo/Projet_indus/src/Geomagic_Touch_ROS2/omni_common/src/omni.cpp:296:57:[m[K [01;35m[Kwarning: [m[Knarrowing conversion of ‘[01m[Komni_state->OmniState::joints.hduVector3D<double>::operator[](1)[m[K’ from ‘[01m[Kdouble[m[K’ to ‘[01m[Kfloat[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wnarrowing-Wnarrowing]8;;[m[K]
+[01m[K/home/projet-echo/Projet_indus/src/Geomagic_Touch_ROS2/omni_common/src/omni.cpp:295:41:[m[K [01;35m[Kwarning: [m[Knarrowing conversion of ‘[01m[K(omni_state->OmniState::joints.hduVector3D<double>::operator[](2) - omni_state->OmniState::joints.hduVector3D<double>::operator[](1))[m[K’ from ‘[01m[Kdouble[m[K’ to ‘[01m[Kfloat[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wnarrowing-Wnarrowing]8;;[m[K]
+  295 |                   omni_state->joints[2] - omni_state->joints[1], omni_state->rot[0],
+[01m[K/home/projet-echo/Projet_indus/src/Geomagic_Touch_ROS2/omni_common/src/omni.cpp:296:57:[m[K [01;35m[Kwarning: [m[Knarrowing conversion of ‘[01m[Komni_state->OmniState::rot.hduVector3D<double>::operator[](0)[m[K’ from ‘[01m[Kdouble[m[K’ to ‘[01m[Kfloat[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wnarrowing-Wnarrowing]8;;[m[K]
+  296 |                   omni_state->rot[1], omni_state->rot[2][01;35m[K}[m[K;
+      |                                                         [01;35m[K^[m[K
+[01m[K/home/projet-echo/Projet_indus/src/Geomagic_Touch_ROS2/omni_common/src/omni.cpp:296:57:[m[K [01;35m[Kwarning: [m[Knarrowing conversion of ‘[01m[Komni_state->OmniState::rot.hduVector3D<double>::operator[](1)[m[K’ from ‘[01m[Kdouble[m[K’ to ‘[01m[Kfloat[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wnarrowing-Wnarrowing]8;;[m[K]
+[01m[K/home/projet-echo/Projet_indus/src/Geomagic_Touch_ROS2/omni_common/src/omni.cpp:296:57:[m[K [01;35m[Kwarning: [m[Knarrowing conversion of ‘[01m[Komni_state->OmniState::rot.hduVector3D<double>::operator[](2)[m[K’ from ‘[01m[Kdouble[m[K’ to ‘[01m[Kfloat[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wnarrowing-Wnarrowing]8;;[m[K]
+[01m[K/home/projet-echo/Projet_indus/src/Geomagic_Touch_ROS2/omni_common/src/omni_state.cpp:[m[K In function ‘[01m[KHDCallbackCode omni_state_callback(void*)[m[K’:
+[01m[K/home/projet-echo/Projet_indus/src/Geomagic_Touch_ROS2/omni_common/src/omni_state.cpp:345:53:[m[K [01;35m[Kwarning: [m[Knarrowing conversion of ‘[01m[Komni_state->OmniState::joints.hduVector3D<double>::operator[](0)[m[K’ from ‘[01m[Kdouble[m[K’ to ‘[01m[Kfloat[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wnarrowing-Wnarrowing]8;;[m[K]
+  345 |                   gimbal_angles[1], gimbal_angles[2][01;35m[K}[m[K;
+      |                                                     [01;35m[K^[m[K
+[01m[K/home/projet-echo/Projet_indus/src/Geomagic_Touch_ROS2/omni_common/src/omni_state.cpp:345:53:[m[K [01;35m[Kwarning: [m[Knarrowing conversion of ‘[01m[Komni_state->OmniState::joints.hduVector3D<double>::operator[](1)[m[K’ from ‘[01m[Kdouble[m[K’ to ‘[01m[Kfloat[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wnarrowing-Wnarrowing]8;;[m[K]
+[01m[K/home/projet-echo/Projet_indus/src/Geomagic_Touch_ROS2/omni_common/src/omni_state.cpp:344:41:[m[K [01;35m[Kwarning: [m[Knarrowing conversion of ‘[01m[K(omni_state->OmniState::joints.hduVector3D<double>::operator[](2) - omni_state->OmniState::joints.hduVector3D<double>::operator[](1))[m[K’ from ‘[01m[Kdouble[m[K’ to ‘[01m[Kfloat[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wnarrowing-Wnarrowing]8;;[m[K]
+  344 |                   omni_state->joints[2] - omni_state->joints[1], gimbal_angles[0],
+[01m[K/home/projet-echo/Projet_indus/src/Geomagic_Touch_ROS2/omni_common/src/omni_state.cpp:345:53:[m[K [01;35m[Kwarning: [m[Knarrowing conversion of ‘[01m[Kgimbal_angles.hduVector3D<double>::operator[](0)[m[K’ from ‘[01m[Kdouble[m[K’ to ‘[01m[Kfloat[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wnarrowing-Wnarrowing]8;;[m[K]
+  345 |                   gimbal_angles[1], gimbal_angles[2][01;35m[K}[m[K;
+      |                                                     [01;35m[K^[m[K
+[01m[K/home/projet-echo/Projet_indus/src/Geomagic_Touch_ROS2/omni_common/src/omni_state.cpp:345:53:[m[K [01;35m[Kwarning: [m[Knarrowing conversion of ‘[01m[Kgimbal_angles.hduVector3D<double>::operator[](1)[m[K’ from ‘[01m[Kdouble[m[K’ to ‘[01m[Kfloat[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wnarrowing-Wnarrowing]8;;[m[K]
+[01m[K/home/projet-echo/Projet_indus/src/Geomagic_Touch_ROS2/omni_common/src/omni_state.cpp:345:53:[m[K [01;35m[Kwarning: [m[Knarrowing conversion of ‘[01m[Kgimbal_angles.hduVector3D<double>::operator[](2)[m[K’ from ‘[01m[Kdouble[m[K’ to ‘[01m[Kfloat[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wnarrowing-Wnarrowing]8;;[m[K]
+[ 75%] [32m[1mLinking CXX executable omni[0m
+[100%] [32m[1mLinking CXX executable omni_state[0m
+/usr/bin/ld : warning : libncurses.so.5, requis par /usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib/libHD.so, peut être en conflit avec libncurses.so.6
+/usr/bin/ld : warning : libncurses.so.5, requis par /usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib/libHD.so, peut être en conflit avec libncurses.so.6
+[100%] Built target omni
+[100%] Built target omni_state
+-- Install configuration: ""
+-- Installing: /home/projet-echo/Projet_indus/install/omni_common/lib/omni_common/omni
+-- Set runtime path of "/home/projet-echo/Projet_indus/install/omni_common/lib/omni_common/omni" to ""
+-- Installing: /home/projet-echo/Projet_indus/install/omni_common/lib/omni_common/omni_state
+-- Set runtime path of "/home/projet-echo/Projet_indus/install/omni_common/lib/omni_common/omni_state" to ""
+-- Up-to-date: /home/projet-echo/Projet_indus/install/omni_common/include/omni_common/
+-- Up-to-date: /home/projet-echo/Projet_indus/install/omni_common/include/omni_common//empty.md
+-- Up-to-date: /home/projet-echo/Projet_indus/install/omni_common/share/omni_common/launch
+-- Installing: /home/projet-echo/Projet_indus/install/omni_common/share/omni_common/launch/omni_state.launch.py
+-- Up-to-date: /home/projet-echo/Projet_indus/install/omni_common/share/omni_common/launch/__pycache__
+-- Up-to-date: /home/projet-echo/Projet_indus/install/omni_common/share/omni_common/launch/__pycache__/omni_state.launch.cpython-310.pyc
+-- Up-to-date: /home/projet-echo/Projet_indus/install/omni_common/share/omni_common/launch/omni.launch.py
+-- Up-to-date: /home/projet-echo/Projet_indus/install/omni_common/share/ament_index/resource_index/package_run_dependencies/omni_common
+-- Up-to-date: /home/projet-echo/Projet_indus/install/omni_common/share/ament_index/resource_index/parent_prefix_path/omni_common
+-- Up-to-date: /home/projet-echo/Projet_indus/install/omni_common/share/omni_common/environment/ament_prefix_path.sh
+-- Up-to-date: /home/projet-echo/Projet_indus/install/omni_common/share/omni_common/environment/ament_prefix_path.dsv
+-- Up-to-date: /home/projet-echo/Projet_indus/install/omni_common/share/omni_common/environment/path.sh
+-- Up-to-date: /home/projet-echo/Projet_indus/install/omni_common/share/omni_common/environment/path.dsv
+-- Up-to-date: /home/projet-echo/Projet_indus/install/omni_common/share/omni_common/local_setup.bash
+-- Up-to-date: /home/projet-echo/Projet_indus/install/omni_common/share/omni_common/local_setup.sh
+-- Up-to-date: /home/projet-echo/Projet_indus/install/omni_common/share/omni_common/local_setup.zsh
+-- Up-to-date: /home/projet-echo/Projet_indus/install/omni_common/share/omni_common/local_setup.dsv
+-- Installing: /home/projet-echo/Projet_indus/install/omni_common/share/omni_common/package.dsv
+-- Up-to-date: /home/projet-echo/Projet_indus/install/omni_common/share/ament_index/resource_index/packages/omni_common
+-- Up-to-date: /home/projet-echo/Projet_indus/install/omni_common/share/omni_common/cmake/omni_commonConfig.cmake
+-- Up-to-date: /home/projet-echo/Projet_indus/install/omni_common/share/omni_common/cmake/omni_commonConfig-version.cmake
+-- Up-to-date: /home/projet-echo/Projet_indus/install/omni_common/share/omni_common/package.xml

@@ -1,0 +1,14 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "omni_msgs__py",
+		"source" : "/home/projet-echo/Projet_indus/build/omni_msgs/omni_msgs__py"
+	}
+}

@@ -1,0 +1,3 @@
+[console_scripts]
+ur3e = ur_control.ur3e:main
+

@@ -1,0 +1,427 @@
+[0.097s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build']
+[0.097s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=False, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=20, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=None, packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, verb_parser=<colcon_defaults.argument_parser.defaults.DefaultArgumentsDecorator object at 0x7ee27c43b2b0>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x7ee27c43ad70>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x7ee27c43ad70>>)
+[0.202s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.202s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.202s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.202s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.202s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[0.203s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.203s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/projet-echo/Projet_indus'
+[0.203s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[0.203s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[0.203s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[0.203s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[0.203s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[0.203s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[0.203s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[0.203s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[0.203s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[0.210s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[0.210s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[0.210s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[0.210s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[0.210s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[0.210s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[0.210s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[0.210s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[0.210s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[0.210s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[0.210s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[0.210s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[0.210s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[0.210s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[0.210s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ignore', 'ignore_ament_install']
+[0.210s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore'
+[0.210s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore_ament_install'
+[0.210s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_pkg']
+[0.210s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_pkg'
+[0.210s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_meta']
+[0.210s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_meta'
+[0.210s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ros']
+[0.210s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ros'
+[0.210s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['cmake', 'python']
+[0.210s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'cmake'
+[0.210s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python'
+[0.210s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['python_setup_py']
+[0.210s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python_setup_py'
+[0.210s] Level 1:colcon.colcon_core.package_identification:_identify(src/Geomagic_Touch_ROS2) by extensions ['ignore', 'ignore_ament_install']
+[0.210s] Level 1:colcon.colcon_core.package_identification:_identify(src/Geomagic_Touch_ROS2) by extension 'ignore'
+[0.210s] Level 1:colcon.colcon_core.package_identification:_identify(src/Geomagic_Touch_ROS2) by extension 'ignore_ament_install'
+[0.210s] Level 1:colcon.colcon_core.package_identification:_identify(src/Geomagic_Touch_ROS2) by extensions ['colcon_pkg']
+[0.210s] Level 1:colcon.colcon_core.package_identification:_identify(src/Geomagic_Touch_ROS2) by extension 'colcon_pkg'
+[0.210s] Level 1:colcon.colcon_core.package_identification:_identify(src/Geomagic_Touch_ROS2) by extensions ['colcon_meta']
+[0.210s] Level 1:colcon.colcon_core.package_identification:_identify(src/Geomagic_Touch_ROS2) by extension 'colcon_meta'
+[0.210s] Level 1:colcon.colcon_core.package_identification:_identify(src/Geomagic_Touch_ROS2) by extensions ['ros']
+[0.210s] Level 1:colcon.colcon_core.package_identification:_identify(src/Geomagic_Touch_ROS2) by extension 'ros'
+[0.210s] Level 1:colcon.colcon_core.package_identification:_identify(src/Geomagic_Touch_ROS2) by extensions ['cmake', 'python']
+[0.211s] Level 1:colcon.colcon_core.package_identification:_identify(src/Geomagic_Touch_ROS2) by extension 'cmake'
+[0.211s] Level 1:colcon.colcon_core.package_identification:_identify(src/Geomagic_Touch_ROS2) by extension 'python'
+[0.211s] Level 1:colcon.colcon_core.package_identification:_identify(src/Geomagic_Touch_ROS2) by extensions ['python_setup_py']
+[0.211s] Level 1:colcon.colcon_core.package_identification:_identify(src/Geomagic_Touch_ROS2) by extension 'python_setup_py'
+[0.211s] Level 1:colcon.colcon_core.package_identification:_identify(src/Geomagic_Touch_ROS2/omni_common) by extensions ['ignore', 'ignore_ament_install']
+[0.211s] Level 1:colcon.colcon_core.package_identification:_identify(src/Geomagic_Touch_ROS2/omni_common) by extension 'ignore'
+[0.211s] Level 1:colcon.colcon_core.package_identification:_identify(src/Geomagic_Touch_ROS2/omni_common) by extension 'ignore_ament_install'
+[0.211s] Level 1:colcon.colcon_core.package_identification:_identify(src/Geomagic_Touch_ROS2/omni_common) by extensions ['colcon_pkg']
+[0.211s] Level 1:colcon.colcon_core.package_identification:_identify(src/Geomagic_Touch_ROS2/omni_common) by extension 'colcon_pkg'
+[0.211s] Level 1:colcon.colcon_core.package_identification:_identify(src/Geomagic_Touch_ROS2/omni_common) by extensions ['colcon_meta']
+[0.211s] Level 1:colcon.colcon_core.package_identification:_identify(src/Geomagic_Touch_ROS2/omni_common) by extension 'colcon_meta'
+[0.211s] Level 1:colcon.colcon_core.package_identification:_identify(src/Geomagic_Touch_ROS2/omni_common) by extensions ['ros']
+[0.211s] Level 1:colcon.colcon_core.package_identification:_identify(src/Geomagic_Touch_ROS2/omni_common) by extension 'ros'
+[0.213s] DEBUG:colcon.colcon_core.package_identification:Package 'src/Geomagic_Touch_ROS2/omni_common' with type 'ros.ament_cmake' and name 'omni_common'
+[0.213s] Level 1:colcon.colcon_core.package_identification:_identify(src/Geomagic_Touch_ROS2/omni_description) by extensions ['ignore', 'ignore_ament_install']
+[0.213s] Level 1:colcon.colcon_core.package_identification:_identify(src/Geomagic_Touch_ROS2/omni_description) by extension 'ignore'
+[0.213s] Level 1:colcon.colcon_core.package_identification:_identify(src/Geomagic_Touch_ROS2/omni_description) by extension 'ignore_ament_install'
+[0.213s] Level 1:colcon.colcon_core.package_identification:_identify(src/Geomagic_Touch_ROS2/omni_description) by extensions ['colcon_pkg']
+[0.213s] Level 1:colcon.colcon_core.package_identification:_identify(src/Geomagic_Touch_ROS2/omni_description) by extension 'colcon_pkg'
+[0.213s] Level 1:colcon.colcon_core.package_identification:_identify(src/Geomagic_Touch_ROS2/omni_description) by extensions ['colcon_meta']
+[0.213s] Level 1:colcon.colcon_core.package_identification:_identify(src/Geomagic_Touch_ROS2/omni_description) by extension 'colcon_meta'
+[0.213s] Level 1:colcon.colcon_core.package_identification:_identify(src/Geomagic_Touch_ROS2/omni_description) by extensions ['ros']
+[0.213s] Level 1:colcon.colcon_core.package_identification:_identify(src/Geomagic_Touch_ROS2/omni_description) by extension 'ros'
+[0.213s] DEBUG:colcon.colcon_core.package_identification:Package 'src/Geomagic_Touch_ROS2/omni_description' with type 'ros.ament_cmake' and name 'omni_description'
+[0.213s] Level 1:colcon.colcon_core.package_identification:_identify(src/Geomagic_Touch_ROS2/omni_msgs) by extensions ['ignore', 'ignore_ament_install']
+[0.213s] Level 1:colcon.colcon_core.package_identification:_identify(src/Geomagic_Touch_ROS2/omni_msgs) by extension 'ignore'
+[0.213s] Level 1:colcon.colcon_core.package_identification:_identify(src/Geomagic_Touch_ROS2/omni_msgs) by extension 'ignore_ament_install'
+[0.213s] Level 1:colcon.colcon_core.package_identification:_identify(src/Geomagic_Touch_ROS2/omni_msgs) by extensions ['colcon_pkg']
+[0.213s] Level 1:colcon.colcon_core.package_identification:_identify(src/Geomagic_Touch_ROS2/omni_msgs) by extension 'colcon_pkg'
+[0.213s] Level 1:colcon.colcon_core.package_identification:_identify(src/Geomagic_Touch_ROS2/omni_msgs) by extensions ['colcon_meta']
+[0.213s] Level 1:colcon.colcon_core.package_identification:_identify(src/Geomagic_Touch_ROS2/omni_msgs) by extension 'colcon_meta'
+[0.213s] Level 1:colcon.colcon_core.package_identification:_identify(src/Geomagic_Touch_ROS2/omni_msgs) by extensions ['ros']
+[0.213s] Level 1:colcon.colcon_core.package_identification:_identify(src/Geomagic_Touch_ROS2/omni_msgs) by extension 'ros'
+[0.214s] DEBUG:colcon.colcon_core.package_identification:Package 'src/Geomagic_Touch_ROS2/omni_msgs' with type 'ros.catkin' and name 'omni_msgs'
+[0.214s] Level 1:colcon.colcon_core.package_identification:_identify(src/ur_to_touch_haptic_teleoperation) by extensions ['ignore', 'ignore_ament_install']
+[0.214s] Level 1:colcon.colcon_core.package_identification:_identify(src/ur_to_touch_haptic_teleoperation) by extension 'ignore'
+[0.214s] Level 1:colcon.colcon_core.package_identification:_identify(src/ur_to_touch_haptic_teleoperation) by extension 'ignore_ament_install'
+[0.214s] Level 1:colcon.colcon_core.package_identification:_identify(src/ur_to_touch_haptic_teleoperation) by extensions ['colcon_pkg']
+[0.214s] Level 1:colcon.colcon_core.package_identification:_identify(src/ur_to_touch_haptic_teleoperation) by extension 'colcon_pkg'
+[0.214s] Level 1:colcon.colcon_core.package_identification:_identify(src/ur_to_touch_haptic_teleoperation) by extensions ['colcon_meta']
+[0.214s] Level 1:colcon.colcon_core.package_identification:_identify(src/ur_to_touch_haptic_teleoperation) by extension 'colcon_meta'
+[0.214s] Level 1:colcon.colcon_core.package_identification:_identify(src/ur_to_touch_haptic_teleoperation) by extensions ['ros']
+[0.214s] Level 1:colcon.colcon_core.package_identification:_identify(src/ur_to_touch_haptic_teleoperation) by extension 'ros'
+[0.214s] DEBUG:colcon.colcon_core.package_identification:Package 'src/ur_to_touch_haptic_teleoperation' with type 'ros.ament_cmake' and name 'ur_to_touch_haptic_teleoperation'
+[0.214s] Level 1:colcon.colcon_core.package_identification:_identify(src/ur_udp) by extensions ['ignore', 'ignore_ament_install']
+[0.215s] Level 1:colcon.colcon_core.package_identification:_identify(src/ur_udp) by extension 'ignore'
+[0.215s] Level 1:colcon.colcon_core.package_identification:_identify(src/ur_udp) by extension 'ignore_ament_install'
+[0.215s] Level 1:colcon.colcon_core.package_identification:_identify(src/ur_udp) by extensions ['colcon_pkg']
+[0.215s] Level 1:colcon.colcon_core.package_identification:_identify(src/ur_udp) by extension 'colcon_pkg'
+[0.215s] Level 1:colcon.colcon_core.package_identification:_identify(src/ur_udp) by extensions ['colcon_meta']
+[0.215s] Level 1:colcon.colcon_core.package_identification:_identify(src/ur_udp) by extension 'colcon_meta'
+[0.215s] Level 1:colcon.colcon_core.package_identification:_identify(src/ur_udp) by extensions ['ros']
+[0.215s] Level 1:colcon.colcon_core.package_identification:_identify(src/ur_udp) by extension 'ros'
+[0.215s] DEBUG:colcon.colcon_core.package_identification:Package 'src/ur_udp' with type 'ros.ament_cmake' and name 'ur_udp'
+[0.215s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[0.215s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[0.215s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[0.215s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[0.215s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[0.235s] Level 5:colcon.colcon_core.verb:set package 'omni_description' build argument 'cmake_args' from command line to 'None'
+[0.235s] Level 5:colcon.colcon_core.verb:set package 'omni_description' build argument 'cmake_target' from command line to 'None'
+[0.235s] Level 5:colcon.colcon_core.verb:set package 'omni_description' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.235s] Level 5:colcon.colcon_core.verb:set package 'omni_description' build argument 'cmake_clean_cache' from command line to 'False'
+[0.235s] Level 5:colcon.colcon_core.verb:set package 'omni_description' build argument 'cmake_clean_first' from command line to 'False'
+[0.235s] Level 5:colcon.colcon_core.verb:set package 'omni_description' build argument 'cmake_force_configure' from command line to 'False'
+[0.235s] Level 5:colcon.colcon_core.verb:set package 'omni_description' build argument 'ament_cmake_args' from command line to 'None'
+[0.235s] Level 5:colcon.colcon_core.verb:set package 'omni_description' build argument 'catkin_cmake_args' from command line to 'None'
+[0.235s] Level 5:colcon.colcon_core.verb:set package 'omni_description' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.235s] DEBUG:colcon.colcon_core.verb:Building package 'omni_description' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/projet-echo/Projet_indus/build/omni_description', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/projet-echo/Projet_indus/install/omni_description', 'merge_install': False, 'path': '/home/projet-echo/Projet_indus/src/Geomagic_Touch_ROS2/omni_description', 'symlink_install': False, 'test_result_base': None}
+[0.235s] Level 5:colcon.colcon_core.verb:set package 'omni_msgs' build argument 'cmake_args' from command line to 'None'
+[0.235s] Level 5:colcon.colcon_core.verb:set package 'omni_msgs' build argument 'cmake_target' from command line to 'None'
+[0.235s] Level 5:colcon.colcon_core.verb:set package 'omni_msgs' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.235s] Level 5:colcon.colcon_core.verb:set package 'omni_msgs' build argument 'cmake_clean_cache' from command line to 'False'
+[0.235s] Level 5:colcon.colcon_core.verb:set package 'omni_msgs' build argument 'cmake_clean_first' from command line to 'False'
+[0.235s] Level 5:colcon.colcon_core.verb:set package 'omni_msgs' build argument 'cmake_force_configure' from command line to 'False'
+[0.235s] Level 5:colcon.colcon_core.verb:set package 'omni_msgs' build argument 'ament_cmake_args' from command line to 'None'
+[0.235s] Level 5:colcon.colcon_core.verb:set package 'omni_msgs' build argument 'catkin_cmake_args' from command line to 'None'
+[0.235s] Level 5:colcon.colcon_core.verb:set package 'omni_msgs' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.235s] DEBUG:colcon.colcon_core.verb:Building package 'omni_msgs' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/projet-echo/Projet_indus/build/omni_msgs', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/projet-echo/Projet_indus/install/omni_msgs', 'merge_install': False, 'path': '/home/projet-echo/Projet_indus/src/Geomagic_Touch_ROS2/omni_msgs', 'symlink_install': False, 'test_result_base': None}
+[0.235s] Level 5:colcon.colcon_core.verb:set package 'omni_common' build argument 'cmake_args' from command line to 'None'
+[0.235s] Level 5:colcon.colcon_core.verb:set package 'omni_common' build argument 'cmake_target' from command line to 'None'
+[0.235s] Level 5:colcon.colcon_core.verb:set package 'omni_common' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.235s] Level 5:colcon.colcon_core.verb:set package 'omni_common' build argument 'cmake_clean_cache' from command line to 'False'
+[0.235s] Level 5:colcon.colcon_core.verb:set package 'omni_common' build argument 'cmake_clean_first' from command line to 'False'
+[0.235s] Level 5:colcon.colcon_core.verb:set package 'omni_common' build argument 'cmake_force_configure' from command line to 'False'
+[0.235s] Level 5:colcon.colcon_core.verb:set package 'omni_common' build argument 'ament_cmake_args' from command line to 'None'
+[0.235s] Level 5:colcon.colcon_core.verb:set package 'omni_common' build argument 'catkin_cmake_args' from command line to 'None'
+[0.235s] Level 5:colcon.colcon_core.verb:set package 'omni_common' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.235s] DEBUG:colcon.colcon_core.verb:Building package 'omni_common' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/projet-echo/Projet_indus/build/omni_common', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/projet-echo/Projet_indus/install/omni_common', 'merge_install': False, 'path': '/home/projet-echo/Projet_indus/src/Geomagic_Touch_ROS2/omni_common', 'symlink_install': False, 'test_result_base': None}
+[0.236s] Level 5:colcon.colcon_core.verb:set package 'ur_udp' build argument 'cmake_args' from command line to 'None'
+[0.236s] Level 5:colcon.colcon_core.verb:set package 'ur_udp' build argument 'cmake_target' from command line to 'None'
+[0.236s] Level 5:colcon.colcon_core.verb:set package 'ur_udp' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.236s] Level 5:colcon.colcon_core.verb:set package 'ur_udp' build argument 'cmake_clean_cache' from command line to 'False'
+[0.236s] Level 5:colcon.colcon_core.verb:set package 'ur_udp' build argument 'cmake_clean_first' from command line to 'False'
+[0.236s] Level 5:colcon.colcon_core.verb:set package 'ur_udp' build argument 'cmake_force_configure' from command line to 'False'
+[0.236s] Level 5:colcon.colcon_core.verb:set package 'ur_udp' build argument 'ament_cmake_args' from command line to 'None'
+[0.236s] Level 5:colcon.colcon_core.verb:set package 'ur_udp' build argument 'catkin_cmake_args' from command line to 'None'
+[0.236s] Level 5:colcon.colcon_core.verb:set package 'ur_udp' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.236s] DEBUG:colcon.colcon_core.verb:Building package 'ur_udp' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/projet-echo/Projet_indus/build/ur_udp', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/projet-echo/Projet_indus/install/ur_udp', 'merge_install': False, 'path': '/home/projet-echo/Projet_indus/src/ur_udp', 'symlink_install': False, 'test_result_base': None}
+[0.236s] Level 5:colcon.colcon_core.verb:set package 'ur_to_touch_haptic_teleoperation' build argument 'cmake_args' from command line to 'None'
+[0.236s] Level 5:colcon.colcon_core.verb:set package 'ur_to_touch_haptic_teleoperation' build argument 'cmake_target' from command line to 'None'
+[0.236s] Level 5:colcon.colcon_core.verb:set package 'ur_to_touch_haptic_teleoperation' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.236s] Level 5:colcon.colcon_core.verb:set package 'ur_to_touch_haptic_teleoperation' build argument 'cmake_clean_cache' from command line to 'False'
+[0.236s] Level 5:colcon.colcon_core.verb:set package 'ur_to_touch_haptic_teleoperation' build argument 'cmake_clean_first' from command line to 'False'
+[0.236s] Level 5:colcon.colcon_core.verb:set package 'ur_to_touch_haptic_teleoperation' build argument 'cmake_force_configure' from command line to 'False'
+[0.236s] Level 5:colcon.colcon_core.verb:set package 'ur_to_touch_haptic_teleoperation' build argument 'ament_cmake_args' from command line to 'None'
+[0.236s] Level 5:colcon.colcon_core.verb:set package 'ur_to_touch_haptic_teleoperation' build argument 'catkin_cmake_args' from command line to 'None'
+[0.236s] Level 5:colcon.colcon_core.verb:set package 'ur_to_touch_haptic_teleoperation' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.236s] DEBUG:colcon.colcon_core.verb:Building package 'ur_to_touch_haptic_teleoperation' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/projet-echo/Projet_indus/build/ur_to_touch_haptic_teleoperation', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/projet-echo/Projet_indus/install/ur_to_touch_haptic_teleoperation', 'merge_install': False, 'path': '/home/projet-echo/Projet_indus/src/ur_to_touch_haptic_teleoperation', 'symlink_install': False, 'test_result_base': None}
+[0.236s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[0.237s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[0.237s] INFO:colcon.colcon_ros.task.catkin.build:Building ROS package in '/home/projet-echo/Projet_indus/src/Geomagic_Touch_ROS2/omni_msgs' with build type 'catkin'
+[0.237s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/projet-echo/Projet_indus/src/Geomagic_Touch_ROS2/omni_msgs'
+[0.239s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[0.239s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.239s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.240s] WARNING:colcon.colcon_core.prefix_path.colcon:The path '/home/projet-echo/ros2_ws/install' in the environment variable COLCON_PREFIX_PATH doesn't exist
+[0.240s] WARNING:colcon.colcon_ros.prefix_path.ament:The path '/home/projet-echo/ros2_ws/install/ur_udp' in the environment variable AMENT_PREFIX_PATH doesn't exist
+[0.240s] WARNING:colcon.colcon_ros.prefix_path.ament:The path '/home/projet-echo/ros2_ws/install/ur_to_touch_haptic_teleoperation' in the environment variable AMENT_PREFIX_PATH doesn't exist
+[0.240s] WARNING:colcon.colcon_ros.prefix_path.ament:The path '/home/projet-echo/ros2_ws/install/omni_common' in the environment variable AMENT_PREFIX_PATH doesn't exist
+[0.240s] WARNING:colcon.colcon_ros.prefix_path.ament:The path '/home/projet-echo/ros2_ws/install/omni_description' in the environment variable AMENT_PREFIX_PATH doesn't exist
+[0.240s] WARNING:colcon.colcon_ros.prefix_path.catkin:The path '/home/projet-echo/ros2_ws/install/ur_udp' in the environment variable CMAKE_PREFIX_PATH doesn't exist
+[0.240s] WARNING:colcon.colcon_ros.prefix_path.catkin:The path '/home/projet-echo/ros2_ws/install/ur_to_touch_haptic_teleoperation' in the environment variable CMAKE_PREFIX_PATH doesn't exist
+[0.240s] WARNING:colcon.colcon_ros.prefix_path.catkin:The path '/home/projet-echo/ros2_ws/install/omni_common' in the environment variable CMAKE_PREFIX_PATH doesn't exist
+[0.240s] WARNING:colcon.colcon_ros.prefix_path.catkin:The path '/home/projet-echo/ros2_ws/install/omni_msgs' in the environment variable CMAKE_PREFIX_PATH doesn't exist
+[0.240s] WARNING:colcon.colcon_ros.prefix_path.catkin:The path '/home/projet-echo/ros2_ws/install/omni_description' in the environment variable CMAKE_PREFIX_PATH doesn't exist
+[0.242s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/projet-echo/Projet_indus/src/Geomagic_Touch_ROS2/omni_description' with build type 'ament_cmake'
+[0.242s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/projet-echo/Projet_indus/src/Geomagic_Touch_ROS2/omni_description'
+[0.242s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.242s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.247s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/projet-echo/Projet_indus/build/omni_msgs': /usr/bin/cmake /home/projet-echo/Projet_indus/src/Geomagic_Touch_ROS2/omni_msgs -DCATKIN_INSTALL_INTO_PREFIX_ROOT=0 -DCMAKE_INSTALL_PREFIX=/home/projet-echo/Projet_indus/install/omni_msgs
+[0.249s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/projet-echo/Projet_indus/build/omni_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/projet-echo/Projet_indus/src/Geomagic_Touch_ROS2/omni_description -DCMAKE_INSTALL_PREFIX=/home/projet-echo/Projet_indus/install/omni_description
+[0.738s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/projet-echo/Projet_indus/build/omni_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/projet-echo/Projet_indus/src/Geomagic_Touch_ROS2/omni_description -DCMAKE_INSTALL_PREFIX=/home/projet-echo/Projet_indus/install/omni_description
+[0.739s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/projet-echo/Projet_indus/build/omni_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/projet-echo/Projet_indus/build/omni_description -- -j20 -l20
+[0.762s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/projet-echo/Projet_indus/build/omni_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/projet-echo/Projet_indus/build/omni_description -- -j20 -l20
+[0.769s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/projet-echo/Projet_indus/build/omni_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/projet-echo/Projet_indus/build/omni_description
+[0.782s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(omni_description)
+[0.782s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/projet-echo/Projet_indus/build/omni_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/projet-echo/Projet_indus/build/omni_description
+[0.785s] Level 1:colcon.colcon_core.environment:checking '/home/projet-echo/Projet_indus/install/omni_description' for CMake module files
+[0.785s] Level 1:colcon.colcon_core.environment:checking '/home/projet-echo/Projet_indus/install/omni_description' for CMake config files
+[0.785s] Level 1:colcon.colcon_core.shell:create_environment_hook('omni_description', 'cmake_prefix_path')
+[0.785s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/projet-echo/Projet_indus/install/omni_description/share/omni_description/hook/cmake_prefix_path.ps1'
+[0.786s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/projet-echo/Projet_indus/install/omni_description/share/omni_description/hook/cmake_prefix_path.dsv'
+[0.786s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/projet-echo/Projet_indus/install/omni_description/share/omni_description/hook/cmake_prefix_path.sh'
+[0.787s] Level 1:colcon.colcon_core.environment:checking '/home/projet-echo/Projet_indus/install/omni_description/bin'
+[0.787s] Level 1:colcon.colcon_core.environment:checking '/home/projet-echo/Projet_indus/install/omni_description/lib/pkgconfig/omni_description.pc'
+[0.788s] Level 1:colcon.colcon_core.environment:checking '/home/projet-echo/Projet_indus/install/omni_description/lib/python3.10/site-packages'
+[0.788s] Level 1:colcon.colcon_core.environment:checking '/home/projet-echo/Projet_indus/install/omni_description/bin'
+[0.788s] INFO:colcon.colcon_core.shell:Creating package script '/home/projet-echo/Projet_indus/install/omni_description/share/omni_description/package.ps1'
+[0.789s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/projet-echo/Projet_indus/install/omni_description/share/omni_description/package.dsv'
+[0.789s] INFO:colcon.colcon_core.shell:Creating package script '/home/projet-echo/Projet_indus/install/omni_description/share/omni_description/package.sh'
+[0.790s] INFO:colcon.colcon_core.shell:Creating package script '/home/projet-echo/Projet_indus/install/omni_description/share/omni_description/package.bash'
+[0.790s] INFO:colcon.colcon_core.shell:Creating package script '/home/projet-echo/Projet_indus/install/omni_description/share/omni_description/package.zsh'
+[0.790s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/projet-echo/Projet_indus/install/omni_description/share/colcon-core/packages/omni_description)
+[0.791s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(omni_description)
+[0.791s] Level 1:colcon.colcon_core.environment:checking '/home/projet-echo/Projet_indus/install/omni_description' for CMake module files
+[0.791s] Level 1:colcon.colcon_core.environment:checking '/home/projet-echo/Projet_indus/install/omni_description' for CMake config files
+[0.791s] Level 1:colcon.colcon_core.shell:create_environment_hook('omni_description', 'cmake_prefix_path')
+[0.791s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/projet-echo/Projet_indus/install/omni_description/share/omni_description/hook/cmake_prefix_path.ps1'
+[0.791s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/projet-echo/Projet_indus/install/omni_description/share/omni_description/hook/cmake_prefix_path.dsv'
+[0.792s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/projet-echo/Projet_indus/install/omni_description/share/omni_description/hook/cmake_prefix_path.sh'
+[0.792s] Level 1:colcon.colcon_core.environment:checking '/home/projet-echo/Projet_indus/install/omni_description/bin'
+[0.792s] Level 1:colcon.colcon_core.environment:checking '/home/projet-echo/Projet_indus/install/omni_description/lib/pkgconfig/omni_description.pc'
+[0.792s] Level 1:colcon.colcon_core.environment:checking '/home/projet-echo/Projet_indus/install/omni_description/lib/python3.10/site-packages'
+[0.792s] Level 1:colcon.colcon_core.environment:checking '/home/projet-echo/Projet_indus/install/omni_description/bin'
+[0.792s] INFO:colcon.colcon_core.shell:Creating package script '/home/projet-echo/Projet_indus/install/omni_description/share/omni_description/package.ps1'
+[0.793s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/projet-echo/Projet_indus/install/omni_description/share/omni_description/package.dsv'
+[0.793s] INFO:colcon.colcon_core.shell:Creating package script '/home/projet-echo/Projet_indus/install/omni_description/share/omni_description/package.sh'
+[0.793s] INFO:colcon.colcon_core.shell:Creating package script '/home/projet-echo/Projet_indus/install/omni_description/share/omni_description/package.bash'
+[0.793s] INFO:colcon.colcon_core.shell:Creating package script '/home/projet-echo/Projet_indus/install/omni_description/share/omni_description/package.zsh'
+[0.793s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/projet-echo/Projet_indus/install/omni_description/share/colcon-core/packages/omni_description)
+[1.537s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/projet-echo/Projet_indus/build/omni_msgs' returned '0': /usr/bin/cmake /home/projet-echo/Projet_indus/src/Geomagic_Touch_ROS2/omni_msgs -DCATKIN_INSTALL_INTO_PREFIX_ROOT=0 -DCMAKE_INSTALL_PREFIX=/home/projet-echo/Projet_indus/install/omni_msgs
+[1.537s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/projet-echo/Projet_indus/build/omni_msgs': /usr/bin/cmake --build /home/projet-echo/Projet_indus/build/omni_msgs -- -j20 -l20
+[3.029s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/projet-echo/Projet_indus/build/omni_msgs' returned '0': /usr/bin/cmake --build /home/projet-echo/Projet_indus/build/omni_msgs -- -j20 -l20
+[3.030s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/projet-echo/Projet_indus/build/omni_msgs': /usr/bin/cmake --install /home/projet-echo/Projet_indus/build/omni_msgs
+[3.070s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/projet-echo/Projet_indus/build/omni_msgs' returned '0': /usr/bin/cmake --install /home/projet-echo/Projet_indus/build/omni_msgs
+[3.070s] Level 1:colcon.colcon_core.shell:create_environment_hook('omni_msgs', 'ros_package_path')
+[3.070s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/projet-echo/Projet_indus/install/omni_msgs/share/omni_msgs/hook/ros_package_path.ps1'
+[3.070s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/projet-echo/Projet_indus/install/omni_msgs/share/omni_msgs/hook/ros_package_path.dsv'
+[3.070s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/projet-echo/Projet_indus/install/omni_msgs/share/omni_msgs/hook/ros_package_path.sh'
+[3.071s] Level 1:colcon.colcon_ros.task.catkin:checking '/home/projet-echo/Projet_indus/install/omni_msgs/local/lib/python3.10/dist-packages'
+[3.071s] Level 1:colcon.colcon_core.shell:create_environment_hook('omni_msgs', 'catkin_pythonpath')
+[3.071s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/projet-echo/Projet_indus/install/omni_msgs/share/omni_msgs/hook/catkin_pythonpath.ps1'
+[3.071s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/projet-echo/Projet_indus/install/omni_msgs/share/omni_msgs/hook/catkin_pythonpath.dsv'
+[3.071s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/projet-echo/Projet_indus/install/omni_msgs/share/omni_msgs/hook/catkin_pythonpath.sh'
+[3.071s] Level 1:colcon.colcon_core.shell:create_environment_hook('omni_msgs', 'pkg_config_path')
+[3.072s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/projet-echo/Projet_indus/install/omni_msgs/share/omni_msgs/hook/pkg_config_path.ps1'
+[3.072s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/projet-echo/Projet_indus/install/omni_msgs/share/omni_msgs/hook/pkg_config_path.dsv'
+[3.072s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/projet-echo/Projet_indus/install/omni_msgs/share/omni_msgs/hook/pkg_config_path.sh'
+[3.073s] Level 1:colcon.colcon_core.shell:create_environment_hook('omni_msgs', 'pkg_config_path_multiarch')
+[3.073s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/projet-echo/Projet_indus/install/omni_msgs/share/omni_msgs/hook/pkg_config_path_multiarch.ps1'
+[3.074s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/projet-echo/Projet_indus/install/omni_msgs/share/omni_msgs/hook/pkg_config_path_multiarch.dsv'
+[3.074s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/projet-echo/Projet_indus/install/omni_msgs/share/omni_msgs/hook/pkg_config_path_multiarch.sh'
+[3.075s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(omni_msgs)
+[3.075s] Level 1:colcon.colcon_core.environment:checking '/home/projet-echo/Projet_indus/install/omni_msgs' for CMake module files
+[3.076s] Level 1:colcon.colcon_core.environment:checking '/home/projet-echo/Projet_indus/install/omni_msgs' for CMake config files
+[3.076s] Level 1:colcon.colcon_core.shell:create_environment_hook('omni_msgs', 'cmake_prefix_path')
+[3.076s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/projet-echo/Projet_indus/install/omni_msgs/share/omni_msgs/hook/cmake_prefix_path.ps1'
+[3.076s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/projet-echo/Projet_indus/install/omni_msgs/share/omni_msgs/hook/cmake_prefix_path.dsv'
+[3.077s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/projet-echo/Projet_indus/install/omni_msgs/share/omni_msgs/hook/cmake_prefix_path.sh'
+[3.077s] Level 1:colcon.colcon_core.environment:checking '/home/projet-echo/Projet_indus/install/omni_msgs/lib'
+[3.077s] Level 1:colcon.colcon_core.shell:create_environment_hook('omni_msgs', 'ld_library_path_lib')
+[3.077s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/projet-echo/Projet_indus/install/omni_msgs/share/omni_msgs/hook/ld_library_path_lib.ps1'
+[3.077s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/projet-echo/Projet_indus/install/omni_msgs/share/omni_msgs/hook/ld_library_path_lib.dsv'
+[3.078s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/projet-echo/Projet_indus/install/omni_msgs/share/omni_msgs/hook/ld_library_path_lib.sh'
+[3.078s] Level 1:colcon.colcon_core.environment:checking '/home/projet-echo/Projet_indus/install/omni_msgs/bin'
+[3.078s] Level 1:colcon.colcon_core.environment:checking '/home/projet-echo/Projet_indus/install/omni_msgs/lib/pkgconfig/omni_msgs.pc'
+[3.078s] Level 1:colcon.colcon_core.environment:checking '/home/projet-echo/Projet_indus/install/omni_msgs/lib/python3.10/site-packages'
+[3.078s] Level 1:colcon.colcon_core.environment:checking '/home/projet-echo/Projet_indus/install/omni_msgs/bin'
+[3.078s] INFO:colcon.colcon_core.shell:Creating package script '/home/projet-echo/Projet_indus/install/omni_msgs/share/omni_msgs/package.ps1'
+[3.079s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/projet-echo/Projet_indus/install/omni_msgs/share/omni_msgs/package.dsv'
+[3.079s] INFO:colcon.colcon_core.shell:Creating package script '/home/projet-echo/Projet_indus/install/omni_msgs/share/omni_msgs/package.sh'
+[3.079s] INFO:colcon.colcon_core.shell:Creating package script '/home/projet-echo/Projet_indus/install/omni_msgs/share/omni_msgs/package.bash'
+[3.080s] INFO:colcon.colcon_core.shell:Creating package script '/home/projet-echo/Projet_indus/install/omni_msgs/share/omni_msgs/package.zsh'
+[3.080s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/projet-echo/Projet_indus/install/omni_msgs/share/colcon-core/packages/omni_msgs)
+[3.080s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/projet-echo/Projet_indus/src/Geomagic_Touch_ROS2/omni_common' with build type 'ament_cmake'
+[3.080s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/projet-echo/Projet_indus/src/Geomagic_Touch_ROS2/omni_common'
+[3.080s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[3.080s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[3.082s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/projet-echo/Projet_indus/src/ur_udp' with build type 'ament_cmake'
+[3.082s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/projet-echo/Projet_indus/src/ur_udp'
+[3.082s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[3.082s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[3.087s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/projet-echo/Projet_indus/build/omni_common': CMAKE_PREFIX_PATH=/opt/ros/humble:/home/projet-echo/Projet_indus/install/omni_msgs:${CMAKE_PREFIX_PATH} LD_LIBRARY_PATH=/home/projet-echo/Projet_indus/install/omni_msgs/lib:${LD_LIBRARY_PATH} PKG_CONFIG_PATH=/home/projet-echo/Projet_indus/install/omni_msgs/lib/x86_64-linux-gnu/pkgconfig:/home/projet-echo/Projet_indus/install/omni_msgs/lib/pkgconfig:${PKG_CONFIG_PATH} PYTHONPATH=/home/projet-echo/Projet_indus/install/omni_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} ROS_PACKAGE_PATH=/home/projet-echo/Projet_indus/install/omni_msgs/share:${ROS_PACKAGE_PATH} /usr/bin/cmake /home/projet-echo/Projet_indus/src/Geomagic_Touch_ROS2/omni_common -DCMAKE_INSTALL_PREFIX=/home/projet-echo/Projet_indus/install/omni_common
+[3.088s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/projet-echo/Projet_indus/build/ur_udp': CMAKE_PREFIX_PATH=/opt/ros/humble:/home/projet-echo/Projet_indus/install/omni_msgs:${CMAKE_PREFIX_PATH} LD_LIBRARY_PATH=/home/projet-echo/Projet_indus/install/omni_msgs/lib:${LD_LIBRARY_PATH} PKG_CONFIG_PATH=/home/projet-echo/Projet_indus/install/omni_msgs/lib/x86_64-linux-gnu/pkgconfig:/home/projet-echo/Projet_indus/install/omni_msgs/lib/pkgconfig:${PKG_CONFIG_PATH} PYTHONPATH=/home/projet-echo/Projet_indus/install/omni_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} ROS_PACKAGE_PATH=/home/projet-echo/Projet_indus/install/omni_msgs/share:${ROS_PACKAGE_PATH} /usr/bin/cmake /home/projet-echo/Projet_indus/src/ur_udp -DCMAKE_INSTALL_PREFIX=/home/projet-echo/Projet_indus/install/ur_udp
+[3.861s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/projet-echo/Projet_indus/build/ur_udp' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble:/home/projet-echo/Projet_indus/install/omni_msgs:${CMAKE_PREFIX_PATH} LD_LIBRARY_PATH=/home/projet-echo/Projet_indus/install/omni_msgs/lib:${LD_LIBRARY_PATH} PKG_CONFIG_PATH=/home/projet-echo/Projet_indus/install/omni_msgs/lib/x86_64-linux-gnu/pkgconfig:/home/projet-echo/Projet_indus/install/omni_msgs/lib/pkgconfig:${PKG_CONFIG_PATH} PYTHONPATH=/home/projet-echo/Projet_indus/install/omni_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} ROS_PACKAGE_PATH=/home/projet-echo/Projet_indus/install/omni_msgs/share:${ROS_PACKAGE_PATH} /usr/bin/cmake /home/projet-echo/Projet_indus/src/ur_udp -DCMAKE_INSTALL_PREFIX=/home/projet-echo/Projet_indus/install/ur_udp
+[3.862s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/projet-echo/Projet_indus/build/ur_udp': CMAKE_PREFIX_PATH=/opt/ros/humble:/home/projet-echo/Projet_indus/install/omni_msgs:${CMAKE_PREFIX_PATH} LD_LIBRARY_PATH=/home/projet-echo/Projet_indus/install/omni_msgs/lib:${LD_LIBRARY_PATH} PKG_CONFIG_PATH=/home/projet-echo/Projet_indus/install/omni_msgs/lib/x86_64-linux-gnu/pkgconfig:/home/projet-echo/Projet_indus/install/omni_msgs/lib/pkgconfig:${PKG_CONFIG_PATH} PYTHONPATH=/home/projet-echo/Projet_indus/install/omni_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} ROS_PACKAGE_PATH=/home/projet-echo/Projet_indus/install/omni_msgs/share:${ROS_PACKAGE_PATH} /usr/bin/cmake --build /home/projet-echo/Projet_indus/build/ur_udp -- -j20 -l20
+[4.002s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/projet-echo/Projet_indus/build/omni_common' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble:/home/projet-echo/Projet_indus/install/omni_msgs:${CMAKE_PREFIX_PATH} LD_LIBRARY_PATH=/home/projet-echo/Projet_indus/install/omni_msgs/lib:${LD_LIBRARY_PATH} PKG_CONFIG_PATH=/home/projet-echo/Projet_indus/install/omni_msgs/lib/x86_64-linux-gnu/pkgconfig:/home/projet-echo/Projet_indus/install/omni_msgs/lib/pkgconfig:${PKG_CONFIG_PATH} PYTHONPATH=/home/projet-echo/Projet_indus/install/omni_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} ROS_PACKAGE_PATH=/home/projet-echo/Projet_indus/install/omni_msgs/share:${ROS_PACKAGE_PATH} /usr/bin/cmake /home/projet-echo/Projet_indus/src/Geomagic_Touch_ROS2/omni_common -DCMAKE_INSTALL_PREFIX=/home/projet-echo/Projet_indus/install/omni_common
+[4.003s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/projet-echo/Projet_indus/build/omni_common': CMAKE_PREFIX_PATH=/opt/ros/humble:/home/projet-echo/Projet_indus/install/omni_msgs:${CMAKE_PREFIX_PATH} LD_LIBRARY_PATH=/home/projet-echo/Projet_indus/install/omni_msgs/lib:${LD_LIBRARY_PATH} PKG_CONFIG_PATH=/home/projet-echo/Projet_indus/install/omni_msgs/lib/x86_64-linux-gnu/pkgconfig:/home/projet-echo/Projet_indus/install/omni_msgs/lib/pkgconfig:${PKG_CONFIG_PATH} PYTHONPATH=/home/projet-echo/Projet_indus/install/omni_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} ROS_PACKAGE_PATH=/home/projet-echo/Projet_indus/install/omni_msgs/share:${ROS_PACKAGE_PATH} /usr/bin/cmake --build /home/projet-echo/Projet_indus/build/omni_common -- -j20 -l20
+[10.866s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/projet-echo/Projet_indus/build/omni_common' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble:/home/projet-echo/Projet_indus/install/omni_msgs:${CMAKE_PREFIX_PATH} LD_LIBRARY_PATH=/home/projet-echo/Projet_indus/install/omni_msgs/lib:${LD_LIBRARY_PATH} PKG_CONFIG_PATH=/home/projet-echo/Projet_indus/install/omni_msgs/lib/x86_64-linux-gnu/pkgconfig:/home/projet-echo/Projet_indus/install/omni_msgs/lib/pkgconfig:${PKG_CONFIG_PATH} PYTHONPATH=/home/projet-echo/Projet_indus/install/omni_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} ROS_PACKAGE_PATH=/home/projet-echo/Projet_indus/install/omni_msgs/share:${ROS_PACKAGE_PATH} /usr/bin/cmake --build /home/projet-echo/Projet_indus/build/omni_common -- -j20 -l20
+[10.867s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/projet-echo/Projet_indus/build/omni_common': CMAKE_PREFIX_PATH=/opt/ros/humble:/home/projet-echo/Projet_indus/install/omni_msgs:${CMAKE_PREFIX_PATH} LD_LIBRARY_PATH=/home/projet-echo/Projet_indus/install/omni_msgs/lib:${LD_LIBRARY_PATH} PKG_CONFIG_PATH=/home/projet-echo/Projet_indus/install/omni_msgs/lib/x86_64-linux-gnu/pkgconfig:/home/projet-echo/Projet_indus/install/omni_msgs/lib/pkgconfig:${PKG_CONFIG_PATH} PYTHONPATH=/home/projet-echo/Projet_indus/install/omni_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} ROS_PACKAGE_PATH=/home/projet-echo/Projet_indus/install/omni_msgs/share:${ROS_PACKAGE_PATH} /usr/bin/cmake --install /home/projet-echo/Projet_indus/build/omni_common
+[10.881s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(omni_common)
+[10.881s] Level 1:colcon.colcon_core.environment:checking '/home/projet-echo/Projet_indus/install/omni_common' for CMake module files
+[10.881s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/projet-echo/Projet_indus/build/omni_common' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble:/home/projet-echo/Projet_indus/install/omni_msgs:${CMAKE_PREFIX_PATH} LD_LIBRARY_PATH=/home/projet-echo/Projet_indus/install/omni_msgs/lib:${LD_LIBRARY_PATH} PKG_CONFIG_PATH=/home/projet-echo/Projet_indus/install/omni_msgs/lib/x86_64-linux-gnu/pkgconfig:/home/projet-echo/Projet_indus/install/omni_msgs/lib/pkgconfig:${PKG_CONFIG_PATH} PYTHONPATH=/home/projet-echo/Projet_indus/install/omni_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} ROS_PACKAGE_PATH=/home/projet-echo/Projet_indus/install/omni_msgs/share:${ROS_PACKAGE_PATH} /usr/bin/cmake --install /home/projet-echo/Projet_indus/build/omni_common
+[10.881s] Level 1:colcon.colcon_core.environment:checking '/home/projet-echo/Projet_indus/install/omni_common' for CMake config files
+[10.881s] Level 1:colcon.colcon_core.shell:create_environment_hook('omni_common', 'cmake_prefix_path')
+[10.881s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/projet-echo/Projet_indus/install/omni_common/share/omni_common/hook/cmake_prefix_path.ps1'
+[10.882s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/projet-echo/Projet_indus/install/omni_common/share/omni_common/hook/cmake_prefix_path.dsv'
+[10.882s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/projet-echo/Projet_indus/install/omni_common/share/omni_common/hook/cmake_prefix_path.sh'
+[10.882s] Level 1:colcon.colcon_core.environment:checking '/home/projet-echo/Projet_indus/install/omni_common/lib'
+[10.882s] Level 1:colcon.colcon_core.environment:checking '/home/projet-echo/Projet_indus/install/omni_common/bin'
+[10.883s] Level 1:colcon.colcon_core.environment:checking '/home/projet-echo/Projet_indus/install/omni_common/lib/pkgconfig/omni_common.pc'
+[10.883s] Level 1:colcon.colcon_core.environment:checking '/home/projet-echo/Projet_indus/install/omni_common/lib/python3.10/site-packages'
+[10.883s] Level 1:colcon.colcon_core.environment:checking '/home/projet-echo/Projet_indus/install/omni_common/bin'
+[10.883s] INFO:colcon.colcon_core.shell:Creating package script '/home/projet-echo/Projet_indus/install/omni_common/share/omni_common/package.ps1'
+[10.884s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/projet-echo/Projet_indus/install/omni_common/share/omni_common/package.dsv'
+[10.884s] INFO:colcon.colcon_core.shell:Creating package script '/home/projet-echo/Projet_indus/install/omni_common/share/omni_common/package.sh'
+[10.884s] INFO:colcon.colcon_core.shell:Creating package script '/home/projet-echo/Projet_indus/install/omni_common/share/omni_common/package.bash'
+[10.885s] INFO:colcon.colcon_core.shell:Creating package script '/home/projet-echo/Projet_indus/install/omni_common/share/omni_common/package.zsh'
+[10.885s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/projet-echo/Projet_indus/install/omni_common/share/colcon-core/packages/omni_common)
+[10.885s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(omni_common)
+[10.886s] Level 1:colcon.colcon_core.environment:checking '/home/projet-echo/Projet_indus/install/omni_common' for CMake module files
+[10.886s] Level 1:colcon.colcon_core.environment:checking '/home/projet-echo/Projet_indus/install/omni_common' for CMake config files
+[10.886s] Level 1:colcon.colcon_core.shell:create_environment_hook('omni_common', 'cmake_prefix_path')
+[10.886s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/projet-echo/Projet_indus/install/omni_common/share/omni_common/hook/cmake_prefix_path.ps1'
+[10.887s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/projet-echo/Projet_indus/install/omni_common/share/omni_common/hook/cmake_prefix_path.dsv'
+[10.887s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/projet-echo/Projet_indus/install/omni_common/share/omni_common/hook/cmake_prefix_path.sh'
+[10.887s] Level 1:colcon.colcon_core.environment:checking '/home/projet-echo/Projet_indus/install/omni_common/lib'
+[10.888s] Level 1:colcon.colcon_core.environment:checking '/home/projet-echo/Projet_indus/install/omni_common/bin'
+[10.888s] Level 1:colcon.colcon_core.environment:checking '/home/projet-echo/Projet_indus/install/omni_common/lib/pkgconfig/omni_common.pc'
+[10.888s] Level 1:colcon.colcon_core.environment:checking '/home/projet-echo/Projet_indus/install/omni_common/lib/python3.10/site-packages'
+[10.888s] Level 1:colcon.colcon_core.environment:checking '/home/projet-echo/Projet_indus/install/omni_common/bin'
+[10.888s] INFO:colcon.colcon_core.shell:Creating package script '/home/projet-echo/Projet_indus/install/omni_common/share/omni_common/package.ps1'
+[10.889s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/projet-echo/Projet_indus/install/omni_common/share/omni_common/package.dsv'
+[10.889s] INFO:colcon.colcon_core.shell:Creating package script '/home/projet-echo/Projet_indus/install/omni_common/share/omni_common/package.sh'
+[10.889s] INFO:colcon.colcon_core.shell:Creating package script '/home/projet-echo/Projet_indus/install/omni_common/share/omni_common/package.bash'
+[10.890s] INFO:colcon.colcon_core.shell:Creating package script '/home/projet-echo/Projet_indus/install/omni_common/share/omni_common/package.zsh'
+[10.890s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/projet-echo/Projet_indus/install/omni_common/share/colcon-core/packages/omni_common)
+[10.891s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/projet-echo/Projet_indus/src/ur_to_touch_haptic_teleoperation' with build type 'ament_cmake'
+[10.891s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/projet-echo/Projet_indus/src/ur_to_touch_haptic_teleoperation'
+[10.891s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[10.892s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[10.900s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/projet-echo/Projet_indus/build/ur_to_touch_haptic_teleoperation': AMENT_PREFIX_PATH=/home/projet-echo/Projet_indus/install/omni_common:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/projet-echo/Projet_indus/install/omni_common:/opt/ros/humble:/home/projet-echo/Projet_indus/install/omni_msgs:${CMAKE_PREFIX_PATH} LD_LIBRARY_PATH=/home/projet-echo/Projet_indus/install/omni_msgs/lib:${LD_LIBRARY_PATH} PKG_CONFIG_PATH=/home/projet-echo/Projet_indus/install/omni_msgs/lib/x86_64-linux-gnu/pkgconfig:/home/projet-echo/Projet_indus/install/omni_msgs/lib/pkgconfig:${PKG_CONFIG_PATH} PYTHONPATH=/home/projet-echo/Projet_indus/install/omni_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} ROS_PACKAGE_PATH=/home/projet-echo/Projet_indus/install/omni_msgs/share:${ROS_PACKAGE_PATH} /usr/bin/cmake /home/projet-echo/Projet_indus/src/ur_to_touch_haptic_teleoperation -DCMAKE_INSTALL_PREFIX=/home/projet-echo/Projet_indus/install/ur_to_touch_haptic_teleoperation
+[11.641s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/projet-echo/Projet_indus/build/ur_udp' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble:/home/projet-echo/Projet_indus/install/omni_msgs:${CMAKE_PREFIX_PATH} LD_LIBRARY_PATH=/home/projet-echo/Projet_indus/install/omni_msgs/lib:${LD_LIBRARY_PATH} PKG_CONFIG_PATH=/home/projet-echo/Projet_indus/install/omni_msgs/lib/x86_64-linux-gnu/pkgconfig:/home/projet-echo/Projet_indus/install/omni_msgs/lib/pkgconfig:${PKG_CONFIG_PATH} PYTHONPATH=/home/projet-echo/Projet_indus/install/omni_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} ROS_PACKAGE_PATH=/home/projet-echo/Projet_indus/install/omni_msgs/share:${ROS_PACKAGE_PATH} /usr/bin/cmake --build /home/projet-echo/Projet_indus/build/ur_udp -- -j20 -l20
+[11.642s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/projet-echo/Projet_indus/build/ur_udp': CMAKE_PREFIX_PATH=/opt/ros/humble:/home/projet-echo/Projet_indus/install/omni_msgs:${CMAKE_PREFIX_PATH} LD_LIBRARY_PATH=/home/projet-echo/Projet_indus/install/omni_msgs/lib:${LD_LIBRARY_PATH} PKG_CONFIG_PATH=/home/projet-echo/Projet_indus/install/omni_msgs/lib/x86_64-linux-gnu/pkgconfig:/home/projet-echo/Projet_indus/install/omni_msgs/lib/pkgconfig:${PKG_CONFIG_PATH} PYTHONPATH=/home/projet-echo/Projet_indus/install/omni_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} ROS_PACKAGE_PATH=/home/projet-echo/Projet_indus/install/omni_msgs/share:${ROS_PACKAGE_PATH} /usr/bin/cmake --install /home/projet-echo/Projet_indus/build/ur_udp
+[11.652s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(ur_udp)
+[11.652s] Level 1:colcon.colcon_core.environment:checking '/home/projet-echo/Projet_indus/install/ur_udp' for CMake module files
+[11.652s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/projet-echo/Projet_indus/build/ur_udp' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble:/home/projet-echo/Projet_indus/install/omni_msgs:${CMAKE_PREFIX_PATH} LD_LIBRARY_PATH=/home/projet-echo/Projet_indus/install/omni_msgs/lib:${LD_LIBRARY_PATH} PKG_CONFIG_PATH=/home/projet-echo/Projet_indus/install/omni_msgs/lib/x86_64-linux-gnu/pkgconfig:/home/projet-echo/Projet_indus/install/omni_msgs/lib/pkgconfig:${PKG_CONFIG_PATH} PYTHONPATH=/home/projet-echo/Projet_indus/install/omni_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} ROS_PACKAGE_PATH=/home/projet-echo/Projet_indus/install/omni_msgs/share:${ROS_PACKAGE_PATH} /usr/bin/cmake --install /home/projet-echo/Projet_indus/build/ur_udp
+[11.652s] Level 1:colcon.colcon_core.environment:checking '/home/projet-echo/Projet_indus/install/ur_udp' for CMake config files
+[11.652s] Level 1:colcon.colcon_core.shell:create_environment_hook('ur_udp', 'cmake_prefix_path')
+[11.653s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/projet-echo/Projet_indus/install/ur_udp/share/ur_udp/hook/cmake_prefix_path.ps1'
+[11.653s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/projet-echo/Projet_indus/install/ur_udp/share/ur_udp/hook/cmake_prefix_path.dsv'
+[11.653s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/projet-echo/Projet_indus/install/ur_udp/share/ur_udp/hook/cmake_prefix_path.sh'
+[11.653s] Level 1:colcon.colcon_core.environment:checking '/home/projet-echo/Projet_indus/install/ur_udp/lib'
+[11.653s] Level 1:colcon.colcon_core.environment:checking '/home/projet-echo/Projet_indus/install/ur_udp/bin'
+[11.653s] Level 1:colcon.colcon_core.environment:checking '/home/projet-echo/Projet_indus/install/ur_udp/lib/pkgconfig/ur_udp.pc'
+[11.653s] Level 1:colcon.colcon_core.environment:checking '/home/projet-echo/Projet_indus/install/ur_udp/lib/python3.10/site-packages'
+[11.654s] Level 1:colcon.colcon_core.environment:checking '/home/projet-echo/Projet_indus/install/ur_udp/bin'
+[11.654s] INFO:colcon.colcon_core.shell:Creating package script '/home/projet-echo/Projet_indus/install/ur_udp/share/ur_udp/package.ps1'
+[11.654s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/projet-echo/Projet_indus/install/ur_udp/share/ur_udp/package.dsv'
+[11.654s] INFO:colcon.colcon_core.shell:Creating package script '/home/projet-echo/Projet_indus/install/ur_udp/share/ur_udp/package.sh'
+[11.654s] INFO:colcon.colcon_core.shell:Creating package script '/home/projet-echo/Projet_indus/install/ur_udp/share/ur_udp/package.bash'
+[11.655s] INFO:colcon.colcon_core.shell:Creating package script '/home/projet-echo/Projet_indus/install/ur_udp/share/ur_udp/package.zsh'
+[11.655s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/projet-echo/Projet_indus/install/ur_udp/share/colcon-core/packages/ur_udp)
+[11.655s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(ur_udp)
+[11.655s] Level 1:colcon.colcon_core.environment:checking '/home/projet-echo/Projet_indus/install/ur_udp' for CMake module files
+[11.655s] Level 1:colcon.colcon_core.environment:checking '/home/projet-echo/Projet_indus/install/ur_udp' for CMake config files
+[11.655s] Level 1:colcon.colcon_core.shell:create_environment_hook('ur_udp', 'cmake_prefix_path')
+[11.655s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/projet-echo/Projet_indus/install/ur_udp/share/ur_udp/hook/cmake_prefix_path.ps1'
+[11.656s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/projet-echo/Projet_indus/install/ur_udp/share/ur_udp/hook/cmake_prefix_path.dsv'
+[11.656s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/projet-echo/Projet_indus/install/ur_udp/share/ur_udp/hook/cmake_prefix_path.sh'
+[11.656s] Level 1:colcon.colcon_core.environment:checking '/home/projet-echo/Projet_indus/install/ur_udp/lib'
+[11.656s] Level 1:colcon.colcon_core.environment:checking '/home/projet-echo/Projet_indus/install/ur_udp/bin'
+[11.656s] Level 1:colcon.colcon_core.environment:checking '/home/projet-echo/Projet_indus/install/ur_udp/lib/pkgconfig/ur_udp.pc'
+[11.656s] Level 1:colcon.colcon_core.environment:checking '/home/projet-echo/Projet_indus/install/ur_udp/lib/python3.10/site-packages'
+[11.656s] Level 1:colcon.colcon_core.environment:checking '/home/projet-echo/Projet_indus/install/ur_udp/bin'
+[11.657s] INFO:colcon.colcon_core.shell:Creating package script '/home/projet-echo/Projet_indus/install/ur_udp/share/ur_udp/package.ps1'
+[11.657s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/projet-echo/Projet_indus/install/ur_udp/share/ur_udp/package.dsv'
+[11.657s] INFO:colcon.colcon_core.shell:Creating package script '/home/projet-echo/Projet_indus/install/ur_udp/share/ur_udp/package.sh'
+[11.657s] INFO:colcon.colcon_core.shell:Creating package script '/home/projet-echo/Projet_indus/install/ur_udp/share/ur_udp/package.bash'
+[11.658s] INFO:colcon.colcon_core.shell:Creating package script '/home/projet-echo/Projet_indus/install/ur_udp/share/ur_udp/package.zsh'
+[11.658s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/projet-echo/Projet_indus/install/ur_udp/share/colcon-core/packages/ur_udp)
+[11.708s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/projet-echo/Projet_indus/build/ur_to_touch_haptic_teleoperation' returned '0': AMENT_PREFIX_PATH=/home/projet-echo/Projet_indus/install/omni_common:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/projet-echo/Projet_indus/install/omni_common:/opt/ros/humble:/home/projet-echo/Projet_indus/install/omni_msgs:${CMAKE_PREFIX_PATH} LD_LIBRARY_PATH=/home/projet-echo/Projet_indus/install/omni_msgs/lib:${LD_LIBRARY_PATH} PKG_CONFIG_PATH=/home/projet-echo/Projet_indus/install/omni_msgs/lib/x86_64-linux-gnu/pkgconfig:/home/projet-echo/Projet_indus/install/omni_msgs/lib/pkgconfig:${PKG_CONFIG_PATH} PYTHONPATH=/home/projet-echo/Projet_indus/install/omni_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} ROS_PACKAGE_PATH=/home/projet-echo/Projet_indus/install/omni_msgs/share:${ROS_PACKAGE_PATH} /usr/bin/cmake /home/projet-echo/Projet_indus/src/ur_to_touch_haptic_teleoperation -DCMAKE_INSTALL_PREFIX=/home/projet-echo/Projet_indus/install/ur_to_touch_haptic_teleoperation
+[11.708s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/projet-echo/Projet_indus/build/ur_to_touch_haptic_teleoperation': AMENT_PREFIX_PATH=/home/projet-echo/Projet_indus/install/omni_common:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/projet-echo/Projet_indus/install/omni_common:/opt/ros/humble:/home/projet-echo/Projet_indus/install/omni_msgs:${CMAKE_PREFIX_PATH} LD_LIBRARY_PATH=/home/projet-echo/Projet_indus/install/omni_msgs/lib:${LD_LIBRARY_PATH} PKG_CONFIG_PATH=/home/projet-echo/Projet_indus/install/omni_msgs/lib/x86_64-linux-gnu/pkgconfig:/home/projet-echo/Projet_indus/install/omni_msgs/lib/pkgconfig:${PKG_CONFIG_PATH} PYTHONPATH=/home/projet-echo/Projet_indus/install/omni_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} ROS_PACKAGE_PATH=/home/projet-echo/Projet_indus/install/omni_msgs/share:${ROS_PACKAGE_PATH} /usr/bin/cmake --build /home/projet-echo/Projet_indus/build/ur_to_touch_haptic_teleoperation -- -j20 -l20
+[18.133s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/projet-echo/Projet_indus/build/ur_to_touch_haptic_teleoperation' returned '0': AMENT_PREFIX_PATH=/home/projet-echo/Projet_indus/install/omni_common:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/projet-echo/Projet_indus/install/omni_common:/opt/ros/humble:/home/projet-echo/Projet_indus/install/omni_msgs:${CMAKE_PREFIX_PATH} LD_LIBRARY_PATH=/home/projet-echo/Projet_indus/install/omni_msgs/lib:${LD_LIBRARY_PATH} PKG_CONFIG_PATH=/home/projet-echo/Projet_indus/install/omni_msgs/lib/x86_64-linux-gnu/pkgconfig:/home/projet-echo/Projet_indus/install/omni_msgs/lib/pkgconfig:${PKG_CONFIG_PATH} PYTHONPATH=/home/projet-echo/Projet_indus/install/omni_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} ROS_PACKAGE_PATH=/home/projet-echo/Projet_indus/install/omni_msgs/share:${ROS_PACKAGE_PATH} /usr/bin/cmake --build /home/projet-echo/Projet_indus/build/ur_to_touch_haptic_teleoperation -- -j20 -l20
+[18.135s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/projet-echo/Projet_indus/build/ur_to_touch_haptic_teleoperation': AMENT_PREFIX_PATH=/home/projet-echo/Projet_indus/install/omni_common:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/projet-echo/Projet_indus/install/omni_common:/opt/ros/humble:/home/projet-echo/Projet_indus/install/omni_msgs:${CMAKE_PREFIX_PATH} LD_LIBRARY_PATH=/home/projet-echo/Projet_indus/install/omni_msgs/lib:${LD_LIBRARY_PATH} PKG_CONFIG_PATH=/home/projet-echo/Projet_indus/install/omni_msgs/lib/x86_64-linux-gnu/pkgconfig:/home/projet-echo/Projet_indus/install/omni_msgs/lib/pkgconfig:${PKG_CONFIG_PATH} PYTHONPATH=/home/projet-echo/Projet_indus/install/omni_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} ROS_PACKAGE_PATH=/home/projet-echo/Projet_indus/install/omni_msgs/share:${ROS_PACKAGE_PATH} /usr/bin/cmake --install /home/projet-echo/Projet_indus/build/ur_to_touch_haptic_teleoperation
+[18.145s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(ur_to_touch_haptic_teleoperation)
+[18.146s] Level 1:colcon.colcon_core.environment:checking '/home/projet-echo/Projet_indus/install/ur_to_touch_haptic_teleoperation' for CMake module files
+[18.146s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/projet-echo/Projet_indus/build/ur_to_touch_haptic_teleoperation' returned '0': AMENT_PREFIX_PATH=/home/projet-echo/Projet_indus/install/omni_common:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/projet-echo/Projet_indus/install/omni_common:/opt/ros/humble:/home/projet-echo/Projet_indus/install/omni_msgs:${CMAKE_PREFIX_PATH} LD_LIBRARY_PATH=/home/projet-echo/Projet_indus/install/omni_msgs/lib:${LD_LIBRARY_PATH} PKG_CONFIG_PATH=/home/projet-echo/Projet_indus/install/omni_msgs/lib/x86_64-linux-gnu/pkgconfig:/home/projet-echo/Projet_indus/install/omni_msgs/lib/pkgconfig:${PKG_CONFIG_PATH} PYTHONPATH=/home/projet-echo/Projet_indus/install/omni_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} ROS_PACKAGE_PATH=/home/projet-echo/Projet_indus/install/omni_msgs/share:${ROS_PACKAGE_PATH} /usr/bin/cmake --install /home/projet-echo/Projet_indus/build/ur_to_touch_haptic_teleoperation
+[18.146s] Level 1:colcon.colcon_core.environment:checking '/home/projet-echo/Projet_indus/install/ur_to_touch_haptic_teleoperation' for CMake config files
+[18.146s] Level 1:colcon.colcon_core.shell:create_environment_hook('ur_to_touch_haptic_teleoperation', 'cmake_prefix_path')
+[18.146s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/projet-echo/Projet_indus/install/ur_to_touch_haptic_teleoperation/share/ur_to_touch_haptic_teleoperation/hook/cmake_prefix_path.ps1'
+[18.147s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/projet-echo/Projet_indus/install/ur_to_touch_haptic_teleoperation/share/ur_to_touch_haptic_teleoperation/hook/cmake_prefix_path.dsv'
+[18.147s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/projet-echo/Projet_indus/install/ur_to_touch_haptic_teleoperation/share/ur_to_touch_haptic_teleoperation/hook/cmake_prefix_path.sh'
+[18.147s] Level 1:colcon.colcon_core.environment:checking '/home/projet-echo/Projet_indus/install/ur_to_touch_haptic_teleoperation/lib'
+[18.147s] Level 1:colcon.colcon_core.environment:checking '/home/projet-echo/Projet_indus/install/ur_to_touch_haptic_teleoperation/bin'
+[18.147s] Level 1:colcon.colcon_core.environment:checking '/home/projet-echo/Projet_indus/install/ur_to_touch_haptic_teleoperation/lib/pkgconfig/ur_to_touch_haptic_teleoperation.pc'
+[18.147s] Level 1:colcon.colcon_core.environment:checking '/home/projet-echo/Projet_indus/install/ur_to_touch_haptic_teleoperation/lib/python3.10/site-packages'
+[18.147s] Level 1:colcon.colcon_core.environment:checking '/home/projet-echo/Projet_indus/install/ur_to_touch_haptic_teleoperation/bin'
+[18.148s] INFO:colcon.colcon_core.shell:Creating package script '/home/projet-echo/Projet_indus/install/ur_to_touch_haptic_teleoperation/share/ur_to_touch_haptic_teleoperation/package.ps1'
+[18.148s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/projet-echo/Projet_indus/install/ur_to_touch_haptic_teleoperation/share/ur_to_touch_haptic_teleoperation/package.dsv'
+[18.148s] INFO:colcon.colcon_core.shell:Creating package script '/home/projet-echo/Projet_indus/install/ur_to_touch_haptic_teleoperation/share/ur_to_touch_haptic_teleoperation/package.sh'
+[18.148s] INFO:colcon.colcon_core.shell:Creating package script '/home/projet-echo/Projet_indus/install/ur_to_touch_haptic_teleoperation/share/ur_to_touch_haptic_teleoperation/package.bash'
+[18.148s] INFO:colcon.colcon_core.shell:Creating package script '/home/projet-echo/Projet_indus/install/ur_to_touch_haptic_teleoperation/share/ur_to_touch_haptic_teleoperation/package.zsh'
+[18.149s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/projet-echo/Projet_indus/install/ur_to_touch_haptic_teleoperation/share/colcon-core/packages/ur_to_touch_haptic_teleoperation)
+[18.149s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(ur_to_touch_haptic_teleoperation)
+[18.149s] Level 1:colcon.colcon_core.environment:checking '/home/projet-echo/Projet_indus/install/ur_to_touch_haptic_teleoperation' for CMake module files
+[18.149s] Level 1:colcon.colcon_core.environment:checking '/home/projet-echo/Projet_indus/install/ur_to_touch_haptic_teleoperation' for CMake config files
+[18.149s] Level 1:colcon.colcon_core.shell:create_environment_hook('ur_to_touch_haptic_teleoperation', 'cmake_prefix_path')
+[18.149s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/projet-echo/Projet_indus/install/ur_to_touch_haptic_teleoperation/share/ur_to_touch_haptic_teleoperation/hook/cmake_prefix_path.ps1'
+[18.150s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/projet-echo/Projet_indus/install/ur_to_touch_haptic_teleoperation/share/ur_to_touch_haptic_teleoperation/hook/cmake_prefix_path.dsv'
+[18.150s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/projet-echo/Projet_indus/install/ur_to_touch_haptic_teleoperation/share/ur_to_touch_haptic_teleoperation/hook/cmake_prefix_path.sh'
+[18.150s] Level 1:colcon.colcon_core.environment:checking '/home/projet-echo/Projet_indus/install/ur_to_touch_haptic_teleoperation/lib'
+[18.150s] Level 1:colcon.colcon_core.environment:checking '/home/projet-echo/Projet_indus/install/ur_to_touch_haptic_teleoperation/bin'
+[18.150s] Level 1:colcon.colcon_core.environment:checking '/home/projet-echo/Projet_indus/install/ur_to_touch_haptic_teleoperation/lib/pkgconfig/ur_to_touch_haptic_teleoperation.pc'
+[18.150s] Level 1:colcon.colcon_core.environment:checking '/home/projet-echo/Projet_indus/install/ur_to_touch_haptic_teleoperation/lib/python3.10/site-packages'
+[18.150s] Level 1:colcon.colcon_core.environment:checking '/home/projet-echo/Projet_indus/install/ur_to_touch_haptic_teleoperation/bin'
+[18.150s] INFO:colcon.colcon_core.shell:Creating package script '/home/projet-echo/Projet_indus/install/ur_to_touch_haptic_teleoperation/share/ur_to_touch_haptic_teleoperation/package.ps1'
+[18.151s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/projet-echo/Projet_indus/install/ur_to_touch_haptic_teleoperation/share/ur_to_touch_haptic_teleoperation/package.dsv'
+[18.151s] INFO:colcon.colcon_core.shell:Creating package script '/home/projet-echo/Projet_indus/install/ur_to_touch_haptic_teleoperation/share/ur_to_touch_haptic_teleoperation/package.sh'
+[18.151s] INFO:colcon.colcon_core.shell:Creating package script '/home/projet-echo/Projet_indus/install/ur_to_touch_haptic_teleoperation/share/ur_to_touch_haptic_teleoperation/package.bash'
+[18.151s] INFO:colcon.colcon_core.shell:Creating package script '/home/projet-echo/Projet_indus/install/ur_to_touch_haptic_teleoperation/share/ur_to_touch_haptic_teleoperation/package.zsh'
+[18.151s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/projet-echo/Projet_indus/install/ur_to_touch_haptic_teleoperation/share/colcon-core/packages/ur_to_touch_haptic_teleoperation)
+[18.151s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[18.151s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[18.151s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[18.151s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[18.155s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[18.155s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[18.155s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[18.164s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[18.164s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/projet-echo/Projet_indus/install/local_setup.ps1'
+[18.165s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/projet-echo/Projet_indus/install/_local_setup_util_ps1.py'
+[18.166s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/projet-echo/Projet_indus/install/setup.ps1'
+[18.167s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/projet-echo/Projet_indus/install/local_setup.sh'
+[18.167s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/projet-echo/Projet_indus/install/_local_setup_util_sh.py'
+[18.167s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/projet-echo/Projet_indus/install/setup.sh'
+[18.168s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/projet-echo/Projet_indus/install/local_setup.bash'
+[18.169s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/projet-echo/Projet_indus/install/setup.bash'
+[18.169s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/projet-echo/Projet_indus/install/local_setup.zsh'
+[18.170s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/projet-echo/Projet_indus/install/setup.zsh'

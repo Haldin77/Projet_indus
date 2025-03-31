@@ -1,0 +1,10 @@
+[0.011s] Invoking command in '/home/projet-echo/Projet_indus/build/ur_udp': CMAKE_PREFIX_PATH=/opt/ros/humble:/home/projet-echo/Projet_indus/install/omni_msgs LD_LIBRARY_PATH=/home/projet-echo/Projet_indus/install/omni_msgs/lib:${LD_LIBRARY_PATH} PKG_CONFIG_PATH=/home/projet-echo/Projet_indus/install/omni_msgs/lib/x86_64-linux-gnu/pkgconfig:/home/projet-echo/Projet_indus/install/omni_msgs/lib/pkgconfig PYTHONPATH=/home/projet-echo/Projet_indus/install/omni_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} ROS_PACKAGE_PATH=/home/projet-echo/Projet_indus/install/omni_msgs/share /usr/bin/cmake --build /home/projet-echo/Projet_indus/build/ur_udp -- -j20 -l20
+[0.047s] [35m[1mConsolidate compiler generated dependencies of target ur_udp[0m
+[0.061s] [ 25%] [32mBuilding CXX object CMakeFiles/phantom_udp.dir/src/phantom_udp.cpp.o[0m
+[0.066s] [ 50%] [32mBuilding CXX object CMakeFiles/ur_udp.dir/src/ur_udp.cpp.o[0m
+[1.385s] gmake[2]: *** [CMakeFiles/ur_udp.dir/build.make:76: CMakeFiles/ur_udp.dir/src/ur_udp.cpp.o] Interrompre
+[1.385s] gmake[2]: *** [CMakeFiles/phantom_udp.dir/build.make:76: CMakeFiles/phantom_udp.dir/src/phantom_udp.cpp.o] Interrompre
+[1.385s] gmake[1]: *** [CMakeFiles/Makefile2:139: CMakeFiles/ur_udp.dir/all] Interrompre
+[1.385s] gmake[1]: *** [CMakeFiles/Makefile2:165: CMakeFiles/phantom_udp.dir/all] Interrompre
+[1.385s] gmake: *** [Makefile:146: all] Interrompre
+[1.399s] Invoked command in '/home/projet-echo/Projet_indus/build/ur_udp' returned '-2': CMAKE_PREFIX_PATH=/opt/ros/humble:/home/projet-echo/Projet_indus/install/omni_msgs LD_LIBRARY_PATH=/home/projet-echo/Projet_indus/install/omni_msgs/lib:${LD_LIBRARY_PATH} PKG_CONFIG_PATH=/home/projet-echo/Projet_indus/install/omni_msgs/lib/x86_64-linux-gnu/pkgconfig:/home/projet-echo/Projet_indus/install/omni_msgs/lib/pkgconfig PYTHONPATH=/home/projet-echo/Projet_indus/install/omni_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} ROS_PACKAGE_PATH=/home/projet-echo/Projet_indus/install/omni_msgs/share /usr/bin/cmake --build /home/projet-echo/Projet_indus/build/ur_udp -- -j20 -l20

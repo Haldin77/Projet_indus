@@ -1,0 +1,37 @@
+[1.558s] Invoking command in '/home/projet-echo/Projet_indus/src/ur_control': CMAKE_PREFIX_PATH=/home/projet-echo/Projet_indus/install/omni_msgs:/home/projet-echo/Projet_indus/install/ur_udp:/home/projet-echo/Projet_indus/install/ur_to_touch_haptic_teleoperation:/home/projet-echo/Projet_indus/install/omni_common:/home/projet-echo/Projet_indus/install/omni_description PYTHONPATH=/home/projet-echo/Projet_indus/build/ur_control/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/projet-echo/Projet_indus/install/ur_control/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/ur_control build --build-base /home/projet-echo/Projet_indus/build/ur_control/build install --record /home/projet-echo/Projet_indus/build/ur_control/install.log --single-version-externally-managed install_data
+[2.148s] running egg_info
+[2.150s] creating ../../build/ur_control/ur_control.egg-info
+[2.150s] writing ../../build/ur_control/ur_control.egg-info/PKG-INFO
+[2.151s] writing dependency_links to ../../build/ur_control/ur_control.egg-info/dependency_links.txt
+[2.151s] writing entry points to ../../build/ur_control/ur_control.egg-info/entry_points.txt
+[2.151s] writing requirements to ../../build/ur_control/ur_control.egg-info/requires.txt
+[2.151s] writing top-level names to ../../build/ur_control/ur_control.egg-info/top_level.txt
+[2.151s] writing manifest file '../../build/ur_control/ur_control.egg-info/SOURCES.txt'
+[2.154s] reading manifest file '../../build/ur_control/ur_control.egg-info/SOURCES.txt'
+[2.156s] writing manifest file '../../build/ur_control/ur_control.egg-info/SOURCES.txt'
+[2.156s] running build
+[2.157s] running build_py
+[2.157s] creating /home/projet-echo/Projet_indus/build/ur_control/build
+[2.157s] creating /home/projet-echo/Projet_indus/build/ur_control/build/lib
+[2.158s] creating /home/projet-echo/Projet_indus/build/ur_control/build/lib/ur_control
+[2.158s] copying ur_control/ur3e.py -> /home/projet-echo/Projet_indus/build/ur_control/build/lib/ur_control
+[2.158s] copying ur_control/__init__.py -> /home/projet-echo/Projet_indus/build/ur_control/build/lib/ur_control
+[2.159s] running install
+[2.159s] running install_lib
+[2.160s] creating /home/projet-echo/Projet_indus/install/ur_control/lib/python3.10/site-packages/ur_control
+[2.161s] copying /home/projet-echo/Projet_indus/build/ur_control/build/lib/ur_control/ur3e.py -> /home/projet-echo/Projet_indus/install/ur_control/lib/python3.10/site-packages/ur_control
+[2.161s] copying /home/projet-echo/Projet_indus/build/ur_control/build/lib/ur_control/__init__.py -> /home/projet-echo/Projet_indus/install/ur_control/lib/python3.10/site-packages/ur_control
+[2.162s] byte-compiling /home/projet-echo/Projet_indus/install/ur_control/lib/python3.10/site-packages/ur_control/ur3e.py to ur3e.cpython-310.pyc
+[2.167s] byte-compiling /home/projet-echo/Projet_indus/install/ur_control/lib/python3.10/site-packages/ur_control/__init__.py to __init__.cpython-310.pyc
+[2.167s] running install_data
+[2.167s] creating /home/projet-echo/Projet_indus/install/ur_control/share/ament_index
+[2.167s] creating /home/projet-echo/Projet_indus/install/ur_control/share/ament_index/resource_index
+[2.168s] creating /home/projet-echo/Projet_indus/install/ur_control/share/ament_index/resource_index/packages
+[2.168s] copying resource/ur_control -> /home/projet-echo/Projet_indus/install/ur_control/share/ament_index/resource_index/packages
+[2.168s] copying package.xml -> /home/projet-echo/Projet_indus/install/ur_control/share/ur_control
+[2.168s] running install_egg_info
+[2.173s] Copying ../../build/ur_control/ur_control.egg-info to /home/projet-echo/Projet_indus/install/ur_control/lib/python3.10/site-packages/ur_control-0.0.0-py3.10.egg-info
+[2.175s] running install_scripts
+[2.231s] Installing ur3e script to /home/projet-echo/Projet_indus/install/ur_control/lib/ur_control
+[2.232s] writing list of installed files to '/home/projet-echo/Projet_indus/build/ur_control/install.log'
+[2.288s] Invoked command in '/home/projet-echo/Projet_indus/src/ur_control' returned '0': CMAKE_PREFIX_PATH=/home/projet-echo/Projet_indus/install/omni_msgs:/home/projet-echo/Projet_indus/install/ur_udp:/home/projet-echo/Projet_indus/install/ur_to_touch_haptic_teleoperation:/home/projet-echo/Projet_indus/install/omni_common:/home/projet-echo/Projet_indus/install/omni_description PYTHONPATH=/home/projet-echo/Projet_indus/build/ur_control/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/projet-echo/Projet_indus/install/ur_control/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/ur_control build --build-base /home/projet-echo/Projet_indus/build/ur_control/build install --record /home/projet-echo/Projet_indus/build/ur_control/install.log --single-version-externally-managed install_data

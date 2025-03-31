@@ -1,0 +1,79 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-662aadb34b2764d602a8.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"name" : "",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "ur_to_touch_haptic_teleoperation",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-uninstall-8ec5e38c06eaf5b8b696.json",
+					"name" : "uninstall",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ur3e::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ur3e-58da2b3b018331d9ca39.json",
+					"name" : "ur3e",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ur_to_touch_haptic_teleoperation_uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ur_to_touch_haptic_teleoperation_uninstall-3461616291b5a2bc1c57.json",
+					"name" : "ur_to_touch_haptic_teleoperation_uninstall",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/projet-echo/Projet_indus/build/ur_to_touch_haptic_teleoperation",
+		"source" : "/home/projet-echo/Projet_indus/src/ur_to_touch_haptic_teleoperation"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}

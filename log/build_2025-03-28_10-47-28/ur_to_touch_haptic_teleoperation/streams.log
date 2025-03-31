@@ -1,0 +1,234 @@
+[0.050s] Invoking command in '/home/projet-echo/Projet_indus/build/ur_to_touch_haptic_teleoperation': CMAKE_PREFIX_PATH=/home/projet-echo/Projet_indus/install/omni_common:/home/projet-echo/Projet_indus/install/ur_control:/opt/ros/humble:/home/projet-echo/Projet_indus/install/omni_msgs:/home/projet-echo/Projet_indus/install/ur_udp:/home/projet-echo/Projet_indus/install/ur_to_touch_haptic_teleoperation:/home/projet-echo/Projet_indus/install/omni_description PYTHONPATH=/home/projet-echo/Projet_indus/install/omni_msgs/local/lib/python3.10/dist-packages:/home/projet-echo/Projet_indus/install/ur_control/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages /usr/bin/cmake --build /home/projet-echo/Projet_indus/build/ur_to_touch_haptic_teleoperation -- -j20 -l20
+[0.109s] -- Found ament_cmake: 1.3.11 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.387s] -- Found rclcpp: 16.0.11 (/opt/ros/humble/share/rclcpp/cmake)
+[0.450s] -- Found rosidl_generator_c: 3.1.6 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.454s] -- Found rosidl_adapter: 3.1.6 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.462s] -- Found rosidl_generator_cpp: 3.1.6 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.477s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.513s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.565s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[0.567s] -- Found rmw_fastrtps_cpp: 6.2.7 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[0.768s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.863s] -- Found geometry_msgs: 4.2.4 (/opt/ros/humble/share/geometry_msgs/cmake)
+[0.898s] -- Found omni_msgs: 0.0.0 (/home/projet-echo/Projet_indus/install/omni_msgs/share/omni_msgs/cmake)
+[1.105s] -- Configuring done
+[1.162s] -- Generating done
+[1.170s] -- Build files have been written to: /home/projet-echo/Projet_indus/build/ur_to_touch_haptic_teleoperation
+[1.249s] [ 50%] [32mBuilding CXX object CMakeFiles/ur3e.dir/src/ur3e.cpp.o[0m
+[5.897s] [01m[K/home/projet-echo/Projet_indus/src/ur_to_touch_haptic_teleoperation/src/ur3e.cpp:55:5:[m[K [01;31m[Kerror: [m[K‘[01m[KMatrix4d[m[K’ does not name a type
+[5.897s]    55 |     [01;31m[KMatrix4d[m[K fk_ur(const std::vector<double>& joint_angles) {
+[5.897s]       |     [01;31m[K^~~~~~~~[m[K
+[5.897s] [01m[K/home/projet-echo/Projet_indus/src/ur_to_touch_haptic_teleoperation/src/ur3e.cpp:69:5:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[Kdouble[m[K’
+[5.897s]    69 |     [01;31m[Kdouble[m[K a2, d2, alpha2,
+[5.897s]       |     [01;31m[K^~~~~~[m[K
+[5.905s] [01m[K/home/projet-echo/Projet_indus/src/ur_to_touch_haptic_teleoperation/src/ur3e.cpp:[m[K In constructor ‘[01m[KUR3Kinematics::UR3Kinematics()[m[K’:
+[5.905s] [01m[K/home/projet-echo/Projet_indus/src/ur_to_touch_haptic_teleoperation/src/ur3e.cpp:39:9:[m[K [01;31m[Kerror: [m[K‘[01m[Ka2[m[K’ was not declared in this scope; did you mean ‘[01m[Ka1[m[K’?
+[5.906s]    39 |         [01;31m[Ka2[m[K = -0.24355; d2 = 0.0; alpha2 = 0.0;
+[5.906s]       |         [01;31m[K^~[m[K
+[5.906s]       |         [32m[Ka1[m[K
+[5.916s] [01m[K/home/projet-echo/Projet_indus/src/ur_to_touch_haptic_teleoperation/src/ur3e.cpp:39:24:[m[K [01;31m[Kerror: [m[K‘[01m[Kd2[m[K’ was not declared in this scope; did you mean ‘[01m[Kd1[m[K’?
+[5.916s]    39 |         a2 = -0.24355; [01;31m[Kd2[m[K = 0.0; alpha2 = 0.0;
+[5.917s]       |                        [01;31m[K^~[m[K
+[5.917s]       |                        [32m[Kd1[m[K
+[5.930s] [01m[K/home/projet-echo/Projet_indus/src/ur_to_touch_haptic_teleoperation/src/ur3e.cpp:39:34:[m[K [01;31m[Kerror: [m[K‘[01m[Kalpha2[m[K’ was not declared in this scope; did you mean ‘[01m[Kalpha1[m[K’?
+[5.931s]    39 |         a2 = -0.24355; d2 = 0.0; [01;31m[Kalpha2[m[K = 0.0;
+[5.931s]       |                                  [01;31m[K^~~~~~[m[K
+[5.931s]       |                                  [32m[Kalpha1[m[K
+[5.944s] [01m[K/home/projet-echo/Projet_indus/src/ur_to_touch_haptic_teleoperation/src/ur3e.cpp:40:9:[m[K [01;31m[Kerror: [m[K‘[01m[Ka3[m[K’ was not declared in this scope; did you mean ‘[01m[Ka1[m[K’?
+[5.944s]    40 |         [01;31m[Ka3[m[K = -0.2132; d3 = 0.0; alpha3 = 0.0;
+[5.944s]       |         [01;31m[K^~[m[K
+[5.944s]       |         [32m[Ka1[m[K
+[5.955s] [01m[K/home/projet-echo/Projet_indus/src/ur_to_touch_haptic_teleoperation/src/ur3e.cpp:40:23:[m[K [01;31m[Kerror: [m[K‘[01m[Kd3[m[K’ was not declared in this scope; did you mean ‘[01m[Kd1[m[K’?
+[5.956s]    40 |         a3 = -0.2132; [01;31m[Kd3[m[K = 0.0; alpha3 = 0.0;
+[5.956s]       |                       [01;31m[K^~[m[K
+[5.956s]       |                       [32m[Kd1[m[K
+[5.966s] [01m[K/home/projet-echo/Projet_indus/src/ur_to_touch_haptic_teleoperation/src/ur3e.cpp:40:33:[m[K [01;31m[Kerror: [m[K‘[01m[Kalpha3[m[K’ was not declared in this scope; did you mean ‘[01m[Kalpha1[m[K’?
+[5.966s]    40 |         a3 = -0.2132; d3 = 0.0; [01;31m[Kalpha3[m[K = 0.0;
+[5.966s]       |                                 [01;31m[K^~~~~~[m[K
+[5.966s]       |                                 [32m[Kalpha1[m[K
+[5.975s] [01m[K/home/projet-echo/Projet_indus/src/ur_to_touch_haptic_teleoperation/src/ur3e.cpp:41:9:[m[K [01;31m[Kerror: [m[K‘[01m[Ka4[m[K’ was not declared in this scope; did you mean ‘[01m[Ka1[m[K’?
+[5.975s]    41 |         [01;31m[Ka4[m[K = 0.0; d4 = 0.13105; alpha4 = 0.5 * M_PI;
+[5.975s]       |         [01;31m[K^~[m[K
+[5.975s]       |         [32m[Ka1[m[K
+[5.983s] [01m[K/home/projet-echo/Projet_indus/src/ur_to_touch_haptic_teleoperation/src/ur3e.cpp:41:19:[m[K [01;31m[Kerror: [m[K‘[01m[Kd4[m[K’ was not declared in this scope; did you mean ‘[01m[Kd1[m[K’?
+[5.983s]    41 |         a4 = 0.0; [01;31m[Kd4[m[K = 0.13105; alpha4 = 0.5 * M_PI;
+[5.983s]       |                   [01;31m[K^~[m[K
+[5.983s]       |                   [32m[Kd1[m[K
+[5.991s] [01m[K/home/projet-echo/Projet_indus/src/ur_to_touch_haptic_teleoperation/src/ur3e.cpp:41:33:[m[K [01;31m[Kerror: [m[K‘[01m[Kalpha4[m[K’ was not declared in this scope; did you mean ‘[01m[Kalpha1[m[K’?
+[5.991s]    41 |         a4 = 0.0; d4 = 0.13105; [01;31m[Kalpha4[m[K = 0.5 * M_PI;
+[5.991s]       |                                 [01;31m[K^~~~~~[m[K
+[5.991s]       |                                 [32m[Kalpha1[m[K
+[5.998s] [01m[K/home/projet-echo/Projet_indus/src/ur_to_touch_haptic_teleoperation/src/ur3e.cpp:42:9:[m[K [01;31m[Kerror: [m[K‘[01m[Ka5[m[K’ was not declared in this scope; did you mean ‘[01m[Ka1[m[K’?
+[5.998s]    42 |         [01;31m[Ka5[m[K = 0.0; d5 = 0.08535; alpha5 = -0.5 * M_PI;
+[5.998s]       |         [01;31m[K^~[m[K
+[5.998s]       |         [32m[Ka1[m[K
+[6.008s] [01m[K/home/projet-echo/Projet_indus/src/ur_to_touch_haptic_teleoperation/src/ur3e.cpp:42:19:[m[K [01;31m[Kerror: [m[K‘[01m[Kd5[m[K’ was not declared in this scope; did you mean ‘[01m[Kd1[m[K’?
+[6.008s]    42 |         a5 = 0.0; [01;31m[Kd5[m[K = 0.08535; alpha5 = -0.5 * M_PI;
+[6.009s]       |                   [01;31m[K^~[m[K
+[6.009s]       |                   [32m[Kd1[m[K
+[6.021s] [01m[K/home/projet-echo/Projet_indus/src/ur_to_touch_haptic_teleoperation/src/ur3e.cpp:42:33:[m[K [01;31m[Kerror: [m[K‘[01m[Kalpha5[m[K’ was not declared in this scope; did you mean ‘[01m[Kalpha1[m[K’?
+[6.021s]    42 |         a5 = 0.0; d5 = 0.08535; [01;31m[Kalpha5[m[K = -0.5 * M_PI;
+[6.021s]       |                                 [01;31m[K^~~~~~[m[K
+[6.021s]       |                                 [32m[Kalpha1[m[K
+[6.034s] [01m[K/home/projet-echo/Projet_indus/src/ur_to_touch_haptic_teleoperation/src/ur3e.cpp:43:9:[m[K [01;31m[Kerror: [m[K‘[01m[Ka6[m[K’ was not declared in this scope; did you mean ‘[01m[Ka1[m[K’?
+[6.034s]    43 |         [01;31m[Ka6[m[K = 0.0; d6 = 0.0921; alpha6 = 0.0;
+[6.034s]       |         [01;31m[K^~[m[K
+[6.034s]       |         [32m[Ka1[m[K
+[6.046s] [01m[K/home/projet-echo/Projet_indus/src/ur_to_touch_haptic_teleoperation/src/ur3e.cpp:43:19:[m[K [01;31m[Kerror: [m[K‘[01m[Kd6[m[K’ was not declared in this scope; did you mean ‘[01m[Kd1[m[K’?
+[6.046s]    43 |         a6 = 0.0; [01;31m[Kd6[m[K = 0.0921; alpha6 = 0.0;
+[6.046s]       |                   [01;31m[K^~[m[K
+[6.047s]       |                   [32m[Kd1[m[K
+[6.057s] [01m[K/home/projet-echo/Projet_indus/src/ur_to_touch_haptic_teleoperation/src/ur3e.cpp:43:32:[m[K [01;31m[Kerror: [m[K‘[01m[Kalpha6[m[K’ was not declared in this scope; did you mean ‘[01m[Kalpha1[m[K’?
+[6.057s]    43 |         a6 = 0.0; d6 = 0.0921; [01;31m[Kalpha6[m[K = 0.0;
+[6.057s]       |                                [01;31m[K^~~~~~[m[K
+[6.057s]       |                                [32m[Kalpha1[m[K
+[6.080s] [01m[K/home/projet-echo/Projet_indus/src/ur_to_touch_haptic_teleoperation/src/ur3e.cpp:[m[K At global scope:
+[6.080s] [01m[K/home/projet-echo/Projet_indus/src/ur_to_touch_haptic_teleoperation/src/ur3e.cpp:156:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kwrench_input[m[K’ does not name a type
+[6.080s]   156 |     [01;31m[Kwrench_input[m[K = geometry_msgs::msg::WrenchStamped();     // a garder ??
+[6.080s]       |     [01;31m[K^~~~~~~~~~~~[m[K
+[6.083s] [01m[K/home/projet-echo/Projet_indus/src/ur_to_touch_haptic_teleoperation/src/ur3e.cpp:157:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kwrench_msg[m[K’ does not name a type
+[6.083s]   157 |     [01;31m[Kwrench_msg[m[K = geometry_msgs::msg::WrenchStamped();       // a garder ??
+[6.084s]       |     [01;31m[K^~~~~~~~~~[m[K
+[6.084s] [01m[K/home/projet-echo/Projet_indus/src/ur_to_touch_haptic_teleoperation/src/ur3e.cpp:160:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kunsigned[m[K’ specified with ‘[01m[Kdouble[m[K’
+[6.084s]   160 |     [01;31m[Kunsigned[m[K double timer;
+[6.084s]       |     [01;31m[K^~~~~~~~[m[K
+[6.316s] [01m[K/home/projet-echo/Projet_indus/src/ur_to_touch_haptic_teleoperation/src/ur3e.cpp:325:2:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ after class definition
+[6.316s]   325 | }
+[6.316s]       |  [01;31m[K^[m[K
+[6.316s]       |  [32m[K;[m[K
+[6.316s] [01m[K/home/projet-echo/Projet_indus/src/ur_to_touch_haptic_teleoperation/src/ur3e.cpp:[m[K In constructor ‘[01m[KOmniStateToTwistWithButton::OmniStateToTwistWithButton()[m[K’:
+[6.316s] [01m[K/home/projet-echo/Projet_indus/src/ur_to_touch_haptic_teleoperation/src/ur3e.cpp:79:76:[m[K [01;31m[Kerror: [m[Kclass ‘[01m[KOmniStateToTwistWithButton[m[K’ does not have any field named ‘[01m[Kfilter_size[m[K’
+[6.316s]    79 |     OmniStateToTwistWithButton() : Node("omni_to_twist_with_button_node"), [01;31m[Kfilter_size[m[K(5){
+[6.317s]       |                                                                            [01;31m[K^~~~~~~~~~~[m[K
+[6.338s] [01m[K/home/projet-echo/Projet_indus/src/ur_to_touch_haptic_teleoperation/src/ur3e.cpp:88:111:[m[K [01;31m[Kerror: [m[K‘[01m[K_1[m[K’ was not declared in this scope; did you mean ‘[01m[Kstd::placeholders::_1[m[K’?
+[6.338s]    88 |             "/phantom_state", QUEUE_LENGTH, std::bind(&OmniStateToTwistWithButton::omni_state_callback, this, [01;31m[K_1[m[K));
+[6.338s]       |                                                                                                               [01;31m[K^~[m[K
+[6.338s]       |                                                                                                               [32m[Kstd::placeholders::_1[m[K
+[6.338s] In file included from [01m[K/usr/include/eigen3/Eigen/Core:85[m[K,
+[6.338s]                  from [01m[K/usr/include/eigen3/Eigen/Dense:1[m[K,
+[6.338s]                  from [01m[K/home/projet-echo/Projet_indus/src/ur_to_touch_haptic_teleoperation/src/ur3e.cpp:6[m[K:
+[6.338s] [01m[K/usr/include/c++/11/functional:225:34:[m[K [01;36m[Knote: [m[K‘[01m[Kstd::placeholders::_1[m[K’ declared here
+[6.338s]   225 |     extern const _Placeholder<1> [01;36m[K_1[m[K;
+[6.338s]       |                                  [01;36m[K^~[m[K
+[6.343s] [01m[K/home/projet-echo/Projet_indus/src/ur_to_touch_haptic_teleoperation/src/ur3e.cpp:114:18:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ‘[01m[K;[m[K’ token
+[6.343s]   114 |         size_a = [01;31m[K;[m[K
+[6.343s]       |                  [01;31m[K^[m[K
+[6.344s] [01m[K/home/projet-echo/Projet_indus/src/ur_to_touch_haptic_teleoperation/src/ur3e.cpp:115:18:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ‘[01m[K;[m[K’ token
+[6.344s]   115 |         size_b = [01;31m[K;[m[K
+[6.344s]       |                  [01;31m[K^[m[K
+[6.344s] [01m[K/home/projet-echo/Projet_indus/src/ur_to_touch_haptic_teleoperation/src/ur3e.cpp:125:30:[m[K [01;31m[Kerror: [m[Kinvalid types ‘[01m[Kdouble[int][m[K’ for array subscript
+[6.344s]   125 |             angular_z_history[01;31m[K[[m[Ki] = 0.0;
+[6.344s]       |                              [01;31m[K^[m[K
+[6.344s] [01m[K/home/projet-echo/Projet_indus/src/ur_to_touch_haptic_teleoperation/src/ur3e.cpp:134:22:[m[K [01;31m[Kerror: [m[Kassigning to an array from an initializer list
+[6.344s]   134 |         [01;31m[Kjoint_angles = {0.0, 0.0, 0.0, 0.0, 0.0, 0.0}[m[K;
+[6.344s]       |         [01;31m[K~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[6.344s] [01m[K/home/projet-echo/Projet_indus/src/ur_to_touch_haptic_teleoperation/src/ur3e.cpp:135:34:[m[K [01;31m[Kerror: [m[Kassigning to an array from an initializer list
+[6.344s]   135 |         [01;31m[Kold_filtered_orientation = {0.0, 0.0, 0.0, 0.0}[m[K;
+[6.345s]       |         [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~[m[K
+[6.809s] [01m[K/home/projet-echo/Projet_indus/src/ur_to_touch_haptic_teleoperation/src/ur3e.cpp:[m[K In member function ‘[01m[Kdouble OmniStateToTwistWithButton::lfilter(double)[m[K’:
+[6.809s] [01m[K/home/projet-echo/Projet_indus/src/ur_to_touch_haptic_teleoperation/src/ur3e.cpp:205:33:[m[K [01;31m[Kerror: [m[Kinvalid types ‘[01m[Kfloat[int][m[K’ for array subscript
+[6.809s]   205 |                 output += b_coef[01;31m[K[[m[Ki] * data[LEN_HISTORY-i];
+[6.810s]       |                                 [01;31m[K^[m[K
+[6.810s] [01m[K/home/projet-echo/Projet_indus/src/ur_to_touch_haptic_teleoperation/src/ur3e.cpp:205:43:[m[K [01;31m[Kerror: [m[Kinvalid types ‘[01m[Kconst double[int][m[K’ for array subscript
+[6.810s]   205 |                 output += b_coef[i] * data[01;31m[K[[m[KLEN_HISTORY-i];
+[6.810s]       |                                           [01;31m[K^[m[K
+[6.810s] [01m[K/home/projet-echo/Projet_indus/src/ur_to_touch_haptic_teleoperation/src/ur3e.cpp:210:33:[m[K [01;31m[Kerror: [m[Kinvalid types ‘[01m[Kfloat[int][m[K’ for array subscript
+[6.810s]   210 |                 output -= a_coef[01;31m[K[[m[Kj] * data[LEN_HISTORY-j];
+[6.811s]       |                                 [01;31m[K^[m[K
+[6.811s] [01m[K/home/projet-echo/Projet_indus/src/ur_to_touch_haptic_teleoperation/src/ur3e.cpp:210:43:[m[K [01;31m[Kerror: [m[Kinvalid types ‘[01m[Kconst double[int][m[K’ for array subscript
+[6.811s]   210 |                 output -= a_coef[j] * data[01;31m[K[[m[KLEN_HISTORY-j];
+[6.811s]       |                                           [01;31m[K^[m[K
+[6.811s] [01m[K/home/projet-echo/Projet_indus/src/ur_to_touch_haptic_teleoperation/src/ur3e.cpp:212:29:[m[K [01;31m[Kerror: [m[Kinvalid types ‘[01m[Kfloat[int][m[K’ for array subscript
+[6.811s]   212 |         return output/a_coef[01;31m[K[[m[K0];
+[6.811s]       |                             [01;31m[K^[m[K
+[6.816s] [01m[K/home/projet-echo/Projet_indus/src/ur_to_touch_haptic_teleoperation/src/ur3e.cpp:[m[K In member function ‘[01m[Kvoid OmniStateToTwistWithButton::joint_state_callback(sensor_msgs::msg::JointState_<std::allocator<void> >::SharedPtr)[m[K’:
+[6.816s] [01m[K/home/projet-echo/Projet_indus/src/ur_to_touch_haptic_teleoperation/src/ur3e.cpp:218:22:[m[K [01;31m[Kerror: [m[Kincompatible types in assignment of ‘[01m[Ksensor_msgs::msg::JointState_<std::allocator<void> >::_position_type[m[K’ {aka ‘[01m[Kstd::vector<double, std::allocator<double> >[m[K’} to ‘[01m[Kdouble [6][m[K’
+[6.816s]   218 |         [01;31m[Kjoint_angles = msg->position[m[K;
+[6.816s]       |         [01;31m[K~~~~~~~~~~~~~^~~~~~~~~~~~~~~[m[K
+[6.822s] [01m[K/home/projet-echo/Projet_indus/src/ur_to_touch_haptic_teleoperation/src/ur3e.cpp:[m[K In member function ‘[01m[Kvoid OmniStateToTwistWithButton::omni_state_callback(omni_msgs::msg::OmniState_<std::allocator<void> >::SharedPtr)[m[K’:
+[6.823s] [01m[K/home/projet-echo/Projet_indus/src/ur_to_touch_haptic_teleoperation/src/ur3e.cpp:223:9:[m[K [01;31m[Kerror: [m[K‘[01m[Kunsigned[m[K’ specified with ‘[01m[Kdouble[m[K’
+[6.823s]   223 |         [01;31m[Kunsigned[m[K double current_time = now.seconds();
+[6.824s]       |         [01;31m[K^~~~~~~~[m[K
+[6.825s] [01m[K/home/projet-echo/Projet_indus/src/ur_to_touch_haptic_teleoperation/src/ur3e.cpp:224:9:[m[K [01;31m[Kerror: [m[K‘[01m[Kunsigned[m[K’ specified with ‘[01m[Kdouble[m[K’
+[6.826s]   224 |         [01;31m[Kunsigned[m[K double dt = current_time - timer;
+[6.826s]       |         [01;31m[K^~~~~~~~[m[K
+[6.827s] [01m[K/home/projet-echo/Projet_indus/src/ur_to_touch_haptic_teleoperation/src/ur3e.cpp:239:30:[m[K [01;31m[Kerror: [m[Kinvalid types ‘[01m[Kdouble[int][m[K’ for array subscript
+[6.827s]   239 |             angular_z_history[01;31m[K[[m[Ki] = angular_z_history[i+1];
+[6.827s]       |                              [01;31m[K^[m[K
+[6.827s] [01m[K/home/projet-echo/Projet_indus/src/ur_to_touch_haptic_teleoperation/src/ur3e.cpp:239:53:[m[K [01;31m[Kerror: [m[Kinvalid types ‘[01m[Kdouble[int][m[K’ for array subscript
+[6.827s]   239 |             angular_z_history[i] = angular_z_history[01;31m[K[[m[Ki+1];
+[6.828s]       |                                                     [01;31m[K^[m[K
+[6.828s] [01m[K/home/projet-echo/Projet_indus/src/ur_to_touch_haptic_teleoperation/src/ur3e.cpp:250:45:[m[K [01;31m[Kerror: [m[Kcannot convert ‘[01m[Kdouble [10][m[K’ to ‘[01m[Kdouble[m[K’
+[6.828s]   250 |         twist_msg.twist.angular.x = lfilter([01;31m[Klinear_x_history[m[K);
+[6.828s]       |                                             [01;31m[K^~~~~~~~~~~~~~~~[m[K
+[6.829s]       |                                             [01;31m[K|[m[K
+[6.829s]       |                                             [01;31m[Kdouble [10][m[K
+[6.829s] [01m[K/home/projet-echo/Projet_indus/src/ur_to_touch_haptic_teleoperation/src/ur3e.cpp:200:33:[m[K [01;36m[Knote: [m[K  initializing argument 1 of ‘[01m[Kdouble OmniStateToTwistWithButton::lfilter(double)[m[K’
+[6.829s]   200 |     double lfilter([01;36m[Kconst double data[m[K){
+[6.829s]       |                    [01;36m[K~~~~~~~~~~~~~^~~~[m[K
+[6.830s] [01m[K/home/projet-echo/Projet_indus/src/ur_to_touch_haptic_teleoperation/src/ur3e.cpp:251:45:[m[K [01;31m[Kerror: [m[Kcannot convert ‘[01m[Kdouble [10][m[K’ to ‘[01m[Kdouble[m[K’
+[6.830s]   251 |         twist_msg.twist.angular.y = lfilter([01;31m[Klinear_y_history[m[K);
+[6.830s]       |                                             [01;31m[K^~~~~~~~~~~~~~~~[m[K
+[6.830s]       |                                             [01;31m[K|[m[K
+[6.830s]       |                                             [01;31m[Kdouble [10][m[K
+[6.831s] [01m[K/home/projet-echo/Projet_indus/src/ur_to_touch_haptic_teleoperation/src/ur3e.cpp:200:33:[m[K [01;36m[Knote: [m[K  initializing argument 1 of ‘[01m[Kdouble OmniStateToTwistWithButton::lfilter(double)[m[K’
+[6.831s]   200 |     double lfilter([01;36m[Kconst double data[m[K){
+[6.831s]       |                    [01;36m[K~~~~~~~~~~~~~^~~~[m[K
+[6.831s] [01m[K/home/projet-echo/Projet_indus/src/ur_to_touch_haptic_teleoperation/src/ur3e.cpp:252:45:[m[K [01;31m[Kerror: [m[Kcannot convert ‘[01m[Kdouble [10][m[K’ to ‘[01m[Kdouble[m[K’
+[6.831s]   252 |         twist_msg.twist.angular.z = lfilter([01;31m[Klinear_z_history[m[K);
+[6.832s]       |                                             [01;31m[K^~~~~~~~~~~~~~~~[m[K
+[6.832s]       |                                             [01;31m[K|[m[K
+[6.832s]       |                                             [01;31m[Kdouble [10][m[K
+[6.832s] [01m[K/home/projet-echo/Projet_indus/src/ur_to_touch_haptic_teleoperation/src/ur3e.cpp:200:33:[m[K [01;36m[Knote: [m[K  initializing argument 1 of ‘[01m[Kdouble OmniStateToTwistWithButton::lfilter(double)[m[K’
+[6.832s]   200 |     double lfilter([01;36m[Kconst double data[m[K){
+[6.833s]       |                    [01;36m[K~~~~~~~~~~~~~^~~~[m[K
+[6.833s] [01m[K/home/projet-echo/Projet_indus/src/ur_to_touch_haptic_teleoperation/src/ur3e.cpp:258:26:[m[K [01;31m[Kerror: [m[Kinvalid types ‘[01m[Kdouble[int][m[K’ for array subscript
+[6.833s]   258 |         angular_z_history[01;31m[K[[m[KLEN_HISTORY-1] = msg->pose.orientation.z;
+[6.833s]       |                          [01;31m[K^[m[K
+[6.833s] [01m[K/home/projet-echo/Projet_indus/src/ur_to_touch_haptic_teleoperation/src/ur3e.cpp:262:45:[m[K [01;31m[Kerror: [m[Kcannot convert ‘[01m[Kdouble [10][m[K’ to ‘[01m[Kdouble[m[K’
+[6.834s]   262 |         double angular_x_filtered = lfilter([01;31m[Kangular_x_history[m[K);
+[6.834s]       |                                             [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+[6.834s]       |                                             [01;31m[K|[m[K
+[6.834s]       |                                             [01;31m[Kdouble [10][m[K
+[6.834s] [01m[K/home/projet-echo/Projet_indus/src/ur_to_touch_haptic_teleoperation/src/ur3e.cpp:200:33:[m[K [01;36m[Knote: [m[K  initializing argument 1 of ‘[01m[Kdouble OmniStateToTwistWithButton::lfilter(double)[m[K’
+[6.835s]   200 |     double lfilter([01;36m[Kconst double data[m[K){
+[6.835s]       |                    [01;36m[K~~~~~~~~~~~~~^~~~[m[K
+[6.835s] [01m[K/home/projet-echo/Projet_indus/src/ur_to_touch_haptic_teleoperation/src/ur3e.cpp:263:45:[m[K [01;31m[Kerror: [m[Kcannot convert ‘[01m[Kdouble [10][m[K’ to ‘[01m[Kdouble[m[K’
+[6.835s]   263 |         double angular_y_filtered = lfilter([01;31m[Kangular_y_history[m[K);
+[6.836s]       |                                             [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+[6.836s]       |                                             [01;31m[K|[m[K
+[6.836s]       |                                             [01;31m[Kdouble [10][m[K
+[6.836s] [01m[K/home/projet-echo/Projet_indus/src/ur_to_touch_haptic_teleoperation/src/ur3e.cpp:200:33:[m[K [01;36m[Knote: [m[K  initializing argument 1 of ‘[01m[Kdouble OmniStateToTwistWithButton::lfilter(double)[m[K’
+[6.836s]   200 |     double lfilter([01;36m[Kconst double data[m[K){
+[6.836s]       |                    [01;36m[K~~~~~~~~~~~~~^~~~[m[K
+[6.837s] [01m[K/home/projet-echo/Projet_indus/src/ur_to_touch_haptic_teleoperation/src/ur3e.cpp:265:45:[m[K [01;31m[Kerror: [m[Kcannot convert ‘[01m[Kdouble [10][m[K’ to ‘[01m[Kdouble[m[K’
+[6.837s]   265 |         double angular_w_filtered = lfilter([01;31m[Kangular_w_history[m[K);
+[6.837s]       |                                             [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+[6.837s]       |                                             [01;31m[K|[m[K
+[6.838s]       |                                             [01;31m[Kdouble [10][m[K
+[6.838s] [01m[K/home/projet-echo/Projet_indus/src/ur_to_touch_haptic_teleoperation/src/ur3e.cpp:200:33:[m[K [01;36m[Knote: [m[K  initializing argument 1 of ‘[01m[Kdouble OmniStateToTwistWithButton::lfilter(double)[m[K’
+[6.838s]   200 |     double lfilter([01;36m[Kconst double data[m[K){
+[6.838s]       |                    [01;36m[K~~~~~~~~~~~~~^~~~[m[K
+[6.838s] [01m[K/home/projet-echo/Projet_indus/src/ur_to_touch_haptic_teleoperation/src/ur3e.cpp:271:33:[m[K [01;31m[Kerror: [m[K‘[01m[Kusing _angular_type = struct geometry_msgs::msg::Vector3_<std::allocator<void> >[m[K’ {aka ‘[01m[Kstruct geometry_msgs::msg::Vector3_<std::allocator<void> >[m[K’} has no member named ‘[01m[Kw[m[K’
+[6.839s]   271 |         twist_msg.twist.angular.[01;31m[Kw[m[K = (angular_w_filtered - old_filtered_orientation[3]) / dt;
+[6.839s]       |                                 [01;31m[K^[m[K
+[6.850s] [01m[K/home/projet-echo/Projet_indus/src/ur_to_touch_haptic_teleoperation/src/ur3e.cpp:282:13:[m[K [01;31m[Kerror: [m[K‘[01m[Kwrench_msg[m[K’ was not declared in this scope
+[6.850s]   282 |             [01;31m[Kwrench_msg[m[K.wrench.force.x,
+[6.851s]       |             [01;31m[K^~~~~~~~~~[m[K
+[6.857s] [01m[K/home/projet-echo/Projet_indus/src/ur_to_touch_haptic_teleoperation/src/ur3e.cpp:[m[K In member function ‘[01m[Kvoid OmniStateToTwistWithButton::wrench_callback(geometry_msgs::msg::WrenchStamped_<std::allocator<void> >::SharedPtr)[m[K’:
+[6.857s] [01m[K/home/projet-echo/Projet_indus/src/ur_to_touch_haptic_teleoperation/src/ur3e.cpp:307:26:[m[K [01;31m[Kerror: [m[Krequest for member ‘[01m[Kempty[m[K’ in ‘[01m[K((OmniStateToTwistWithButton*)this)->OmniStateToTwistWithButton::joint_angles[m[K’, which is of non-class type ‘[01m[Kdouble [6][m[K’
+[6.858s]   307 |         if(!joint_angles.[01;31m[Kempty[m[K()){
+[6.858s]       |                          [01;31m[K^~~~~[m[K
+[6.858s] [01m[K/home/projet-echo/Projet_indus/src/ur_to_touch_haptic_teleoperation/src/ur3e.cpp:309:39:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass UR3Kinematics[m[K’ has no member named ‘[01m[Kfk_ur[m[K’
+[6.858s]   309 |             Eigen::Matrix4d T06 = ur3.[01;31m[Kfk_ur[m[K(joint_angles);
+[6.858s]       |                                       [01;31m[K^~~~~[m[K
+[6.935s] [01m[K/home/projet-echo/Projet_indus/src/ur_to_touch_haptic_teleoperation/src/ur3e.cpp:312:28:[m[K [01;31m[Kerror: [m[K‘[01m[Kwrench_input[m[K’ was not declared in this scope
+[6.935s]   312 |             F_effecteur << [01;31m[Kwrench_input[m[K.wrench.force.x,
+[6.936s]       |                            [01;31m[K^~~~~~~~~~~~[m[K
+[6.970s] [01m[K/home/projet-echo/Projet_indus/src/ur_to_touch_haptic_teleoperation/src/ur3e.cpp:318:13:[m[K [01;31m[Kerror: [m[K‘[01m[Kwrench_msg[m[K’ was not declared in this scope
+[6.970s]   318 |             [01;31m[Kwrench_msg[m[K.wrench.force.x = F_base[0] * WRENCH_SCALE;
+[6.970s]       |             [01;31m[K^~~~~~~~~~[m[K
+[12.981s] gmake[2]: *** [CMakeFiles/ur3e.dir/build.make:76 : CMakeFiles/ur3e.dir/src/ur3e.cpp.o] Erreur 1
+[12.982s] gmake[1]: *** [CMakeFiles/Makefile2:137 : CMakeFiles/ur3e.dir/all] Erreur 2
+[12.982s] gmake: *** [Makefile:146 : all] Erreur 2
+[12.986s] Invoked command in '/home/projet-echo/Projet_indus/build/ur_to_touch_haptic_teleoperation' returned '2': CMAKE_PREFIX_PATH=/home/projet-echo/Projet_indus/install/omni_common:/home/projet-echo/Projet_indus/install/ur_control:/opt/ros/humble:/home/projet-echo/Projet_indus/install/omni_msgs:/home/projet-echo/Projet_indus/install/ur_udp:/home/projet-echo/Projet_indus/install/ur_to_touch_haptic_teleoperation:/home/projet-echo/Projet_indus/install/omni_description PYTHONPATH=/home/projet-echo/Projet_indus/install/omni_msgs/local/lib/python3.10/dist-packages:/home/projet-echo/Projet_indus/install/ur_control/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages /usr/bin/cmake --build /home/projet-echo/Projet_indus/build/ur_to_touch_haptic_teleoperation -- -j20 -l20

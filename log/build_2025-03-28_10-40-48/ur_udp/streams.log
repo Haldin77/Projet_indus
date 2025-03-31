@@ -1,0 +1,40 @@
+[0.024s] Invoking command in '/home/projet-echo/Projet_indus/build/ur_udp': CMAKE_PREFIX_PATH=/home/projet-echo/Projet_indus/install/ur_control:/opt/ros/humble:/home/projet-echo/Projet_indus/install/omni_msgs:/home/projet-echo/Projet_indus/install/ur_udp:/home/projet-echo/Projet_indus/install/ur_to_touch_haptic_teleoperation:/home/projet-echo/Projet_indus/install/omni_common:/home/projet-echo/Projet_indus/install/omni_description PYTHONPATH=/home/projet-echo/Projet_indus/install/omni_msgs/local/lib/python3.10/dist-packages:/home/projet-echo/Projet_indus/install/ur_control/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages /usr/bin/cmake --build /home/projet-echo/Projet_indus/build/ur_udp -- -j20 -l20
+[0.132s] [35m[1mConsolidate compiler generated dependencies of target phantom_udp[0m
+[0.133s] [35m[1mConsolidate compiler generated dependencies of target ur_udp[0m
+[0.193s] [ 25%] [32mBuilding CXX object CMakeFiles/phantom_udp.dir/src/phantom_udp.cpp.o[0m
+[0.196s] [ 50%] [32mBuilding CXX object CMakeFiles/ur_udp.dir/src/ur_udp.cpp.o[0m
+[10.681s] [01m[K/home/projet-echo/Projet_indus/src/ur_udp/src/ur_udp.cpp:[m[K In member function ‘[01m[Kvoid* URNode::serveur_udp()[m[K’:
+[10.681s] [01m[K/home/projet-echo/Projet_indus/src/ur_udp/src/ur_udp.cpp:138:9:[m[K [01;35m[Kwarning: [m[Kcontrol reaches end of non-void function [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreturn-type-Wreturn-type]8;;[m[K]
+[10.681s]   138 |         [01;35m[K}[m[K
+[10.682s]       |         [01;35m[K^[m[K
+[12.182s] [01m[K/home/projet-echo/Projet_indus/src/ur_udp/src/phantom_udp.cpp:[m[K In member function ‘[01m[Kvoid* PhantomNode::serveur_udp()[m[K’:
+[12.182s] [01m[K/home/projet-echo/Projet_indus/src/ur_udp/src/phantom_udp.cpp:144:5:[m[K [01;35m[Kwarning: [m[Kcontrol reaches end of non-void function [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreturn-type-Wreturn-type]8;;[m[K]
+[12.183s]   144 |     [01;35m[K}[m[K
+[12.183s]       |     [01;35m[K^[m[K
+[19.075s] [ 75%] [32m[1mLinking CXX executable ur_udp[0m
+[20.029s] [ 75%] Built target ur_udp
+[23.310s] [100%] [32m[1mLinking CXX executable phantom_udp[0m
+[24.324s] [100%] Built target phantom_udp
+[24.345s] Invoked command in '/home/projet-echo/Projet_indus/build/ur_udp' returned '0': CMAKE_PREFIX_PATH=/home/projet-echo/Projet_indus/install/ur_control:/opt/ros/humble:/home/projet-echo/Projet_indus/install/omni_msgs:/home/projet-echo/Projet_indus/install/ur_udp:/home/projet-echo/Projet_indus/install/ur_to_touch_haptic_teleoperation:/home/projet-echo/Projet_indus/install/omni_common:/home/projet-echo/Projet_indus/install/omni_description PYTHONPATH=/home/projet-echo/Projet_indus/install/omni_msgs/local/lib/python3.10/dist-packages:/home/projet-echo/Projet_indus/install/ur_control/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages /usr/bin/cmake --build /home/projet-echo/Projet_indus/build/ur_udp -- -j20 -l20
+[24.348s] Invoking command in '/home/projet-echo/Projet_indus/build/ur_udp': CMAKE_PREFIX_PATH=/home/projet-echo/Projet_indus/install/ur_control:/opt/ros/humble:/home/projet-echo/Projet_indus/install/omni_msgs:/home/projet-echo/Projet_indus/install/ur_udp:/home/projet-echo/Projet_indus/install/ur_to_touch_haptic_teleoperation:/home/projet-echo/Projet_indus/install/omni_common:/home/projet-echo/Projet_indus/install/omni_description PYTHONPATH=/home/projet-echo/Projet_indus/install/omni_msgs/local/lib/python3.10/dist-packages:/home/projet-echo/Projet_indus/install/ur_control/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages /usr/bin/cmake --install /home/projet-echo/Projet_indus/build/ur_udp
+[24.358s] -- Install configuration: ""
+[24.359s] -- Installing: /home/projet-echo/Projet_indus/install/ur_udp/lib/ur_udp/ur_udp
+[24.365s] -- Set runtime path of "/home/projet-echo/Projet_indus/install/ur_udp/lib/ur_udp/ur_udp" to ""
+[24.365s] -- Installing: /home/projet-echo/Projet_indus/install/ur_udp/lib/ur_udp/phantom_udp
+[24.372s] -- Set runtime path of "/home/projet-echo/Projet_indus/install/ur_udp/lib/ur_udp/phantom_udp" to ""
+[24.373s] -- Up-to-date: /home/projet-echo/Projet_indus/install/ur_udp/share/ament_index/resource_index/package_run_dependencies/ur_udp
+[24.373s] -- Up-to-date: /home/projet-echo/Projet_indus/install/ur_udp/share/ament_index/resource_index/parent_prefix_path/ur_udp
+[24.373s] -- Up-to-date: /home/projet-echo/Projet_indus/install/ur_udp/share/ur_udp/environment/ament_prefix_path.sh
+[24.373s] -- Up-to-date: /home/projet-echo/Projet_indus/install/ur_udp/share/ur_udp/environment/ament_prefix_path.dsv
+[24.373s] -- Up-to-date: /home/projet-echo/Projet_indus/install/ur_udp/share/ur_udp/environment/path.sh
+[24.373s] -- Up-to-date: /home/projet-echo/Projet_indus/install/ur_udp/share/ur_udp/environment/path.dsv
+[24.373s] -- Up-to-date: /home/projet-echo/Projet_indus/install/ur_udp/share/ur_udp/local_setup.bash
+[24.374s] -- Up-to-date: /home/projet-echo/Projet_indus/install/ur_udp/share/ur_udp/local_setup.sh
+[24.374s] -- Up-to-date: /home/projet-echo/Projet_indus/install/ur_udp/share/ur_udp/local_setup.zsh
+[24.374s] -- Up-to-date: /home/projet-echo/Projet_indus/install/ur_udp/share/ur_udp/local_setup.dsv
+[24.374s] -- Installing: /home/projet-echo/Projet_indus/install/ur_udp/share/ur_udp/package.dsv
+[24.374s] -- Up-to-date: /home/projet-echo/Projet_indus/install/ur_udp/share/ament_index/resource_index/packages/ur_udp
+[24.375s] -- Up-to-date: /home/projet-echo/Projet_indus/install/ur_udp/share/ur_udp/cmake/ur_udpConfig.cmake
+[24.375s] -- Up-to-date: /home/projet-echo/Projet_indus/install/ur_udp/share/ur_udp/cmake/ur_udpConfig-version.cmake
+[24.375s] -- Up-to-date: /home/projet-echo/Projet_indus/install/ur_udp/share/ur_udp/package.xml
+[24.379s] Invoked command in '/home/projet-echo/Projet_indus/build/ur_udp' returned '0': CMAKE_PREFIX_PATH=/home/projet-echo/Projet_indus/install/ur_control:/opt/ros/humble:/home/projet-echo/Projet_indus/install/omni_msgs:/home/projet-echo/Projet_indus/install/ur_udp:/home/projet-echo/Projet_indus/install/ur_to_touch_haptic_teleoperation:/home/projet-echo/Projet_indus/install/omni_common:/home/projet-echo/Projet_indus/install/omni_description PYTHONPATH=/home/projet-echo/Projet_indus/install/omni_msgs/local/lib/python3.10/dist-packages:/home/projet-echo/Projet_indus/install/ur_control/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages /usr/bin/cmake --install /home/projet-echo/Projet_indus/build/ur_udp

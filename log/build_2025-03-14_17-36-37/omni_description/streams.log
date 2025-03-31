@@ -1,0 +1,35 @@
+[0.006s] Invoking command in '/home/projet-echo/Projet_indus/build/omni_description': CMAKE_PREFIX_PATH=/home/projet-echo/Projet_indus/install/ur_udp:/home/projet-echo/Projet_indus/install/ur_to_touch_haptic_teleoperation:/home/projet-echo/Projet_indus/install/omni_common:/opt/ros/humble:/home/projet-echo/Projet_indus/install/omni_msgs:/home/projet-echo/Projet_indus/install/omni_description /usr/bin/cmake --build /home/projet-echo/Projet_indus/build/omni_description -- -j20 -l20
+[0.033s] Invoked command in '/home/projet-echo/Projet_indus/build/omni_description' returned '0': CMAKE_PREFIX_PATH=/home/projet-echo/Projet_indus/install/ur_udp:/home/projet-echo/Projet_indus/install/ur_to_touch_haptic_teleoperation:/home/projet-echo/Projet_indus/install/omni_common:/opt/ros/humble:/home/projet-echo/Projet_indus/install/omni_msgs:/home/projet-echo/Projet_indus/install/omni_description /usr/bin/cmake --build /home/projet-echo/Projet_indus/build/omni_description -- -j20 -l20
+[0.040s] Invoking command in '/home/projet-echo/Projet_indus/build/omni_description': CMAKE_PREFIX_PATH=/home/projet-echo/Projet_indus/install/ur_udp:/home/projet-echo/Projet_indus/install/ur_to_touch_haptic_teleoperation:/home/projet-echo/Projet_indus/install/omni_common:/opt/ros/humble:/home/projet-echo/Projet_indus/install/omni_msgs:/home/projet-echo/Projet_indus/install/omni_description /usr/bin/cmake --install /home/projet-echo/Projet_indus/build/omni_description
+[0.048s] -- Install configuration: ""
+[0.048s] -- Up-to-date: /home/projet-echo/Projet_indus/install/omni_description/share/omni_description/meshes
+[0.048s] -- Up-to-date: /home/projet-echo/Projet_indus/install/omni_description/share/omni_description/meshes/base.stl
+[0.049s] -- Up-to-date: /home/projet-echo/Projet_indus/install/omni_description/share/omni_description/meshes/tip.stl
+[0.049s] -- Up-to-date: /home/projet-echo/Projet_indus/install/omni_description/share/omni_description/meshes/wrist.stl
+[0.049s] -- Up-to-date: /home/projet-echo/Projet_indus/install/omni_description/share/omni_description/meshes/upper_arm.stl
+[0.049s] -- Up-to-date: /home/projet-echo/Projet_indus/install/omni_description/share/omni_description/meshes/lower_arm.stl
+[0.049s] -- Up-to-date: /home/projet-echo/Projet_indus/install/omni_description/share/omni_description/meshes/torso.stl
+[0.049s] -- Up-to-date: /home/projet-echo/Projet_indus/install/omni_description/share/omni_description/meshes/pen.stl
+[0.049s] -- Up-to-date: /home/projet-echo/Projet_indus/install/omni_description/share/omni_description/resources
+[0.049s] -- Up-to-date: /home/projet-echo/Projet_indus/install/omni_description/share/omni_description/resources/omni.rviz
+[0.049s] -- Up-to-date: /home/projet-echo/Projet_indus/install/omni_description/share/omni_description/resources/OmniRviz.png
+[0.049s] -- Up-to-date: /home/projet-echo/Projet_indus/install/omni_description/share/omni_description/urdf
+[0.049s] -- Up-to-date: /home/projet-echo/Projet_indus/install/omni_description/share/omni_description/urdf/omni.urdf
+[0.050s] -- Up-to-date: /home/projet-echo/Projet_indus/install/omni_description/share/omni_description/urdf/omni.dae
+[0.050s] -- Up-to-date: /home/projet-echo/Projet_indus/install/omni_description/share/omni_description/urdf/omni.robot.xml
+[0.050s] -- Up-to-date: /home/projet-echo/Projet_indus/install/omni_description/share/ament_index/resource_index/package_run_dependencies/omni_description
+[0.050s] -- Up-to-date: /home/projet-echo/Projet_indus/install/omni_description/share/ament_index/resource_index/parent_prefix_path/omni_description
+[0.050s] -- Up-to-date: /home/projet-echo/Projet_indus/install/omni_description/share/omni_description/environment/ament_prefix_path.sh
+[0.050s] -- Up-to-date: /home/projet-echo/Projet_indus/install/omni_description/share/omni_description/environment/ament_prefix_path.dsv
+[0.050s] -- Up-to-date: /home/projet-echo/Projet_indus/install/omni_description/share/omni_description/environment/path.sh
+[0.050s] -- Up-to-date: /home/projet-echo/Projet_indus/install/omni_description/share/omni_description/environment/path.dsv
+[0.050s] -- Up-to-date: /home/projet-echo/Projet_indus/install/omni_description/share/omni_description/local_setup.bash
+[0.050s] -- Up-to-date: /home/projet-echo/Projet_indus/install/omni_description/share/omni_description/local_setup.sh
+[0.050s] -- Up-to-date: /home/projet-echo/Projet_indus/install/omni_description/share/omni_description/local_setup.zsh
+[0.050s] -- Up-to-date: /home/projet-echo/Projet_indus/install/omni_description/share/omni_description/local_setup.dsv
+[0.050s] -- Installing: /home/projet-echo/Projet_indus/install/omni_description/share/omni_description/package.dsv
+[0.050s] -- Up-to-date: /home/projet-echo/Projet_indus/install/omni_description/share/ament_index/resource_index/packages/omni_description
+[0.050s] -- Up-to-date: /home/projet-echo/Projet_indus/install/omni_description/share/omni_description/cmake/omni_descriptionConfig.cmake
+[0.050s] -- Up-to-date: /home/projet-echo/Projet_indus/install/omni_description/share/omni_description/cmake/omni_descriptionConfig-version.cmake
+[0.050s] -- Up-to-date: /home/projet-echo/Projet_indus/install/omni_description/share/omni_description/package.xml
+[0.052s] Invoked command in '/home/projet-echo/Projet_indus/build/omni_description' returned '0': CMAKE_PREFIX_PATH=/home/projet-echo/Projet_indus/install/ur_udp:/home/projet-echo/Projet_indus/install/ur_to_touch_haptic_teleoperation:/home/projet-echo/Projet_indus/install/omni_common:/opt/ros/humble:/home/projet-echo/Projet_indus/install/omni_msgs:/home/projet-echo/Projet_indus/install/omni_description /usr/bin/cmake --install /home/projet-echo/Projet_indus/build/omni_description

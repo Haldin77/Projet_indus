@@ -1,0 +1,4 @@
+[01m[K/home/projet-echo/Projet_indus/src/ur_udp/src/ur_udp.cpp:[m[K In member function ‘[01m[Kvoid* URNode::serveur_udp()[m[K’:
+[01m[K/home/projet-echo/Projet_indus/src/ur_udp/src/ur_udp.cpp:138:9:[m[K [01;35m[Kwarning: [m[Kcontrol reaches end of non-void function [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreturn-type-Wreturn-type]8;;[m[K]
+  138 |         [01;35m[K}[m[K
+      |         [01;35m[K^[m[K
