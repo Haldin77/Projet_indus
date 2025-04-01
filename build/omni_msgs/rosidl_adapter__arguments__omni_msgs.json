@@ -1,8 +1,0 @@
-{
-  "package_name": "omni_msgs",
-  "non_idl_tuples": [
-    "/home/projet-echo/Projet_indus/src/Geomagic_Touch_ROS2/omni_msgs:msg/OmniFeedback.msg",
-    "/home/projet-echo/Projet_indus/src/Geomagic_Touch_ROS2/omni_msgs:msg/OmniButtonEvent.msg",
-    "/home/projet-echo/Projet_indus/src/Geomagic_Touch_ROS2/omni_msgs:msg/OmniState.msg"
-  ]
-}
