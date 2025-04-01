@@ -15,7 +15,7 @@ def generate_launch_description():
                 'ur3e.launch.py'
             ])
         ]),
-        launch_arguments={'robot_ip':'192.168.56.2'}.items()
+        launch_arguments={'robot_ip':'192.168.56.2',"initial_joint_controller":"forward_position_controller"}.items()
     )
     
     moveit_launch = IncludeLaunchDescription(
@@ -26,7 +26,7 @@ def generate_launch_description():
                 'ur_moveit.launch.py'
             ])
         ]),
-        launch_arguments={'ur_type':'ur3e'}.items()
+        launch_arguments={'ur_type':'ur3e','moveit_config_package':'ur3e_moveit_config'}.items()
     )
     
     ur3e_node = Node(
@@ -57,19 +57,6 @@ def generate_launch_description():
                 "service", "call",
                 "/servo_node/start_servo",
                 "std_srvs/srv/Trigger"
-            ],
-            output='screen'
-        )
-    )
-    
-    ld.add_action(
-        ExecuteProcess(
-            cmd=[
-                FindExecutable(name="ros2"),
-                "control",
-                "switch_controllers",
-                "--activate", "forward_position_controller",
-                "--deactivate", "scaled_joint_trajectory_controller" 
             ],
             output='screen'
         )
