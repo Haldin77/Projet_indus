@@ -1,8 +1,0 @@
-[35m[1mConsolidate compiler generated dependencies of target ur_udp[0m
-[ 25%] [32mBuilding CXX object CMakeFiles/phantom_udp.dir/src/phantom_udp.cpp.o[0m
-[ 50%] [32mBuilding CXX object CMakeFiles/ur_udp.dir/src/ur_udp.cpp.o[0m
-gmake[2]: *** [CMakeFiles/ur_udp.dir/build.make:76: CMakeFiles/ur_udp.dir/src/ur_udp.cpp.o] Interrompre
-gmake[2]: *** [CMakeFiles/phantom_udp.dir/build.make:76: CMakeFiles/phantom_udp.dir/src/phantom_udp.cpp.o] Interrompre
-gmake[1]: *** [CMakeFiles/Makefile2:139: CMakeFiles/ur_udp.dir/all] Interrompre
-gmake[1]: *** [CMakeFiles/Makefile2:165: CMakeFiles/phantom_udp.dir/all] Interrompre
-gmake: *** [Makefile:146: all] Interrompre

@@ -175,26 +175,52 @@ class OmniStateToTwistWithButton(Node):
             #self.get_logger().info(f"Force en base: {self.VecteurforceBase}")
         
         # Copier les vitesses linéaires
-        self.linear_x_history.append(msg.velocity.x*10)
-        self.linear_y_history.append(msg.velocity.y*10)
-        self.linear_z_history.append(msg.velocity.z*10)
+        self.linear_x_history.append(msg.velocity.x*100)
+        self.linear_y_history.append(msg.velocity.y*100)
+        self.linear_z_history.append(msg.velocity.z*100)
 
 
-        # self.angular_x_history.append(msg.pose.orientation.x)
-        # self.angular_y_history.append(msg.pose.orientation.y)
-        # self.angular_z_history.append(msg.pose.orientation.z)
+        self.angular_x_history.append(msg.pose.orientation.x)
+        self.angular_y_history.append(msg.pose.orientation.y)
+        self.angular_z_history.append(msg.pose.orientation.z)
+        self.angular_w_history.append(msg.pose.orientation.w)
+
         quat = self.pl_scene.pose.orientation
-        q1 = np.array([quat.x,quat.y,quat.z,quat.w])
-        q2 = [msg.pose.orientation.x,msg.pose.orientation.y,msg.pose.orientation.z,msg.pose.orientation.w]
-        theta_axis = self.quaternion_to_axis_angle(q2,q1)*self.K
+        # q1 = np.array([quat.x,quat.y,quat.z,quat.w])
+        # q2 = [msg.pose.orientation.x,msg.pose.orientation.y,msg.pose.orientation.z,msg.pose.orientation.w]
+        q1 = OmniState().pose.orientation
+        if len(self.angular_x_history) > 2 :
+            q1.x = self.angular_x_history[-2]#self.apply_filter(self.angular_x_history,-2)
+            q1.y = self.angular_y_history[-2]#self.apply_filter(self.angular_y_history,-2)
+            q1.z = self.angular_z_history[-2]#self.apply_filter(self.angular_z_history,-2)
+            q1.w = self.angular_w_history[-2]#self.apply_filter(self.angular_w_history,-2)
+        
+        
+        q2 = OmniState().pose.orientation
+        q2.x = self.angular_x_history[-1]#self.apply_filter(self.angular_x_history,-1)
+        q2.y = self.angular_y_history[-1]#self.apply_filter(self.angular_y_history,-1)
+        q2.z = self.angular_z_history[-1]#self.apply_filter(self.angular_z_history,-1)
+        q2.w = self.angular_w_history[-1]#self.apply_filter(self.angular_w_history,-1)
+        # Orientation 
+        # Calcul des vitesses angulaires
+        if len(self.angular_x_history) < 2 or len(self.angular_w_history) < 2 or len(self.angular_y_history) < 2 or len(self.angular_z_history) < 2:
+            twist_msg.twist.angular.x = 0.0
+            twist_msg.twist.angular.y = 0.0
+            twist_msg.twist.angular.z = 0.0
+        else:
+            twist_msg.twist.angular.x = (2.0 / dt) * (q1.w * q2.x - q1.x * q2.w - q1.y * q2.z + q1.z * q2.y)
+            twist_msg.twist.angular.z = -(2.0 / dt) * (q1.w * q2.y + q1.x * q2.z - q1.y * q2.w - q1.z * q2.x)
+            twist_msg.twist.angular.y = (2.0 / dt) * (q1.w * q2.z - q1.x * q2.y + q1.y * q2.x - q1.z * q2.w)
+        #theta_axis = self.quaternion_to_axis_angle(q2,q1)*self.K
         
         if len(self.linear_x_history) > 20 :
             self.linear_x_history = self.linear_x_history[1:-1]
             self.linear_y_history = self.linear_y_history[1:-1]
             self.linear_z_history = self.linear_z_history[1:-1]
-            # self.angular_x_history = self.angular_x_history[1:-1]
-            # self.angular_y_history = self.angular_y_history[1:-1]
-            # self.angular_z_history = self.angular_z_history[1:-1]
+            self.angular_x_history = self.angular_x_history[1:-1]
+            self.angular_y_history = self.angular_y_history[1:-1]
+            self.angular_z_history = self.angular_z_history[1:-1]
+            self.angular_w_history = self.angular_w_history[1:-1]
             # self.angular_velocity_x = self.angular_velocity_x[1:-1]
             # self.angular_velocity_y = self.angular_velocity_y[1:-1]
             # self.angular_velocity_z = self.angular_velocity_z[1:-1]
@@ -216,9 +242,9 @@ class OmniStateToTwistWithButton(Node):
         twist_msg.twist.linear.x = -self.apply_filter(self.linear_x_history,-1)
         twist_msg.twist.linear.y = -self.apply_filter(self.linear_y_history,-1)
         twist_msg.twist.linear.z = self.apply_filter(self.linear_z_history,-1)
-        twist_msg.twist.angular.x = theta_axis[0]#-(q2[0] - q1[0])*self.K
-        twist_msg.twist.angular.y = theta_axis[1]#-(q2[1] - q1[1])*self.K
-        twist_msg.twist.angular.z = theta_axis[2]#-(q2[2] - q1[2])*self.K  
+        # twist_msg.twist.angular.x = theta_axis[0]#-(q2[0] - q1[0])*self.K
+        # twist_msg.twist.angular.y = theta_axis[1]#-(q2[1] - q1[1])*self.K
+        # twist_msg.twist.angular.z = theta_axis[2]#-(q2[2] - q1[2])*self.K  
         self.deadband_filter_noise(twist_msg, 0.00101)
         
 

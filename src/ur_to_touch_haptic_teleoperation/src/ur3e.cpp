@@ -22,9 +22,9 @@ static const int QUEUE_LENGTH = 10;
 
 ///////////[  PARAMETRAGE TELEOPERATION  ]//////////////
 
-static const float SPEED_LINEAR_SCALE = 0.01;
+static const float SPEED_LINEAR_SCALE = 100;
 static const float WRENCH_SCALE = 0.1;
-static const float WRENCH_LIMIT = 2;
+static const float WRENCH_LIMIT = 200;
 static const float DEADBAND = 0.00101;
 
 /////////////////////////////////////////////////////////
@@ -250,16 +250,27 @@ class OmniStateToTwistWithButton : public rclcpp::Node {
         angular_z_history[LEN_HISTORY-1] = msg->pose.orientation.z;
         angular_w_history[LEN_HISTORY-1] = msg->pose.orientation.w;
 
+        geometry_msgs::msg::Quaternion q1;
+        q1.x = old_filtered_orientation[0];
+        q1.y = old_filtered_orientation[1];
+        q1.z = old_filtered_orientation[2];
+        q1.w = old_filtered_orientation[3];
         // Application du filtre sur les orientations
         double angular_x_filtered = lfilter(angular_x_history);
         double angular_y_filtered = lfilter(angular_y_history);
         double angular_z_filtered = lfilter(angular_z_history);
         double angular_w_filtered = lfilter(angular_w_history);
+        
 
+        geometry_msgs::msg::Quaternion q2;
+        q2.x = angular_x_filtered;
+        q2.y = angular_y_filtered;
+        q2.z = angular_z_filtered;
+        q2.w = angular_w_filtered;
         // Calcul des vitesses d'orientation
-        twist_msg.twist.angular.x = (angular_x_filtered - old_filtered_orientation[0]) / dt;
-        twist_msg.twist.angular.y = (angular_y_filtered - old_filtered_orientation[1]) / dt;
-        twist_msg.twist.angular.z = (angular_z_filtered - old_filtered_orientation[2]) / dt;
+        twist_msg.twist.angular.x = (2.0 / dt) * (q1.w * q2.x - q1.x * q2.w - q1.y * q2.z + q1.z * q2.y);
+        twist_msg.twist.angular.y = (2.0 / dt) * (q1.w * q2.y + q1.x * q2.z - q1.y * q2.w - q1.z * q2.x);
+        twist_msg.twist.angular.z = (2.0 / dt) * (q1.w * q2.z - q1.x * q2.y + q1.y * q2.x - q1.z * q2.w);
         //twist_msg.twist.angular.w = (angular_w_filtered - old_filtered_orientation[3]) / dt;
 
         // Mise à jour de old_filtered_orientation (stockage de l'orientation précédente)
