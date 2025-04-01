@@ -39,13 +39,13 @@ public:
         // Abonnement à un topic pour recevoir des données à envoyer à l'UR
 
         sub2 = this->create_subscription<std_msgs::msg::Float32MultiArray>(
-            "/haply_quaternion", 1000, std::bind(&PhantomNode::receive_quat_callback, this, std::placeholders::_1));
+            "/haply_quaternion", 10, std::bind(&PhantomNode::receive_quat_callback, this, std::placeholders::_1));
 
         sub = this->create_subscription<std_msgs::msg::Float32MultiArray>(
-            "/haply_pos_vel", 1000,
+            "/haply_pos_vel", 10,
             std::bind(&PhantomNode::sendMsgToUR_callback, this, std::placeholders::_1));
 
-        pub = this->create_publisher<std_msgs::msg::Float32MultiArray>("/haply_forces", 100);
+        pub = this->create_publisher<std_msgs::msg::Float32MultiArray>("/haply_forces", 10);
         // sub_button = this->create_subscription<omni_msgs::msg::OmniButtonEvent>("/phantom/button",10,std::bind(&PhantomNode::button_callback, this, std::placeholders::_1));
         //  Lancer un thread pour écouter le serveur UDP
         std::thread thread_serveur_udp = std::thread(&PhantomNode::serveur_udp, this);
@@ -102,18 +102,18 @@ private:
             // Réinitialiser le tampon
             memset(buffer, 0, 256);
             clilen = sizeof(cli_addr);
-            
+
             // Recevoir un message du client
             ssize_t received_bytes = recvfrom(sockfd, buffer, 255, MSG_DONTWAIT, (struct sockaddr *)&cli_addr, &clilen);
             if (received_bytes < 0)
             {
                 if (errno != EWOULDBLOCK && errno != EAGAIN) // Si l'erreur ne correspond pas à une absence de messages
                     cerr << "Erreur lors de l'appel système recvfrom()." << strerror(errno) << endl;
-                //else
-                    //cerr << "Erreur lors de l'appel système recvfrom() - pas de msg" << strerror(errno) << endl;
+                // else
+                // cerr << "Erreur lors de l'appel système recvfrom() - pas de msg" << strerror(errno) << endl;
                 continue;
             }
-            
+
             // Désérialiser le message
             msgpack::object_handle oh = msgpack::unpack(buffer, received_bytes);
             msgpack::object obj = oh.get();
@@ -168,15 +168,16 @@ private:
         // Créer le message
         MessagePhantom::Velocity vel;
         MessagePhantom::Position pos;
-        // if (0)
-        // {
-        //     vel = {0, 0, 0};
-        //     pos = {0, 0, 0, 0};
-        // }
-        // else
-
-        vel = {msg_omniState.data[3], msg_omniState.data[4], msg_omniState.data[5]};
-        pos = {quat.data[0], quat.data[1], quat.data[2], quat.data[3]};
+        if (!quat.data[4])
+        {
+            vel = {0, 0, 0};
+            pos = {0, 0, 0, 0};
+        }
+        else
+        {
+            vel = {msg_omniState.data[3], msg_omniState.data[4], msg_omniState.data[5]};
+            pos = {quat.data[0], quat.data[1], quat.data[2], quat.data[3]};
+        }
 
         double time = static_cast<double>(chrono::duration_cast<us>(get_time::now().time_since_epoch()).count());
         MessagePhantom msg{vel, pos, time};
@@ -191,10 +192,11 @@ private:
                                     (struct sockaddr *)&serv_addr, sizeof(serv_addr));
         if (sent_bytes < 0)
             cerr << "Erreur lors de l'envoi du message. Code d'erreur : " << strerror(errno) << "\n";
-        // geometry_msgs / msg / PoseStamped void button_callback(const omni_msgs::msg::OmniButtonEvent::SharedPtr msg)
-        // {
-        //     button = msg->grey_button;
-        // }
+        else
+        {
+            cout << "msg envoyé" << std::endl;
+        }
+
         close(sockfd);
     }
 

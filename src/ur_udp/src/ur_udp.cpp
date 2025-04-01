@@ -42,7 +42,7 @@ class URNode : public rclcpp::Node
             sub = this->create_subscription<geometry_msgs::msg::WrenchStamped>(
                 "/wrench", 1000, std::bind(&URNode::sendMsgToPhantom_callback, this, std::placeholders::_1));
 
-            // Création d'un Publisher pour envoyer des données reçues
+                // Création d'un Publisher pour envoyer des données reçues
             pub = this->create_publisher<omni_msgs::msg::OmniState>("/phantom_state", 1000);
 
             // Lancer un thread pour écouter le serveur UDP
