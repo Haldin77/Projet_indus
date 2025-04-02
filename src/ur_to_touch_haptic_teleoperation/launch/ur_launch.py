@@ -15,7 +15,7 @@ def generate_launch_description():
                 'ur3e.launch.py'
             ])
         ]),
-        launch_arguments={'robot_ip':'192.168.56.2',"initial_joint_controller":"forward_position_controller"}.items()
+        launch_arguments={'robot_ip':'192.168.56.2'}.items()
     )
     
     moveit_launch = IncludeLaunchDescription(
