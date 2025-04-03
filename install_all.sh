@@ -37,6 +37,7 @@ sudo apt-get update && sudo apt-get install -q -y --no-install-recommends \
     ros-humble-rosidl-default-generators \
     tree \
     ros-humble-ur \
+    libmsgpack-dev \
 
 
 colcon build
