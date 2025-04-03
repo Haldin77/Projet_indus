@@ -20,7 +20,10 @@ Ce repository contient tous les packages ros et scripts permettant de faire fonc
 - Prérequis : 
 Ce projet a été réalisé pour des ordinateurs sous Linux, avec Ubuntu 22.04
 
-- Télécharger et lancer le script d'installation ... pour télécharger toutes les dépendances nécessaires facilement 
+- Télécharger et lancer le script d'installation install_all.sh pour télécharger toutes les dépendances nécessaires facilement 
+```
+./install_all.sh
+```
 - Créer un workspace ros2 (dossier de ros2 contenant les packages ros) et y mettre tous les packages ros, dans un dossier src/
 - Compiler et sourcer (à la racine du workspace) :
 ```
