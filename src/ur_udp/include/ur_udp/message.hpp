@@ -3,18 +3,18 @@
 
 #include <msgpack.hpp>
 
-struct MessagePhantom {
+struct MessageHaply {
     struct Velocity {
-        double vx;
-        double vy;
-        double vz;
+        float vx;
+        float vy;
+        float vz;
         MSGPACK_DEFINE(vx, vy, vz)
     };
     struct Position {
-        double x;
-        double y;
-        double z;
-        double w;
+        float x;
+        float y;
+        float z;
+        float w;
         MSGPACK_DEFINE(x, y, z, w)
     };
 

@@ -9,11 +9,11 @@
 #include "rclcpp/rclcpp.hpp"
 #include "std_msgs/msg/string.hpp"
 #include "geometry_msgs/msg/wrench_stamped.hpp"
-#include "sensor_msgs/msg/joint_state.hpp"
-#include "geometry_msgs/msg/twist_stamped.hpp"
-// #include "omni_msgs/msg/omni_state.hpp"
-// #include "omni_msgs/msg/omni_button_event.hpp"
-// #include "omni_msgs/msg/omni_feedback.hpp"
+#include "omni_msgs/msg/omni_state.hpp"
+#include "std_msgs/msg/float32_multi_array.hpp"
+#include "omni_msgs/msg/omni_button_event.hpp"
+#include "omni_msgs/msg/omni_feedback.hpp"
+
 #include "message.hpp"
 #include "../include/ur_udp/message.hpp"
 
@@ -27,49 +27,49 @@ mutex console_mutex;
 sockaddr_in serv_addr{}, cli_addr{};
 socklen_t clilen;
 
-class PhantomNode : public rclcpp::Node
+class HaplyNode : public rclcpp::Node
 {
 public:
-    PhantomNode() : Node("phantom_node")
+    HaplyNode() : Node("Haply_node")
     {
         // Déclaration des paramètres de configuration
         this->declare_parameter<int>("portUR", 32000);
         this->declare_parameter<std::string>("server_ip", "192.168.42.130");
-        this->declare_parameter<int>("portPhantom", 32001);
-
+        this->declare_parameter<int>("portHaply", 32001);
+        quat.data = {0, 0, 0, 1};
         // Abonnement à un topic pour recevoir des données à envoyer à l'UR
-        sub = this->create_subscription<geometry_msgs::msg::TwistStamped>(
-            "/Omni/measured_cv", 1000, std::bind(&PhantomNode::sendMsgToUR_callback, this, std::placeholders::_1));
 
-        subpos = this->create_subscription<sensor_msgs::msg::JointState>(
-            "/Omni/measured_js", 1000, std::bind(&PhantomNode::position_callback, this, std::placeholders::_1));
+        sub2 = this->create_subscription<std_msgs::msg::Float32MultiArray>(
+            "/haply_quaternion", 10, std::bind(&HaplyNode::receive_quat_callback, this, std::placeholders::_1));
 
-        // Création d'un Publisher pour envoyer des données reçues
-        // pub = this->create_publisher<omni_msgs::msg::OmniFeedback>("/phantom/force_feedback", 1000);
+        sub = this->create_subscription<std_msgs::msg::Float32MultiArray>(
+            "/haply_pos_vel", 10,
+            std::bind(&HaplyNode::sendMsgToUR_callback, this, std::placeholders::_1));
 
-        // sub_button = this->create_subscription<omni_msgs::msg::OmniButtonEvent>("/phantom/button",10,std::bind(&PhantomNode::button_callback, this, std::placeholders::_1));
+        pub = this->create_publisher<std_msgs::msg::Float32MultiArray>("/haply_forces", 10);
+        // sub_button = this->create_subscription<omni_msgs::msg::OmniButtonEvent>("/Haply/button",10,std::bind(&HaplyNode::button_callback, this, std::placeholders::_1));
         //  Lancer un thread pour écouter le serveur UDP
-        std::thread thread_serveur_udp = std::thread(&PhantomNode::serveur_udp, this);
+        std::thread thread_serveur_udp = std::thread(&HaplyNode::serveur_udp, this);
         /*if (thread_serveur_udp.joinable())
         {
             thread_serveur_udp.join();
         }*/
         thread_serveur_udp.detach();
     }
-
-    ~PhantomNode() {}
+    ~HaplyNode() {}
 
 private:
-    rclcpp::Subscription<geometry_msgs::msg::TwistStamped>::SharedPtr sub;
-    rclcpp::Subscription<sensor_msgs::msg::JointState>::SharedPtr subpos;
-    // rclcpp::Publisher<omni_msgs::msg::OmniFeedback>::SharedPtr pub;
-    // rclcpp::Subscription<omni_msgs::msg::OmniButtonEvent>::SharedPtr sub_button;
+    rclcpp::Subscription<omni_msgs::msg::OmniButtonEvent>::SharedPtr sub_button;
+    std::shared_ptr<rclcpp::Subscription<std_msgs::msg::Float32MultiArray>> sub2;
+    std::shared_ptr<rclcpp::Subscription<std_msgs::msg::Float32MultiArray>> sub;
+    std::shared_ptr<rclcpp::Publisher<std_msgs::msg::Float32MultiArray>> pub;
+
     std::thread thread_serveur_udp;
-    std::uint32_t button = 1;
-    sensor_msgs::msg::JointState omni_pos;
+    std::uint32_t button = 0;
+    std_msgs::msg::Float32MultiArray quat;
 
     // Partie serveur pour recevoir les efforts de l'UR
-    void *serveur_udp()
+    void serveur_udp()
     {
         // 1) Création de la socket
         int sockfd = socket(AF_INET, SOCK_DGRAM,0);
@@ -83,7 +83,7 @@ private:
         memset(&serv_addr, 0, sizeof(serv_addr));
         serv_addr.sin_family = AF_INET;
         serv_addr.sin_addr.s_addr = INADDR_ANY;
-        int portno = this->get_parameter("portPhantom").as_int();
+        int portno = this->get_parameter("portHaply").as_int();
         serv_addr.sin_port = htons(portno);
 
         // Liaison de la socket à l'adresse locale
@@ -108,6 +108,8 @@ private:
             {
                 if (errno != EWOULDBLOCK && errno != EAGAIN) // Si l'erreur ne correspond pas à une absence de messages
                     cerr << "Erreur lors de l'appel système recvfrom()." << strerror(errno) << endl;
+                // else
+                // cerr << "Erreur lors de l'appel système recvfrom() - pas de msg" << strerror(errno) << endl;
                 continue;
             }
             // Désérialiser le message
@@ -131,24 +133,15 @@ private:
                 // cout << "Vecteur de force reçu :\nx : " << msg.f.x << "\ny : " << msg.f.y << "\nz : " << msg.f.z << endl;
 
                 currentMsg = msg;
-
-                // omni_msgs::msg::OmniFeedback wrenchMsg;
-                // wrenchMsg.force.x = msg.f.x;
-                // wrenchMsg.force.y = msg.f.y;
-                // wrenchMsg.force.z = msg.f.z;
-
-                // pub->publish(wrenchMsg);
+                std_msgs::msg::Float32MultiArray wrenchMsg;
+                wrenchMsg.data = {msg.f.x, msg.f.y, msg.f.z};
+                pub->publish(wrenchMsg);
             }
         }
         close(sockfd);
     }
 
-    void position_callback(const sensor_msgs::msg::JointState msg_pos)
-    {
-        omni_pos = msg_pos;
-    }
-
-    void sendMsgToUR_callback(const geometry_msgs::msg::TwistStamped::SharedPtr msg_omniState)
+    void sendMsgToUR_callback(const std_msgs::msg::Float32MultiArray msg_omniState)
     {
         int sockfd = socket(AF_INET, SOCK_DGRAM, 0);
         if (sockfd < 0)
@@ -169,21 +162,21 @@ private:
         }
 
         // Créer le message
-        MessagePhantom::Velocity vel;
-        MessagePhantom::Position pos;
-        if (button == 0)
+        MessageHaply::Velocity vel;
+        MessageHaply::Position pos;
+        if (!quat.data[4])
         {
             vel = {0, 0, 0};
             pos = {0, 0, 0, 0};
         }
         else
         {
-
-            vel = {msg_omniState->twist.linear.x, msg_omniState->twist.linear.y, msg_omniState->twist.linear.z,};
-            pos = {omni_pos.position[3], omni_pos.position[4], omni_pos.position[5], 0};
+            vel = {msg_omniState.data[3], msg_omniState.data[4], msg_omniState.data[5]};
+            pos = {quat.data[0], quat.data[1], quat.data[2], quat.data[3]};
         }
+
         double time = static_cast<double>(chrono::duration_cast<us>(get_time::now().time_since_epoch()).count());
-        MessagePhantom msg{vel, pos, time};
+        MessageHaply msg{vel, pos, time};
 
         // Sérialiser le message (= encodage)
         msgpack::sbuffer buffer;                     // Tampon pour les données sérialisées
@@ -195,11 +188,22 @@ private:
                                     (struct sockaddr *)&serv_addr, sizeof(serv_addr));
         if (sent_bytes < 0)
             cerr << "Erreur lors de l'envoi du message. Code d'erreur : " << strerror(errno) << "\n";
-        // geometry_msgs / msg / PoseStamped void button_callback(const omni_msgs::msg::OmniButtonEvent::SharedPtr msg)
-        // {
-        //     button = msg->grey_button;
-        // }
+        else
+        {
+            cout << "msg envoyé" << std::endl;
+        }
+
         close(sockfd);
+    }
+
+    void receive_quat_callback(std_msgs::msg::Float32MultiArray msg)
+    {
+        quat = msg;
+    }
+
+    void button_callback(const omni_msgs::msg::OmniButtonEvent::SharedPtr msg)
+    {
+        button = msg->grey_button;
     }
 };
 
@@ -207,7 +211,7 @@ int main(int argc, char *argv[])
 {
 
     rclcpp::init(argc, argv);
-    rclcpp::spin(std::make_shared<PhantomNode>());
+    rclcpp::spin(std::make_shared<HaplyNode>());
     rclcpp::shutdown();
 
     return 0;
