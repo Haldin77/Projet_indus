@@ -1,8 +1,22 @@
 #!/bin/bash
 
 #Configurer l'adresse ip
-sudo ifconfig wlp0s20f3 192.168.42.146 netmask 255.255.255.0 up
+ETH_IFACE=$(ip -o link show up | awk -F': ' '{print $2}' | grep -E '^e(n|th)' | head -n1)
 
+if [ -z "$ETH_IFACE" ]; then
+  echo "Aucune interface Ethernet active détectée."
+  exit 1
+fi
+
+echo "Interface Ethernet détectée : $ETH_IFACE"
+
+# Attribuer IP statique
+sudo ifconfig "$ETH_IFACE" 192.168.42.146 netmask 255.255.255.0 up
+echo "IP statique configurée sur $ETH_IFACE"
+
+# Ajouter une route pour forcer le trafic via cette interface
+sudo ip route add 192.168.42.0/24 dev "$ETH_IFACE"
+echo "Route ajoutée pour le sous-réseau 192.168.42.0/24"
 sudo chmod 777 /dev/ttyACM0
 sudo chmod 777 /dev/ttyACM1
 

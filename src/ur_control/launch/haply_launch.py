@@ -1,19 +1,10 @@
 import launch
 from launch import LaunchDescription
 from launch_ros.actions import Node
-from launch.actions import IncludeLaunchDescription, ExecuteProcess
-from launch.launch_description_sources import PythonLaunchDescriptionSource
-from launch_ros.substitutions import FindPackageShare
-from launch.substitutions import PathJoinSubstitution, FindExecutable
+from launch.actions import TimerAction
 
 def generate_launch_description():
-    phantom_udp_node = Node(
-        package='ur_udp',
-        executable='phantom_udp',
-        name='phantom_udp',
-        output='screen'
-    )
-
+    # Node 1 : haply_inverse3_quaternion
     haply_inverse3_quaternion_node = Node(
         package='ros2_haply_inverse3_python',
         executable='haply_inverse3_quaternion',
@@ -21,17 +12,30 @@ def generate_launch_description():
         output='screen'
     )
 
+    # Node 2 : haply_inverse3_pos (lancé après 3 secondes)
     haply_inverse3_pos_node = Node(
         package='ros2_haply_inverse3_python',
         executable='haply_inverse3_pos',
         name='haply_inverse3_pos',
         output='screen'
     )
-    
-    ld =  LaunchDescription([
+
+    # Node 3 : phantom_udp (lancé en parallèle)
+    phantom_udp_node = Node(
+        package='ur_udp',
+        executable='phantom_udp',
+        name='phantom_udp',
+        output='screen'
+    )
+
+    # Attendre 3 secondes avant de lancer haply_inverse3_pos
+    wait_3_seconds = TimerAction(
+        period=3.0,  # Attente de 3 secondes
+        actions=[haply_inverse3_pos_node]
+    )
+
+    return LaunchDescription([
         haply_inverse3_quaternion_node,
-        haply_inverse3_pos_node,
+        wait_3_seconds,  # Ajouter le délai avant haply_inverse3_pos
         phantom_udp_node
     ])
-        
-    return ld
