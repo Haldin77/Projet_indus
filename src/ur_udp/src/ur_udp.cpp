@@ -44,7 +44,6 @@ class URNode : public rclcpp::Node
 
                 // Création d'un Publisher pour envoyer des données reçues
             pub = this->create_publisher<omni_msgs::msg::OmniState>("/haply_state", 10);
-
             // Lancer un thread pour écouter le serveur UDP
             std::thread thread_serveur_udp = std::thread(&URNode::serveur_udp, this);
             /*if (thread_serveur_udp.joinable())
@@ -60,7 +59,6 @@ class URNode : public rclcpp::Node
         rclcpp::Subscription<geometry_msgs::msg::WrenchStamped>::SharedPtr sub;
         rclcpp::Publisher<omni_msgs::msg::OmniState>::SharedPtr pub;
         std::thread thread_serveur_udp;
-
         // Partie serveur pour recevoir les vitesses du Haply
         void *serveur_udp()
         {
@@ -86,7 +84,6 @@ class URNode : public rclcpp::Node
 
             std::string serverStartMsg = "Serveur UDP en écoute sur le port " + std::to_string(portno) + "...";
             RCLCPP_INFO(this->get_logger(), serverStartMsg.c_str());
-
             char buffer[256];
             while(rclcpp::ok())
             {

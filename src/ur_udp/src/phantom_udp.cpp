@@ -13,6 +13,7 @@
 #include "std_msgs/msg/float32_multi_array.hpp"
 #include "omni_msgs/msg/omni_button_event.hpp"
 #include "omni_msgs/msg/omni_feedback.hpp"
+
 #include "message.hpp"
 #include "../include/ur_udp/message.hpp"
 
@@ -55,7 +56,6 @@ public:
         }*/
         thread_serveur_udp.detach();
     }
-
     ~HaplyNode() {}
 
 private:
@@ -98,7 +98,6 @@ private:
         char buffer[256];
         while (rclcpp::ok())
         {
-
             // Réinitialiser le tampon
             memset(buffer, 0, 256);
             clilen = sizeof(cli_addr);
@@ -113,7 +112,6 @@ private:
                 // cerr << "Erreur lors de l'appel système recvfrom() - pas de msg" << strerror(errno) << endl;
                 continue;
             }
-
             // Désérialiser le message
             msgpack::object_handle oh = msgpack::unpack(buffer, received_bytes);
             msgpack::object obj = oh.get();
@@ -135,11 +133,9 @@ private:
                 // cout << "Vecteur de force reçu :\nx : " << msg.f.x << "\ny : " << msg.f.y << "\nz : " << msg.f.z << endl;
 
                 currentMsg = msg;
-
                 std_msgs::msg::Float32MultiArray wrenchMsg;
                 wrenchMsg.data = {msg.f.x, msg.f.y, msg.f.z};
-
-                // pub->publish(wrenchMsg);
+                pub->publish(wrenchMsg);
             }
         }
         close(sockfd);

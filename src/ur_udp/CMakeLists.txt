@@ -28,7 +28,10 @@ endif()
 add_executable(ur_udp src/ur_udp.cpp)
 add_executable(phantom_udp src/phantom_udp.cpp)
 
+
 include_directories(include/ur_udp ${rclcpp_INCLUDE_DIRS} ${std_msgs_INCLUDE_DIRS})
+
+
 
 # Lier l'exécutable avec les bibliothèques ROS 2 nécessaires
 ament_target_dependencies(ur_udp 
