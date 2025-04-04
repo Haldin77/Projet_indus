@@ -31,7 +31,7 @@ def generate_launch_description():
     
     ur3e_node = Node(
         package='ur_control',
-        executable='ur3e',
+        executable='ur3e_node',
         name='ur3e',
         output='screen'
     )

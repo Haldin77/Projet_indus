@@ -5,7 +5,6 @@ from geometry_msgs.msg import TwistStamped
 from geometry_msgs.msg import PoseStamped
 from rclpy.clock import Clock
 from scipy.signal import butter, lfilter
-import tf_transformations as tf
 from scipy.spatial.transform import Rotation as R
 import numpy as np
 from sensor_msgs.msg import JointState
@@ -80,6 +79,71 @@ class UR3Kinematics:
         # T60=np.linalg.inv(T06)
 
         return T06
+
+    def jacobienne(self,joint_angles):
+        J=np.zeros((6,3))
+        theta1 = joint_angles[5]
+        theta2 = joint_angles[0]
+        theta3 = joint_angles[1]
+        theta4 = joint_angles[2]
+        theta5 = joint_angles[3]
+        theta6 = joint_angles[4]
+        # theta1 = joint_angles[0]
+        # theta2 = joint_angles[1]
+        # theta3 = joint_angles[2]
+        # theta4 = joint_angles[3]
+        # theta5 = joint_angles[4]
+        # theta6 = joint_angles[5]
+
+   
+        # Matrices de transformation DH modifiÃ©es
+        T01 = dh_matrix(theta1, self.d1, self.a1, self.alpha1)
+        T12 = dh_matrix(theta2, self.d2, self.a2, self.alpha2)
+        T23 = dh_matrix(theta3, self.d3, self.a3, self.alpha3)
+        T34 = dh_matrix(theta4, self.d4, self.a4, self.alpha4)
+        T45 = dh_matrix(theta5, self.d5, self.a5, self.alpha5)
+        T56 = dh_matrix(theta6, self.d6, self.a6, self.alpha6)
+
+        # Multiplier les matrices de transformation pour obtenir T06
+        T02 = np.dot(T01, T12)
+        T03 = np.dot(T02, T23)
+        T04 = np.dot(T03, T34)
+        T05 = np.dot(T04, T45)
+        T06 = np.dot(T05, T56)
+
+        #Vecteurs 
+        OP1=T06[0:3,3]-T01[0:3,3]
+        OP2=T06[0:3,3]-T01[0:3,3]
+        OP3=T06[0:3,3]-T01[0:3,3]
+        OP4=T06[0:3,3]-T01[0:3,3]
+        OP5=T06[0:3,3]-T01[0:3,3]
+        OP6=T06[0:3,3]-T01[0:3,3]
+        OP=np.array([OP1,OP2,OP3,OP4,OP5,OP6])
+
+        #Axe rticulation 
+        k1=T01[0:3,2]
+        k2=T01[0:3,2]
+        k3=T01[0:3,2]
+        k4=T01[0:3,2]
+        k5=T01[0:3,2]
+        k6=T01[0:3,2]
+        k=np.array([k1,k2,k3,k4,k5,k6])
+
+        for i in range(0,3): 
+            Ja=k[i]
+            Jl=np.cross(k[i],OP[i])
+            J[0,i]=Ja[0]
+            J[1,i]=Ja[1]
+            J[2,i]=Jl[2]
+            J[3,i]=Jl[0]
+            J[4,i]=Jl[1]
+            J[5,i]=Jl[2]
+            
+        return J
+
+            
+
+
 
 
 
@@ -160,6 +224,8 @@ class OmniStateToTwistWithButton(Node):
     
     
     def omni_state_callback(self, msg: OmniState):
+        ur3 = UR3Kinematics()
+        J=ur3.jacobienne(self.joint_angles)
         
         current_time = self.clock.now().nanoseconds / 1e9  # Convertir en secondes
         dt = current_time - self.timer
@@ -209,7 +275,7 @@ class OmniStateToTwistWithButton(Node):
             twist_msg.twist.angular.z = 0.0
         else:
             twist_msg.twist.angular.x = (2.0 / dt) * (q1.w * q2.x - q1.x * q2.w - q1.y * q2.z + q1.z * q2.y)
-            twist_msg.twist.angular.z = -(2.0 / dt) * (q1.w * q2.y + q1.x * q2.z - q1.y * q2.w - q1.z * q2.x)
+            twist_msg.twist.angular.z = (2.0 / dt) * (q1.w * q2.y + q1.x * q2.z - q1.y * q2.w - q1.z * q2.x)
             twist_msg.twist.angular.y = (2.0 / dt) * (q1.w * q2.z - q1.x * q2.y + q1.y * q2.x - q1.z * q2.w)
         #theta_axis = self.quaternion_to_axis_angle(q2,q1)*self.K
         
@@ -237,7 +303,19 @@ class OmniStateToTwistWithButton(Node):
         #     self.angular_velocity_x.append((q2[0] - q1[0])*self.K)
         #     self.angular_velocity_y.append((q2[1] - q1[1])*self.K)
         #     self.angular_velocity_z.append((q2[2] - q1[2])*self.K)
-
+        #linear_velocity_outil = np.array([twist_msg.twist.linear.x, 
+        #                            twist_msg.twist.linear.y, 
+        #                            twist_msg.twist.linear.z])
+        #linear_velocity_base=np.dot(J[-3:,:],linear_velocity_outil)
+        #twist_msg.twist.linear.x =linear_velocity_base[0]
+        #twist_msg.twist.linear.y =linear_velocity_base[1]
+        #twist_msg.twist.linear.z=linear_velocity_base[2]
+#
+        #angular_velocity_outil=np.array([twist_msg.twist.angular.x , twist_msg.twist.angular.y,twist_msg.twist.angular.z])
+        #angular_velocity_base=np.dot(J[:3,:],angular_velocity_outil)
+        #twist_msg.twist.angular.x=angular_velocity_base[0]
+        #twist_msg.twist.angular.y=angular_velocity_base[1]
+        #twist_msg.twist.angular.z=angular_velocity_base[2]
         # Appliquer le filtre
         twist_msg.twist.linear.x = -self.apply_filter(self.linear_x_history,-1)
         twist_msg.twist.linear.y = -self.apply_filter(self.linear_y_history,-1)
@@ -264,9 +342,10 @@ class OmniStateToTwistWithButton(Node):
                           self.wrench_msg.wrench.force.z])
 
         # Convertir la vitesse linéaire (Vector3) en un tableau numpy
-        linear_velocity = np.array([twist_msg.twist.linear.x, 
-                                    twist_msg.twist.linear.y, 
-                                    twist_msg.twist.linear.z])
+        
+
+
+        
 
         # Calculer la norme au carré de la force (produit scalaire de la force avec elle-même)
         norm = np.dot(force, force)
@@ -274,7 +353,7 @@ class OmniStateToTwistWithButton(Node):
         # Vérifier si la norme de la force est supérieure à 10
         if norm >200:
             # # Calculer le produit scalaire entre la force et la vitesse linéaire
-            if np.dot(force, linear_velocity) > 0:
+            if np.dot(force, linear_velocity_outil) > 0:
             #     dot_product = np.dot(force, linear_velocity)
 
             #     # Calculer la projection de la vitesse linéaire sur la force

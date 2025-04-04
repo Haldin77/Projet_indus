@@ -35,7 +35,7 @@ class URNode : public rclcpp::Node
         {
             // Déclaration des paramètres de configuration
             this->declare_parameter<int>("portUR", 32000);
-            this->declare_parameter<std::string>("server_ip", "192.168.42.163");
+            this->declare_parameter<std::string>("server_ip", "192.168.42.146");
             this->declare_parameter<int>("portPhantom", 32001);
             
             // Abonnement à un topic pour recevoir des données à envoyer à l'UR
@@ -110,7 +110,7 @@ class URNode : public rclcpp::Node
 
                 //Duré en micro-secondes, calulée entre maintenant et ... 1970 (.time_since_epoch())
                 double currentTime = chrono::duration_cast<us>(get_time::now().time_since_epoch()).count()/1000.0;
-                cout << "Temps de transmission (ms) : " << currentTime << " - " << msg.time/1000.0 << " = " << currentTime - msg.time/1000.0 << endl;
+                // cout << "Temps de transmission (ms) : " << currentTime << " - " << msg.time/1000.0 << " = " << currentTime - msg.time/1000.0 << endl;
 
                 // On vérifie que le message reçu n'est pas un message plus vieux que le dernier message pris en compte (sécurité sur l'ordre d'arrivée des messages)
                 if((msg.time - currentMsg.time) > 0)
@@ -118,9 +118,9 @@ class URNode : public rclcpp::Node
                     // Afficher le message reçu
                     // inet_ntoa() convertit l'adresse IP du client en une chaîne lisible
                     // ntohs() convertit le numéro de port du client en ordre d'octets hôte
-                    cout << "\nNouveau message reçu de " << inet_ntoa(cli_addr.sin_addr)
-                            << ":" << ntohs(cli_addr.sin_port) << "\n";
-                    cout << "velocity reçue :\nx : " << msg.pos.x << "\ny : " << msg.pos.y << "\nvz : " << msg.pos.z << "\nwx : " << endl;
+                    // cout << "\nNouveau message reçu de " << inet_ntoa(cli_addr.sin_addr)
+                            // << ":" << ntohs(cli_addr.sin_port) << "\n";
+                    // cout << "velocity reçue :\nx : " << msg.pos.x << "\ny : " << msg.pos.y << "\nvz : " << msg.pos.z << "\nwx : " << endl;
 
                     currentMsg = msg;
 
@@ -140,7 +140,7 @@ class URNode : public rclcpp::Node
 
         void sendMsgToPhantom_callback(const geometry_msgs::msg::WrenchStamped::SharedPtr msg_wrench)
         {
-            RCLCPP_INFO(this->get_logger(), "Message reçu sur le topic /wrench");
+            // RCLCPP_INFO(this->get_logger(), "Message reçu sur le topic /wrench");
             int sockfd = socket(AF_INET, SOCK_DGRAM, 0);
             if (sockfd < 0)
             {
