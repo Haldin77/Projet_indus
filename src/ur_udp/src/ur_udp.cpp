@@ -18,7 +18,7 @@ using  us = chrono::microseconds;
 using get_time = chrono::steady_clock;
 
 // Variable globale : vitesse reçue la plus récente
-MessagePhantom currentMsg = {{0, 0, 0},{0, 0, 0, 0}, -1};
+MessageHaply currentMsg = {{0, 0, 0},{0, 0, 0, 0}, -1};
 
 // Mutex pour synchroniser l'accès à la console pour les threads
 mutex console_mutex;
@@ -36,14 +36,14 @@ class URNode : public rclcpp::Node
             // Déclaration des paramètres de configuration
             this->declare_parameter<int>("portUR", 32000);
             this->declare_parameter<std::string>("server_ip", "192.168.42.146");
-            this->declare_parameter<int>("portPhantom", 32001);
+            this->declare_parameter<int>("portHaply", 32001);
             
             // Abonnement à un topic pour recevoir des données à envoyer à l'UR
             sub = this->create_subscription<geometry_msgs::msg::WrenchStamped>(
-                "/wrench", 1000, std::bind(&URNode::sendMsgToPhantom_callback, this, std::placeholders::_1));
+                "/wrench", 10, std::bind(&URNode::sendMsgToHaply_callback, this, std::placeholders::_1));
 
                 // Création d'un Publisher pour envoyer des données reçues
-            pub = this->create_publisher<omni_msgs::msg::OmniState>("/phantom_state", 1000);
+            pub = this->create_publisher<omni_msgs::msg::OmniState>("/haply_state", 10);
 
             // Lancer un thread pour écouter le serveur UDP
             std::thread thread_serveur_udp = std::thread(&URNode::serveur_udp, this);
@@ -61,7 +61,7 @@ class URNode : public rclcpp::Node
         rclcpp::Publisher<omni_msgs::msg::OmniState>::SharedPtr pub;
         std::thread thread_serveur_udp;
 
-        // Partie serveur pour recevoir les vitesses du Phantom
+        // Partie serveur pour recevoir les vitesses du Haply
         void *serveur_udp()
         {
             // 1) Création de la socket
@@ -105,7 +105,7 @@ class URNode : public rclcpp::Node
                 // Désérialiser le message
                 msgpack::object_handle oh = msgpack::unpack(buffer, received_bytes);
                 msgpack::object obj = oh.get();
-                MessagePhantom msg;
+                MessageHaply msg;
                 obj.convert(msg);
 
                 //Duré en micro-secondes, calulée entre maintenant et ... 1970 (.time_since_epoch())
@@ -138,7 +138,7 @@ class URNode : public rclcpp::Node
             close(sockfd);
         }
 
-        void sendMsgToPhantom_callback(const geometry_msgs::msg::WrenchStamped::SharedPtr msg_wrench)
+        void sendMsgToHaply_callback(const geometry_msgs::msg::WrenchStamped::SharedPtr msg_wrench)
         {
             // RCLCPP_INFO(this->get_logger(), "Message reçu sur le topic /wrench");
             int sockfd = socket(AF_INET, SOCK_DGRAM, 0);
@@ -150,8 +150,8 @@ class URNode : public rclcpp::Node
 
             sockaddr_in serv_addr{};
             serv_addr.sin_family = AF_INET;
-            int portPhantom = this->get_parameter("portPhantom").as_int();
-            serv_addr.sin_port = htons(portPhantom);
+            int portHaply = this->get_parameter("portHaply").as_int();
+            serv_addr.sin_port = htons(portHaply);
             std::string server_ip = this->get_parameter("server_ip").as_string();
             if (inet_pton(AF_INET, server_ip.c_str(), &serv_addr.sin_addr) <= 0)
             {

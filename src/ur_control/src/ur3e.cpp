@@ -162,9 +162,9 @@ public:
         subscription_joint = this->create_subscription<sensor_msgs::msg::JointState>(
             "/joint_states", QUEUE_LENGTH, std::bind(&OmniStateToTwistWithButton::joint_state_callback, this, std::placeholders::_1));
 
-        // Subscriber au topic /phantom_state
+        // Subscriber au topic /Haply_state
         subscription_state = this->create_subscription<omni_msgs::msg::OmniState>(
-            "/phantom_state", QUEUE_LENGTH, std::bind(&OmniStateToTwistWithButton::omni_state_callback, this, std::placeholders::_1));
+            "/Haply_state", QUEUE_LENGTH, std::bind(&OmniStateToTwistWithButton::omni_state_callback, this, std::placeholders::_1));
 
         // Subscriber au topic /force_torque_sensor_broadcaster/wrench
         subscription_wrench = this->create_subscription<geometry_msgs::msg::WrenchStamped>(
@@ -310,7 +310,7 @@ public:
         }
 
         //__________________[  VITESSES  ]_______________________
-        // Recuperation des vitesses linéaire du phantom omni
+        // Recuperation des vitesses linéaire du Haply omni
         linear_x_history[LEN_HISTORY - 1] = msg->velocity.x * SPEED_LINEAR_SCALE;
         linear_y_history[LEN_HISTORY - 1] = msg->velocity.y * SPEED_LINEAR_SCALE;
         linear_z_history[LEN_HISTORY - 1] = msg->velocity.z * SPEED_LINEAR_SCALE;
@@ -325,7 +325,7 @@ public:
         twist_msg.twist.linear.z = linear_z_history_filtered[LEN_HISTORY - 1];
 
         //__________________[  ORIENTATIONS  ]___________________
-        // Recuperation des orientations du phantom omni
+        // Recuperation des orientations du Haply omni
 
         double angle = 0.0;                 // en degrés
         double radian = angle * M_PI / 180.0; // Convertir l'angle en radians

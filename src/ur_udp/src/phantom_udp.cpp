@@ -26,29 +26,29 @@ mutex console_mutex;
 sockaddr_in serv_addr{}, cli_addr{};
 socklen_t clilen;
 
-class PhantomNode : public rclcpp::Node
+class HaplyNode : public rclcpp::Node
 {
 public:
-    PhantomNode() : Node("phantom_node")
+    HaplyNode() : Node("Haply_node")
     {
         // Déclaration des paramètres de configuration
         this->declare_parameter<int>("portUR", 32000);
         this->declare_parameter<std::string>("server_ip", "192.168.42.130");
-        this->declare_parameter<int>("portPhantom", 32001);
+        this->declare_parameter<int>("portHaply", 32001);
         quat.data = {0, 0, 0, 1};
         // Abonnement à un topic pour recevoir des données à envoyer à l'UR
 
         sub2 = this->create_subscription<std_msgs::msg::Float32MultiArray>(
-            "/haply_quaternion", 10, std::bind(&PhantomNode::receive_quat_callback, this, std::placeholders::_1));
+            "/haply_quaternion", 10, std::bind(&HaplyNode::receive_quat_callback, this, std::placeholders::_1));
 
         sub = this->create_subscription<std_msgs::msg::Float32MultiArray>(
             "/haply_pos_vel", 10,
-            std::bind(&PhantomNode::sendMsgToUR_callback, this, std::placeholders::_1));
+            std::bind(&HaplyNode::sendMsgToUR_callback, this, std::placeholders::_1));
 
         pub = this->create_publisher<std_msgs::msg::Float32MultiArray>("/haply_forces", 10);
-        // sub_button = this->create_subscription<omni_msgs::msg::OmniButtonEvent>("/phantom/button",10,std::bind(&PhantomNode::button_callback, this, std::placeholders::_1));
+        // sub_button = this->create_subscription<omni_msgs::msg::OmniButtonEvent>("/Haply/button",10,std::bind(&HaplyNode::button_callback, this, std::placeholders::_1));
         //  Lancer un thread pour écouter le serveur UDP
-        std::thread thread_serveur_udp = std::thread(&PhantomNode::serveur_udp, this);
+        std::thread thread_serveur_udp = std::thread(&HaplyNode::serveur_udp, this);
         /*if (thread_serveur_udp.joinable())
         {
             thread_serveur_udp.join();
@@ -56,7 +56,7 @@ public:
         thread_serveur_udp.detach();
     }
 
-    ~PhantomNode() {}
+    ~HaplyNode() {}
 
 private:
     rclcpp::Subscription<omni_msgs::msg::OmniButtonEvent>::SharedPtr sub_button;
@@ -69,7 +69,7 @@ private:
     std_msgs::msg::Float32MultiArray quat;
 
     // Partie serveur pour recevoir les efforts de l'UR
-    void *serveur_udp()
+    void serveur_udp()
     {
         // 1) Création de la socket
         int sockfd = socket(AF_INET, SOCK_DGRAM,0);
@@ -83,7 +83,7 @@ private:
         memset(&serv_addr, 0, sizeof(serv_addr));
         serv_addr.sin_family = AF_INET;
         serv_addr.sin_addr.s_addr = INADDR_ANY;
-        int portno = this->get_parameter("portPhantom").as_int();
+        int portno = this->get_parameter("portHaply").as_int();
         serv_addr.sin_port = htons(portno);
 
         // Liaison de la socket à l'adresse locale
@@ -166,8 +166,8 @@ private:
         }
 
         // Créer le message
-        MessagePhantom::Velocity vel;
-        MessagePhantom::Position pos;
+        MessageHaply::Velocity vel;
+        MessageHaply::Position pos;
         if (!quat.data[4])
         {
             vel = {0, 0, 0};
@@ -180,7 +180,7 @@ private:
         }
 
         double time = static_cast<double>(chrono::duration_cast<us>(get_time::now().time_since_epoch()).count());
-        MessagePhantom msg{vel, pos, time};
+        MessageHaply msg{vel, pos, time};
 
         // Sérialiser le message (= encodage)
         msgpack::sbuffer buffer;                     // Tampon pour les données sérialisées
@@ -215,7 +215,7 @@ int main(int argc, char *argv[])
 {
 
     rclcpp::init(argc, argv);
-    rclcpp::spin(std::make_shared<PhantomNode>());
+    rclcpp::spin(std::make_shared<HaplyNode>());
     rclcpp::shutdown();
 
     return 0;
