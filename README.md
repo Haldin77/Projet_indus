@@ -24,18 +24,12 @@ Ce projet a été réalisé pour des ordinateurs sous Linux, avec Ubuntu 22.04
 ```
 ./install_all.sh
 ```
-- Créer un workspace ros2 (dossier de ros2 contenant les packages ros) et y mettre tous les packages ros, dans un dossier src/
-- Compiler et sourcer (à la racine du workspace) :
-```
-colcon build
-source install/setup.bash
-```
 
 # Lancements
 
 - Réseau : 
 
-Dans le cadre de ce projet, nous avons fait nos tests avec des ordinateurs connectés sur un même réseau via un routeur, il suffit donc de connecter les 2 ordinateurs à ce routeur par câbles ethernet, et de désactiver le wifi.
+Dans le cadre de ce projet, nous avons fait nos tests avec des ordinateurs connectés sur un même réseau via un routeur, il suffit donc de connecter les 2 ordinateurs à ce routeur par câbles ethernet, et de désactiver le wifi si celui ci est actif.
 
 - Haply : 
 
