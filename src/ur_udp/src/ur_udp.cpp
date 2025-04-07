@@ -159,7 +159,7 @@ class URNode : public rclcpp::Node
             // Créer le message
             MessageUR::Force f{msg_wrench->wrench.force.x, msg_wrench->wrench.force.y, msg_wrench->wrench.force.z};
             double time = static_cast<double>(chrono::duration_cast<us>(get_time::now().time_since_epoch()).count());
-            MessageUR msg{f, time};
+            MessageUR msg{f, time, currentMsg.time};
 
             // Sérialiser le message (= encodage)
             msgpack::sbuffer buffer;                      // Tampon pour les données sérialisées

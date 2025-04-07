@@ -17,7 +17,7 @@
 #include "message.hpp"
 #include "../include/ur_udp/message.hpp"
 
-MessageUR currentMsg = {{0, 0, 0}, -1};
+MessageUR currentMsg = {{0, 0, 0}, -1, -1};
 
 using namespace std;
 using us = chrono::microseconds;
@@ -120,7 +120,7 @@ private:
 
             // Duré en micro-secondes, calulée entre maintenant et ... 1970 (.time_since_epoch())
             double currentTime = chrono::duration_cast<us>(get_time::now().time_since_epoch()).count() / 1000.0;
-            cout << "Temps de transmission (ms) : " << currentTime << " - " << msg.time / 1000.0 << " = " << currentTime - msg.time / 1000.0 << endl;
+            cout << "Temps de transmission (ms) : " << currentTime - msg.transmissionTime / 1000.0 << endl;
 
             // On vérifie que le message reçu n'est pas un message plus vieux que le dernier message pris en compte (sécurité sur l'ordre d'arrivée des messages)
             if ((msg.time - currentMsg.time) > 0)
