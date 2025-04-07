@@ -22,11 +22,10 @@ static const int QUEUE_LENGTH = 10;
 ///////////[  PARAMETRAGE TELEOPERATION  ]//////////////
 
 static const float SPEED_LINEAR_SCALE = 10;
-static const float WRENCH_SCALE = 0.5;
-static const float WRENCH_LIMIT = 2;
+static const float WRENCH_SCALE = 1.0;
+static const float WRENCH_LIMIT = 200.0;
 static const float DEADBAND = 0.00111;
-static const float Kp_force = 1;
-static const float FORCE_DEADBAND = 0.5;
+static const float FORCE_DEADBAND = 0.005;
 
 /////////////////////////////////////////////////////////
 
@@ -117,13 +116,16 @@ class OmniStateToTwistWithButton : public rclcpp::Node
 private:
     //////////////////////////[  VARIABLES  ]///////////////////////////
     geometry_msgs::msg::TwistStamped twist_msg;
+    UR3Kinematics ur3;
+    Eigen::Vector3d F_base;
+    double norm;
     //_________FILTRE______________
     float cutoff_frequency;   // Frequence de coupure en Hz
     float sampling_frequency; // Frequence d'echantillonage
     const int size_a = 3;
     const int size_b = 3;
     float a_coef[3] = {1, -1.9556, 0.9565};
-
+    float Kp_force = 0.6;
     float b_coef[3] = {0.0002414, 0.0004827, 0.0002414};
 
     //________HISTORIQUE____________
@@ -266,6 +268,27 @@ public:
         }
         return output / a_coef[0];
     }
+    double lfilter_forces(const double *x, const double *y)
+    {
+        double output = 0.0;
+        // application des coefficients b
+        const int size_a_forces = 3;
+        const int size_b_forces = 3;
+        float a_coef_forces[5] = {1, -1.9378, 0.9397};
+        float b_coef_forces[3] = {0.0004690, 0.0009379, 0.0004690};
+        for (int i = 0; i < size_b_forces; i++)
+        {
+            if (LEN_HISTORY >= i)
+                output += b_coef_forces[i] * x[LEN_HISTORY - i - 1];
+        }
+        // application des coefficients a
+        for (int j = 1; j < size_a_forces; j++)
+        {
+            if (LEN_HISTORY >= j)
+                output -= a_coef_forces[j] * y[LEN_HISTORY - j - 1];
+        }
+        return output / a_coef_forces[0];
+    }
 
     //////////////////////[  CALLBACK  ]///////////////////////////////
     void joint_state_callback(const sensor_msgs::msg::JointState::SharedPtr msg)
@@ -301,12 +324,6 @@ public:
             angular_y_history_filtered[i] = angular_y_history_filtered[i + 1];
             angular_z_history_filtered[i] = angular_z_history_filtered[i + 1];
             angular_w_history_filtered[i] = angular_w_history_filtered[i + 1];
-            force_x_history[i] = force_x_history[i + 1];
-            force_y_history[i] = force_y_history[i + 1];
-            force_z_history[i] = force_z_history[i + 1];
-            force_x_history_filtered[i] = force_x_history_filtered[i + 1];
-            force_y_history_filtered[i] = force_y_history_filtered[i + 1];
-            force_z_history_filtered[i] = force_z_history_filtered[i + 1];
         }
 
         //__________________[  VITESSES  ]_______________________
@@ -327,7 +344,7 @@ public:
         //__________________[  ORIENTATIONS  ]___________________
         // Recuperation des orientations du Haply omni
 
-        double angle = 0.0;                 // en degrés
+        double angle = 0.0;                   // en degrés
         double radian = angle * M_PI / 180.0; // Convertir l'angle en radians
         double cos_half_angle = cos(radian / 2);
         double sin_half_angle = sin(radian / 2);
@@ -346,10 +363,10 @@ public:
         q1.z = old_filtered_orientation[2];
         q1.w = old_filtered_orientation[3];
         // Application du filtre sur les orientations
-        angular_x_history_filtered[LEN_HISTORY - 1] = lfilter(angular_x_history,angular_x_history_filtered);
-        angular_y_history_filtered[LEN_HISTORY - 1] = lfilter(angular_y_history,angular_y_history_filtered);
-        angular_z_history_filtered[LEN_HISTORY - 1] = lfilter(angular_z_history,angular_z_history_filtered);
-        angular_w_history_filtered[LEN_HISTORY - 1] = lfilter(angular_w_history,angular_w_history_filtered);
+        angular_x_history_filtered[LEN_HISTORY - 1] = lfilter(angular_x_history, angular_x_history_filtered);
+        angular_y_history_filtered[LEN_HISTORY - 1] = lfilter(angular_y_history, angular_y_history_filtered);
+        angular_z_history_filtered[LEN_HISTORY - 1] = lfilter(angular_z_history, angular_z_history_filtered);
+        angular_w_history_filtered[LEN_HISTORY - 1] = lfilter(angular_w_history, angular_w_history_filtered);
 
         geometry_msgs::msg::Quaternion q2;
         q2.x = angular_x_history_filtered[LEN_HISTORY - 1];
@@ -358,9 +375,9 @@ public:
         q2.w = angular_w_history_filtered[LEN_HISTORY - 1];
         // Calcul des vitesses d'orientation
         std::cout << "x: " << angular_x_history_filtered[LEN_HISTORY - 1] << std::endl;
-        twist_msg.twist.angular.z = -(2.0 / dt) * (q1.w * q2.x - q1.x * q2.w - q1.y * q2.z + q1.z * q2.y) * 2.0;
-        twist_msg.twist.angular.y = -(2.0 / dt) * (q1.w * q2.y + q1.x * q2.z - q1.y * q2.w - q1.z * q2.x) * 2.0;
-        twist_msg.twist.angular.x = (2.0 / dt) * (q1.w * q2.z - q1.x * q2.y + q1.y * q2.x - q1.z * q2.w) * 2.0;
+        twist_msg.twist.angular.z = -(2.0 / dt) * (q1.w * q2.x - q1.x * q2.w - q1.y * q2.z + q1.z * q2.y);
+        twist_msg.twist.angular.y = -(2.0 / dt) * (q1.w * q2.y + q1.x * q2.z - q1.y * q2.w - q1.z * q2.x);
+        twist_msg.twist.angular.x = (2.0 / dt) * (q1.w * q2.z - q1.x * q2.y + q1.y * q2.x - q1.z * q2.w);
         // twist_msg.twist.angular.w = (angular_w_filtered - old_filtered_orientation[3]) / dt;
 
         // Mise à jour de old_filtered_orientation (stockage de l'orientation précédente)
@@ -371,16 +388,11 @@ public:
 
         //_______________[  SECURITE D'EFFORT  ]________________________
         // annule les vitesses si la force reçu est supérieur à un certain seuil
-        double force[3] = {
-            wrench_msg.wrench.force.x,
-            wrench_msg.wrench.force.y,
-            wrench_msg.wrench.force.z};
-
-        // calcul de la norme de la force
-        Eigen::Vector3d force_vector(force[0], force[1], force[2]);
+        Eigen::Vector3d force_vector(F_base[0], F_base[1], F_base[2]);
         Eigen::Vector3d linear_velocity_outil(twist_msg.twist.linear.x, twist_msg.twist.linear.y, twist_msg.twist.linear.z); // Exemple de vitesse linéaire
 
-        double norm = force_vector.squaredNorm(); // Norme au carré
+        norm = force_vector.squaredNorm(); // Norme au carré
+        RCLCPP_INFO(this->get_logger(), "NORme : %f", norm);
         if (norm > WRENCH_LIMIT)
         {
             // Réinitialiser les vitesses
@@ -407,40 +419,68 @@ public:
     {
         if (!joint_angles.empty())
         {
-            UR3Kinematics ur3;
+            wrench_input = *msg;
             Eigen::Matrix4d T06 = ur3.fk_ur(joint_angles);
             Eigen::Matrix3d R06 = T06.block<3, 3>(0, 0);
             Eigen::Vector3d F_effecteur;
-            auto F_previous = Eigen::Vector3d(0,0,0);
+            auto F_previous = Eigen::Vector3d(0, 0, 0);
             Eigen::Vector3d linear_velocity_outil(twist_msg.twist.linear.x, twist_msg.twist.linear.y, twist_msg.twist.linear.z);
             F_effecteur << wrench_input.wrench.force.x,
                 wrench_input.wrench.force.y,
                 wrench_input.wrench.force.z;
 
-            Eigen::Vector3d F_base = R06 * F_effecteur;
-            
-            F_base[0] =  F_base[0]*0.1 + (1-0.1)*F_previous[0];
-            F_base[1] =  F_base[1]*0.1 + (1-0.1)*F_previous[1];
-            F_base[2] =  F_base[2]*0.1 + (1-0.1)*F_previous[2];
-            wrench_input = *msg; // positionné ici? utile? pq pas utiliser wrench_msg?
-            
-            
-            wrench_msg.wrench.force.x = F_base[0]*WRENCH_SCALE+Kp_force*twist_msg.twist.linear.x;
-            wrench_msg.wrench.force.y = F_base[1]*WRENCH_SCALE-Kp_force*twist_msg.twist.linear.y;
-            wrench_msg.wrench.force.z = F_base[2]*WRENCH_SCALE-Kp_force*twist_msg.twist.linear.z;
-            if (F_base[0] < FORCE_DEADBAND)
+            F_base = R06 * F_effecteur;
+            force_x_history[LEN_HISTORY - 1] = F_base[0];
+            force_y_history[LEN_HISTORY - 1] = F_base[1];
+            force_z_history[LEN_HISTORY - 1] = F_base[2];
+
+            force_x_history_filtered[LEN_HISTORY - 1] = lfilter_forces(force_x_history, force_x_history_filtered);
+            force_y_history_filtered[LEN_HISTORY - 1] = lfilter_forces(force_y_history, force_y_history_filtered);
+            force_z_history_filtered[LEN_HISTORY - 1] = lfilter_forces(force_z_history, force_z_history_filtered);
+
+            float alpha = 0.09;//(2 * M_PI * 3 * 500) / (2 * M_PI * 3 * 500 + 1);
+            Eigen::Vector3d F_base_filtre;
+
+            F_base_filtre[0] = F_base[0] * alpha + (1 - alpha) * F_previous[0];
+            F_base_filtre[1] = F_base[1] * alpha + (1 - alpha) * F_previous[1];
+            F_base_filtre[2] = F_base[2] * alpha + (1 - alpha) * F_previous[2];
+            // positionné ici? utile? pq pas utiliser wrench_msg?
+            if (norm < 20 )
             {
-                wrench_msg.wrench.force.x = 0.0;
+                Kp_force = 0.2;
             }
-            if (F_base[1] < FORCE_DEADBAND)
+            else if (norm < 200)
             {
-                wrench_msg.wrench.force.y = 0.0;
+                Kp_force = 0.2*norm/10.0;
             }
-            if (F_base[2] < FORCE_DEADBAND)
-            {
-                wrench_msg.wrench.force.z = 0.0;
+            else{
+                Kp_force = 4.0;
             }
-            F_previous = F_base;
+            
+            
+            F_base_filtre[0] = F_base[0] * WRENCH_SCALE + Kp_force * twist_msg.twist.linear.x;
+            F_base_filtre[1] = F_base[1] * WRENCH_SCALE + Kp_force * twist_msg.twist.linear.y;
+            F_base_filtre[2] = F_base[2] * WRENCH_SCALE - Kp_force * twist_msg.twist.linear.z;
+            F_base_filtre[0] = F_base_filtre[0] * alpha + (1 - alpha) * F_previous[0];
+            F_base_filtre[1] = F_base_filtre[1] * alpha + (1 - alpha) * F_previous[1];
+            F_base_filtre[2] = F_base_filtre[2] * alpha + (1 - alpha) * F_previous[2];
+            // if (abs(F_base[0]) < FORCE_DEADBAND)
+            // {
+            //     wrench_msg.wrench.force.x = 0.0;
+            // }
+            // if (abs(F_base[1]) < FORCE_DEADBAND)
+            // {
+            //     wrench_msg.wrench.force.y = 0.0;
+            // }
+            // if (abs(F_base[2]) < FORCE_DEADBAND)
+            // {
+            //     wrench_msg.wrench.force.z = 0.0;
+            // }
+            F_previous = F_base_filtre;
+            wrench_msg.wrench.force.x = F_base_filtre[0];
+            wrench_msg.wrench.force.y = F_base_filtre[1];
+            wrench_msg.wrench.force.z = F_base_filtre[2];
+
             publisher_omni->publish(wrench_msg);
         }
     }

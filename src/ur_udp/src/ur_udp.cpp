@@ -43,7 +43,7 @@ class URNode : public rclcpp::Node
                 "/wrench", 10, std::bind(&URNode::sendMsgToHaply_callback, this, std::placeholders::_1));
 
                 // Création d'un Publisher pour envoyer des données reçues
-            pub = this->create_publisher<omni_msgs::msg::OmniState>("/haply_state", 10);
+            pub = this->create_publisher<omni_msgs::msg::OmniState>("/Haply_state", 10);
             // Lancer un thread pour écouter le serveur UDP
             std::thread thread_serveur_udp = std::thread(&URNode::serveur_udp, this);
             /*if (thread_serveur_udp.joinable())
@@ -117,7 +117,7 @@ class URNode : public rclcpp::Node
                     // ntohs() convertit le numéro de port du client en ordre d'octets hôte
                     // cout << "\nNouveau message reçu de " << inet_ntoa(cli_addr.sin_addr)
                             // << ":" << ntohs(cli_addr.sin_port) << "\n";
-                    // cout << "velocity reçue :\nx : " << msg.pos.x << "\ny : " << msg.pos.y << "\nvz : " << msg.pos.z << "\nwx : " << endl;
+                    cout << "velocity reçue :\nx : " << msg.pos.x << "\ny : " << msg.pos.y << "\nvz : " << msg.pos.z << "\nwx : " << endl;
 
                     currentMsg = msg;
 
