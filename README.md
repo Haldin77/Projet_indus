@@ -49,10 +49,13 @@ Connecter l'UR à l'ordinateur gérant le contrôle de l'UR par câble ethernet,
 ```
 ./ur.bash
 ```
-
+La gestion de l'activation des contrôleurs n'étant pas encore fonctionne il faut également lancer cette commande dans un second terminal après le lancement du script :
+```
+ros2 control switch_controllers --activate forward_position_controller --deactivate scaled_joint_trajectory_controller
+```
 # Contrôle de l'UR
 
-Une fois tout bien lancé, il suffit d'appuyer sur l'un des deux boutons du stylet pour pouvoir contrôler l'UR en déplaçant l'Haply
+Une fois tout bien lancé, le boutton le plus proche de la pointe permet l'engagement du mouvement, le deuxième lui permet un mouvement avec une échelle de rotation autour de l'axe de la sonde échographique plus importante afin d'effectuer les quarts de rotation.
 
 # Débuggage
 
