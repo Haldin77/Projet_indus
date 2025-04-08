@@ -147,7 +147,7 @@ private:
     //_______ARTICULATIONS__________
     std::vector<double> joint_angles;
     double old_filtered_orientation[4] = {0.0, 0.0, 0.0, 0.0};
-
+    float z_scale = 1;
     ///////////////////////[  SUB_AND_PUB  ]///////////////////////////
     rclcpp::Subscription<sensor_msgs::msg::JointState>::SharedPtr subscription_joint;
     rclcpp::Subscription<omni_msgs::msg::OmniState>::SharedPtr subscription_state;
@@ -302,7 +302,16 @@ public:
         double current_time = now.seconds();
         double dt = current_time - timer;
         timer = current_time;
-
+        if (msg->locked)
+        {
+            z_scale = 10.0;
+        }
+        else
+        {
+            z_scale = 1.0;
+        }
+        
+        
         // Créer un message TwistStamped
         twist_msg.header.stamp = this->get_clock()->now();
         twist_msg.header.frame_id = "base_link";
@@ -375,7 +384,7 @@ public:
         q2.w = angular_w_history_filtered[LEN_HISTORY - 1];
         // Calcul des vitesses d'orientation
         std::cout << "x: " << angular_x_history_filtered[LEN_HISTORY - 1] << std::endl;
-        twist_msg.twist.angular.z = -(2.0 / dt) * (q1.w * q2.x - q1.x * q2.w - q1.y * q2.z + q1.z * q2.y);
+        twist_msg.twist.angular.z = -(2.0 / dt) * (q1.w * q2.x - q1.x * q2.w - q1.y * q2.z + q1.z * q2.y)*z_scale;
         twist_msg.twist.angular.y = -(2.0 / dt) * (q1.w * q2.y + q1.x * q2.z - q1.y * q2.w - q1.z * q2.x);
         twist_msg.twist.angular.x = (2.0 / dt) * (q1.w * q2.z - q1.x * q2.y + q1.y * q2.x - q1.z * q2.w);
         // twist_msg.twist.angular.w = (angular_w_filtered - old_filtered_orientation[3]) / dt;
@@ -413,6 +422,11 @@ public:
 
         // Publication des consignes de vitesse (angulaire et lineaire)
         publisher_->publish(twist_msg);
+
+        //calcul du temps de calcul
+        double end_time = (this->get_clock()->now()).seconds();
+        double delay = end_time - current_time;
+        std::cout << "delay : " << delay << std::endl;
     }
 
     void wrench_callback(const geometry_msgs::msg::WrenchStamped::SharedPtr msg)
@@ -447,14 +461,14 @@ public:
             // positionné ici? utile? pq pas utiliser wrench_msg?
             if (norm < 20 )
             {
-                Kp_force = 0.2;
+                Kp_force = 1.0;
             }
             else if (norm < 200)
             {
-                Kp_force = 0.2*norm/10.0;
+                Kp_force = 1.0*norm/10.0;
             }
             else{
-                Kp_force = 4.0;
+                Kp_force = 20.0;
             }
             
             

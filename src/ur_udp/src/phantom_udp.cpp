@@ -134,7 +134,14 @@ private:
 
                 currentMsg = msg;
                 std_msgs::msg::Float32MultiArray wrenchMsg;
-                wrenchMsg.data = {msg.f.x, msg.f.y, msg.f.z};
+                if (button == 0)
+                {
+                    wrenchMsg.data = {0, 0, 0};
+                }
+                else
+                {
+                    wrenchMsg.data = {msg.f.x, msg.f.y, msg.f.z};
+                }
                 pub->publish(wrenchMsg);
             }
         }
@@ -164,7 +171,7 @@ private:
         // Créer le message
         MessageHaply::Velocity vel;
         MessageHaply::Position pos;
-        if (!quat.data[4])
+        if (quat.data[4] == 0)
         {
             vel = {0, 0, 0};
             pos = {0, 0, 0, 0};
@@ -176,7 +183,7 @@ private:
         }
 
         double time = static_cast<double>(chrono::duration_cast<us>(get_time::now().time_since_epoch()).count());
-        MessageHaply msg{vel, pos, time};
+        MessageHaply msg{vel, pos, time,quat.data[4]};
 
         // Sérialiser le message (= encodage)
         msgpack::sbuffer buffer;                     // Tampon pour les données sérialisées
@@ -199,11 +206,7 @@ private:
     void receive_quat_callback(std_msgs::msg::Float32MultiArray msg)
     {
         quat = msg;
-    }
-
-    void button_callback(const omni_msgs::msg::OmniButtonEvent::SharedPtr msg)
-    {
-        button = msg->grey_button;
+        button = quat.data[4];
     }
 };
 

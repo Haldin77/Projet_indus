@@ -18,7 +18,7 @@ using  us = chrono::microseconds;
 using get_time = chrono::steady_clock;
 
 // Variable globale : vitesse reçue la plus récente
-MessageHaply currentMsg = {{0, 0, 0},{0, 0, 0, 0}, -1};
+MessageHaply currentMsg = {{0, 0, 0},{0, 0, 0, 0}, -1,0};
 
 // Mutex pour synchroniser l'accès à la console pour les threads
 mutex console_mutex;
@@ -46,10 +46,6 @@ class URNode : public rclcpp::Node
             pub = this->create_publisher<omni_msgs::msg::OmniState>("/Haply_state", 10);
             // Lancer un thread pour écouter le serveur UDP
             std::thread thread_serveur_udp = std::thread(&URNode::serveur_udp, this);
-            /*if (thread_serveur_udp.joinable())
-            {
-                thread_serveur_udp.join();
-            }*/
            thread_serveur_udp.detach();  // Laisse le thread tourner en arrière-plan
         }
 
@@ -129,6 +125,7 @@ class URNode : public rclcpp::Node
                     omniStateMsg.pose.orientation.y = msg.pos.y;
                     omniStateMsg.pose.orientation.z = msg.pos.z;
                     omniStateMsg.pose.orientation.w = msg.pos.w;
+                    omniStateMsg.locked = (msg.button == 2);
                     pub->publish(omniStateMsg);
                 }
             }

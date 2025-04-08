@@ -17,12 +17,12 @@ struct MessageHaply {
         float w;
         MSGPACK_DEFINE(x, y, z, w)
     };
-
     Velocity vel;
     Position pos;
     double time;
+    int button;
 
-    MSGPACK_DEFINE(vel,pos, time) // Macro pour Msgpack
+    MSGPACK_DEFINE(vel,pos, time,button) // Macro pour Msgpack
 };
 
 struct MessageUR {

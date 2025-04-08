@@ -8,7 +8,7 @@ command_in_type: "speed_units" # "unitless"> in the range [-1:1], as if from joy
 scale:
   # Scale parameters are only used if command_in_type=="unitless"
   linear:  0.6  # Max linear velocity. Meters per publish_period. Unit is [m/s]. Only used for Cartesian commands.
-  rotational:  0.3 # Max angular velocity. Rads per publish_period. Unit is [rad/s]. Only used for Cartesian commands.
+  rotational:  2.0 # Max angular velocity. Rads per publish_period. Unit is [rad/s]. Only used for Cartesian commands.
   # Max joint angular/linear velocity. Rads or Meters per publish period. Only used for joint commands on joint_command_in_topic.
   joint: 0.01
 # This is a fudge factor to account for any latency in the system, e.g. network latency or poor low-level
@@ -17,7 +17,7 @@ scale:
 system_latency_compensation: 0.04
 
 ## Properties of outgoing commands
-publish_period: 0.004  # 1/Nominal publish rate [seconds]
+publish_period: 0.002  # 1/Nominal publish rate [seconds]
 low_latency_mode: true  # Set this to true to publish as soon as an incoming Twist command is received (publish_period is ignored)
 
 # What type of topic does your robot driver expect?
