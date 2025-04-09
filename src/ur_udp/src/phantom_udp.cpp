@@ -47,13 +47,7 @@ public:
             std::bind(&HaplyNode::sendMsgToUR_callback, this, std::placeholders::_1));
 
         pub = this->create_publisher<std_msgs::msg::Float32MultiArray>("/haply_forces", 10);
-        // sub_button = this->create_subscription<omni_msgs::msg::OmniButtonEvent>("/Haply/button",10,std::bind(&HaplyNode::button_callback, this, std::placeholders::_1));
-        //  Lancer un thread pour écouter le serveur UDP
         std::thread thread_serveur_udp = std::thread(&HaplyNode::serveur_udp, this);
-        /*if (thread_serveur_udp.joinable())
-        {
-            thread_serveur_udp.join();
-        }*/
         thread_serveur_udp.detach();
     }
     ~HaplyNode() {}
@@ -128,10 +122,6 @@ private:
                 // Afficher le message reçu
                 //inet_ntoa() convertit l'adresse IP du client en une chaîne lisible
                 //ntohs() convertit le numéro de port du client en ordre d'octets hôte
-                cout << "\nNouveau message reçu de " << inet_ntoa(cli_addr.sin_addr)
-                     << ":" << ntohs(cli_addr.sin_port) << "\n";
-                // cout << "Vecteur de force reçu :\nx : " << msg.f.x << "\ny : " << msg.f.y << "\nz : " << msg.f.z << endl;
-
                 currentMsg = msg;
                 std_msgs::msg::Float32MultiArray wrenchMsg;
                 if (button == 0)

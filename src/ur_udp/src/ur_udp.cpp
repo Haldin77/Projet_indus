@@ -111,10 +111,6 @@ class URNode : public rclcpp::Node
                     // Afficher le message reçu
                     // inet_ntoa() convertit l'adresse IP du client en une chaîne lisible
                     // ntohs() convertit le numéro de port du client en ordre d'octets hôte
-                    // cout << "\nNouveau message reçu de " << inet_ntoa(cli_addr.sin_addr)
-                            // << ":" << ntohs(cli_addr.sin_port) << "\n";
-                    cout << "velocity reçue :\nx : " << msg.pos.x << "\ny : " << msg.pos.y << "\nvz : " << msg.pos.z << "\nwx : " << endl;
-
                     currentMsg = msg;
 
                     omni_msgs::msg::OmniState omniStateMsg;
@@ -134,7 +130,6 @@ class URNode : public rclcpp::Node
 
         void sendMsgToHaply_callback(const geometry_msgs::msg::WrenchStamped::SharedPtr msg_wrench)
         {
-            // RCLCPP_INFO(this->get_logger(), "Message reçu sur le topic /wrench");
             int sockfd = socket(AF_INET, SOCK_DGRAM, 0);
             if (sockfd < 0)
             {

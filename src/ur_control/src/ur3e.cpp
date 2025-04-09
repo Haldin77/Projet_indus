@@ -384,9 +384,9 @@ public:
         q2.w = angular_w_history_filtered[LEN_HISTORY - 1];
         // Calcul des vitesses d'orientation
         std::cout << "x: " << angular_x_history_filtered[LEN_HISTORY - 1] << std::endl;
-        twist_msg.twist.angular.z = -(2.0 / dt) * (q1.w * q2.x - q1.x * q2.w - q1.y * q2.z + q1.z * q2.y)*z_scale;
-        twist_msg.twist.angular.y = -(2.0 / dt) * (q1.w * q2.y + q1.x * q2.z - q1.y * q2.w - q1.z * q2.x);
-        twist_msg.twist.angular.x = (2.0 / dt) * (q1.w * q2.z - q1.x * q2.y + q1.y * q2.x - q1.z * q2.w);
+        twist_msg.twist.angular.z = -(2.0 / dt) * (q1.w * q2.x - q1.x * q2.w - q1.y * q2.z + q1.z * q2.y)*z_scale*2.0;
+        twist_msg.twist.angular.y = -(2.0 / dt) * (q1.w * q2.y + q1.x * q2.z - q1.y * q2.w - q1.z * q2.x)*2.0;
+        twist_msg.twist.angular.x = (2.0 / dt) * (q1.w * q2.z - q1.x * q2.y + q1.y * q2.x - q1.z * q2.w)*2.0;
         // twist_msg.twist.angular.w = (angular_w_filtered - old_filtered_orientation[3]) / dt;
 
         // Mise à jour de old_filtered_orientation (stockage de l'orientation précédente)
@@ -401,7 +401,6 @@ public:
         Eigen::Vector3d linear_velocity_outil(twist_msg.twist.linear.x, twist_msg.twist.linear.y, twist_msg.twist.linear.z); // Exemple de vitesse linéaire
 
         norm = force_vector.squaredNorm(); // Norme au carré
-        RCLCPP_INFO(this->get_logger(), "NORme : %f", norm);
         if (norm > WRENCH_LIMIT)
         {
             // Réinitialiser les vitesses
@@ -478,18 +477,6 @@ public:
             F_base_filtre[0] = F_base_filtre[0] * alpha + (1 - alpha) * F_previous[0];
             F_base_filtre[1] = F_base_filtre[1] * alpha + (1 - alpha) * F_previous[1];
             F_base_filtre[2] = F_base_filtre[2] * alpha + (1 - alpha) * F_previous[2];
-            // if (abs(F_base[0]) < FORCE_DEADBAND)
-            // {
-            //     wrench_msg.wrench.force.x = 0.0;
-            // }
-            // if (abs(F_base[1]) < FORCE_DEADBAND)
-            // {
-            //     wrench_msg.wrench.force.y = 0.0;
-            // }
-            // if (abs(F_base[2]) < FORCE_DEADBAND)
-            // {
-            //     wrench_msg.wrench.force.z = 0.0;
-            // }
             F_previous = F_base_filtre;
             wrench_msg.wrench.force.x = F_base_filtre[0];
             wrench_msg.wrench.force.y = F_base_filtre[1];
